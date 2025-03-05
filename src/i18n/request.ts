@@ -1,17 +1,20 @@
 import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
-export default getRequestConfig(async ({ requestLocale }) => {
-  // This typically corresponds to the `[locale]` segment
-  let locale = await requestLocale;
+// استخراج نوع اللغات المدعومة
+type Locale = (typeof routing.locales)[number];
 
-  // Ensure that a valid locale is used
-  if (!locale || !routing.locales.includes(locale as any)) {
-    locale = routing.defaultLocale;
-  }
+export default getRequestConfig(async ({ requestLocale }) => {
+  // انتظار قيمة اللغة من Promise
+  const locale = await requestLocale;
+
+  // التحقق من أن اللغة المحددة مدعومة، وإلا يتم استخدام اللغة الافتراضية
+  const validatedLocale: Locale = routing.locales.includes(locale as Locale)
+    ? (locale as Locale)
+    : (routing.defaultLocale as Locale);
 
   return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
+    locale: validatedLocale,
+    messages: (await import(`../../messages/${validatedLocale}.json`)).default,
   };
 });

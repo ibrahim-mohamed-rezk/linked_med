@@ -1,6 +1,60 @@
 {
-    "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+  "HomePage": {
+    "our_services": "Our Services",
+    "about_us": "About Us",
+    "about_p1": "With over two decades of excellence in healthcare recruitment and workforce solutions, LinkedMed was founded in 2022, establishing its inaugural office in Dubai—an epicenter of medical innovation and global connectivity. Expanding our footprint, we launched in Frankfurt, a cornerstone of European healthcare, and are now poised to extend our expertise to Cairo, further solidifying our presence in key medical hubs.",
+    "about_p2": " As a premier healthcare talent acquisition firm, LinkedMed specializes in sourcing, credentialing, and placing elite medical professionals across 10+ countries. We collaborate with world-class healthcare institutions, ensuring seamless integration of top-tier doctors, physicians, surgeons, nurses, pharmacists, and allied healthcare specialists into high-caliber medical environments.",
+    "about_p3": "Our mission is to elevate healthcare standards by aligning exceptional clinical talent with prestigious medical institutions worldwide. Through strategic workforce solutions, we bridge the gap between expertise and opportunity, optimizing patient care outcomes and advancing the future of global medicine.",
+    "our_locations": "Our Locations",
+    "hero": {
+      "title": "LinkedMed",
+      "subtitle": "Career beyond borders"
+    },
+    "in": "IN",
+    "out": "OUT",
+    "in_services": {
+      "service1": "- Guidance in learning language",
+      "service2": "- Preparation for language exams",
+      "service3": "- Assistance with document legalization",
+      "service4": "- Attesting certificates for visa approval"
+    },
+    "out_services": {
+      "service1": "- Job Placement",
+      "service2": "- Visa support",
+      "service3": "- Language training",
+      "service4": "- Culture integration service"
     }
+  },
+
+  "footer": {
+    "missionStatement": "Our mission is to provide exceptional services.",
+    "solutions": "Solutions",
+    "support": "Support",
+    "company": "Company",
+    "Marketing": "Marketing",
+    "Analytics": "Analytics",
+    "Commerce": "Commerce",
+    "Insights": "Insights",
+    "Pricing": "Pricing",
+    "Documentation": "Documentation",
+    "Guides": "Guides",
+    "API Status": "API Status",
+    "About": "About",
+    "Blog": "Blog",
+    "Jobs": "Jobs",
+    "Press": "Press",
+    "Partners": "Partners",
+    "rightsReserved": "All rights reserved.",
+    "Claim": "Claim",
+    "Privacy": "Privacy",
+    "Terms": "Terms"
+  },
+
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "about": "About"
   }
+}

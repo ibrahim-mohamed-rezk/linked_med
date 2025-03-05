@@ -20,18 +20,19 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale as any)) {
+  type Locale = "en" | "ar";
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main>{children}</main> 
+          <main>{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

@@ -1,6 +1,8 @@
-import React from "react";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations('footer');
+
   return (
     <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -9,7 +11,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-8">
               <div className="text-black text-3xl sm:text-4xl font-bold">Logo</div>
               <p className="text-[#121127]/60 text-base sm:text-lg font-bold leading-relaxed">
-                Making the world a better place through constructing elegant hierarchies
+                {t('missionStatement')}
               </p>
               <div className="flex space-x-4">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,26 +30,26 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">Solutions</h3>
+            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">{t('solutions')}</h3>
             <ul className="space-y-2">
               {["Marketing", "Analytics", "Commerce", "Insights"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">{item}</li>
+                <li key={item} className="text-[#111127] text-base font-bold">{t(item)}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">Support</h3>
+            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">{t('support')}</h3>
             <ul className="space-y-2">
               {["Pricing", "Documentation", "Guides", "API Status"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">{item}</li>
+                <li key={item} className="text-[#111127] text-base font-bold">{t(item)}</li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">Company</h3>
+            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">{t('company')}</h3>
             <ul className="space-y-2">
               {["About", "Blog", "Jobs", "Press", "Partners"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">{item}</li>
+                <li key={item} className="text-[#111127] text-base font-bold">{t(item)}</li>
               ))}
             </ul>
           </div>
@@ -55,12 +57,12 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-[#121127]/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-[#121127]/60 text-sm mb-4 md:mb-0">
-              © 2020 Dlex, Inc. All rights reserved
+              © 2020 Dlex, Inc. {t('rightsReserved')}
             </div>
             <div className="flex space-x-6">
               {["Claim", "Privacy", "Terms"].map((item) => (
                 <a key={item} href="#" className="text-[#111127] text-sm font-bold">
-                  {item}
+                  {t(item)}
                 </a>
               ))}
             </div>
