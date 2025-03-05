@@ -115,7 +115,7 @@ const Navbar = () => {
                 )}
               </div>
               <button className="bg-[#96b8ff] hidden md:flex items-center justify-center px-[20px] py-[10px] text-white rounded-full text-sm font-bold font-['Satoshi_Variable']">
-                {t("nav.contactUs")}
+                {t("enrol_now")}
               </button>
             </div>
 
@@ -179,7 +179,7 @@ const Navbar = () => {
                 </a>
               ))}
               <button className="w-full text-left px-4 py-2 text-base font-medium text-white bg-[#96b8ff] hover:bg-blue-700">
-                {t("nav.contactUs")}
+                {t("enrol_now")}
               </button>
             </div>
           </div>
