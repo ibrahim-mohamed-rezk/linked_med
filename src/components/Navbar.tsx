@@ -24,8 +24,9 @@ const Navbar = () => {
   const navItems = [
     t("home"),
     t("services"),
-    t("portfolio"),
-    t("pricing"),
+    // t("portfolio"),
+    // t("pricing"),
+    t("contact_us"),
     t("about"),
   ];
 
