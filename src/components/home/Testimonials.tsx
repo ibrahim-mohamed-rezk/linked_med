@@ -50,7 +50,7 @@ const Testimonials = () => {
         "LinkedMed's career guidance and job placement support helped me secure my ideal role in Germany. Their professional and personalized approach made everything smooth. Highly recommended!",
     },
     {
-      image: "/images/testimonials/RebicaMüller.jpg",
+      image: "/images/testimonials/RebicaMuller.jpg",
       name: "Rebica Müller",
       testimonial:
         "LinkedMed provides well- prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
