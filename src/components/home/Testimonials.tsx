@@ -42,32 +42,32 @@ const Testimonials = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isVisible, lastScrollY]);
 
-  const testimonials = [
-    {
-      image: "",
-      name: "",
-      position: "",
-      testimonial: ""
-    },
-    {
-      image: "",
-      name: "",
-      position: "",
-      testimonial: ""
-    },
-    {
-      image: "",
-      name: "",
-      position: "",
-      testimonial: ""
-    },
-    {
-      image: "",
-      name: "",
-      position: "",
-      testimonial: ""
-    }
-  ]
+  // const testimonials = [
+  //   {
+  //     image: "",
+  //     name: "",
+  //     position: "",
+  //     testimonial: ""
+  //   },
+  //   {
+  //     image: "",
+  //     name: "",
+  //     position: "",
+  //     testimonial: ""
+  //   },
+  //   {
+  //     image: "",
+  //     name: "",
+  //     position: "",
+  //     testimonial: ""
+  //   },
+  //   {
+  //     image: "",
+  //     name: "",
+  //     position: "",
+  //     testimonial: ""
+  //   }
+  // ]
 
   return (
     <div ref={sectionRef} className="w-full">
