@@ -8,11 +8,22 @@
     "our_locations": "مواقعنا",
     "hero": {
       "title": "LinkedMed",
-      "subtitle": "مهنة بلا حدود"
-      
+      "subtitle": "Career beyond borders"
     },
-    "in": "دخول",
-    "out": "خروج"
+    "in": "الوطن",
+    "out": "في الخارج",
+    "in_services": {
+      "service1": "- إرشاد في تعلم اللغة",
+      "service2": "- التحضير للامتحانات اللغوية",
+      "service3": "- المساعدة في توثيق الوثائق",
+      "service4": "- تصديق الشهادات للموافقة على التأشيرة"
+    },
+    "out_services": {
+      "service1": "- توظيف",
+      "service2": "- دعم التأشيرة",
+      "service3": "- تدريب اللغة",
+      "service4": "- خدمة الاندماج الثقافي"
+    }
   },
   "footer": {
     "missionStatement": "مهمتنا هي تقديم خدمات استثنائية.",
@@ -36,5 +47,14 @@
     "Claim": "مطالبة",
     "Privacy": "خصوصية",
     "Terms": "الشروط"
+  },
+  "header": {
+    "home": "الصفحة الرئيسية",
+    "services": "الخدمات",
+    "portfolio": "مجموعة",
+    "pricing": "التسعير",
+    "about": "من نحن",
+    "enrol_now": "انضم الان",
+    "contact_us": "اتصل بنا"
   }
 }

@@ -3,7 +3,8 @@ import About from "@/components/home/About";
 import Services from "@/components/home/Services";
 import "../../../public/css/home.css";
 import Testimonials from "@/components/home/Testimonials";
-import Map from "@/components/home/Map";
+// import Map from "@/components/home/Map";
+import MapImage from "@/components/home/MapImage";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        <Map />
+        <MapImage />
+        {/* <Map /> */}
         <Testimonials />
       </main>
     </div>

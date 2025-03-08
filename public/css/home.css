@@ -12,7 +12,7 @@
   top: 0;
 }
 
-.front-full video {
+.front-full video, .front-full img {
   width: 100vw;
   height: 100vh;
   object-fit: cover;

@@ -21,29 +21,28 @@ const Services = () => {
 
         <div className="front-full-inner w-full max-w-[1920px] mx-auto">
           <div className="font-full-inner-content front-story w-full">
-            <h3 className="text-6xl w-full text-center font-bold leading-snug text-white">
+            <h3 className="text-[clamp(25px,3.125vw,60px)] w-full text-center font-bold leading-snug text-white">
               {t("our_services")}
             </h3>
-            <div className="flex w-full mt-[100px] items-center justify-between">
-              <div className="w-[671px] group h-[582px] relative bg-white/10 rounded-[30px] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-[671px] text-center text-white text-[82px] font-bold font-['Satoshi Variable']">
+            <div className="flex px-[5px] gap-[20px] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
+              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(42px,4.27083vw,82px)] font-bold font-['Satoshi Variable']">
                   {t("in")}
                 </div>
-                <ul className="w-[671px] list-none translate-x-[-100%] flex flex-col items-start justify-center group-hover:translate-x-0 transition-all duration-300 h-[451px] rounded-[33px] pl-5">
+                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-start justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
                   {inServices?.map((service: { service: string }) => (
                     <li
                       key={service.service}
-                      className="text-[30px] font-semibold leading-relaxed"
+                      className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
                     >
                       {service.service}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div data-svg-wrapper>
+              <div className="rotate-90 md:rotate-0 flex items-center justify-center" data-svg-wrapper>
                 <svg
-                  width="8"
-                  height="533"
+                  className="w-full md:w-[8px] h-[8px] md:h-[533px] "
                   viewBox="0 0 8 533"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,14 +69,14 @@ const Services = () => {
                   </defs>
                 </svg>
               </div>
-              <div className="w-[671px] group h-[582px] relative bg-white/10 rounded-[30px] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-[671px] text-center text-white text-[82px] font-bold font-['Satoshi Variable']">
+              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(42px,4.27083vw,82px)] font-bold font-['Satoshi Variable']">
                   {t("out")}
-                  <ul className="w-[671px] list-none translate-x-[100%] flex flex-col items-start justify-center group-hover:translate-x-0 transition-all duration-300 h-[451px] rounded-[33px] pl-5">
+                  <ul className="w-full max-w-[671px] list-none md:translate-x-[100%] flex flex-col items-start justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
                     {outServices?.map((service: { service: string }) => (
                       <li
                         key={service.service}
-                        className="text-[40px] font-semibold leading-relaxed"
+                        className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
                       >
                         {service.service}
                       </li>

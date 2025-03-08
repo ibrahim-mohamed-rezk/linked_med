@@ -22,17 +22,17 @@ const Testimonials = () => {
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return; // If not visible, keep current rotation
+    if (!isVisible) return; 
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const direction = scrollY > lastScrollY ? -1 : 1; // Reverse rotation direction on scroll up
+      const direction = scrollY > lastScrollY ? -1 : 1; 
       const maxRotation = 11;
       const minRotation = -10;
 
       setRotation((prev) => {
-        const newRotation = prev + direction * 0.6; // Adjust rotation speed
-        return Math.max(minRotation, Math.min(maxRotation, newRotation)); // Clamp rotation
+        const newRotation = prev + direction * 0.6; 
+        return Math.max(minRotation, Math.min(maxRotation, newRotation)); 
       });
 
       setLastScrollY(scrollY);
@@ -42,13 +42,42 @@ const Testimonials = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isVisible, lastScrollY]);
 
+  const testimonials = [
+    {
+      image: "",
+      name: "",
+      position: "",
+      testimonial: ""
+    },
+    {
+      image: "",
+      name: "",
+      position: "",
+      testimonial: ""
+    },
+    {
+      image: "",
+      name: "",
+      position: "",
+      testimonial: ""
+    },
+    {
+      image: "",
+      name: "",
+      position: "",
+      testimonial: ""
+    }
+  ]
+
   return (
     <div ref={sectionRef} className="w-full">
       <div className="w-full ">
-        <section className="sticky top-0 w-full h-screen bg-[#d6d8e2]">
+        <section className="sticky top-0 w-full h-screen">
           <div className="relative w-full h-screen overflow-hidden">
-            <div className="absolute w-full inset-0 flex items-center justify-center -translate-x-8">
-              <svg
+            <div style={{
+              WebkitTextStroke: "3px #578bfd"
+            }} className="absolute w-full top-[-620px] inset-0 flex items-center justify-center">
+              {/* <svg
                 className="absolute"
                 width="100%"
                 height="2623"
@@ -61,7 +90,10 @@ const Testimonials = () => {
                   stroke="white"
                   strokeWidth="3"
                 ></path>
-              </svg>
+              </svg> */}
+              <h2 className="relative opacity-10 justify-center text-[#8cb0fd]/60 text-[clamp(55px,15.625vw,300px)] font-bold font-['Inter']">
+                Testimonials
+              </h2>
             </div>
             <div className="">
               <div className="inset-0 absolute flex items-center justify-center">

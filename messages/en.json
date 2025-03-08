@@ -10,8 +10,8 @@
       "title": "LinkedMed",
       "subtitle": "Career beyond borders"
     },
-    "in": "IN",
-    "out": "OUT",
+    "in": "Home Country",
+    "out": "Abroad",
     "in_services": {
       "service1": "- Guidance in learning language",
       "service2": "- Preparation for language exams",
@@ -25,7 +25,6 @@
       "service4": "- Culture integration service"
     }
   },
-
   "footer": {
     "missionStatement": "Our mission is to provide exceptional services.",
     "solutions": "Solutions",
@@ -49,12 +48,13 @@
     "Privacy": "Privacy",
     "Terms": "Terms"
   },
-
   "header": {
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
     "pricing": "Pricing",
-    "about": "About"
+    "about": "About",
+    "enrol_now": "Enroll Now",
+    "contact_us": "Contact Us"
   }
 }
