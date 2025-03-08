@@ -23,6 +23,11 @@
       "service2": "- Visa support",
       "service3": "- Language training",
       "service4": "- Culture integration service"
+    },
+    "mapImage": {
+      "welcomePound": "Welcome to LinkedMed",
+      "makeForgs": "Meet The Forgs Making an impact for leading brands around the world",
+      "carrer": "Career"
     }
   },
   "footer": {
