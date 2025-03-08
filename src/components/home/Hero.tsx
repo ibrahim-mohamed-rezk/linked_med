@@ -29,6 +29,7 @@ const Hero = () => {
         src="https://storage.googleapis.com/otherprojects1323/hero.mp4"
         autoPlay
         loop
+        muted
       />
       <div className="container h-full !mx-auto z-10 relative">
         {visible && (
