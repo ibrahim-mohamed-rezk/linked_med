@@ -23,18 +23,14 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (!isVisible) return; 
-    if (!isVisible) return; 
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const direction = scrollY > lastScrollY ? -1 : 1; 
       const direction = scrollY > lastScrollY ? -1 : 1; 
       const maxRotation = 11;
       const minRotation = -10;
 
       setRotation((prev) => {
-        const newRotation = prev + direction * 0.6; 
-        return Math.max(minRotation, Math.min(maxRotation, newRotation)); 
         const newRotation = prev + direction * 0.6; 
         return Math.max(minRotation, Math.min(maxRotation, newRotation)); 
       });
@@ -76,7 +72,6 @@ const Testimonials = () => {
   return (
     <div ref={sectionRef} className="w-full">
       <div className="w-full ">
-        <section className="sticky top-0 w-full h-screen">
         <section className="sticky top-0 w-full h-screen">
           <div className="relative w-full h-screen overflow-hidden">
             <div style={{
