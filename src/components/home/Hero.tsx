@@ -9,13 +9,8 @@ const Hero = () => {
       setVisible(true);
     }, 10400);
 
-    const hideTimeout = setTimeout(() => {
-      setVisible(false);
-    }, 110000);
-
     return () => {
       clearTimeout(showTimeout);
-      clearTimeout(hideTimeout);
     };
   }, []);
   console.log(visible);
@@ -34,7 +29,7 @@ const Hero = () => {
       <div className="container h-full !mx-auto z-10 relative">
         {visible && (
           <div
-            className={`text-white px-[20px] md:px-0 text-[clamp(30px,4.27083vw,82px)] font-bold w-full h-full flex items-center ${
+            className={`text-white px-[20px] md:px-0 text-[clamp(30px,4.27083vw,82px)] font-bold w-full h-[85%] flex items-end ${
               locale === "ar" ? "justify-end" : "justify-start"
             } text-left font-['Satoshi Variable']`}
           >
