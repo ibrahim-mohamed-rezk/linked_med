@@ -5,9 +5,9 @@ const Footer = () => {
 
   return (
     <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="col-span-1 lg:col-span-2">
+      <div className="max-w-[1900px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2">
+          <div className="col-span-1 ">
             <div className="flex flex-col space-y-8">
               <div className="text-black text-3xl sm:text-4xl font-bold">
                 <img
@@ -60,39 +60,51 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">
-              {t("solutions")}
-            </h3>
             <ul className="space-y-2">
-              {["Marketing", "Analytics", "Commerce", "Insights"].map(
-                (item) => (
-                  <li key={item} className="text-[#111127] text-base font-bold">
-                    {t(item)}
-                  </li>
-                )
-              )}
+              {["home", "ourStory", "ourValues", "contactUs"].map((item) => (
+                <li key={item} className="text-[#111127] text-base font-bold">
+                  {t(item)}
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">
-              {t("support")}
-            </h3>
             <ul className="space-y-2">
-              {["Pricing", "Documentation", "Guides", "API Status"].map(
-                (item) => (
-                  <li key={item} className="text-[#111127] text-base font-bold">
-                    {t(item)}
-                  </li>
-                )
-              )}
+              {[
+                "services",
+                "makingTheMove",
+                "seamlessProcessing",
+                "tracking",
+                "referAFriend",
+                "eLearning",
+              ].map((item) => (
+                <li key={item} className="text-[#111127] text-base font-bold">
+                  {t(item)}
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-[#121127]/40 text-sm font-bold uppercase tracking-wide mb-4">
-              {t("company")}
-            </h3>
             <ul className="space-y-2">
-              {["About", "Blog", "Jobs", "Press", "Partners"].map((item) => (
+              {["whyLinkedmed", "Partners"].map((item) => (
+                <li key={item} className="text-[#111127] text-base font-bold">
+                  {t(item)}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <ul className="space-y-2">
+              {["messageFromCeo", "blogs/Events", "Testimonials", "workWithUs"].map((item) => (
+                <li key={item} className="text-[#111127] text-base font-bold">
+                  {t(item)}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <ul className="space-y-2">
+              {["privacyPolicy", "termsAndConditions"].map((item) => (
                 <li key={item} className="text-[#111127] text-base font-bold">
                   {t(item)}
                 </li>

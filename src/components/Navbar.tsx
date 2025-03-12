@@ -5,7 +5,6 @@ import { useTranslations, useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState, useRef } from "react";
 
-
 const Navbar = () => {
   const t = useTranslations("header");
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-white rounded-bl-[20px] rounded-br-[20px] shadow-md">
-      <div className="container !mx-auto">
+      <div className="max-w-[1900px] !mx-auto">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex w-full justify-between items-center z-50 relative h-16">
             <div className="flex-shrink-0">
@@ -51,7 +50,9 @@ const Navbar = () => {
                   <a
                     key={index}
                     href="#"
-                    className="text-gray-800 hover:text-blue-600 transition-colors duration-200 text-sm font-medium font-['Satoshi_Variable']"
+                    className={`text-[18px] transition-colors duration-200 text-sm font-bold ${
+                      locale === "ar" ? "" : "font-[Satoshi_Variable]"
+                    }`}
                   >
                     {item}
                   </a>

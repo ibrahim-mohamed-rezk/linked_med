@@ -44,10 +44,10 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      image: "/images/testimonials/SusiSmith.jpg",
-      name: "Susi Smith",
+      image: "/images/testimonials/Hagar.jpg",
+      name: "Hagar Elnahhas",
       testimonial:
-        "LinkedMed's career guidance and job placement support helped me secure my ideal role in Germany. Their professional and personalized approach made everything smooth. Highly recommended!",
+        "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
     },
     {
       image: "/images/testimonials/RebicaMuller.jpg",

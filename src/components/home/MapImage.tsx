@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 const MapImage = () => {
   const t = useTranslations("HomePage.mapImage");
   return (
-    <div className="w-full">
+    <div className="w-full bg-black">
       <div className="front-full front-full-story featured1">
         <img src="/images/map.gif" alt="" />
 
@@ -16,9 +16,13 @@ const MapImage = () => {
               <p className="text-2xl font-semibold leading-relaxed">
                 {t("welcomePound")}
               </p>
-              <p className="text-2xl font-semibold leading-relaxed">
+              <a
+                href="mailto:hany@linkedmed.org"
+                target="_blank"
+                className="text-2xl font-semibold leading-relaxed"
+              >
                 {t("makeForgs")}
-              </p>
+              </a>
             </div>
           </div>
         </div>
