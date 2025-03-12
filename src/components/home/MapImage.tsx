@@ -5,7 +5,7 @@ const MapImage = () => {
   return (
     <div className="w-full bg-black">
       <div className="front-full front-full-story featured1">
-        <img src="/images/map.gif" alt="" />
+        <img src="/images/map.gif" className="!w-[80%] mx-auto " alt="" />
 
         <div className="front-full-inner max-w-[1920px] mx-auto w-full px-[12vw]">
           <div className="font-full-inner-content front-story w-full">
