@@ -37,7 +37,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           />
         </svg>
       </div>
-      <div className="w-[250px] h-[250px] overflow-hidden rounded-full border border-[#96b8ff]">
+      <div className="w-[250px] h-[250px] overflow-hidden rounded-full bg-black border border-[#96b8ff]">
         <img className="w-full h-full" src={testimonial.image} alt={testimonial.name} />
       </div>
       <div className="flex flex-col items-center">

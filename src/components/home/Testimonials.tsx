@@ -44,7 +44,7 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      image: "/images/testimonials/Hagar.jpg",
+      image: "/images/testimonials/hager.png",
       name: "Hagar Elnahhas",
       testimonial:
         "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
