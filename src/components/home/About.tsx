@@ -5,12 +5,12 @@ const About = () => {
   return (
     <div className="w-full">
       <div className="front-full front-full-story featured1">
-      <video
-        src="/videos/about.mp4"
-        autoPlay
-        loop
-        muted
-      />
+        <video
+          src="https://storage.googleapis.com/otherprojects1323/linked-med/copy_A474E9EA-690A-48AF-BC7D-7A777B4747BE%202.mp4"
+          autoPlay
+          loop
+          muted
+        />
 
         <div className="front-full-inner max-w-[1920px] mx-auto w-full px-[12vw]">
           <div className="font-full-inner-content front-story w-full">

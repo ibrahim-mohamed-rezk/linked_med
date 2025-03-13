@@ -17,7 +17,12 @@ const Services = () => {
   return (
     <div className="w-full">
       <div className="front-full front-full-story featured1 w-full">
-        <video src="/videos/services.mp4" autoPlay loop muted />
+        <video
+          src="https://storage.googleapis.com/otherprojects1323/linked-med/copy_6EBEE849-8993-4FDE-A76A-543E660F1126.mp4"
+          autoPlay
+          loop
+          muted
+        />
 
         <div className="front-full-inner w-full max-w-[1920px] mx-auto">
           <div className="font-full-inner-content front-story w-full">
@@ -40,7 +45,10 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-              <div className="rotate-90 md:rotate-0 flex items-center justify-center" data-svg-wrapper>
+              <div
+                className="rotate-90 md:rotate-0 flex items-center justify-center"
+                data-svg-wrapper
+              >
                 <svg
                   className="w-full md:w-[8px] h-[8px] md:h-[533px] "
                   viewBox="0 0 8 533"

@@ -21,7 +21,7 @@ const Hero = () => {
     <div className="h-screen relative overflow-hidden">
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://storage.googleapis.com/otherprojects1323/hero.mp4"
+        src="https://storage.googleapis.com/otherprojects1323/linked-med/intro%20to%20edit-2.mp4"
         autoPlay
         loop
       />
