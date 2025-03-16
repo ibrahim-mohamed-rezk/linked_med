@@ -4,11 +4,11 @@ const Footer = () => {
   const t = useTranslations("footer");
 
   return (
-    <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
       <div className="max-w-[1900px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2">
-          <div className="col-span-1 ">
-            <div className="flex flex-col space-y-8">
+        <div className="flex w-full flex-col md:flex-row items-start justify-between gap-8"> 
+          <div className="w-full md:w-auto mb-8 md:mb-0">
+            <div className="flex flex-col space-y-6">
               <div className="text-black text-3xl sm:text-4xl font-bold">
                 <img
                   className="w-[130px] h-[53px]"
@@ -16,7 +16,7 @@ const Footer = () => {
                   alt="logo"
                 />
               </div>
-              <p className="text-[#121127]/60 text-base sm:text-lg font-bold leading-relaxed">
+              <p className="text-[#121127]/60 text-base sm:text-lg font-bold leading-relaxed max-w-md">
                 {t("missionStatement")}
               </p>
               <div className="flex space-x-4">
@@ -59,70 +59,81 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div>
-            <ul className="space-y-2">
-              {["home", "ourStory", "ourValues", "contactUs"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">
-                  {t(item)}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul className="space-y-2">
-              {[
-                "services",
-                "makingTheMove",
-                "seamlessProcessing",
-                "tracking",
-                "referAFriend",
-                "eLearning",
-              ].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">
-                  {t(item)}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul className="space-y-2">
-              {["whyLinkedmed", "Partners"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">
-                  {t(item)}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul className="space-y-2">
-              {["messageFromCeo", "blogs/Events", "Testimonials", "workWithUs"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">
-                  {t(item)}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <ul className="space-y-2">
-              {["privacyPolicy", "termsAndConditions"].map((item) => (
-                <li key={item} className="text-[#111127] text-base font-bold">
-                  {t(item)}
-                </li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 w-full md:w-auto">
+            <div className="mb-4 sm:mb-0">
+              <ul className="space-y-3">
+                {["home", "ourStory", "ourValues", "contactUs"].map((item) => (
+                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                    {t(item)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mb-4 sm:mb-0">
+              <ul className="space-y-3">
+                {[
+                  "services",
+                  "makingTheMove",
+                  "seamlessProcessing",
+                  "tracking",
+                  "referAFriend",
+                  "eLearning",
+                ].map((item) => (
+                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                    {t(item)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mb-4 sm:mb-0">
+              <ul className="space-y-3">
+                {["whyLinkedmed", "Partners"].map((item) => (
+                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                    {t(item)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mb-4 sm:mb-0">
+              <ul className="space-y-3">
+                {[
+                  "messageFromCeo",
+                  "blogs/Events",
+                  "Testimonials",
+                  "workWithUs",
+                ].map((item) => (
+                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                    {t(item)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mb-4 sm:mb-0">
+              <ul className="space-y-3">
+                {["privacyPolicy", "termsAndConditions"].map((item) => (
+                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                    {t(item)}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-[#121127]/10">
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#121127]/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-[#121127]/60 text-sm mb-4 md:mb-0">
+            <div className="text-[#121127]/60 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left">
               © 2020 Dlex, Inc. {t("rightsReserved")}
             </div>
-            <div className="flex space-x-6">
+            <div className="flex space-x-4 sm:space-x-6">
               {["Claim", "Privacy", "Terms"].map((item) => (
                 <a
                   key={item}
                   href="#"
-                  className="text-[#111127] text-sm font-bold"
+                  className="text-[#111127] text-xs sm:text-sm font-bold"
                 >
                   {t(item)}
                 </a>
