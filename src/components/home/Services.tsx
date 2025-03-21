@@ -18,7 +18,15 @@ const Services = () => {
     <div className="w-full">
       <div className="front-full front-full-story featured1 w-full">
         <video
+          src="https://storage.googleapis.com/otherprojects1323/linked-med/SERVICE-MOBILE.mp4"
+          className="md:hidden"
+          autoPlay
+          loop
+          muted
+        />
+        <video
           src="https://storage.googleapis.com/otherprojects1323/linked-med/copy_6EBEE849-8993-4FDE-A76A-543E660F1126.mp4"
+          className="hidden md:block"
           autoPlay
           loop
           muted

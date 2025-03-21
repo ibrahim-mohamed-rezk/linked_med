@@ -32,7 +32,15 @@ const Hero = () => {
       {/* فيديو الخلفية */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute md:hidden inset-0 w-full h-full object-cover"
+        src="https://storage.googleapis.com/otherprojects1323/linked-med/INTRO-MOBILE.mp4"
+        autoPlay
+        loop
+        muted
+      />
+      <video
+        ref={videoRef}
+        className="absolute hidden md:block inset-0 w-full h-full object-cover"
         src="https://storage.googleapis.com/otherprojects1323/linked-med/intro%20to%20edit-2.mp4"
         autoPlay
         loop

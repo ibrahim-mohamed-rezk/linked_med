@@ -6,7 +6,15 @@ const About = () => {
     <div className="w-full">
       <div className="front-full front-full-story featured1">
         <video
+          src="https://storage.googleapis.com/otherprojects1323/linked-med/location-mobile.mp4"
+          className="md:hidden"
+          autoPlay
+          loop
+          muted
+        />
+        <video
           src="https://storage.googleapis.com/otherprojects1323/linked-med/copy_A474E9EA-690A-48AF-BC7D-7A777B4747BE%202.mp4"
+          className="hidden md:block"
           autoPlay
           loop
           muted
