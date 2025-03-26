@@ -1,8 +1,7 @@
-import { useTranslations } from "next-intl";
-import React from "react";
+import { getTranslations } from "next-intl/server";
 
-const page = () => {
-  const termsData = useTranslations("terms");
+const page = async () => {
+  const termsData = await getTranslations("terms");
   return (
     <div className="container mx-auto p-6 max-[1920px]">
       <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
@@ -67,9 +66,11 @@ const page = () => {
           title: termsData("linking.title"),
           content: (
             <ul className="list-disc list-inside">
-              {termsData.raw("linking.conditions").map((condition: string, index: number) => (
-                <li key={index}>{condition}</li>
-              ))}
+              {termsData
+                .raw("linking.conditions")
+                .map((condition: string, index: number) => (
+                  <li key={index}>{condition}</li>
+                ))}
             </ul>
           ),
         },
@@ -79,11 +80,13 @@ const page = () => {
             <>
               <p className="mb-2">{termsData("acceptableUse.purpose")}</p>
               <ul className="list-disc list-inside">
-                {termsData.raw("acceptableUse.prohibitions").map((prohibition: string, index: number) => (
-                  <li key={index} className="text-red-600">
-                    {prohibition}
-                  </li>
-                ))}
+                {termsData
+                  .raw("acceptableUse.prohibitions")
+                  .map((prohibition: string, index: number) => (
+                    <li key={index} className="text-red-600">
+                      {prohibition}
+                    </li>
+                  ))}
               </ul>
             </>
           ),
@@ -96,9 +99,11 @@ const page = () => {
           title: termsData("userSubmissions.title"),
           content: (
             <ul className="list-disc list-inside">
-              {termsData.raw("userSubmissions.conditions").map((condition: string, index: number) => (
-                <li key={index}>{condition}</li>
-              ))}
+              {termsData
+                .raw("userSubmissions.conditions")
+                .map((condition: string, index: number) => (
+                  <li key={index}>{condition}</li>
+                ))}
             </ul>
           ),
         },
@@ -150,11 +155,11 @@ const page = () => {
             {termsData("limitationOfLiability.description")}
           </p>
           <ul className="list-disc list-inside text-red-700">
-            {termsData.raw("limitationOfLiability.exemptions").map(
-              (exemption: string, index: number) => (
+            {termsData
+              .raw("limitationOfLiability.exemptions")
+              .map((exemption: string, index: number) => (
                 <li key={index}>{exemption}</li>
-              )
-            )}
+              ))}
           </ul>
         </div>
       </section>
