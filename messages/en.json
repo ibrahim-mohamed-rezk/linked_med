@@ -67,5 +67,107 @@
     "about": "About",
     "enrol_now": "Enroll Now",
     "contact_us": "Contact Us"
+  },
+
+  "terms": {
+    "introduction": {
+      "title": "Introduction",
+      "attention": "ATTENTION: PLEASE READ THESE TERMS CAREFULLY BEFORE USING THIS WEBSITE. BY ACCESSING AND USING THIS WEBSITE, YOU AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS. IF YOU DO NOT ACCEPT THESE TERMS, PLEASE DO NOT USE THIS WEBSITE.",
+      "definitions": {
+        "we": "\"we\" refers to LinkedMed, a medical recruitment company operating in Germany, Dubai, and Egypt.",
+        "you": "\"you\" refers to the individual, firm, company, or organization accessing or using the LinkedMed website and services."
+      }
+    },
+    "keySections": {
+      "title": "Key Sections"
+    },
+
+    "serviceAvailability": {
+      "title": "Service Availability",
+      "description": "While we strive to maintain the highest standards and continuous availability of our website and services, the internet is subject to occasional interruptions and downtime. We do not accept liability for any service interruptions, errors, delays, or loss of access to our website and services."
+    },
+    "informationAccuracy": {
+      "title": "Information Accuracy",
+      "description": "We endeavor to provide accurate and up-to-date information; however, some details may be provided by third parties, and we cannot guarantee complete accuracy. We do not accept liability for any inaccuracies or omissions."
+    },
+    "thirdPartyLinks": {
+      "title": "Third-Party Links",
+      "description": "Our website may contain links to third-party websites. We do not have control over these websites and do not accept responsibility for their content, security, or data protection policies."
+    },
+    "linking": {
+      "title": "Linking to LinkedMed's Website",
+      "conditions": [
+        "You do not misrepresent your relationship with LinkedMed.",
+        "You do not present false information about our services.",
+        "You do not use LinkedMed's logo without prior consent.",
+        "Your website does not contain offensive or unlawful content.",
+        "You obtain permission before linking beyond our homepage."
+      ]
+    },
+    "acceptableUse": {
+      "title": "Acceptable Use of the Website",
+      "purpose": "You may only use our website for lawful purposes related to job seeking or staff recruitment.",
+      "prohibitions": [
+        "Attempt to gain unauthorized access to the website.",
+        "Disrupt, damage, or impair website functionality.",
+        "Post or submit false, misleading, or unlawful information.",
+        "Upload viruses, malware, or harmful software."
+      ]
+    },
+    "candidateResponsibilities": {
+      "title": "Candidate Responsibilities",
+      "description": "Candidates using our services must ensure that all information provided is accurate, complete, and truthful. LinkedMed does not accept responsibility for incorrect, misleading, or fraudulent information provided by candidates. If a candidate provides false information, they bear full legal responsibility for any resulting consequences, including loss of employment opportunities or legal action."
+    },
+    "dataProtection": {
+      "title": "Data Protection and Privacy",
+      "description": "LinkedMed is committed to protecting your personal data in accordance with the General Data Protection Regulation (GDPR) in Germany, the Federal Data Protection Act (BDSG), UAE data protection laws, and Egyptian data regulations. We process your data for recruitment purposes and comply with legal requirements. For more information, please refer to our Privacy Policy."
+    },
+    "userSubmissions": {
+      "title": "Information Submitted by Users",
+      "conditions": [
+        "Consent to us processing and sharing your information for recruitment purposes.",
+        "Confirm that all provided information is accurate and lawful.",
+        "Understand that third-party recruitment agencies working with LinkedMed must adhere to our terms and conditions."
+      ]
+    },
+    "termsOfBusiness": {
+      "title": "Terms of Business",
+      "description": "Each employment assignment or placement facilitated by LinkedMed is subject to our standard Terms of Business, which will be provided to employers and candidates upon engagement."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property Rights",
+      "description": "All content on this website, including text, graphics, logos, and software, is owned by or licensed to LinkedMed. You may not copy, distribute, or reproduce any material from this website without prior written permission."
+    },
+    "securityAndAccount": {
+      "title": "Security and Account Management",
+      "description": "Users are responsible for maintaining the confidentiality of their login credentials. If you suspect unauthorized access to your account, you must notify us immediately. We are not liable for any unauthorized use of your account."
+    },
+    "terminationOfAccess": {
+      "title": "Termination of Access",
+      "description": "We reserve the right to terminate or restrict access to our website and services at any time, at our sole discretion, without prior notice."
+    },
+    "limitationOfLiability": {
+      "description": "We reserve the right to terminate or restrict access to our website and services at any time, at our sole discretion, without prior notice.",
+      "title": "Limitation of Liability",
+      "exemptions": [
+        "Any loss of business, revenue, or profits resulting from website use.",
+        "Any errors, delays, or interruptions in service.",
+        "Any claims arising from the misuse of candidate or employer-provided information."
+      ]
+    },
+    "governingLaw": {
+      "title": "Governing Law and Jurisdiction",
+      "description": "The use of our website and any agreements made through it shall be governed by the respective legal frameworks of Germany, the United Arab Emirates (Dubai), depending on the jurisdiction of service."
+    },
+    "updates": {
+      "title": "Updates to Terms & Conditions",
+      "description": "We may update these terms periodically. Continued use of our website signifies acceptance of any updated terms."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "officer": "LinkedMed Data Protection Officer",
+      "email": "legal@linkedmed.org",
+      "website": "www.linkedmed.org"
+    }
   }
 }
