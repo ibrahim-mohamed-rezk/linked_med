@@ -66,9 +66,9 @@ const Navbar = () => {
                   onClick={() => setIsOpen(!isOpen)}
                   className="flex items-center gap-2"
                 >
-                  <div>
+                  <div className="">
                     <img
-                      className="w-[47px] h-[29px]"
+                      className="w-[47px] h-[29px] rounded-sm shadow-md"
                       src={`/images/${locale}.svg`}
                       alt="language"
                     />

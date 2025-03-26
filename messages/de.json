@@ -1,0 +1,172 @@
+{
+  "HomePage": {
+    "our_services": "Unsere Dienstleistungen",
+    "about_us": "Über uns",
+    "about_p1": "Mit über zwei Jahrzehnten Exzellenz in der Gesundheitsrekrutierung und Workforce-Lösungen wurde LinkedMed 2022 gegründet und eröffnete sein erstes Büro in Dubai – einem Epizentrum für medizinische Innovation und globale Konnektivität. Wir erweiterten unsere Präsenz mit einem Standort in Frankfurt, einem Eckpfeiler des europäischen Gesundheitswesens, und sind nun bereit, unsere Expertise nach Kairo auszudehnen, was unsere Präsenz in wichtigen medizinischen Zentren weiter festigt.",
+    "about_p2": "Als führendes Unternehmen für die Akquisition von Gesundheitstalenten spezialisiert sich LinkedMed auf die Beschaffung, Zertifizierung und Vermittlung von Elite-Medizinern in über 10 Ländern. Wir arbeiten mit erstklassigen Gesundheitseinrichtungen zusammen und sorgen für eine nahtlose Integration von Ärzten, Chirurgen, Krankenpflegern, Apothekern und anderen Gesundheitsspezialisten in hochkarätige medizinische Umgebungen.",
+    "about_p3": "Unsere Mission ist es, Gesundheitsstandards zu verbessern, indem wir außergewöhnliche klinische Talente mit renommierten medizinischen Einrichtungen weltweit zusammenbringen. Durch strategische Workforce-Lösungen überbrücken wir die Kluft zwischen Expertise und Chancen, optimieren die Ergebnisse der Patientenversorgung und fördern die Zukunft der globalen Medizin.",
+    "our_locations": "Unsere Standorte",
+    "hero": {
+      "title": "LinkedMed",
+      "subtitle": "Karriere ohne Grenzen"
+    },
+    "in": "Heimatland",
+    "out": "Ausland",
+    "in_services": {
+      "service1": "- Anleitung beim Sprachenlernen",
+      "service2": "- Vorbereitung auf Sprachprüfungen",
+      "service3": "- Unterstützung bei der Dokumentenlegalisierung",
+      "service4": "- Beglaubigung von Zertifikaten für Visagenehmigungen"
+    },
+    "out_services": {
+      "service1": "- Arbeitsvermittlung",
+      "service2": "- Visa-Unterstützung",
+      "service3": "- Wissenschaftliches Sprachtraining",
+      "service4": "- Kulturelle Integrationsservice"
+    },
+    "mapImage": {
+      "welcomePound": "Arbeiten Sie mit LinkedMed (Karriere)",
+      "makeForgs": "hr@linkedmed.org",
+      "carrer": "Kontaktieren Sie uns"
+    }
+  },
+  "footer": {
+    "missionStatement": "Unsere Mission ist es, außergewöhnliche Dienstleistungen zu erbringen.",
+    "solutions": "Lösungen",
+    "support": "Unterstützung",
+    "company": "Unternehmen",
+    "home": "Startseite",
+    "ourStory": "Unsere Geschichte",
+    "ourValues": "Unsere Werte",
+    "contactUs": "Kontakt",
+    "services": "Dienstleistungen",
+    "makingTheMove": "Den Umzug gestalten",
+    "seamlessProcessing": "Nahtlose Bearbeitung",
+    "tracking": "Verfolgung",
+    "referAFriend": "Freund empfehlen",
+    "eLearning": "E-Learning",
+    "whyLinkedmed": "Warum LinkedMed",
+    "Partners": "Partner",
+    "messageFromCeo": "Nachricht vom CEO",
+    "blogs/Events": "Blogs/Veranstaltungen",
+    "Testimonials": "Referenzen",
+    "workWithUs": "Arbeiten Sie mit uns",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsAndConditions": "Allgemeine Geschäftsbedingungen",
+    "Press": "Presse",
+    "rightsReserved": "Alle Rechte vorbehalten.",
+    "Claim": "Anspruch",
+    "Privacy": "Datenschutz",
+    "Terms": "Bedingungen"
+  },
+  "header": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "portfolio": "Portfolio",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "enrol_now": "Jetzt anmelden",
+    "contact_us": "Kontakt"
+  },
+
+  "terms": {
+    "introduction": {
+      "title": "Einführung",
+      "attention": "ACHTUNG: BITTE LESEN SIE DIESE BEDINGUNGEN SORGFÄLTIG VOR DER NUTZUNG DIESER WEBSITE. DURCH DEN ZUGRIFF UND DIE NUTZUNG DIESER WEBSITE ERKLÄREN SIE SICH MIT DIESEN NUTZUNGSBEDINGUNGEN EINVERSTANDEN. FALLS SIE DIESE BEDINGUNGEN NICHT AKZEPTIEREN, NUTZEN SIE BITTE DIESE WEBSITE NICHT.",
+      "definitions": {
+        "we": "\"wir\" bezieht sich auf LinkedMed, ein Personalvermittlungsunternehmen, das in Deutschland, Dubai und Ägypten tätig ist.",
+        "you": "\"Sie\" bezieht sich auf die Einzelperson, Firma, Unternehmen oder Organisation, die auf die LinkedMed-Website und -Dienste zugreift oder diese nutzt."
+      }
+    },
+    "keySections": {
+      "title": "Hauptabschnitte"
+    },
+    "serviceAvailability": {
+      "title": "Dienstverfügbarkeit",
+      "description": "Obwohl wir bestrebt sind, höchste Standards und eine kontinuierliche Verfügbarkeit unserer Website und Dienste zu gewährleisten, unterliegt das Internet gelegentlichen Unterbrechungen und Ausfallzeiten. Wir übernehmen keine Haftung für Dienstunterbrechungen, Fehler, Verzögerungen oder Zugangsverlust zu unserer Website und unseren Diensten."
+    },
+    "informationAccuracy": {
+      "title": "Informationsgenauigkeit",
+      "description": "Wir bemühen uns, genaue und aktuelle Informationen zu liefern; jedoch können einige Details von Dritten stammen, und wir können keine vollständige Genauigkeit garantieren. Wir übernehmen keine Haftung für Ungenauigkeiten oder Auslassungen."
+    },
+    "thirdPartyLinks": {
+      "title": "Links zu Drittanbieter-Websites",
+      "description": "Unsere Website kann Links zu Websites Dritter enthalten. Wir haben keine Kontrolle über diese Websites und übernehmen keine Verantwortung für deren Inhalt, Sicherheit oder Datenschutzrichtlinien."
+    },
+    "linking": {
+      "title": "Verlinkung zur LinkedMed-Website",
+      "conditions": [
+        "Sie dürfen Ihre Beziehung zu LinkedMed nicht falsch darstellen.",
+        "Sie dürfen keine falschen Informationen über unsere Dienste verbreiten.",
+        "Sie dürfen das LinkedMed-Logo nicht ohne vorherige Zustimmung verwenden.",
+        "Ihre Website darf keine beleidigenden oder rechtswidrigen Inhalte enthalten.",
+        "Sie müssen eine Erlaubnis einholen, bevor Sie über die Startseite hinaus verlinken."
+      ]
+    },
+    "acceptableUse": {
+      "title": "Zulässige Nutzung der Website",
+      "purpose": "Sie dürfen unsere Website nur für rechtmäßige Zwecke im Zusammenhang mit Jobsuche oder Personalrekrutierung nutzen.",
+      "prohibitions": [
+        "Versuchen, unbefugten Zugriff auf die Website zu erlangen.",
+        "Die Funktionalität der Website zu stören, zu beschädigen oder zu beeinträchtigen.",
+        "Falsche, irreführende oder rechtswidrige Informationen zu posten oder zu übermitteln.",
+        "Viren, Malware oder schädliche Software hochzuladen."
+      ]
+    },
+    "candidateResponsibilities": {
+      "title": "Verantwortlichkeiten der Kandidaten",
+      "description": "Kandidaten, die unsere Dienste nutzen, müssen sicherstellen, dass alle bereitgestellten Informationen genau, vollständig und wahrheitsgemäß sind. LinkedMed übernimmt keine Verantwortung für fehlerhafte, irreführende oder betrügerische Informationen, die von Kandidaten bereitgestellt werden. Falls ein Kandidat falsche Informationen bereitstellt, trägt er die volle rechtliche Verantwortung für alle daraus resultierenden Konsequenzen, einschließlich Verlust von Beschäftigungsmöglichkeiten oder rechtlicher Schritte."
+    },
+    "dataProtection": {
+      "title": "Datenschutz und Privatsphäre",
+      "description": "LinkedMed ist verpflichtet, Ihre persönlichen Daten in Übereinstimmung mit der Datenschutz-Grundverordnung (DSGVO) in Deutschland, dem Bundesdatenschutzgesetz (BDSG), den Datenschutzgesetzen der VAE und den ägyptischen Datenschutzvorschriften zu schützen. Wir verarbeiten Ihre Daten für Rekrutierungszwecke und halten uns an gesetzliche Anforderungen. Weitere Informationen finden Sie in unserer Datenschutzerklärung."
+    },
+    "userSubmissions": {
+      "title": "Von Benutzern eingereichte Informationen",
+      "conditions": [
+        "Zustimmung zur Verarbeitung und Weitergabe Ihrer Informationen für Rekrutierungszwecke.",
+        "Bestätigung, dass alle bereitgestellten Informationen genau und rechtmäßig sind.",
+        "Verständnis, dass Dritte-Personalvermittlungsagenturen, die mit LinkedMed zusammenarbeiten, unsere Nutzungsbedingungen einhalten müssen."
+      ]
+    },
+    "termsOfBusiness": {
+      "title": "Geschäftsbedingungen",
+      "description": "Jede Beschäftigungsvermittlung oder -platzierung, die von LinkedMed durchgeführt wird, unterliegt unseren Standard-Geschäftsbedingungen, die Arbeitgebern und Kandidaten bei Engagement bereitgestellt werden."
+    },
+    "intellectualProperty": {
+      "title": "Rechte an geistigem Eigentum",
+      "description": "Der gesamte Inhalt dieser Website, einschließlich Text, Grafiken, Logos und Software, ist Eigentum von LinkedMed oder an LinkedMed lizenziert. Sie dürfen keinerlei Material von dieser Website ohne vorherige schriftliche Genehmigung kopieren, verteilen oder reproduzieren."
+    },
+    "securityAndAccount": {
+      "title": "Sicherheit und Kontoverwaltung",
+      "description": "Benutzer sind für die Geheimhaltung ihrer Anmeldedaten verantwortlich. Wenn Sie einen unbefugten Zugriff auf Ihr Konto vermuten, müssen Sie uns umgehend informieren. Wir haften nicht für unbefugte Nutzung Ihres Kontos."
+    },
+    "terminationOfAccess": {
+      "title": "Beendigung des Zugriffs",
+      "description": "Wir behalten uns das Recht vor, den Zugriff auf unsere Website und Dienste jederzeit nach unserem alleinigen Ermessen ohne vorherige Ankündigung zu beenden oder einzuschränken."
+    },
+    "limitationOfLiability": {
+      "title": "Haftungsbeschränkung",
+      "description": "Wir behalten uns das Recht vor, den Zugriff auf unsere Website und Dienste jederzeit nach unserem alleinigen Ermessen ohne vorherige Ankündigung zu beenden oder einzuschränken.",
+      "exemptions": [
+        "Jeglicher Verlust von Geschäft, Umsatz oder Gewinn, der aus der Nutzung der Website resultiert.",
+        "Jegliche Fehler, Verzögerungen oder Unterbrechungen des Dienstes.",
+        "Jegliche Ansprüche, die aus der Missbrauch von Kandidaten- oder Arbeitgeberinformationen entstehen."
+      ]
+    },
+    "governingLaw": {
+      "title": "Anwendbares Recht und Gerichtsstand",
+      "description": "Die Nutzung unserer Website und alle darüber geschlossenen Vereinbarungen unterliegen den jeweiligen Rechtsrahmen von Deutschland und den Vereinigten Arabischen Emiraten (Dubai), abhängig von der Jurisdiktion des Dienstes."
+    },
+    "updates": {
+      "title": "Aktualisierungen der Nutzungsbedingungen",
+      "description": "Wir können diese Bedingungen gelegentlich aktualisieren. Die fortgesetzte Nutzung unserer Website bedeutet die Akzeptanz der aktualisierten Bedingungen."
+    },
+    "contact": {
+      "title": "Kontaktinformationen",
+      "officer": "LinkedMed Datenschutzbeauftragter",
+      "email": "legal@linkedmed.org",
+      "website": "www.linkedmed.org"
+    }
+  }
+}

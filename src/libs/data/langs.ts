@@ -1,12 +1,20 @@
 export const langs = [
-    {
-        label: "English",
-        value: "en",
-    },
-    {
-        label: "Arabic",
-        value: "ar",
-    },
+  {
+    label: "English",
+    value: "en",
+  },
+  {
+    label: "العربية",
+    value: "ar",
+  },
+  {
+    label: "русский язык",
+    value: "ru",
+  },
+  {
+    label: "Deutsch",
+    value: "de",
+  },
 ] as const;
 
-export type Lang = typeof langs[number];
+export type Lang = (typeof langs)[number];
