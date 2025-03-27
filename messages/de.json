@@ -325,5 +325,61 @@
       "email": "data@linkedmed.org",
       "website": "www.linkedmed.org"
     }
+  },
+
+  "makeMove": {
+    "title": "Mit LinkedMed den Umzug meistern",
+    "description": "Exklusive Informationsveranstaltungen für Gesundheitsfachkräfte, die globale Chancen suchen",
+    "introduction": "Bei LinkedMed verstehen wir, dass ein Umzug für eine medizinische Karriere ein bedeutender Schritt ist. Deshalb veranstalten wir \"Den Umzug meistern\"-Events an Schlüsselstandorten und bieten Ärzten, Apothekern und Krankenpflegern wertvolle Einblicke in das Arbeiten im Ausland - insbesondere in Deutschland und anderen Regionen mit hoher Nachfrage.",
+    "event_description": "Diese Veranstaltungen bieten die Möglichkeit, unser Expertenteam kennenzulernen, erste Einblicke in Karrierewege, Zulassung und Leben im Ausland zu gewinnen und Antworten auf alle Ihre Fragen zur Sicherung Ihrer nächsten Stelle zu erhalten.",
+    "event_overview_title": "Veranstaltungsübersicht",
+    "what_youll_learn_title": "Was Sie lernen werden",
+    "who_should_attend_title": "Für wen ist die Veranstaltung geeignet",
+    "why_attend_title": "Warum teilnehmen",
+    "what_youll_learn": [
+      {
+        "topic": "Medizinische Zulassung & Registrierung",
+        "description": "Verstehen Sie den Prozess der Akkreditierung und die Anforderungen für die Arbeit in Ihrem Zielland."
+      },
+      {
+        "topic": "Arbeitsumfeld & Kultur",
+        "description": "Lernen Sie die Gesundheitssysteme, Arbeitszeiten und beruflichen Erwartungen kennen."
+      },
+      {
+        "topic": "Finanzielle & rechtliche Überlegungen",
+        "description": "Holen Sie sich Expertenrat zu Steuern, Gehältern und Verträgen."
+      },
+      {
+        "topic": "Visum & Umzugsprozess",
+        "description": "Navigieren Sie durch rechtliche Anforderungen und logistische Schritte für einen reibungslosen Übergang."
+      },
+      {
+        "topic": "Lebensstil & Integration",
+        "description": "Entdecken Sie, was Sie bei der Niederlassung in einem neuen Land erwarten können, einschließlich Wohnen, Bildung und kultureller Anpassung."
+      }
+    ],
+    "who_should_attend": [
+      "Gesundheitsfachkräfte, die internationale Karrieremöglichkeiten erkunden.",
+      "Diejenigen, die aktiv ihren Umzug planen und Schritt-für-Schritt-Anleitung suchen.",
+      "Kandidaten, die bereits eine Stelle gefunden haben und sich endgültig vorbereiten möchten."
+    ],
+    "why_attend": [
+      {
+        "benefit": "Expertengeführte Einblicke",
+        "description": "Lernen Sie von Rekrutierungsspezialisten und Branchenprofis."
+      },
+      {
+        "benefit": "Networking-Möglichkeiten",
+        "description": "Vernetzen Sie sich mit Kollegen und Profis, die den Übergang bereits erfolgreich gemeistert haben."
+      },
+      {
+        "benefit": "Praktische Ressourcen",
+        "description": "Erhalten Sie Zugang zu exklusiven Leitfäden, Checklisten und professioneller Unterstützung."
+      }
+    ],
+    "call_to_action": "Machen Sie den ersten Schritt in Ihre internationale medizinische Karriere mit LinkedMed. Buchen Sie Ihren Platz bei einer kommenden \"Den Umzug meistern\"-Veranstaltung und kommen Sie Ihrem Traumberuf im Ausland näher.",
+    "closing_statement": "Wir freuen uns darauf, Ihnen mit Zuversicht beim Umzug zu helfen!",
+    "cta_section_title": "Ihre internationale Karriere wartet",
+    "book_spot_button": "Jetzt Ihren Platz buchen"
   }
 }

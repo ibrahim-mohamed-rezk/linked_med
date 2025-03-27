@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 const page = async () => {
   const privacyData = await getTranslations("privacy");
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
+    <div className="container mx-auto p-6">
       <h1 className="text-4xl font-bold mb-8 text-center text-gray-900 border-b-4 border-blue-500 pb-4">
         {privacyData("companyName")}{" "}
         {privacyData("sections.privacyPromise.title")}

@@ -326,5 +326,61 @@
       "email": "data@linkedmed.org",
       "website": "www.linkedmed.org"
     }
+  },
+
+  "makeMove": {
+    "title": "Making the Move with LinkedMed",
+    "description": "Exclusive Information Sessions for Healthcare Professionals Seeking Global Opportunities",
+    "introduction": "At LinkedMed, we understand that relocating for a medical career is a significant step. That's why we host \"Making the Move\" events in key locations, offering doctors, pharmacists, and nurses valuable insights into working abroad—especially in Germany and other high-demand regions.",
+    "event_description": "These events provide an opportunity to meet our expert team, gain first-hand knowledge about career pathways, licensing, and life abroad, and get answers to all your questions about securing your next role.",
+    "event_overview_title": "Event Overview",
+    "what_youll_learn_title": "What You'll Learn",
+    "who_should_attend_title": "Who Should Attend",
+    "why_attend_title": "Why Attend",
+    "what_youll_learn": [
+      {
+        "topic": "Medical Licensing & Registration",
+        "description": "Understand the credentialing process and requirements for working in your destination country."
+      },
+      {
+        "topic": "Workplace Environment & Culture",
+        "description": "Learn about healthcare systems, working hours, and professional expectations."
+      },
+      {
+        "topic": "Financial & Legal Considerations",
+        "description": "Get expert advice on taxation, salaries, and contracts."
+      },
+      {
+        "topic": "Visa & Relocation Process",
+        "description": "Navigate the legal requirements and logistical steps for a smooth transition."
+      },
+      {
+        "topic": "Lifestyle & Integration",
+        "description": "Discover what to expect when settling into a new country, including housing, education, and cultural adaptation."
+      }
+    ],
+    "who_should_attend": [
+      "Healthcare professionals exploring international career options.",
+      "Those actively planning their move and seeking step-by-step guidance.",
+      "Candidates who have already secured a job and want final preparations."
+    ],
+    "why_attend": [
+      {
+        "benefit": "Expert-Led Insights",
+        "description": "Learn from recruitment specialists and industry professionals."
+      },
+      {
+        "benefit": "Networking Opportunities",
+        "description": "Connect with peers and professionals who have successfully made the transition."
+      },
+      {
+        "benefit": "Practical Resources",
+        "description": "Gain access to exclusive guides, checklists, and professional support."
+      }
+    ],
+    "call_to_action": "Take the first step toward your international medical career with LinkedMed. Book your spot at an upcoming \"Making the Move\" event and get closer to your dream job abroad.",
+    "closing_statement": "We look forward to helping you make the move with confidence!",
+    "cta_section_title": "Your International Career Awaits",
+    "book_spot_button": "Book Your Spot Now"
   }
 }

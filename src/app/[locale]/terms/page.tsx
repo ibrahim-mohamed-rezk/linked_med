@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 const page = async () => {
   const termsData = await getTranslations("terms");
   return (
-    <div className="container mx-auto p-6 max-[1920px]">
+    <div className="container mx-auto p-6 ">
       <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">
         Terms & Conditions
       </h1>

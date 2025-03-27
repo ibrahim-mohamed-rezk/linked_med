@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
       <div className="max-w-[1900px] mx-auto">
-        <div className="flex w-full flex-col md:flex-row items-start justify-between gap-8"> 
+        <div className="flex w-full flex-col md:flex-row items-start justify-between gap-8">
           <div className="w-full md:w-auto mb-8 md:mb-0">
             <div className="flex flex-col space-y-6">
               <div className="text-black text-3xl sm:text-4xl font-bold">
@@ -64,7 +64,10 @@ const Footer = () => {
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
                 {["home", "ourStory", "ourValues", "contactUs"].map((item) => (
-                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                  <li
+                    key={item}
+                    className="text-[#111127] text-sm sm:text-base font-bold"
+                  >
                     {t(item)}
                   </li>
                 ))}
@@ -74,15 +77,18 @@ const Footer = () => {
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
                 {[
-                  "services",
-                  "makingTheMove",
-                  "seamlessProcessing",
-                  "tracking",
-                  "referAFriend",
-                  "eLearning",
+                  { label: "services", url: "/services" },
+                  { label: "makingTheMove", url: "/make-move" },
+                  { label: "seamlessProcessing", url: "/seamless-processing" },
+                  { label: "tracking", url: "/tracking" },
+                  { label: "referAFriend", url: "/refer-a-friend" },
+                  { label: "eLearning", url: "/e-learning" },
                 ].map((item) => (
-                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
-                    {t(item)}
+                  <li
+                    key={item.label}
+                    className="text-[#111127] cursor-pointer text-sm sm:text-base font-bold"
+                  >
+                    <Link href={item.url}>{t(item.label)}</Link>
                   </li>
                 ))}
               </ul>
@@ -91,7 +97,10 @@ const Footer = () => {
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
                 {["whyLinkedmed", "Partners"].map((item) => (
-                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                  <li
+                    key={item}
+                    className="text-[#111127] text-sm sm:text-base font-bold"
+                  >
                     {t(item)}
                   </li>
                 ))}
@@ -106,7 +115,10 @@ const Footer = () => {
                   "Testimonials",
                   "workWithUs",
                 ].map((item) => (
-                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
+                  <li
+                    key={item}
+                    className="text-[#111127] text-sm sm:text-base font-bold"
+                  >
                     {t(item)}
                   </li>
                 ))}
@@ -115,8 +127,14 @@ const Footer = () => {
 
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
-                {[{lable: "privacyPolicy", url: "/privacy"}, {lable: "termsAndConditions", url: "/terms"}].map((item) => (
-                  <li key={item.lable} className="text-[#111127] text-sm sm:text-base font-bold">
+                {[
+                  { lable: "privacyPolicy", url: "/privacy" },
+                  { lable: "termsAndConditions", url: "/terms" },
+                ].map((item) => (
+                  <li
+                    key={item.lable}
+                    className="text-[#111127] text-sm sm:text-base font-bold"
+                  >
                     <Link href={item.url}>{t(item.lable)}</Link>
                   </li>
                 ))}
