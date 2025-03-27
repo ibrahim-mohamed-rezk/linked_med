@@ -69,17 +69,24 @@ const page = async () => {
           {makeMove("why_attend_title")}
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {makeMove.raw("why_attend").map((item: any, index: number) => (
-            <div
-              key={index}
-              className="bg-indigo-50 p-6 rounded-lg text-center shadow-sm hover:shadow-md transition-shadow"
-            >
-              <h3 className="text-xl font-bold mb-3 text-indigo-900">
-                {item.benefit}
-              </h3>
-              <p className="text-indigo-800">{item.description}</p>
-            </div>
-          ))}
+          {makeMove
+            .raw("why_attend")
+            .map(
+              (
+                item: { benefit: string; description: string },
+                index: number
+              ) => (
+                <div
+                  key={index}
+                  className="bg-indigo-50 p-6 rounded-lg text-center shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <h3 className="text-xl font-bold mb-3 text-indigo-900">
+                    {item.benefit}
+                  </h3>
+                  <p className="text-indigo-800">{item.description}</p>
+                </div>
+              )
+            )}
         </div>
       </section>
 
