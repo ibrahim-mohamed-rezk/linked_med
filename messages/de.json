@@ -168,5 +168,162 @@
       "email": "legal@linkedmed.org",
       "website": "www.linkedmed.org"
     }
+  },
+
+  "privacy": {
+    "companyName": "LinkedMed",
+    "pageTitle": "Datenschutzrichtlinie",
+    "sections": {
+      "privacyPromise": {
+        "title": "Unser Datenschutzversprechen",
+        "descriptionIntro": "Unser Engagement für Ihren Datenschutz"
+      },
+      "complianceRegulations": {
+        "title": "Einhaltung von Vorschriften"
+      },
+      "dataCollection": {
+        "title": "Datenerhebung",
+        "personalInformationTitle": "Persönliche Informationen",
+        "sensitiveInformationTitle": "Sensible Informationen",
+        "sharingPrinciplesNote": "Grundsätze zur Datenübermittlung"
+      },
+      "dataUsage": {
+        "title": "Wie wir Ihre Daten nutzen"
+      },
+      "userRights": {
+        "title": "Ihre Rechte",
+        "statementIntro": "Sie haben folgende Rechte:",
+        "exerciseMethodNote": "Um diese Rechte auszuüben, kontaktieren Sie uns"
+      },
+      "contactInformation": {
+        "title": "Kontaktinformationen",
+        "emailLabel": "E-Mail",
+        "websiteLabel": "Website"
+      },
+      "policyUpdates": {
+        "title": "Richtlinienaktualisierungen",
+        "acceptanceNote": "Die weitere Nutzung bedeutet Akzeptanz"
+      }
+    },
+    "locations": ["Deutschland", "Dubai", "Kairo"],
+    "privacyPromise": {
+      "commitment": "VerbundMed verpflichtet sich, Ihre Privatsphäre zu schützen und Ihre persönlichen Daten mit Transparenz und Sicherheit zu behandeln.",
+      "purpose": "Wir erheben, verarbeiten und speichern Ihre Daten ausschließlich zum Zweck der Rekrutierungsdienstleistungen.",
+      "complianceRegulations": [
+        "Datenschutz-Grundverordnung (DSGVO) in Deutschland und der Europäischen Union",
+        "Bundesdatenschutzgesetz (BDSG)",
+        "Andere relevante internationale Datenschutzvorschriften"
+      ]
+    },
+    "dataCollection": {
+      "personalInformation": [
+        "Name",
+        "E-Mail-Adresse",
+        "Telefonnummer",
+        "Lebenslauf",
+        "Berufliche Qualifikationen"
+      ],
+      "sensitiveInformation": [
+        "Gesundheitsscreeningdaten (z.B. Impfnachweise, Tuberkulose-/HIV-Status)",
+        "Strafregisterauszüge",
+        "Biometrische Daten"
+      ],
+      "sharingPrinciples": "Diese Daten werden nur mit vertrauenswürdigen Dritten geteilt, einschließlich potenzieller Arbeitgeber, medizinischer Räte, Visabehörden und Datenbank-Dienstleistungsanbietern."
+    },
+    "dataUsage": {
+      "purposes": [
+        {
+          "name": "Stellenvermittlung",
+          "details": "Wir verwenden Ihren Namen, Ihre E-Mail, Telefonnummer, Fachrichtung und bevorzugten Standort, um Ihnen passende Stellenangebote zu vermitteln."
+        },
+        {
+          "name": "Präsentation für Arbeitgeber",
+          "details": "Ihr Lebenslauf, Anschreiben und Referenzen (mit Einwilligung) werden potenziellen Arbeitgebern vorgelegt. Nach Erhalt eines Stellenangebots werden zusätzliche relevante Dokumente zur Überprüfung und Einarbeitung geteilt."
+        },
+        {
+          "name": "Medizinische Registrierung und Visaverfahren",
+          "details": "Wir nutzen Ihre Credentials, Zertifikate und Referenzen, um Ihre medizinische Registrierung und Visaanträge zu erleichtern."
+        },
+        {
+          "name": "Rechtliche Einhaltung und Betrugsprävention",
+          "details": "Wir können Ihre Daten nutzen, um rechtlichen Verpflichtungen nachzukommen, auf Anfragen von Aufsichtsbehörden zu reagieren und Betrug oder Sicherheitsbedrohungen zu erkennen."
+        }
+      ]
+    },
+    "candidateResponsibilities": {
+      "statement": "Kandidaten sind allein verantwortlich für die Richtigkeit und Authentizität der persönlichen und beruflichen Informationen, die sie VerbundMed zur Verfügung stellen.",
+      "consequences": "Falsche, irreführende oder unrichtige Informationen, die von einem Kandidaten bereitgestellt werden, können zur Ablehnung der Bewerbung, Beendigung der Stellenvermittlung oder rechtlichen Schritte führen. VerbundMed übernimmt keine Haftung für Folgen, die aus falschen oder betrügerischen Informationen entstehen."
+    },
+    "dataControl": {
+      "rights": [
+        {
+          "type": "Abmeldung von Mitteilungen",
+          "method": "Sie können sich jederzeit von E-Mails abmelden, indem Sie an data@linkedmed.org mit dem Betreff 'Abmelden' schreiben."
+        },
+        {
+          "type": "Datenkorrekturen",
+          "method": "Wenn Ihre Informationen nicht korrekt sind, können Sie Aktualisierungen anfordern, indem Sie eine E-Mail an data@linkedmed.org senden."
+        },
+        {
+          "type": "Datenlöschung",
+          "method": "Wenn Sie aus unserer Datenbank entfernt werden möchten, senden Sie eine E-Mail an data@linkedmed.org mit dem Betreff 'Löschen'. Bitte beachten Sie, dass gelöschte Daten nicht wiederhergestellt werden können. Einige rechtliche Verpflichtungen können erfordern, dass wir Ihre Daten für einen bestimmten Zeitraum aufbewahren."
+        }
+      ]
+    },
+    "dataController": {
+      "details": "VerbundMed, in Deutschland registriert, fungiert als Datenverantwortlicher und gewährleistet die Einhaltung der DSGVO, des BDSG und anderer relevanter Datenschutzgesetze.",
+      "legalBasis": "Wir verarbeiten Ihre Daten auf der Rechtsgrundlage der Bereitstellung internationaler medizinischer Rekrutierungsdienste."
+    },
+    "dataSharing": {
+      "sharedWith": [
+        "Potenzielle Arbeitgeber",
+        "Medizinische Räte",
+        "Visabehörden",
+        "Vertrauenswürdige Partner für Datenbank-, Cybersicherheits- und IT-Sicherheitsdienste",
+        "Rechtliche und regulatorische Stellen, soweit gesetzlich erforderlich",
+        "Strafverfolgungsbehörden bei gesetzlicher Verpflichtung"
+      ],
+      "internationalTransfers": "Datenübertragungen außerhalb des Europäischen Wirtschaftsraums (EWR) erfolgen nur unter sicheren und konformen Rahmenbedingungen, wie Standardvertragsklauseln (SVK), die von der Europäischen Kommission genehmigt wurden."
+    },
+    "dataSecurity": {
+      "approach": "VerbundMed implementiert hochgradige Verschlüsselung, sichere Datenspeicherung und strenge Zugriffskontrollen, um Ihre Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.",
+      "thirdPartyRequirements": "Wir verlangen von allen Dritten, die Daten in unserem Auftrag verarbeiten, die Einhaltung strenger Sicherheitsprotokolle, einschließlich:",
+      "securityMeasures": [
+        "Sichere Server mit Ende-zu-Ende-Verschlüsselung",
+        "Mehrstufige Authentifizierung für Datenzugriff",
+        "Regelmäßige Sicherheitsaudits und Penetrationstests",
+        "Einhaltung der ISO 27001 Sicherheitsstandards"
+      ]
+    },
+    "cookies": {
+      "purpose": "Um unsere Dienste zu verbessern und das Nutzererlebnis zu optimieren, verwenden wir Cookies und Tracking-Technologien.",
+      "types": [
+        "Essentielle Cookies: Erforderlich für die Funktionalität der Website",
+        "Analytische Cookies: Zur Nutzungsverfolgung und Dienstoptimierung",
+        "Marketing-Cookies: Für personalisierte Stellenempfehlungen"
+      ],
+      "management": "Sie können Cookie-Einstellungen über die Einstellungen Ihres Browsers verwalten."
+    },
+    "userRights": {
+      "statement": "Sie haben das Recht:",
+      "rights": [
+        "Datenzugriff: Eine Kopie Ihrer bei VerbundMed gespeicherten persönlichen Daten anzufordern",
+        "Korrekturen anfordern: Falsche oder veraltete Daten korrigieren",
+        "Verarbeitung einschränken: Die Nutzung Ihrer Daten unter bestimmten Bedingungen begrenzen",
+        "Einwilligung widerrufen: Die Datenverarbeitung stoppen, wenn die Einwilligung die Rechtsgrundlage ist",
+        "Datenportabilität: Ihre Daten in einem strukturierten, maschinenlesbaren Format erhalten",
+        "Beschwerden einreichen: Wenn Sie der Meinung sind, dass Ihre Daten nicht korrekt behandelt werden, können Sie sich an die deutsche Datenschutzbehörde (Bundesbeauftragter für den Datenschutz und die Informationsfreiheit - BfDI) wenden"
+      ],
+      "exerciseMethod": "Um eines dieser Rechte auszuüben, senden Sie bitte eine E-Mail an data@linkedmed.org."
+    },
+    "policyUpdates": {
+      "details": "Diese Richtlinie kann von Zeit zu Zeit aktualisiert werden. Die neueste Version wird immer auf unserer Website verfügbar sein.",
+      "acceptance": "Die weitere Nutzung unserer Dienste bedeutet die Akzeptanz etwaiger Aktualisierungen."
+    },
+    "contactInformation": {
+      "title": "Datenschutzbeauftragter von VerbundMed",
+      "email": "data@linkedmed.org",
+      "website": "www.linkedmed.org"
+    }
   }
 }

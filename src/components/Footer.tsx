@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 const Footer = () => {
@@ -114,9 +115,9 @@ const Footer = () => {
 
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
-                {["privacyPolicy", "termsAndConditions"].map((item) => (
-                  <li key={item} className="text-[#111127] text-sm sm:text-base font-bold">
-                    {t(item)}
+                {[{lable: "privacyPolicy", url: "/privacy"}, {lable: "termsAndConditions", url: "/terms"}].map((item) => (
+                  <li key={item.lable} className="text-[#111127] text-sm sm:text-base font-bold">
+                    <Link href={item.url}>{t(item.lable)}</Link>
                   </li>
                 ))}
               </ul>

@@ -169,5 +169,162 @@
       "email": "legal@linkedmed.org",
       "website": "www.linkedmed.org"
     }
+  },
+
+  "privacy": {
+    "pageTitle": "Privacy Policy",
+    "sections": {
+      "privacyPromise": {
+        "title": "Our Privacy Promise",
+        "descriptionIntro": "Our Commitment to Your Privacy"
+      },
+      "complianceRegulations": {
+        "title": "Compliance Regulations"
+      },
+      "dataCollection": {
+        "title": "Data Collection",
+        "personalInformationTitle": "Personal Information",
+        "sensitiveInformationTitle": "Sensitive Information",
+        "sharingPrinciplesNote": "Data Sharing Principles"
+      },
+      "dataUsage": {
+        "title": "How We Use Your Data"
+      },
+      "userRights": {
+        "title": "Your Rights",
+        "statementIntro": "You have the following rights:",
+        "exerciseMethodNote": "To exercise these rights, contact us"
+      },
+      "contactInformation": {
+        "title": "Contact Information",
+        "emailLabel": "Email",
+        "websiteLabel": "Website"
+      },
+      "policyUpdates": {
+        "title": "Policy Updates",
+        "acceptanceNote": "Continued use constitutes acceptance"
+      }
+    },
+    "companyName": "LinkedMed",
+    "locations": ["Germany", "Dubai", "Cairo"],
+    "privacyPromise": {
+      "commitment": "LinkedMed is committed to protecting your privacy and handling your personal data with transparency and security.",
+      "purpose": "We collect, process, and store your data solely for the purpose of providing recruitment services.",
+      "complianceRegulations": [
+        "General Data Protection Regulation (GDPR) in Germany and the European Union",
+        "Bundesdatenschutzgesetz (BDSG - Federal Data Protection Act of Germany)",
+        "Other relevant international privacy regulations"
+      ]
+    },
+    "dataCollection": {
+      "personalInformation": [
+        "Name",
+        "Email address",
+        "Phone number",
+        "CV",
+        "Professional qualifications"
+      ],
+      "sensitiveInformation": [
+        "Health screening data (e.g., immunization records, TB/HIV status)",
+        "Criminal background checks",
+        "Biometric data"
+      ],
+      "sharingPrinciples": "These data are shared only with trusted third parties, including potential employers, medical councils, visa authorities, and database management service providers."
+    },
+    "dataUsage": {
+      "purposes": [
+        {
+          "name": "Job Matching",
+          "details": "We use your name, email, phone number, specialty, and preferred location to match you with suitable job opportunities."
+        },
+        {
+          "name": "Presentation to Employers",
+          "details": "Your CV, covering letter, and references (with consent) are shared with potential employers. Upon securing a job offer, additional relevant documents you provide will be shared with the employer for verification and onboarding purposes."
+        },
+        {
+          "name": "Medical Registration and Visa Processing",
+          "details": "We use your credentials, certifications, and references to facilitate your medical registration and visa applications."
+        },
+        {
+          "name": "Legal Compliance and Fraud Prevention",
+          "details": "We may use your data to comply with legal obligations, respond to regulatory inquiries, and detect fraud or security threats."
+        }
+      ]
+    },
+    "candidateResponsibilities": {
+      "statement": "Candidates are solely responsible for the accuracy and authenticity of the personal and professional information they provide to LinkedMed.",
+      "consequences": "Any false, misleading, or incorrect information supplied by a candidate may result in the rejection of their application, termination of job placements, or legal action where applicable. LinkedMed assumes no liability for consequences arising from incorrect or fraudulent information submitted by candidates."
+    },
+    "dataControl": {
+      "rights": [
+        {
+          "type": "Opt-out from communications",
+          "method": "You can unsubscribe from emails at any time by contacting data@linkedmed.org with the subject 'Unsubscribe.'"
+        },
+        {
+          "type": "Data correction",
+          "method": "If any of your information is incorrect, you can request updates by emailing data@linkedmed.org."
+        },
+        {
+          "type": "Data removal",
+          "method": "If you wish to be removed from our database, email data@linkedmed.org with the subject 'Remove.' Please note that once deleted, your data cannot be recovered. Some legal obligations may require us to retain your data for a specified period."
+        }
+      ]
+    },
+    "dataController": {
+      "details": "LinkedMed, registered in Germany, acts as the Data Controller, ensuring compliance with the GDPR, BDSG, and other relevant data protection laws.",
+      "legalBasis": "We process your data under the legitimate basis of providing international medical recruitment services."
+    },
+    "dataSharing": {
+      "sharedWith": [
+        "Potential employers",
+        "Medical councils",
+        "Visa processing authorities",
+        "Trusted partners providing database, cybersecurity, and IT security services",
+        "Legal and regulatory bodies where required by law",
+        "Law enforcement agencies if legally mandated"
+      ],
+      "internationalTransfers": "Data transfers outside the European Economic Area (EEA) occur only under secure and compliant frameworks, such as Standard Contractual Clauses (SCCs) approved by the European Commission."
+    },
+    "dataSecurity": {
+      "approach": "LinkedMed implements high-level encryption, secure data storage, and stringent access controls to protect your data from unauthorized access, loss, or misuse.",
+      "thirdPartyRequirements": "We require all third parties handling data on our behalf to adhere to strict security protocols, including:",
+      "securityMeasures": [
+        "Secure servers with end-to-end encryption",
+        "Multi-factor authentication for data access",
+        "Regular security audits and penetration testing",
+        "Compliance with ISO 27001 security standards"
+      ]
+    },
+    "cookies": {
+      "purpose": "To improve our services and enhance user experience, we use cookies and tracking technologies.",
+      "types": [
+        "Essential Cookies: Required for website functionality",
+        "Analytical Cookies: To track usage and optimize services",
+        "Marketing Cookies: To provide personalized job recommendations"
+      ],
+      "management": "You can manage cookie preferences through your browser settings."
+    },
+    "userRights": {
+      "statement": "You have the right to:",
+      "rights": [
+        "Access your data: Request a copy of your personal data held by LinkedMed",
+        "Request corrections: Amend incorrect or outdated data",
+        "Restrict processing: Limit how your data is used under certain conditions",
+        "Withdraw consent: Stop data processing when consent is the legal basis",
+        "Request data portability: Obtain your data in a structured, machine-readable format",
+        "Lodge complaints: If you believe your data is mishandled, you may contact the German Data Protection Authority (Bundesbeauftragter für den Datenschutz und die Informationsfreiheit - BfDI)"
+      ],
+      "exerciseMethod": "To exercise any of these rights, please email data@linkedmed.org."
+    },
+    "policyUpdates": {
+      "details": "This policy may be updated periodically. The latest version will always be available on our website.",
+      "acceptance": "Continued use of our services constitutes acceptance of any updates."
+    },
+    "contactInformation": {
+      "title": "LinkedMed Data Protection Officer",
+      "email": "data@linkedmed.org",
+      "website": "www.linkedmed.org"
+    }
   }
 }
