@@ -63,12 +63,17 @@ const Footer = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 w-full md:w-auto">
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
-                {["home", "ourStory", "ourValues", "contactUs"].map((item) => (
+                {[
+                  { label: "home", url: "/" },
+                  { label: "ourStory", url: "/our-story" },
+                  { label: "ourValues", url: "/our-values" },
+                  { label: "contactUs", url: "/contact-us" },
+                ].map((item) => (
                   <li
-                    key={item}
-                    className="text-[#111127] text-sm sm:text-base font-bold"
+                    key={item.label}
+                    className="text-[#111127] cursor-pointer text-sm sm:text-base font-bold"
                   >
-                    {t(item)}
+                    <Link href={item.url}>{t(item.label)}</Link>
                   </li>
                 ))}
               </ul>

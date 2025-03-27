@@ -381,5 +381,38 @@
     "closing_statement": "Wir freuen uns darauf, Ihnen mit Zuversicht beim Umzug zu helfen!",
     "cta_section_title": "Ihre internationale Karriere wartet",
     "book_spot_button": "Jetzt Ihren Platz buchen"
+  },
+
+  "ourValues": {
+    "page_title": "UNSERE WERTE",
+    "mission_statement": "Bei LinkedMed verfolgen wir eine klare Mission: die Verbindung zwischen medizinischen Fachkräften und globalen Karrieremöglichkeiten zu schaffen. Unsere Werte definieren, wer wir sind, und leiten jede unserer Entscheidungen, während wir Talente mit Gesundheitssystemen weltweit vernetzen.",
+    "values": {
+      "excellence_innovation": {
+        "title": "Exzellenz & Innovation",
+        "description": "Wir stehen für höchste Standards im medizinischen Recruiting. Mit modernster Technologie und Branchenexpertise sorgen wir für effiziente, transparente und reibungslose Prozesse, die medizinischen Fachkräften helfen, ihre internationalen Karriereziele zu erreichen."
+      },
+      "integrity_trust": {
+        "title": "Integrität & Vertrauen",
+        "description": "Vertrauen ist die Basis unserer Arbeit. Wir handeln mit vollständiger Transparenz, ethischer Verantwortung und Fairness, damit sich sowohl Bewerber als auch Arbeitgeber auf uns verlassen können."
+      },
+      "empowerment_growth": {
+        "title": "Empowerment & Wachstum",
+        "description": "Wir helfen medizinischen Fachkräften, ihr volles Potenzial zu entfalten – mit individueller Unterstützung, Sprachkursen und Karriereberatung. Unser Ziel ist es, Menschen und Institutionen mit dem Wissen und den Ressourcen auszustatten, die sie für ihren Erfolg brauchen."
+      },
+      "global_reach": {
+        "title": "Globale Reichweite, persönliche Verbindung",
+        "description": "Mit Präsenz in über 80 Ländern kombinieren wir eine internationale Reichweite mit einem persönlichen Ansatz. Jede Verbindung basiert auf Respekt, interkulturellem Verständnis und dem gemeinsamen Ziel, die globale Gesundheitsversorgung zu verbessern."
+      },
+      "impact_driven": {
+        "title": "Nachhaltiger Impact",
+        "description": "Gesundheitsberufe sind mehr als nur ein Job – sie sind eine Berufung. Wir sind stolz darauf, durch unsere Arbeit stärkere, nachhaltige Gesundheitssysteme zu unterstützen, indem wir erstklassige Talente mit den Einrichtungen verbinden, die sie am dringendsten brauchen."
+      }
+    },
+    "mission_closing": "Bei LinkedMed schaffen wir nicht nur Karrieremöglichkeiten – wir bauen Zukunftsperspektiven auf, stärken Gemeinschaften und gestalten die Zukunft des globalen Gesundheitswesens.",
+    "corporate_responsibility": {
+      "title": "Unternehmerische Verantwortung in der medizinischen Innovation",
+      "subtitle": "Jährliches Engagement für den Fortschritt der Krebsforschung",
+      "description": "Bei LinkedMed geht unsere Mission über die Personalvermittlung hinaus – wir engagieren uns für den Fortschritt im globalen Gesundheitswesen. Im Rahmen unserer unternehmerischen Verantwortung verpflichten wir uns, jährlich bahnbrechende Krebsforschungsinitiativen zu unterstützen und so zu medizinischen Fortschritten beizutragen, die Leben retten. Durch Investitionen in Innovation und wissenschaftliche Entdeckungen stehen wir gemeinsam mit medizinischen Fachkräften im Kampf gegen eine der größten gesundheitlichen Herausforderungen der Welt und bekräftigen unser Engagement für eine gesündere Zukunft für alle."
+    }
   }
 }

@@ -382,5 +382,38 @@
     "closing_statement": "We look forward to helping you make the move with confidence!",
     "cta_section_title": "Your International Career Awaits",
     "book_spot_button": "Book Your Spot Now"
+  },
+
+  "ourValues": {
+    "page_title": "OUR VALUES",
+    "mission_statement": "At LinkedMed, we pursue a clear mission: creating connections between medical professionals and global career opportunities. Our values define who we are and guide every decision we make as we network talents with healthcare systems worldwide.",
+    "values": {
+      "excellence_innovation": {
+        "title": "Excellence & Innovation",
+        "description": "We stand for the highest standards in medical recruiting. With cutting-edge technology and industry expertise, we ensure efficient, transparent, and seamless processes that help medical professionals achieve their international career goals."
+      },
+      "integrity_trust": {
+        "title": "Integrity & Trust",
+        "description": "Trust is the foundation of our work. We act with complete transparency, ethical responsibility, and fairness, so that both applicants and employers can rely on us."
+      },
+      "empowerment_growth": {
+        "title": "Empowerment & Growth",
+        "description": "We help medical professionals unfold their full potential – with individual support, language courses, and career counseling. Our goal is to equip people and institutions with the knowledge and resources they need for their success."
+      },
+      "global_reach": {
+        "title": "Global Reach, Personal Connection",
+        "description": "With a presence in over 80 countries, we combine international reach with a personal approach. Every connection is based on respect, intercultural understanding, and the shared goal of improving global healthcare."
+      },
+      "impact_driven": {
+        "title": "Sustainable Impact",
+        "description": "Healthcare professions are more than just a job – they are a calling. We are proud to support stronger, sustainable healthcare systems through our work by connecting top-tier talents with the institutions that need them most."
+      }
+    },
+    "mission_closing": "At LinkedMed, we don't just create career opportunities – we build future perspectives, strengthen communities, and shape the future of global healthcare.",
+    "corporate_responsibility": {
+      "title": "Corporate Responsibility in Medical Innovation",
+      "subtitle": "Annual Commitment to Advancing Cancer Research",
+      "description": "At LinkedMed, our mission goes beyond personnel placement – we are committed to advancing global healthcare. As part of our corporate responsibility, we pledge to support groundbreaking cancer research initiatives annually, contributing to medical progress that saves lives. By investing in innovation and scientific discoveries, we stand together with medical professionals in the fight against one of the world's greatest health challenges, reaffirming our commitment to a healthier future for all."
+    }
   }
 }
