@@ -10,13 +10,16 @@ const Footer = () => {
         <div className="flex w-full flex-col md:flex-row items-start justify-between gap-8">
           <div className="w-full md:w-auto mb-8 md:mb-0">
             <div className="flex flex-col space-y-6">
-              <div className="text-black text-3xl sm:text-4xl font-bold">
+              <Link
+                href="/"
+                className="text-black text-3xl sm:text-4xl font-bold"
+              >
                 <img
                   className="w-[130px] h-[53px]"
                   src="/images/logo.svg"
                   alt="logo"
                 />
-              </div>
+              </Link>
               <p className="text-[#121127]/60 text-base sm:text-lg font-bold leading-relaxed max-w-md">
                 {t("missionStatement")}
               </p>
@@ -153,7 +156,10 @@ const Footer = () => {
               © LinkedMed. {t("rightsReserved")}
             </div>
             <div className="flex space-x-4 sm:space-x-6">
-              {[ {label: "Privacy", url: "/privacy"}, {label: "Terms", url: "/terms"}].map((item) => (
+              {[
+                { label: "Privacy", url: "/privacy" },
+                { label: "Terms", url: "/terms" },
+              ].map((item) => (
                 <Link
                   key={item.label}
                   href={item.url}
