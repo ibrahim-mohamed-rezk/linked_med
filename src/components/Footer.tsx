@@ -150,17 +150,17 @@ const Footer = () => {
         <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#121127]/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-[#121127]/60 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left">
-              © 2020 Dlex, Inc. {t("rightsReserved")}
+              © LinkedMed. {t("rightsReserved")}
             </div>
             <div className="flex space-x-4 sm:space-x-6">
-              {["Claim", "Privacy", "Terms"].map((item) => (
-                <a
-                  key={item}
-                  href="#"
+              {[ {label: "Privacy", url: "/privacy"}, {label: "Terms", url: "/terms"}].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.url}
                   className="text-[#111127] text-xs sm:text-sm font-bold"
                 >
-                  {t(item)}
-                </a>
+                  {t(item.label)}
+                </Link>
               ))}
             </div>
           </div>

@@ -11,6 +11,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Linked Med",
   description: "Linked Med",
+  icons: {
+    icon: "/images/logo.ico",
+  },
 };
 
 export default async function RootLayout({
