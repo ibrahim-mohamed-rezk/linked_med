@@ -1,4 +1,7 @@
 {
+  "about": {
+    "aboutText": "Vom ersten Treffen bis zur endgültigen Lieferung hat Ethan ein Gefühl des Vertrauens geschaffen und alles geliefert, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich selbst und er kann in einem guten Tempo arbeiten. Er ist ein ausgezeichneter Webflow-Entwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen. Vom ersten Treffen bis zur endgültigen Lieferung hat Ethan ein Gefühl des Vertrauens geschaffen und alles geliefert, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich selbst und er kann in einem guten Tempo arbeiten. Er ist ein ausgezeichneter Webflow-Entwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen. Vom ersten Treffen bis zur endgültigen Lieferung hat Ethan ein Gefühl des Vertrauens geschaffen und alles geliefert, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich selbst und er kann in einem guten Tempo arbeiten. Er ist ein ausgezeichneter Webflow-Entwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen."
+  },
   "HomePage": {
     "our_services": "Unsere Dienstleistungen",
     "about_us": "Über uns",
@@ -70,7 +73,7 @@
   },
 
   "terms": {
-    "page_title":"Allgemeine Geschäftsbedingungen",
+    "page_title": "Allgemeine Geschäftsbedingungen",
     "introduction": {
       "title": "Einführung",
       "attention": "ACHTUNG: BITTE LESEN SIE DIESE BEDINGUNGEN SORGFÄLTIG VOR DER NUTZUNG DIESER WEBSITE. DURCH DEN ZUGRIFF UND DIE NUTZUNG DIESER WEBSITE ERKLÄREN SIE SICH MIT DIESEN NUTZUNGSBEDINGUNGEN EINVERSTANDEN. FALLS SIE DIESE BEDINGUNGEN NICHT AKZEPTIEREN, NUTZEN SIE BITTE DIESE WEBSITE NICHT.",

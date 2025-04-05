@@ -100,9 +100,8 @@ const Navbar = () => {
                       aria-labelledby="options-menu"
                     >
                       {langs.map((language) => (
-                        <a
+                        <span
                           key={language.value}
-                          href={`/${language.value}`}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                           role="menuitem"
                           onClick={() => {
@@ -111,7 +110,7 @@ const Navbar = () => {
                           }}
                         >
                           {language.label}
-                        </a>
+                        </span>
                       ))}
                     </div>
                   </div>
