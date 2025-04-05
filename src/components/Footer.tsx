@@ -71,6 +71,7 @@ const Footer = () => {
                   { label: "ourStory", url: "/our-story" },
                   { label: "ourValues", url: "/our-values" },
                   { label: "contactUs", url: "/contact-us" },
+                  { label: "about", url: "/about" },
                 ].map((item) => (
                   <li
                     key={item.label}
