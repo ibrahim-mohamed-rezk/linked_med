@@ -70,7 +70,9 @@
     "pricing": "Preise",
     "about": "Über uns",
     "enrol_now": "Jetzt anmelden",
-    "contact_us": "Kontakt"
+    "contact_us": "Kontakt",
+    "login": "Anmelden",
+    "singup": "Registrieren"
   },
 
   "terms": {
@@ -419,5 +421,25 @@
       "subtitle": "Jährliches Engagement für den Fortschritt der Krebsforschung",
       "description": "Bei LinkedMed geht unsere Mission über die Personalvermittlung hinaus – wir engagieren uns für den Fortschritt im globalen Gesundheitswesen. Im Rahmen unserer unternehmerischen Verantwortung verpflichten wir uns, jährlich bahnbrechende Krebsforschungsinitiativen zu unterstützen und so zu medizinischen Fortschritten beizutragen, die Leben retten. Durch Investitionen in Innovation und wissenschaftliche Entdeckungen stehen wir gemeinsam mit medizinischen Fachkräften im Kampf gegen eine der größten gesundheitlichen Herausforderungen der Welt und bekräftigen unser Engagement für eine gesündere Zukunft für alle."
     }
-  }
+  },
+  "auth": {
+    "welcome": "Willkommen bei",
+    "sign_in": "Anmelden",
+    "sign_up": "Konto erstellen",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "confirm_password": "Passwort bestätigen",
+    "placeholder_email": "name@example.com",
+    "placeholder_password": "••••••••",
+    "placeholder_create_password": "Passwort erstellen",
+    "placeholder_confirm_password": "Passwort wiederholen",
+    "forgot": "Passwort vergessen?",
+    "submit_signin": "Anmelden",
+    "submit_signup": "Konto erstellen",
+    "no_account": "Noch kein Konto?",
+    "have_account": "Bereits ein Konto?",
+    "link_signup": "Jetzt registrieren",
+    "link_signin": "Anmelden"
+    }
+    
 }

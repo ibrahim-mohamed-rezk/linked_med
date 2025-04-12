@@ -71,7 +71,9 @@
     "pricing": "Pricing",
     "about": "About",
     "enrol_now": "Enroll Now",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+    "login": "Login",
+    "singup": "Register"
   },
 
   "terms": {
@@ -421,5 +423,27 @@
       "subtitle": "Annual Commitment to Advancing Cancer Research",
       "description": "At LinkedMed, our mission goes beyond personnel placement – we are committed to advancing global healthcare. As part of our corporate responsibility, we pledge to support groundbreaking cancer research initiatives annually, contributing to medical progress that saves lives. By investing in innovation and scientific discoveries, we stand together with medical professionals in the fight against one of the world's greatest health challenges, reaffirming our commitment to a healthier future for all."
     }
-  }
+  },
+  
+    "auth": {
+      "welcome": "Welcome to",
+      "sign_in": "Sign in",
+      "sign_up": "Create Account",
+      "email": "Email Address",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "placeholder_email": "name@example.com",
+      "placeholder_password": "••••••••",
+      "placeholder_create_password": "Create a password",
+      "placeholder_confirm_password": "Repeat your password",
+      "forgot": "Forgot?",
+      "submit_signin": "Sign in",
+      "submit_signup": "Create account",
+      "no_account": "No account?",
+      "have_account": "Already have an account?",
+      "link_signup": "Create one",
+      "link_signin": "Sign in"
+    }
+  
+  
 }

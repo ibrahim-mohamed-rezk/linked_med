@@ -32,3 +32,19 @@ select {
     border-color: transparent;
   }
 }
+
+
+/* app/globals.css */
+@media (max-width: 640px) {
+  .timeline-card {
+    flex-direction: column !important;
+  }
+  .timeline-card .bg-blue-500 {
+    left: 0.5rem !important;
+    top: -1rem !important;
+    transform: none !important;
+  }
+  .timeline-card > div {
+    margin-left: 2.5rem !important; /* Adjust card margin on mobile */
+  }
+}
