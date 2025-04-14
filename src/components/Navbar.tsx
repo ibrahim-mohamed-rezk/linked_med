@@ -6,6 +6,7 @@ import { langs } from '@/libs/data/langs';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { LoginModal, SignupModal } from './AuthModals';
+import Image from 'next/image';
 
 const Navbar = () => {
   const t = useTranslations('header');
@@ -40,9 +41,11 @@ const Navbar = () => {
             <div className="flex w-full justify-between items-center h-16 relative z-50">
               {/* Logo */}
               <Link href="/" className="rounded-lg p-2">
-                <img
+                <Image
                   src="/images/logo.svg"
                   alt="Logo"
+                  width={130}
+                  height={53}
                   className="w-[130px] h-[53px]"
                 />
               </Link>
@@ -70,9 +73,11 @@ const Navbar = () => {
                     className="flex items-center gap-2 cursor-pointer"
                     onClick={() => setIsLangOpen(!isLangOpen)}
                   >
-                    <img
+                    <Image
                       src={`/images/${locale}.svg`}
-                      className="w-[47px] h-[29px] rounded-md"
+                      width={47}
+                      height={29}
+                      className="rounded-md"
                       alt="lang"
                     />
                     <span className="text-xs text-[#5e6278] font-semibold flex items-center pe-8 font-['Inter']">

@@ -3,6 +3,7 @@ interface Testimonial {
   name: string;
   testimonial: string;
 }
+import Image from "next/image";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
@@ -38,7 +39,13 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         </svg>
       </div>
       <div className="w-[250px] h-[250px] overflow-hidden rounded-full bg-black border border-[#96b8ff]">
-        <img className="w-full h-full" src={testimonial.image} alt={testimonial.name} />
+        <Image
+          className="w-full h-full"
+          src={testimonial.image}
+          alt={testimonial.name}
+          width={250}
+          height={250}
+        />
       </div>
       <div className="flex flex-col items-center">
         <div className="text-black text-[21px] font-black font-['Satoshi Variable']">

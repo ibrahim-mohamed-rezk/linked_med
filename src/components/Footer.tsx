@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-
+import Image from "next/image";
 const Footer = () => {
   const t = useTranslations("footer");
 
@@ -14,10 +14,12 @@ const Footer = () => {
                 href="/"
                 className="text-black text-3xl sm:text-4xl font-bold"
               >
-                <img
+                <Image
                   className="w-[130px] h-[53px]"
                   src="/images/logo.svg"
                   alt="logo"
+                  width={130}
+                  height={53}
                 />
               </Link>
               <p className="text-[#121127]/60 text-base sm:text-lg font-bold leading-relaxed max-w-md">

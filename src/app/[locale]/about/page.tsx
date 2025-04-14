@@ -1,8 +1,9 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
-const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
+const page = async ({ }: { params: Promise<{ locale: string }> }) => {
   const t = await getTranslations("about");
-  const { locale } = await params;
+  // const { locale } = await params;
 
   return (
     <div className="w-full max-w-[1900px] mx-auto min-h-screen relative bg-white rounded-[20px] overflow-hidden px-[5px] md:px-0">
@@ -25,10 +26,12 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
                 key={i}
                 className={`w-full aspect-[1/2] bg-neutral-400 rounded-[20px] overflow-hidden mt-${i * 8}`}
               >
-                <img
+                <Image
                   className="w-full h-full object-cover"
                   src="/images/aboutImage.png"
                   alt="Team member"
+                  width={500}
+                  height={1000}
                 />
               </div>
             ))}
@@ -41,7 +44,7 @@ const page = async ({ params }: { params: Promise<{ locale: string }> }) => {
         <div className="w-full py-16 md:py-24 relative flex flex-col justify-center items-center gap-2.5 px-4">
           <div className="absolute  top-0 left-0 w-full z-0">
             <div className="w-full h-full">
-              <img className="opacity-50" src="/images/aboutbg.svg" alt="bg" />
+              <Image className="opacity-50" src="/images/aboutbg.svg" alt="bg" layout="fill" objectFit="cover" />
               <div className="absolute z-[1] top-0 left-0 w-full h-full bg-[#96B8FF]/40"></div>
             </div>
           </div>

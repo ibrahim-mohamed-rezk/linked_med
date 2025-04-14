@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
-const ContactUsPage = async ({ params }: { params: { locale: string } }) => {
+const ContactUsPage = async ({ }: { params: { locale: string } }) => {
   const t = await getTranslations("terms.contact");
-  const { locale } = params;
 
   return (
     <main className="bg-[#F3F6FF] py-20 px-6 sm:px-10 lg:px-20 text-gray-800">
@@ -100,7 +100,7 @@ const ContactUsPage = async ({ params }: { params: { locale: string } }) => {
       <section className="max-w-7xl mx-auto mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Map Image */}
         <div className="rounded-xl overflow-hidden shadow-md min-h-90">
-          <img src="/images/map.png" alt="Map" className="w-full h-full object-cover" />
+          <Image src="/images/map.png" alt="Map" layout="responsive" width={800} height={600} className="w-full h-full object-cover" />
         </div>
 
         {/* Location Details */}

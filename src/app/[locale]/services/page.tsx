@@ -12,24 +12,24 @@ const services = [
 
 const servicePositions = [
   { x: 800, y: 185 },
-  { x: 1050, y: 585 },
+  { x: 900, y: 585 },
   { x: 200, y: 585 },
-  { x: 600, y: 987 },
+  { x: 600, y: 980 },
 ];
 
 export default function AnimatedTimelinePage() {
   const svgRef = useRef(null);
   const isInView = useInView(svgRef, { once: true });
-  const controls = useAnimation();
+  const svgControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start({
+      svgControls.start({
         strokeDashoffset: 0,
         transition: { duration: 3, ease: 'easeInOut' },
       });
     }
-  }, [isInView, controls]);
+  }, [isInView, svgControls]);
 
   return (
     <main className="bg-white min-h-screen py-32 px-4 w-screen overflow-y-auto overflow-x-hidden">
@@ -68,26 +68,18 @@ export default function AnimatedTimelinePage() {
             strokeWidth="2"
             strokeLinecap="round"
             initial={{ strokeDasharray: 3000, strokeDashoffset: 3000 }}
-            animate={controls}
+            animate={svgControls}
           />
-
-          {/* Path Dots
-          {[{ x: 1120, y: 220 }, { x: 1120, y: 620 }, { x: 80, y: 620 }, { x: 600, y: 1020 }].map((pt, i) => (
-            <circle key={i} cx={pt.x} cy={pt.y} r="6" fill="#6366f1" />
-          ))} */}
         </svg>
 
         {/* Service Steps */}
         <div className="absolute top-0 left-0 w-full h-full text-9xl">
           {services.map((service, i) => {
             const position = servicePositions[i];
-            const ref = useRef(null);
-            const anim = useAnimation();
 
             return (
               <motion.div
                 key={service.id}
-                ref={ref}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}

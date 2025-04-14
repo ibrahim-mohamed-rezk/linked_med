@@ -1,15 +1,17 @@
 "use client";
 import { useTranslations } from "next-intl";
-
+import Image from "next/image";
 const MapImage = () => {
   const t = useTranslations("HomePage.mapImage");
   return (
     <div className="w-full bg-black py-8 md:py-12">
       <div className="front-full front-full-story featured1 px-4">
-        <img 
-          src="/images/map.gif" 
-          className="w-full md:w-[80%] mx-auto object-contain max-h-[400px] md:max-h-none" 
-          alt="Global map" 
+        <Image
+          src="/images/map.gif"
+          alt="Global map"
+          className="w-full md:w-[80%] mx-auto object-contain max-h-[400px] md:max-h-none"
+          width={800}
+          height={400}
         />
 
         <div className="front-full-inner max-w-[1920px] mx-auto w-full px-4 sm:px-6 md:px-[8vw] lg:px-[12vw] mt-8">
