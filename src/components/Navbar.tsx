@@ -211,9 +211,24 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Full Page Modals */}
-      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
-      <SignupModal isOpen={isSignupOpen} onClose={() => setIsSignupOpen(false)} />
+      <LoginModal
+        isOpen={isLoginOpen}
+        onClose={() => setIsLoginOpen(false)}
+        onSwitchModal={() => {
+          setIsLoginOpen(false);
+          setIsSignupOpen(true);
+        }}
+      />
+
+      <SignupModal
+        isOpen={isSignupOpen}
+        onClose={() => setIsSignupOpen(false)}
+        onSwitchModal={() => {
+          setIsSignupOpen(false);
+          setIsLoginOpen(true);
+        }}
+      />
+
     </>
   );
 };

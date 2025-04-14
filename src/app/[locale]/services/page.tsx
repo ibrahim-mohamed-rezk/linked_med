@@ -1,148 +1,116 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
-const timelineSteps = [
-  {
-    step: '01',
-    title: 'Traditional Passwords',
-  },
-  {
-    step: '02',
-    title: 'Password + Phishable MFA',
-  },
-  {
-    step: '03',
-    title: 'Multi-Device Passkeys',
-  },
-  {
-    step: '04',
-    title: 'Single-Device Enterprise Passkeys',
-    desc: 'Transform your mobile device into a FIDO2 passkey with secure asymmetric cryptography.',
-  },
-  {
-    step: '05',
-    title: 'Next-Gen Authentication',
-    desc: 'Deliver the most robust security with offline-first authentication technology.',
-    image: '/auth-card.png',
-  },
+const services = [
+  { id: '01', label: 'Traditional Passwords' },
+  { id: '02', label: 'Biometric Login' },
+  { id: '03', label: 'Multi-Factor' },
+  { id: '04', label: 'Passkeys' },
 ];
 
-export default function FlowTimeline() {
-  const scrollContainerRef = useRef(null);
+const servicePositions = [
+  { x: 800, y: 185 },
+  { x: 1050, y: 585 },
+  { x: 200, y: 585 },
+  { x: 600, y: 987 },
+];
 
-  const { scrollYProgress } = useScroll({
-    container: scrollContainerRef, // <--- This makes it web scroll
-    offset: ['start start', 'end end'],
-  });
+export default function AnimatedTimelinePage() {
+  const svgRef = useRef(null);
+  const isInView = useInView(svgRef, { once: true });
+  const controls = useAnimation();
 
-  const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        strokeDashoffset: 0,
+        transition: { duration: 3, ease: 'easeInOut' },
+      });
+    }
+  }, [isInView, controls]);
 
   return (
-    <div className="min-h-screen bg-white py-24 sm:px-12 relative">
-      <h1 className="text-4xl font-bold text-center mb-10 text-slate-800">
-        Progressive Snake Timeline
-      </h1>
+    <main className="bg-white min-h-screen py-32 px-4 w-screen overflow-y-auto overflow-x-hidden">
+      <div className="max-w-5xl mx-auto text-center mb-24">
+        <h1 className="text-4xl font-bold text-gray-900">Secure Auth Timeline</h1>
+        <p className="text-gray-500 mt-3 text-lg">Modern methods for secure login</p>
+      </div>
 
-      {/* Scrollable Area */}
-      <div
-        ref={scrollContainerRef}
-        className="relative w-full max-w-5xl mx-auto overflow-y-scroll h-[800px] border rounded-lg"
-      >
-        {/* Snake SVG Path */}
+      <div className="relative w-full max-w-screen-xl mx-auto h-[1400px]">
+        {/* SVG Path */}
         <svg
-          viewBox="0 0 1000 1400"
-          fill="none"
+          viewBox="0 0 1200 1400"
+          className="absolute top-0 left-0 w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-0 w-full h-[1400px] z-0"
+          ref={svgRef}
         >
           <motion.path
             d="
-              M 240 100
-              Q 260 100, 260 120
-              H 800
-              Q 820 120, 820 140
-              V 240
-              Q 820 260, 800 260
-              H 200
-              Q 180 260, 180 280
-              V 380
-              Q 180 400, 200 400
-              H 700
-              Q 720 400, 720 420
-              V 520
-              Q 720 540, 700 540
-              H 200
-              Q 180 540, 180 560
-              V 660
-              Q 180 680, 200 680
-              H 800
-              Q 820 680, 820 700
-              V 800
-              Q 820 820, 800 820
-              H 240
-              Q 220 820, 220 840
-              V 940
-              Q 220 960, 240 960
-              H 760
-              Q 780 960, 780 980
-              V 1080
-              Q 780 1100, 760 1100
-              H 180
-              Q 160 1100, 160 1120
-              V 1220
-              Q 160 1240, 180 1240
-              H 800
+              M 600 0
+              L 600 200
+              Q 600 220, 620 220
+              L 1100 220
+              Q 1120 220, 1120 240
+              L 1120 600
+              Q 1120 620, 1100 620
+              L 100 620
+              Q 80 620, 80 640
+              L 80 1000
+              Q 80 1020, 100 1020
+              L 600 1020
+              Q 620 1020, 620 1040
+              L 620 1300
             "
-            stroke="#3B82F6"
+            fill="none"
+            stroke="#6366f1"
             strokeWidth="2"
-            fill="transparent"
             strokeLinecap="round"
-            strokeDasharray="1"
-            style={{
-              pathLength,
-            }}
+            initial={{ strokeDasharray: 3000, strokeDashoffset: 3000 }}
+            animate={controls}
           />
 
-          {/* Dots */}
-          {[{ x: 250, y: 100 }, { x: 800, y: 260 }, { x: 200, y: 400 }, { x: 720, y: 520 }, { x: 240, y: 960 }, { x: 800, y: 1240 }].map(
-            (dot, i) => (
-              <circle key={i} cx={dot.x} cy={dot.y} r="4" fill="#3B82F6" />
-            )
-          )}
+          {/* Path Dots
+          {[{ x: 1120, y: 220 }, { x: 1120, y: 620 }, { x: 80, y: 620 }, { x: 600, y: 1020 }].map((pt, i) => (
+            <circle key={i} cx={pt.x} cy={pt.y} r="6" fill="#6366f1" />
+          ))} */}
         </svg>
 
-        {/* Timeline Content */}
-        <div className="relative z-10 space-y-24 py-10 px-4">
-          {timelineSteps.map((item, index) => {
-            const isLeft = index % 2 === 0;
+        {/* Service Steps */}
+        <div className="absolute top-0 left-0 w-full h-full text-9xl">
+          {services.map((service, i) => {
+            const position = servicePositions[i];
+            const ref = useRef(null);
+            const anim = useAnimation();
+
             return (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, x: isLeft ? -80 : 80 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true, amount: 0.2 }}
-                className={`flex ${isLeft ? 'justify-start' : 'justify-end'} w-full`}
+                key={service.id}
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="absolute"
+                style={{
+                  top: position.y - 50,
+                  left: position.x - 50,
+                }}
               >
-                <div className="max-w-md px-6 py-4 bg-white border border-gray-200 shadow-lg rounded-xl">
-                  <span className="text-xs text-gray-400 mb-1 block">[ {item.step} ]</span>
-                  <h3 className="text-lg font-semibold text-gray-800">{item.title}</h3>
-                  {item.desc && <p className="text-sm text-gray-600 mt-2">{item.desc}</p>}
-                  {item.image && (
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="rounded-xl mt-4 w-full"
-                    />
-                  )}
+                <div className="flex flex-col items-start gap-1">
+                  <span className="text-xs tracking-widest text-gray-600 font-mono">{`{ ${service.id} }`}</span>
+                  <h3 className="text-3xl text-gray-900 font-semibold line-through">{service.label}</h3>
+                  {/* Glowing Dot */}
+                  <div className="mt-4 w-4 h-4 rounded-full bg-[#6366f1] relative">
+                    <div className="absolute top-1/2 left-1/2 w-8 h-8 rounded-full bg-indigo-500/10 -translate-x-1/2 -translate-y-1/2" />
+                  </div>
                 </div>
               </motion.div>
             );
           })}
         </div>
       </div>
-    </div>
+    </main>
   );
 }

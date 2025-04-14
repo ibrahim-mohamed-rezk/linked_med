@@ -10,9 +10,10 @@ import { useTranslations, useLocale } from 'next-intl';
 type AuthModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  onSwitchModal?: () => void; // Switching between login/signup
 };
 
-export const LoginModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+export const LoginModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSwitchModal }) => {
   const [showPassword, setShowPassword] = useState(false);
   const t = useTranslations('auth');
   const locale = useLocale();
@@ -42,12 +43,9 @@ export const LoginModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
             </svg>
           </button>
 
-          <div className=''>
-
-            <h2 className="text-sm text-gray-500">
-              {t('welcome')} <a href="#" className="text-blue-600 font-semibold">Linkedmed</a>
-            </h2>
-          </div>
+          <h2 className="text-sm text-gray-500">
+            {t('welcome')} <a href="#" className="text-blue-600 font-semibold">Linkedmed</a>
+          </h2>
           <h1 className="text-3xl font-bold mb-6">{t('sign_in')}</h1>
 
           <form className="space-y-8">
@@ -91,7 +89,16 @@ export const LoginModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
 
             <p className="text-sm text-center text-gray-500">
               {t('no_account')}{' '}
-              <a href="#" className="text-blue-600 hover:underline font-medium">{t('link_signup')}</a>
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onSwitchModal?.();
+                }}
+                className="text-blue-600 hover:underline font-medium"
+              >
+                {t('link_signup')}
+              </button>
             </p>
           </form>
         </div>
@@ -100,7 +107,7 @@ export const LoginModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export const SignupModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+export const SignupModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onSwitchModal }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const t = useTranslations('auth');
@@ -194,7 +201,16 @@ export const SignupModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
 
             <p className="text-sm text-center text-gray-500">
               {t('have_account')}{' '}
-              <a href="#" className="text-blue-600 hover:underline font-medium">{t('link_signin')}</a>
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onSwitchModal?.();
+                }}
+                className="text-blue-600 hover:underline font-medium"
+              >
+                {t('link_signin')}
+              </button>
             </p>
           </form>
         </div>

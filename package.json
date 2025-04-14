@@ -11,7 +11,8 @@
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
     "aos": "^2.3.4",
-    "framer-motion": "^12.6.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.7.2",
     "lucide-react": "^0.479.0",
     "next": "15.2.0",
     "next-intl": "^3.26.5",

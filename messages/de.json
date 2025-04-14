@@ -1,6 +1,23 @@
 {
   "about": {
-    "aboutText": "Vom ersten Treffen bis zur endgültigen Lieferung hat Ethan ein Gefühl des Vertrauens geschaffen und alles geliefert, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich selbst und er kann in einem guten Tempo arbeiten. Er ist ein ausgezeichneter Webflow-Entwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen. Vom ersten Treffen bis zur endgültigen Lieferung hat Ethan ein Gefühl des Vertrauens geschaffen und alles geliefert, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich selbst und er kann in einem guten Tempo arbeiten. Er ist ein ausgezeichneter Webflow-Entwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen. Vom ersten Treffen bis zur endgültigen Lieferung hat Ethan ein Gefühl des Vertrauens geschaffen und alles geliefert, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich selbst und er kann in einem guten Tempo arbeiten. Er ist ein ausgezeichneter Webflow-Entwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen."
+    "title": "Über uns",
+    "aboutText": "Mit mehr als 20 Jahren Erfahrung in der Gesundheitsbranche wurde LinkedMed 2022 gegründet. Unser erstes Büro entstand in Dubai – einem Zentrum für medizinische Innova6on und interna6onale Vernetzung. Seitdem haben wir uns weiterentwickelt, ein Büro in Frankfurt eröffnet und bereiten uns nun auf den nächsten Schri] in Kairo vor, um unsere Präsenz in wich6gen medizinischen Hotspots weiter auszubauen. Als führende Personalvermi]lung im Gesundheitswesen sind wir darauf spezialisiert, hochqualifizierte medizinische Fachkräae zu finden, zu prüfen und in über 10 Ländern zu vermi]eln. Wir arbeiten mit erstklassigen Kliniken und Gesundheitseinrichtungen zusammen und sorgen dafür, dass Ärzte, Chirurgen, Pflegekräae, Apotheker und andere medizinische Spezialisten genau dort landen, wo sie gebraucht werden. Unser Ziel ist es, die Qualität im Gesundheitswesen zu verbessern, indem wir exzellente Fachkräae mit renommierten medizinischen Einrichtungen zusammenbringen. Durch intelligente Personalstrategien schließen wir die Lücke zwischen Talent und Bedarf – für bessere Pa6entenversorgung und eine starke Zukuna der Medizin weltweit",
+    "From Application to Onboarding": "Von der Bewerbung bis zur Einarbeitung",
+    "A Seamless Process": "Ein nahtloser Prozess",
+    "Candidates initiate their journey by submitting applications.": "Kandidaten beginnen ihre Reise mit der Einreichung von Bewerbungen.",
+    "Language Training": "Sprachtraining",
+    "Training to enhance communication skills for candidates.": "Training zur Verbesserung der Kommunikationsfähigkeiten für Kandidaten.",
+    "Application Submission": "Bewerbungseinreichung",
+    "Candidates initiate their journey by submitting applications through our online platform. They can upload credentials and details easily.": "Bewerber beginnen ihren Weg, indem sie ihre Bewerbung über unsere Online-Plattform einreichen. Sie können ihre Unterlagen und Daten einfach hochladen.",
+    "Review Process": "Überprüfungsprozess",
+    "Submitted applications go through a review process considering qualifications, experience, and language proficiency.": "Eingereichte Bewerbungen durchlaufen einen Überprüfungsprozess unter Berücksichtigung von Qualifikationen, Erfahrung und Sprachkenntnissen.",
+    "Interview Coordination": "Interview-Koordination",
+    "Candidates who pass the review are invited for interviews. We coordinate schedules to ensure an efficient experience.": "Bewerber, die den Überprüfungsprozess bestehen, werden zu Vorstellungsgesprächen eingeladen. Wir koordinieren die Termine für einen reibungslosen Ablauf.",
+    "Offer Presentation": "Angebotspräsentation",
+    "Successful candidates receive formal offers with job details. We ensure clarity and alignment with their career path.": "Erfolgreiche Bewerber erhalten formelle Angebote mit Stellenangaben. Wir sorgen für Transparenz und eine passende berufliche Ausrichtung.",
+    "Onboarding Procedures": "Einarbeitungsverfahren",
+    "Accepted candidates enter the onboarding phase with orientation and training for a smooth transition into the German healthcare system.": "Angenommene Kandidaten treten in die Einarbeitungsphase mit Orientierung und Schulung ein, um einen reibungslosen Übergang in das deutsche Gesundheitssystem zu gewährleisten.",
+    "Candidates initiate their journey by submitting applications through www.linkedinmed.org, ensuring that all required information is captured effectively. Our online platform simplifies the application process, allowing candidates to upload their credentials and details conveniently": " Bewerber beginnen ihre Reise, indem sie ihre Bewerbung über www.linkedinmed.org einreichen und sicherstellen, dass alle erforderlichen Informationen effektiv erfasst werden. Unsere Online-Plattform vereinfacht den Bewerbungsprozess und ermöglicht es den Kandidaten, ihre Unterlagen und Daten bequem hochzuladen."
   },
   "HomePage": {
     "our_services": "Unsere Dienstleistungen",
@@ -171,9 +188,42 @@
     },
     "contact": {
       "title": "Kontaktinformationen",
-      "officer": "LinkedMed Datenschutzbeauftragter",
+      "description": {
+        "line1": "Senden Sie eine E-Mail, rufen Sie an oder füllen Sie das Formular aus, um zu erfahren,",
+        "line2": "wie Snappy Ihr Nachrichtenproblem lösen kann"
+      },
       "email": "legal@linkedmed.org",
-      "website": "www.linkedmed.org"
+      "supportLink": "Kundensupport",
+      "help": {
+        "customerSupport": {
+          "title": "Kundensupport",
+          "description": "Unser Support-Team ist rund um die Uhr für Sie da, um alle Ihre Fragen und Anliegen zu beantworten."
+        },
+        "feedback": {
+          "title": "Feedback und Vorschläge",
+          "description": "Wir schätzen Ihr Feedback und arbeiten ständig an der Verbesserung von Snappy."
+        },
+        "media": {
+          "title": "Presseanfragen",
+          "description": "Für medienbezogene Fragen kontaktieren Sie uns bitte unter media@linkedmed.com"
+        }
+      },
+      "form": {
+        "title": "Kontaktieren Sie uns",
+        "subtitle": "Sie können uns jederzeit erreichen",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "email": "E-Mail",
+        "message": "Wie können wir Ihnen helfen?",
+        "submit": "Absenden"
+      },
+      "location": {
+        "sectionTitle": "Unser Standort",
+        "title": "Verbindung von nah und fern",
+        "branchTitle": "Hauptsitz",
+        "country": "Kanada – Neu-Ontario",
+        "street": "Straße: 456"
+      }
     }
   },
 

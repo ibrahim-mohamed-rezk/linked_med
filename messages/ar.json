@@ -1,7 +1,25 @@
 {
   "about": {
-    "aboutText": "من الاجتماع الأولي إلى التسليم النهائي، خلق إيثان شعورًا بالثقة وقدم كل ما طلبناه منه. جودة عمله تتحدث عن نفسها وهو قادر على التنفيذ بوتيرة جيدة. إنه مطور ويبفلو ممتاز وسنستعين بخدماته مرة أخرى قريبًا جدًا. من الاجتماع الأولي إلى التسليم النهائي، خلق إيثان شعورًا بالثقة وقدم كل ما طلبناه منه. جودة عمله تتحدث عن نفسها وهو قادر على التنفيذ بوتيرة جيدة. إنه مطور ويبفلو ممتاز وسنستعين بخدماته مرة أخرى قريبًا جدًا. من الاجتماع الأولي إلى التسليم النهائي، خلق إيثان شعورًا بالثقة وقدم كل ما طلبناه منه. جودة عمله تتحدث عن نفسها وهو قادر على التنفيذ بوتيرة جيدة. إنه مطور ويبفلو ممتاز وسنستعين بخدماته مرة أخرى قريبًا جدًا."
-  },
+    "title": "من نحن",
+    "aboutText": "من الاجتماع الأولي إلى التسليم النهائي، خلق إيثان شعورًا بالثقة وقدم كل ما طلبناه منه. جودة عمله تتحدث عن نفسها وهو قادر على التنفيذ بوتيرة جيدة. إنه مطور ويبفلو ممتاز وسنستعين بخدماته مرة أخرى قريبًا جدًا. من الاجتماع الأولي إلى التسليم النهائي، خلق إيثان شعورًا بالثقة وقدم كل ما طلبناه منه. جودة عمله تتحدث عن نفسها وهو قادر على التنفيذ بوتيرة جيدة. إنه مطور ويبفلو ممتاز وسنستعين بخدماته مرة أخرى قريبًا جدًا. من الاجتماع الأولي إلى التسليم النهائي، خلق إيثان شعورًا بالثقة وقدم كل ما طلبناه منه. جودة عمله تتحدث عن نفسها وهو قادر على التنفيذ بوتيرة جيدة. إنه مطور ويبفلو ممتاز وسنستعين بخدماته مرة أخرى قريبًا جدًا.",
+    "From Application to Onboarding": "من التقديم إلى الانضمام",
+    "A Seamless Process": "عملية سلسة",
+    "Candidates initiate their journey by submitting applications.": "يبدأ المرشحون رحلتهم بتقديم الطلبات.",
+    "Language Training": "تدريب اللغة",
+    "Training to enhance communication skills for candidates.": "تدريب لتعزيز مهارات التواصل للمرشحين.",
+    "Review Process": "عملية المراجعة",
+      "Application Submission": "تقديم الطلب",
+      "Candidates initiate their journey by submitting applications through our online platform. They can upload credentials and details easily.": "يبدأ المتقدمون رحلتهم من خلال تقديم الطلبات عبر منصتنا الإلكترونية. يمكنهم تحميل المؤهلات والتفاصيل بسهولة.",
+      "Submitted applications go through a review process considering qualifications, experience, and language proficiency.": "تمر الطلبات المقدمة بعملية مراجعة تأخذ في الاعتبار المؤهلات والخبرة وإتقان اللغة.",
+      "Interview Coordination": "تنسيق المقابلات",
+      "Candidates who pass the review are invited for interviews. We coordinate schedules to ensure an efficient experience.": "يُدعى المرشحون الذين يجتازون المراجعة إلى المقابلات. ننسق الجداول الزمنية لضمان تجربة سلسة.",
+      "Offer Presentation": "تقديم العرض",
+      "Successful candidates receive formal offers with job details. We ensure clarity and alignment with their career path.": "يتلقى المرشحون الناجحون عروضًا رسمية تحتوي على تفاصيل الوظيفة. نضمن الوضوح والتوافق مع مسارهم المهني.",
+      "Onboarding Procedures": "إجراءات الانضمام",
+      "Accepted candidates enter the onboarding phase with orientation and training for a smooth transition into the German healthcare system.": "يبدأ المرشحون المقبولون مرحلة الانضمام التي تتضمن التوجيه والتدريب لضمان انتقال سلس إلى نظام الرعاية الصحية الألماني.",
+      "Candidates initiate their journey by submitting applications through www.linkedinmed.org, ensuring that all required information is captured effectively. Our online platform simplifies the application process, allowing candidates to upload their credentials and details conveniently":"يبدأ المرشحون رحلتهم بتقديم الطلبات عبر www.linkedinmed.org، مما يضمن جمع جميع المعلومات المطلوبة بشكل فعال. تسهل منصتنا الإلكترونية عملية التقديم، مما يسمح للمرشحين بتحميل مؤهلاتهم وتفاصيلهم بسهولة."
+      
+    },
   "HomePage": {
     "our_services": "خدماتنا",
     "about_us": "معلومات عنا",
@@ -440,6 +458,72 @@
     "have_account": "هل لديك حساب بالفعل؟",
     "link_signup": "أنشئ واحدًا",
     "link_signin": "تسجيل الدخول"
-    }
+    },
+    "terms": {
+      "contact": {
+        "title": "معلومات الاتصال",
+        "description": {
+          "line1": "راسلنا عبر البريد الإلكتروني أو اتصل بنا أو املأ النموذج",
+          "line2": "لتعرف كيف يمكن لـ Snappy حل مشكلة المراسلة لديك"
+        },
+        "email": "legal@linkedmed.org",
+        "supportLink": "دعم العملاء",
+        "help": {
+          "customerSupport": {
+            "title": "دعم العملاء",
+            "description": "فريق الدعم لدينا متاح على مدار الساعة لمعالجة أي استفسارات أو مخاوف قد تكون لديك."
+          },
+          "feedback": {
+            "title": "الآراء والاقتراحات",
+            "description": "نحن نقدر ملاحظاتك ونعمل باستمرار على تحسين Snappy."
+          },
+          "media": {
+            "title": "استفسارات إعلامية",
+            "description": "للاستفسارات الإعلامية، يرجى التواصل معنا عبر media@linkedmed.com"
+          }
+        },
+        "form": {
+          "title": "تواصل معنا",
+          "subtitle": "يمكنك التواصل معنا في أي وقت",
+          "firstName": "الاسم الأول",
+          "lastName": "اسم العائلة",
+          "email": "البريد الإلكتروني",
+          "message": "كيف يمكننا مساعدتك؟",
+          "submit": "إرسال"
+        },
+        "location": {
+          "sectionTitle": "موقعنا",
+          "title": "نربط القريب والبعيد",
+          "branchTitle": "المقر الرئيسي",
+          "country": "كندا – أونتاريو الجديدة",
+          "street": "شارع: 456"
+        }
+      }
+    },
+    "help": {
+      "customerSupportTitle": "Customer Support",
+      "customerSupportText": "Our Support Team Is Available Around The Clock To Address Any Concerns Or Queries You May Have.",
+      "feedbackTitle": "Feedback And Suggestions",
+      "feedbackText": "We Value Your Feedback And Are Continuously Working To Improve Snappy.",
+      "mediaTitle": "Media Inquiries",
+      "mediaText": "For Media-Related Questions Or Press Inquiries, Please Contact Us At Media@Linkedmed.Com"
+    },
+    "form": {
+      "title": "Get in Touch",
+      "subtitle": "You can reach us anytime",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "10 162 80 856",
+      "message": "How Can We Help You ?",
+      "submit": "Submit"
+    },
+    "location": {
+      "title": "Our Location",
+      "subtitle": "Connecting Near And Far",
+      "headquarters": "Headquarters",
+      "country": "Canada – New Ontario",
+      "street": "Street: 456"
+}
     
 }
