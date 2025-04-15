@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-const ContactUsPage = async ({ }: { params: { locale: string } }) => {
+const ContactUsPage = async () => {
   const t = await getTranslations("terms.contact");
 
   return (
