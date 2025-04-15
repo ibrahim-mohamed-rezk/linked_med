@@ -24,7 +24,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  type Locale = "en" | "ar";
+  type Locale = "en" | "ar" | "ru" | "de";
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
