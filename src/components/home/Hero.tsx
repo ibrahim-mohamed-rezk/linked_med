@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react"; // أيقونات للصوت (يمكنك استبدالها بـ SVG إذا أردت)
 
-const Hero = () => {
+const Hero = ({ data }: { data: { web: string; mobile: string } }) => {
   const [visible, setVisible] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -33,18 +33,22 @@ const Hero = () => {
       <video
         ref={videoRef}
         className="absolute md:hidden inset-0 w-full h-full object-cover"
-        src="https://storage.googleapis.com/otherprojects1323/linked-med/INTRO-MOBILE.mp4"
+        src={data.mobile}
         autoPlay
         loop
         muted
+        playsInline
+        preload="auto"
       />
       <video
         ref={videoRef}
         className="absolute hidden md:block inset-0 w-full h-full object-cover"
-        src="https://storage.googleapis.com/otherprojects1323/linked-med/intro%20to%20edit-2.mp4"
+        src={data.web}
         autoPlay
         loop
         muted
+        playsInline
+        preload="auto"
       />
 
       {/* زر التحكم بالصوت */}

@@ -3,16 +3,29 @@ import About from "@/components/home/About";
 import Services from "@/components/home/Services";
 import "../../../public/css/home.css";
 import Testimonials from "@/components/home/Testimonials";
-// import Map from "@/components/home/Map";
 import MapImage from "@/components/home/MapImage";
+import { getData } from "@/libs/server/server";
+import { HomeTypes } from "@/libs/helpers/types";
 
-export default function Home() {
+export default async function Home() {
+  const feachData = async () => {
+    try {
+      const response = await getData("/home", {}, {});
+      return response.videos;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const homeData: HomeTypes = await feachData();
+
+  console.log("homeData", homeData);
   return (
     <div>
       <main className="w-full">
-        <Hero />
-        <About />
-        <Services />
+        <Hero data={homeData.intro} />
+        <About data={homeData.about} />
+        <Services data={homeData.service} />
         <MapImage />
         {/* <Map /> */}
         <Testimonials />
