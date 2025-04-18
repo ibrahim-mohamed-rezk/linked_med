@@ -10,7 +10,7 @@ import { HomeTypes } from "@/libs/helpers/types";
 export default async function Home() {
   const feachData = async () => {
     try {
-      const response = await getData("/home", {}, {});
+      const response = await getData("/home");
       return response.videos;
     } catch (error) {
       throw error;

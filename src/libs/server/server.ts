@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestHeaders } from "axios";
 
 const backendServer = axios.create({
   baseURL: process.env.NEXT_PUBLIC_Backend_URL,
@@ -16,8 +16,17 @@ const backendServer = axios.create({
   timeout: 10000,
 });
 
+// types
+type HeadersType = AxiosRequestHeaders;
+type ParamsType = Record<string, string | number | boolean>; // أو حدد حسب احتياجك
+type PostDataType = Record<string, unknown>; // أو use a specific interface
+
 // GET function
-export const getData = async (url: string, params?: any, headers?: any) => {
+export const getData = async (
+  url: string,
+  params?: ParamsType,
+  headers?: HeadersType
+) => {
   try {
     const response = await backendServer.get(url, {
       params,
@@ -29,7 +38,11 @@ export const getData = async (url: string, params?: any, headers?: any) => {
   }
 };
 
-export const postData = async (url: string, data: any, headers?: any) => {
+export const postData = async (
+  url: string,
+  data: PostDataType,
+  headers?: HeadersType
+) => {
   try {
     const response = await backendServer.post(url, data, {
       headers: { ...headers },
