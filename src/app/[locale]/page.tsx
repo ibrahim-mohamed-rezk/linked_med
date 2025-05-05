@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
 import "../../../public/css/home.css";
-import Testimonials from "@/components/home/Testimonials";
+import CustomerReviewsSlider from "@/components/home/CustomerRev";
 import MapImage from "@/components/home/MapImage";
 import { getData } from "@/libs/server/server";
 import { HomeTypes } from "@/libs/helpers/types";
@@ -28,7 +28,9 @@ export default async function Home() {
         <Services data={homeData.service} />
         <MapImage />
         {/* <Map /> */}
-        <Testimonials />
+        {/* <Testimonials />
+         */}
+         <CustomerReviewsSlider/>
       </main>
     </div>
   );

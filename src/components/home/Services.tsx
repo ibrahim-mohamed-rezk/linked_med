@@ -54,8 +54,8 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                   <path
                     d="M4 4L4.00002 529"
                     stroke="url(#paint0_linear_122_409)"
-                    stroke-width="7"
-                    stroke-linecap="round"
+                    strokeWidth="7"
+                    strokeLinecap="round"
                   />
                   <defs>
                     <linearGradient
@@ -66,9 +66,9 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                       y2="529"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#999999" stop-opacity="0" />
-                      <stop offset="0.515" stop-color="white" />
-                      <stop offset="1" stop-color="#999999" stop-opacity="0" />
+                      <stop stopColor="#999999" stopOpacity="0" />
+                      <stop offset="0.515" stopColor="white" />
+                      <stop offset="1" stopColor="#999999" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                 </svg>
