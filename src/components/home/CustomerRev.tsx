@@ -55,9 +55,9 @@ const testimonials: Testimonial[] = [
 ];
 
 const CustomerReviewSlider: React.FC = () => {
-
+  
   const t = useTranslations("Testimonials");
-
+  
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
