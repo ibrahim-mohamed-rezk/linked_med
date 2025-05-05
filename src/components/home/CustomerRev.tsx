@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import { useLocale, useTranslations } from "next-intl";
+// import { useLocale, useTranslations } from "next-intl";
 
 import Image from 'next/image';
 
@@ -56,8 +56,8 @@ const testimonials: Testimonial[] = [
 
 const CustomerReviewSlider: React.FC = () => {
   
-  const t = useTranslations("HomePage");
-  const locale = useLocale();
+  // const t = useTranslations("HomePage");
+  // const locale = useLocale();
   
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
