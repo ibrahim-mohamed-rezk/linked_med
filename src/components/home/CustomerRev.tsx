@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { useTranslations } from "next-intl";
+
 import Image from 'next/image';
 
 // Define the Testimonial type with stars
@@ -53,6 +55,9 @@ const testimonials: Testimonial[] = [
 ];
 
 const CustomerReviewSlider: React.FC = () => {
+
+  const t = useTranslations("Testimonials");
+
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -131,7 +136,7 @@ const CustomerReviewSlider: React.FC = () => {
   return (
     <div className="w-full bg-gray-50 py-6 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-['Satoshi_Variable'] text-gray-900 mb-4">Customer Reviews</h2>
+        <h2 className="text-3xl font-['Satoshi_Variable'] text-gray-900 mb-4">{t('customerReviews')}</h2>
 
         <div className="relative">
           {/* Scroll container */}
@@ -161,7 +166,7 @@ const CustomerReviewSlider: React.FC = () => {
                         priority={index < 4}
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-3 backdrop-blur-sm">
-                        <h3 className="font-['Satoshi_Variable'] text-white bg-black py-1">{testimonial.name}</h3>
+                        <h3 className="font-['Satoshi_Variable'] text-white bg-black py-1">{t(testimonial.name)}</h3>
                         {renderStars(testimonial.stars)}
                       </div>
                     </div>
@@ -170,9 +175,9 @@ const CustomerReviewSlider: React.FC = () => {
                   {/* Back of card */}
                   <div className="flip-card-back bg-blue-900 text-white rounded-lg overflow-hidden shadow-sm p-6 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-['Satoshi_Variable'] text-lg mb-3">{testimonial.name}</h3>
+                      <h3 className="font-['Satoshi_Variable'] text-lg mb-3">{t(testimonial.name)}</h3>
                       <p className="text-sm leading-relaxed overflow-y-auto max-h-40">
-                        {testimonial.testimonial}
+                        {t(testimonial.testimonial)}
                       </p>
                     </div>
                   </div>

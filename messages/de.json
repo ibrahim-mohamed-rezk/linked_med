@@ -495,6 +495,38 @@
     "have_account": "Bereits ein Konto?",
     "link_signup": "Jetzt registrieren",
     "link_signin": "Anmelden"
-    }
+    },
+    "Testimonials": [
+      {
+        "name": "Hagar Elnahhas",
+        "testimonial": "Die Unterstützung und Ressourcen von LinkedMed haben mir geholfen, meine Stelle als approbierte Pharmazeutin (Approbierte) zu sichern. Die Plattform/das Unternehmen hat sowohl mein medizinisches Fachwissen als auch meine Sprachkenntnisse geschärft, um mich bestens auf diese Position vorzubereiten.",
+        "stars": 5
+      },
+      {
+        "name": "Rebica Müller",
+        "testimonial": "LinkedMed stellt gut ausgebildete, qualifizierte Fachkräfte im Gesundheitswesen bereit. Ihr Rekrutierungsprozess gewährleistet eine nahtlose Integration in unser Krankenhaus. Ein vertrauenswürdiger Partner für die Einstellung kompetenter internationaler medizinischer Mitarbeiter!",
+        "stars": 5
+      },
+      {
+        "name": "Ahmed Sabri",
+        "testimonial": "LinkedMed half mir bei der Schulung zur Dokumentenüberprüfung; ihre Unterstützung machte meinen Traum, in Deutschland zu arbeiten, wahr! Die Sprachkurse waren unglaublich. Jetzt arbeite ich glücklich in einem führenden Krankenhaus in Berlin!",
+        "stars": 5
+      },
+      {
+        "name": "Sara Dabagh",
+        "testimonial": "Den Visaprozess zu bewältigen war überwältigend, aber LinkedMed hat alles professionell geregelt. Ihre Expertise garantierte einen reibungslosen Ablauf, und heute bin ich als approbierte Apothekerin in Deutschland tätig. Sehr empfehlenswert!",
+        "stars": 4
+      },
+      {
+        "name": "Fatima M",
+        "testimonial": "Die Deutschkurse und die Prüfungsvorbereitung von LinkedMed haben das Lernen erleichtert. Ihre Anleitung gab mir das Vertrauen, meine Prüfungen zu bestehen und eine Stelle als Krankenschwester in Deutschland zu bekommen. Wirklich lebensverändernd!",
+        "stars": 5
+      },
+      {
+        "name": "Salma Hany",
+        "testimonial": "Dank LinkedMed erhielt ich wertvolle Einblicke in die entscheidende Rolle einer Apothekerin während meines zweiwöchigen Praktikums bei easy Apotheke. Es bereicherte mein Kompetenzprofil und meine Erfahrung.",
+        "stars": 4
+      }
+    ]
     
 }

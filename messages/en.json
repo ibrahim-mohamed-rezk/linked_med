@@ -498,7 +498,39 @@
       "have_account": "Already have an account?",
       "link_signup": "Create one",
       "link_signin": "Sign in"
-    }
+    },
+    "Testimonials": [
+      {
+        "name": "Hagar Elnahhas",
+        "testimonial": "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
+        "stars": 5
+      },
+      {
+        "name": "Rebica Müller",
+        "testimonial": "LinkedMed provides well-prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
+        "stars": 5
+      },
+      {
+        "name": "Ahmed Sabri",
+        "testimonial": "LinkedMed helped me achieve training for document verification; their support was my dream of working in Germany! The language courses were incredible. Now, I'm happily working in a top Berlin hospital!",
+        "stars": 5
+      },
+      {
+        "name": "Sara Dabagh",
+        "testimonial": "Navigating the visa process was overwhelming, but LinkedMed handled everything professionally. Their expertise ensured a smooth journey, and today, I'm a licensed pharmacist in Germany. Highly recommended!",
+        "stars": 4
+      },
+      {
+        "name": "Fatima M",
+        "testimonial": "LinkedMed's German courses and exam preparation made learning easy. Their guidance gave me confidence to pass my exams and secure a nursing job in Germany. Truly life-changing!",
+        "stars": 5
+      },
+      {
+        "name": "Salma Hany",
+        "testimonial": "Thanks to LinkedMed, I gained great insight on the crucial role of a pharmacist during my internship (Praktikum) in easy Apotheke for 2 weeks. It enriched my skill set and experience.",
+        "stars": 4
+      }
+    ]
   
   
 }
