@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-// import { useLocale, useTranslations } from "next-intl";
-
 import Image from 'next/image';
 
 // Define the Testimonial type with stars
@@ -55,10 +53,6 @@ const testimonials: Testimonial[] = [
 ];
 
 const CustomerReviewSlider: React.FC = () => {
-  
-  // const t = useTranslations("HomePage");
-  // const locale = useLocale();
-  
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
