@@ -527,6 +527,40 @@
         "testimonial": "Dank LinkedMed erhielt ich wertvolle Einblicke in die entscheidende Rolle einer Apothekerin während meines zweiwöchigen Praktikums bei easy Apotheke. Es bereicherte mein Kompetenzprofil und meine Erfahrung.",
         "stars": 4
       }
-    ]
+    ],
+         "title": "Unsere Ärzte",
+         "viewProfile": "Profil ansehen",
+         "pageTitle": "Freund empfehlen - Head Medical",
+         "siteName": "Head Medical",
+         "formTitle": "Anmeldeformular zur Freund-Empfehlung",
+         "instructions": "Geben Sie einfach Ihre Daten und die Daten Ihres Freundes in das Formular ein und senden Sie es an",
+         "referralEmail": "referrals@headmedical.com",
+         "fields": {
+           "yourName": "Ihr Name",
+           "yourEmail": "Ihre E-Mail",
+           "friendName": "Name des Freundes",
+           "friendEmail": "E-Mail des Freundes",
+           "friendPhone": "Telefonnummer des Freundes",
+           "friendOccupation": "Beruf des Freundes",
+           "locations": "Interessierte Standorte"
+         },
+         "otherInfo": "Weitere Informationen",
+         "termsText": "Ich habe die",
+         "termsLink": "Geschäftsbedingungen",
+         "consentNote": "Bitte stellen Sie sicher, dass die oben genannte Person damit einverstanden ist, dass Sie ihre Daten mit Head Medical zum Zwecke der Kontaktaufnahme hinsichtlich der Rekrutierung teilen.",
+         "submit": "Senden",
+         "termsHeader": "Head Medical Empfehlungsprämie – Geschäftsbedingungen",
+           "rule1":"1. Alle Empfehlungen müssen durch Ausfüllen unseres Anmeldeformulars erfolgen.",
+           "rule2":"2. Potenzielle Kandidaten können nur einmal empfohlen werden.",
+           "rule3":"3. Sie müssen bei Head Medical registriert sein, um einen Kandidaten zu empfehlen.",
+           "rule4":"4. Der Kandidat darf nicht bereits zuvor empfohlen worden sein.",
+           "rule5":"5. Der Kandidat darf zuvor kein Vorstellungsgespräch über Head Medical geführt haben.",
+           "rule6":"6. Prämien werden ausgezahlt, nachdem der Kandidat seine Tätigkeit oder eine Festanstellung begonnen hat.",
+           "rule7":"7. Head Medical behält sich das Recht vor, das Programm jederzeit zu ändern oder zu stornieren.",
+         "taxHeader": "Steuerliche Auswirkungen:",
+         "taxNote": "Die Teilnahme kann steuerpflichtig sein; es wird empfohlen, einen Fachmann zu konsultieren.",
+         "officeUse": "Nur zur dienstlichen Verwendung",
+         "dateReceived": "Eingangsdatum:",
+         "initials": "Initialen:"
     
 }

@@ -530,7 +530,41 @@
         "testimonial": "Thanks to LinkedMed, I gained great insight on the crucial role of a pharmacist during my internship (Praktikum) in easy Apotheke for 2 weeks. It enriched my skill set and experience.",
         "stars": 4
       }
-    ]
+    ],
+    "title": "Our Doctors",
+    "viewProfile": "View Profile",
+    "pageTitle": "Refer a Friend - Head Medical",
+    "siteName": "Head Medical",
+    "formTitle": "Refer a Friend Registration Form",
+    "instructions": "Simply enter your details and your friend’s details in the form, return it to",
+    "referralEmail": "referrals@headmedical.com",
+    "fields": {
+      "yourName": "Your name",
+      "yourEmail": "Your email",
+      "friendName": "Friend’s name",
+      "friendEmail": "Friend’s email",
+      "friendPhone": "Friend’s phone number",
+      "friendOccupation": "Friend’s occupation",
+      "locations": "Location(s) of interest"
+    },
+    "otherInfo": "Other information",
+    "termsText": "I have read and accept the",
+    "termsLink": "Terms & Conditions",
+    "consentNote": "Please ensure the above named person has agreed to you sharing their details with Head Medical for the purpose of contacting them regarding recruitment.",
+    "submit": "Submit",
+    "termsHeader": "Head Medical Referral Rewards Scheme – Terms & Conditions",
+      "rule1":"1. All referrals should be made by completing our Referral Rewards Registration form.",
+      "rule2":"2. Prospective candidates can only be referred once.",
+      "rule3":"3. You must be registered with Head Medical to refer a candidate.",
+      "rule4":"4. The candidate must not have been referred previously.",
+      "rule5":"5. The candidate must not have already had an interview via Head Medical.",
+      "rule6":"6. Rewards are paid after the candidate starts their assignment or permanent role.",
+      "rule7":"7. Head Medical reserves the right to change or cancel the scheme at any time.",
+    "taxHeader": "Tax Implications:",
+    "taxNote": "Participation may be subject to taxes; individuals should seek their own advice.",
+    "officeUse": "For Office Use Only",
+    "dateReceived": "Date Received:",
+    "initials": "Initials:"
   
   
 }
