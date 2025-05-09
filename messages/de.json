@@ -94,7 +94,8 @@
     "enrol_now": "Jetzt anmelden",
     "contact_us": "Kontakt",
     "login": "Anmelden",
-    "singup": "Registrieren"
+    "singup": "Registrieren",
+    "logout": "Abmelden"
   },
 
   "terms": {

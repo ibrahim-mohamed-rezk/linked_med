@@ -1,15 +1,21 @@
-'use client';
+"use client";
 
-import React, { useState, useRef } from 'react';
-import { Link } from '@/i18n/navigation';
-import { langs } from '@/libs/data/langs';
-import { useTranslations, useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
-import { LoginModal, SignupModal } from './AuthModals';
-import Image from 'next/image';
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "@/i18n/navigation";
+import { langs } from "@/libs/data/langs";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { LoginModal, SignupModal } from "./AuthModals";
+import Image from "next/image";
+import {
+  getUserFromCookies,
+  isAuthenticated,
+  logout,
+  UserProfile,
+} from "@/libs/server/auth";
 
 const Navbar = () => {
-  const t = useTranslations('header');
+  const t = useTranslations("header");
   const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();
@@ -18,19 +24,61 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [user, setUser] = useState<UserProfile | null>(null);
 
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const userMenuRef = useRef<HTMLDivElement>(null);
+
+  // Check if user is authenticated on component mount
+  useEffect(() => {
+    if (isAuthenticated()) {
+      const userData = getUserFromCookies();
+      if (userData) {
+        setUser(userData);
+      }
+    }
+  }, []);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        userMenuRef.current &&
+        !userMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsUserMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const changeLang = (lang: string) => {
     if (lang === locale) return;
-    router.push(`/${lang}${pathname.replace(`/${locale}`, '')}`);
+    router.push(`/${lang}${pathname.replace(`/${locale}`, "")}`);
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    setUser(null);
+    setIsUserMenuOpen(false);
+    router.refresh(); // Refresh the page to update UI
+  };
+
+  // Display name or email depending on what's available
+  const getDisplayName = () => {
+    if (!user) return "";
+    return user.name || user.email;
   };
 
   const navItems = [
-    { label: t('home'), href: '/' },
-    { label: t('services'), href: '/services' },
-    { label: t('contact_us'), href: '/contact-us' },
-    { label: t('about'), href: '/about' },
+    { label: t("home"), href: "/" },
+    { label: t("services"), href: "/services" },
+    { label: t("contact_us"), href: "/contact-us" },
+    { label: t("about"), href: "/about" },
   ];
 
   return (
@@ -57,7 +105,7 @@ const Navbar = () => {
                     key={idx}
                     href={item.href}
                     className={`text-sm font-bold transition-colors text-[18px] ${
-                      locale === 'ar' ? '' : 'font-[Satoshi_Variable]'
+                      locale === "ar" ? "" : "font-[Satoshi_Variable]"
                     }`}
                   >
                     {item.label}
@@ -115,19 +163,58 @@ const Navbar = () => {
                   )}
                 </div>
 
-                {/* Auth Buttons */}
-                <button
-                  onClick={() => setIsLoginOpen(true)}
-                  className="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium hover:bg-blue-700 transition"
-                >
-                  {t('login')}
-                </button>
-                <button
-                  onClick={() => setIsSignupOpen(true)}
-                  className="px-4 py-2 border border-blue-600 text-blue-600 text-sm rounded-full font-medium hover:bg-blue-50 transition"
-                >
-                  {t('singup')}
-                </button>
+                {/* User Menu or Auth Buttons */}
+                {user ? (
+                  <div className="relative" ref={userMenuRef}>
+                    <button
+                      onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                      className="flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition"
+                    >
+                      <span className="text-sm font-medium truncate max-w-[150px]">
+                        {getDisplayName()}
+                      </span>
+                      <svg
+                        className="h-5 w-5 ml-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+
+                    {isUserMenuOpen && (
+                      <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                        <div className="py-1">
+                          <button
+                            onClick={handleLogout}
+                            className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                          >
+                            {t("logout")}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => setIsLoginOpen(true)}
+                      className="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium hover:bg-blue-700 transition"
+                    >
+                      {t("login")}
+                    </button>
+                    <button
+                      onClick={() => setIsSignupOpen(true)}
+                      className="px-4 py-2 border border-blue-600 text-blue-600 text-sm rounded-full font-medium hover:bg-blue-50 transition"
+                    >
+                      {t("singup")}
+                    </button>
+                  </>
+                )}
               </div>
 
               {/* Mobile Button & Hamburger */}
@@ -167,7 +254,7 @@ const Navbar = () => {
           <div
             ref={mobileMenuRef}
             className={`fixed top-[66px] inset-0 z-20 lg:hidden ${
-              isMobileMenuOpen ? 'block' : 'hidden'
+              isMobileMenuOpen ? "block" : "hidden"
             }`}
           >
             <div
@@ -176,7 +263,7 @@ const Navbar = () => {
             ></div>
             <div
               className={`fixed top-[66px] right-0 bottom-0 w-64 bg-white shadow-lg transform transition-all duration-300 ease-in-out ${
-                isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
               <div className="pt-5 pb-3 space-y-1">
@@ -191,24 +278,42 @@ const Navbar = () => {
                 ))}
 
                 <div className="px-4 pt-4 flex flex-col gap-2">
-                  <button
-                    onClick={() => {
-                      setIsLoginOpen(true);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition"
-                  >
-                    {t('login')}
-                  </button>
-                  <button
-                    onClick={() => {
-                      setIsSignupOpen(true);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-full text-sm font-medium hover:bg-blue-50 transition"
-                  >
-                    {t('singup')}
-                  </button>
+                  {user ? (
+                    <>
+                      <div className="py-2 px-4 bg-blue-50 rounded-md">
+                        <p className="text-sm font-medium text-blue-700 truncate">
+                          {getDisplayName()}
+                        </p>
+                      </div>
+                      <button
+                        onClick={handleLogout}
+                        className="w-full px-4 py-2 border border-red-600 text-red-600 rounded-full text-sm font-medium hover:bg-red-50 transition"
+                      >
+                        {t("logout")}
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => {
+                          setIsLoginOpen(true);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="w-full px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition"
+                      >
+                        {t("login")}
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsSignupOpen(true);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-full text-sm font-medium hover:bg-blue-50 transition"
+                      >
+                        {t("singup")}
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -218,7 +323,16 @@ const Navbar = () => {
 
       <LoginModal
         isOpen={isLoginOpen}
-        onClose={() => setIsLoginOpen(false)}
+        onClose={() => {
+          setIsLoginOpen(false);
+          // Check if user logged in after modal closes
+          if (isAuthenticated()) {
+            const userData = getUserFromCookies();
+            if (userData) {
+              setUser(userData);
+            }
+          }
+        }}
         onSwitchModal={() => {
           setIsLoginOpen(false);
           setIsSignupOpen(true);
@@ -227,13 +341,21 @@ const Navbar = () => {
 
       <SignupModal
         isOpen={isSignupOpen}
-        onClose={() => setIsSignupOpen(false)}
+        onClose={() => {
+          setIsSignupOpen(false);
+          // Check if user signed up after modal closes
+          if (isAuthenticated()) {
+            const userData = getUserFromCookies();
+            if (userData) {
+              setUser(userData);
+            }
+          }
+        }}
         onSwitchModal={() => {
           setIsSignupOpen(false);
           setIsLoginOpen(true);
         }}
       />
-
     </>
   );
 };

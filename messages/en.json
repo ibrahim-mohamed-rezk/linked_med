@@ -95,7 +95,8 @@
     "enrol_now": "Enroll Now",
     "contact_us": "Contact Us",
     "login": "Login",
-    "singup": "Register"
+    "singup": "Register",
+    "logout": "Logout"
   },
 
   "terms": {

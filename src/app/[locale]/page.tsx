@@ -19,7 +19,7 @@ export default async function Home() {
 
   const homeData: HomeTypes = await feachData();
 
-  console.log("homeData", homeData);
+  // console.log("homeData", homeData);
   return (
     <div>
       <main className="w-full">
@@ -30,7 +30,7 @@ export default async function Home() {
         {/* <Map /> */}
         {/* <Testimonials />
          */}
-         <CustomerReviewsSlider/>
+        <CustomerReviewsSlider />
       </main>
     </div>
   );

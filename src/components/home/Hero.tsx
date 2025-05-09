@@ -6,15 +6,30 @@ import { Volume2, VolumeX } from "lucide-react"; // أيقونات للصوت (�
 const Hero = ({ data }: { data: { web: string; mobile: string } }) => {
   const [visible, setVisible] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // تشغيل النص بعد 10.4 ثانية
+    // Show text after 10.4 seconds
     const showTimeout = setTimeout(() => {
       setVisible(true);
     }, 10400);
 
-    return () => clearTimeout(showTimeout);
+    // Check screen size
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Listen for resize events
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      clearTimeout(showTimeout);
+      window.removeEventListener("resize", checkScreenSize);
+    };
   }, []);
 
   const handleToggleMute = () => {
@@ -29,27 +44,30 @@ const Hero = ({ data }: { data: { web: string; mobile: string } }) => {
 
   return (
     <div className="h-screen relative overflow-hidden">
-      {/* فيديو الخلفية */}
-      <video
-        ref={videoRef}
-        className="absolute md:hidden inset-0 w-full h-full object-cover"
-        src={data.mobile}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-      />
-      <video
-        ref={videoRef}
-        className="absolute hidden md:block inset-0 w-full h-full object-cover"
-        src={data.web}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-      />
+      {/* Only render one video based on screen size */}
+      {isMobile ? (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          src={data.mobile}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          src={data.web}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        />
+      )}
 
       {/* زر التحكم بالصوت */}
       <button

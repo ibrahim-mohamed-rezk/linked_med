@@ -1,7 +1,11 @@
+"use client";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const Services = ({ data }: { data: { web: string; mobile: string } }) => {
+  const [isMobile, setIsMobile] = useState(true);
   const t = useTranslations("HomePage");
+
   const outServices = [
     { service: t("out_services.service1") },
     { service: t("out_services.service2") },
@@ -14,11 +18,32 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
     { service: t("in_services.service3") },
     { service: t("in_services.service4") },
   ];
+
+  useEffect(() => {
+    // Check screen size
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Listen for resize events
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   return (
     <div className="w-full">
       <div className="front-full front-full-story featured1 w-full">
-        <video src={data.mobile} className="md:hidden" autoPlay loop muted />
-        <video src={data.web} className="hidden md:block" autoPlay loop muted />
+        {isMobile ? (
+          <video src={data.mobile} autoPlay loop muted />
+        ) : (
+          <video src={data.web} autoPlay loop muted />
+        )}
 
         <div className="front-full-inner w-full max-w-[1920px] mx-auto">
           <div className="font-full-inner-content front-story w-full">
