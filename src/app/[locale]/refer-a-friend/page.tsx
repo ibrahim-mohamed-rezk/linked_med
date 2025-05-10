@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+// import Image from 'next/image';
 import React from 'react';
 import { useTranslations } from 'next-intl';
 
@@ -20,7 +20,7 @@ const ReferFriendPage: NextPage = () => {
   const t = useTranslations('');
 
   // Pull translated terms from JSON
-  const rules = Array.from({ length: 7 }, (_, i) => t(`rule${i + 1}`));
+  // const rules = Array.from({ length: 7 }, (_, i) => t(`rule${i + 1}`));
 
   return (
     <>
@@ -31,7 +31,7 @@ const ReferFriendPage: NextPage = () => {
       <main className="min-h-screen bg-white py-10 px-4">
         <div className="max-w-3xl mx-auto">
           {/* Logo & Site Name */}
-          <div className="flex items-center mb-4">
+          {/* <div className="flex items-center mb-4">
             <Image
               src="/images/Heart.png"
               alt={t('siteName')}
@@ -42,17 +42,17 @@ const ReferFriendPage: NextPage = () => {
             <h1 className="text-[#0061A7] text-3xl font-bold">
               {t('siteName')}
             </h1>
-          </div>
+          </div> */}
 
           {/* Form Title & Instructions */}
-          <h2 className="text-[#0061A7] text-2xl font-semibold mb-6">
+          {/* <h2 className="text-[#0061A7] text-2xl font-semibold mb-6">
             {t('formTitle')}
-          </h2>
+          </h2> */}
           <p className="text-[#0061A7] mb-8">
             {t('instructions')}{' '}
-            <a href={`mailto:${t('referralEmail')}`} className="underline">
+            {/* <a href={`mailto:${t('referralEmail')}`} className="underline">
               {t('referralEmail')}
-            </a>
+            </a> */}
           </p>
 
           {/* Registration Form */}
@@ -123,7 +123,7 @@ const ReferFriendPage: NextPage = () => {
           </form>
 
           {/* Terms & Conditions Section */}
-          <div
+          {/* <div
             id="terms-section"
             className="mt-10 border-t pt-4 text-xs text-gray-600 space-y-2"
           >
@@ -133,10 +133,10 @@ const ReferFriendPage: NextPage = () => {
             ))}
             <p className="font-semibold">{t('taxHeader')}</p>
             <p>{t('taxNote')}</p>
-          </div>
+          </div> */}
 
           {/* Office Use Section */}
-          <div className="mt-8 flex justify-between items-center text-sm">
+          {/* <div className="mt-8 flex justify-between items-center text-sm">
             <span>{t('officeUse')}</span>
             <div className="space-x-12">
               <span>
@@ -148,7 +148,7 @@ const ReferFriendPage: NextPage = () => {
                 <span className="inline-block w-16 border-b border-gray-400"></span>
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </>
