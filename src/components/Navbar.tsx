@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { langs } from "@/libs/data/langs";
 import { useTranslations, useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { LoginModal, SignupModal } from "./AuthModals";
+import { LoginModal } from "./AuthModals";
 import Image from "next/image";
 import {
   getUserFromCookies,
@@ -23,7 +23,7 @@ const Navbar = () => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isSignupOpen, setIsSignupOpen] = useState(false);
+  // const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [user, setUser] = useState<UserProfile | null>(null);
 
@@ -207,12 +207,12 @@ const Navbar = () => {
                     >
                       {t("login")}
                     </button>
-                    <button
+                    {/* <button
                       onClick={() => setIsSignupOpen(true)}
                       className="px-4 py-2 border border-blue-600 text-blue-600 text-sm rounded-full font-medium hover:bg-blue-50 transition"
                     >
                       {t("singup")}
-                    </button>
+                    </button> */}
                   </>
                 )}
               </div>
@@ -303,7 +303,7 @@ const Navbar = () => {
                       >
                         {t("login")}
                       </button>
-                      <button
+                      {/* <button
                         onClick={() => {
                           setIsSignupOpen(true);
                           setIsMobileMenuOpen(false);
@@ -311,7 +311,7 @@ const Navbar = () => {
                         className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-full text-sm font-medium hover:bg-blue-50 transition"
                       >
                         {t("singup")}
-                      </button>
+                      </button> */}
                     </>
                   )}
                 </div>
@@ -335,11 +335,11 @@ const Navbar = () => {
         }}
         onSwitchModal={() => {
           setIsLoginOpen(false);
-          setIsSignupOpen(true);
+          // setIsSignupOpen(true);
         }}
       />
 
-      <SignupModal
+      {/* <SignupModal
         isOpen={isSignupOpen}
         onClose={() => {
           setIsSignupOpen(false);
@@ -355,7 +355,7 @@ const Navbar = () => {
           setIsSignupOpen(false);
           setIsLoginOpen(true);
         }}
-      />
+      /> */}
     </>
   );
 };
