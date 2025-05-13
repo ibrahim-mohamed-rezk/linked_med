@@ -2,6 +2,11 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 const page = async ({ }: { params: Promise<{ locale: string }> }) => {
+  const images = [
+    "/images/about/iO8gkR4SV0lBOYjmX9eOc.webp",
+    "/images/about/AISelect_20250512_223546_Gallery.webp",
+    "/images/about/AISelect_20250512_223609_Gallery.webp",
+  ];
   const t = await getTranslations("about");
   // const { locale } = await params;
 
@@ -21,14 +26,14 @@ const page = async ({ }: { params: Promise<{ locale: string }> }) => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 grid grid-cols-3 gap-4">
-            {[0, 1, 2].map((_, i) => (
+            {images.map((image, i) => (
               <div
                 key={i}
                 className={`w-full aspect-[1/2] bg-neutral-400 rounded-[20px] overflow-hidden mt-${i * 8}`}
               >
                 <Image
                   className="w-full h-full object-cover"
-                  src="/images/aboutImage.png"
+                  src={image}
                   alt="Team member"
                   width={500}
                   height={1000}
@@ -39,7 +44,7 @@ const page = async ({ }: { params: Promise<{ locale: string }> }) => {
         </div>
       </div>
 
-      
+            
     </div>
   );
 };

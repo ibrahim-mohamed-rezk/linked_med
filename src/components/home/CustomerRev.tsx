@@ -52,7 +52,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const CustomerReviewSlider: React.FC = () => {
+const Testimonials: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -129,9 +129,9 @@ const CustomerReviewSlider: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-gray-50 py-6 overflow-hidden">
+    <div id="testimonials" className="w-full bg-gray-50 py-6 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-['Satoshi_Variable'] text-gray-900 mb-4">Customer Reviews</h2>
+        <h2 className="text-3xl font-['Satoshi_Variable'] text-gray-900 mb-4">Testimonials</h2>
 
         <div className="relative">
           {/* Scroll container */}
@@ -243,4 +243,4 @@ const CustomerReviewSlider: React.FC = () => {
   );
 };
 
-export default CustomerReviewSlider;
+export default Testimonials;

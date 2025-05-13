@@ -1,8 +1,21 @@
+"use client";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const Footer = () => {
+  const router = useRouter();
   const t = useTranslations("footer");
+  const goToTestimonials = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.location.pathname === "/") {
+      const el = document.getElementById("testimonials");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // navigate to home + hash
+      router.push("/#testimonials");
+    }
+  };
 
   return (
     <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
@@ -122,7 +135,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {[
                   "messageFromCeo",
-                  "blogs/Events",
+                  // "blogs/Events",
                   "Testimonials",
                   "workWithUs",
                 ].map((item) => (
@@ -133,6 +146,12 @@ const Footer = () => {
                     {t(item)}
                   </li>
                 ))}
+                <li
+                  onClick={goToTestimonials}
+                  className="text-[#111127] cursor-pointer text-sm sm:text-base font-bold"
+                >
+                  {t("Testimonials")}
+                </li>
               </ul>
             </div>
 
