@@ -136,7 +136,7 @@ const Footer = () => {
                 {[
                   "messageFromCeo",
                   // "blogs/Events",
-                  "Testimonials",
+                  // "Testimonials",
                   "workWithUs",
                 ].map((item) => (
                   <li
