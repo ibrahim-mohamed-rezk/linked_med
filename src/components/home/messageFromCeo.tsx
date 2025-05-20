@@ -4,10 +4,10 @@ import CEO from "@/../public/images/Home/CEO_2.png";
 
 export default function MessageFromCeo() {
   return (
-    <div className="relative px-4 bg-white overflow-hidden h-[600px]">
+    <div className="relative px-4 bg-white overflow-hidden h-[900px] lg:h-[600px]">
       {/* Background Title Full Width One Line with Outline */}
       <h1
-        className="absolute top-0 left-0 w-full text-center text-[7rem] lg:text-[10rem] font-bold text-transparent tracking-tight select-none z-0 whitespace-nowrap overflow-hidden"
+        className="absolute top-0 left-0 w-full  text-center text-[5rem] lg:text-[10rem] font-bold text-transparent tracking-tight select-none z-0 whitespace-nowrap overflow-hidden"
         style={{
           WebkitTextStroke: "1px #d1d5db",
         }}
