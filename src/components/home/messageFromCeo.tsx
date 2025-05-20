@@ -23,14 +23,14 @@ export default function MessageFromCeo() {
             <QuoteSvgTop />
           </div>
 
-          <p className="text-gray-800 text-lg mt-20">
+          <p className="text-gray-800 text-lg mt-20 font-Inter font-medium">
             From the initial meeting to the final delivery, Ethan has created a
             feeling of trust and delivered everything we asked of him. The
             quality of his work speaks for itself and he is able to execute at a
             pace. He is an excellent Webflow developer and we will be calling on
             his services again, very soon.
           </p>
-          <p className="text-sm text-blue-500">
+          <p className="text-sm text-blue-500 pt-6">
             Message from cso <br />
             <span className="text-xs text-gray-500">@Mohammed</span>
           </p>
