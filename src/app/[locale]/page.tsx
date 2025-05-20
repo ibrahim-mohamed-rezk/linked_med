@@ -6,7 +6,7 @@ import Testimonials from "@/components/home/CustomerRev";
 import MapImage from "@/components/home/MapImage";
 import { getData } from "@/libs/server/server";
 import { HomeTypes } from "@/libs/helpers/types";
-
+import MessageFromCeo from "@/components/home/messageFromCeo";
 export default async function Home() {
   const feachData = async () => {
     try {
@@ -29,6 +29,7 @@ export default async function Home() {
         <MapImage />
         {/* <Map /> */}
         {/* <Testimonials />*/}
+        <MessageFromCeo />
         <Testimonials />
       </main>
     </div>
