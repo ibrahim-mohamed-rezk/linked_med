@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import CEO from "@/../public/images/Home/CEO_2.png";
+import { useTranslations } from "next-intl";
 
 export default function MessageFromCeo() {
+  const t = useTranslations("");
   return (
     <div className="relative px-4 bg-white overflow-hidden h-[900px] lg:h-[600px]">
       {/* Background Title Full Width One Line with Outline */}
@@ -12,7 +14,7 @@ export default function MessageFromCeo() {
           WebkitTextStroke: "1px #d1d5db",
         }}
       >
-        Message from cso
+        {t("messageFromCeo")}
       </h1>
 
       {/* Foreground Content */}
@@ -24,15 +26,11 @@ export default function MessageFromCeo() {
           </div>
 
           <p className="text-gray-800 text-lg mt-20 font-Inter font-medium">
-            From the initial meeting to the final delivery, Ethan has created a
-            feeling of trust and delivered everything we asked of him. The
-            quality of his work speaks for itself and he is able to execute at a
-            pace. He is an excellent Webflow developer and we will be calling on
-            his services again, very soon.
+            {t("ceotext")}
           </p>
           <p className="text-sm text-blue-500 pt-6">
-            Message from cso <br />
-            <span className="text-xs text-gray-500">@Mohammed</span>
+            {t("Message from cso")} <br />
+            <span className="text-xs text-gray-500">@Mr. Hany</span>
           </p>
 
           {/* Bottom-right SVG */}
