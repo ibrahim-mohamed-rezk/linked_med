@@ -7,6 +7,7 @@ import MapImage from "@/components/home/MapImage";
 import { getData } from "@/libs/server/server";
 import { HomeTypes } from "@/libs/helpers/types";
 import MessageFromCeo from "@/components/home/messageFromCeo";
+import WhyLinkedMid from "@/components/home/WhyLinkedMid";
 export default async function Home() {
   const feachData = async () => {
     try {
@@ -30,6 +31,7 @@ export default async function Home() {
         {/* <Map /> */}
         {/* <Testimonials />*/}
         <MessageFromCeo />
+        <WhyLinkedMid />
         <Testimonials />
       </main>
     </div>

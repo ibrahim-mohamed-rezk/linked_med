@@ -568,7 +568,13 @@
     "taxNote": "Participation may be subject to taxes; individuals should seek their own advice.",
     "officeUse": "For Office Use Only",
     "dateReceived": "Date Received:",
-    "initials": "Initials:"
+    "initials": "Initials:",
+    "Home":{
+      "journey": "Every great journey begins with a single, brave step—and at LinkedMed, we walk that step with you.",
+      "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
+      "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
+      "button": "Start your dream!"
+    }
   
   
 }

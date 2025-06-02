@@ -610,6 +610,13 @@
 "rule4": "4. يجب ألا يكون المرشح قد تم إحالته سابقًا.",
 "rule5": "5. يجب ألا يكون المرشح قد أجرى مقابلة عبر هيد ميديكال من قبل.",
 "rule6": "6. يتم دفع المكافآت بعد بدء المرشح مهامه أو حصوله على دور دائم.",
-"rule7": "7. تحتفظ هيد ميديكال بحق تغيير أو إلغاء النظام في أي وقت."
+"rule7": "7. تحتفظ هيد ميديكال بحق تغيير أو إلغاء النظام في أي وقت.",
+"Home":{
+  "journey": "Every great journey begins with a single, brave step—and at LinkedMed, we walk that step with you.",
+  "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
+  "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
+  "button": "Start your dream!"
+}
+
     
 }
