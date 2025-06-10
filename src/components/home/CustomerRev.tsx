@@ -129,7 +129,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <div id="testimonials" className="w-full bg-gray-50 py-6 overflow-hidden">
+    <div id="testimonials" className="w-full bg-[#000] py-6 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-['Satoshi_Variable'] text-gray-900 mb-4">Testimonials</h2>
 
