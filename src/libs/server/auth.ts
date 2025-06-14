@@ -110,7 +110,7 @@ export const signup = async (
   credentials: SignupCredentials
 ): Promise<ApiResponse> => {
   try {
-    const response = await postData("/signup", credentials);
+    const response = await postData("/register", credentials);
 
     // Store auth data in cookies
     storeAuthData(response);
