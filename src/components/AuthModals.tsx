@@ -241,6 +241,7 @@ export const SignupModal: React.FC<AuthModalProps> = ({
       const response = await signup({
         email,
         password,
+        password_confirmation: confirmPassword,
       });
 
       // Use the message from the API response or fallback to translation
