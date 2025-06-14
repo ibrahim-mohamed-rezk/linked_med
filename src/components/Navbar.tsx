@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { LoginModal } from "./AuthModals";
 import { SignupModal } from "./AuthModals";
 import Image from "next/image";
+import { UserRound } from 'lucide-react';
 import {
   getUserFromCookies,
   isAuthenticated,
@@ -166,7 +167,13 @@ const Navbar = () => {
 
                 {/* User Menu or Auth Buttons */}
                 {user ? (
-                  <div className="relative" ref={userMenuRef}>
+                  <div className="relative flex gap-2 items-center" ref={userMenuRef}>
+
+                    <Link href="/myprofile" locale={locale}>
+                      <UserRound size={24} color="black" className="cursor-pointer" />
+                    </Link>
+
+
                     <button
                       onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                       className="flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition"
@@ -187,6 +194,8 @@ const Navbar = () => {
                       </svg>
                     </button>
 
+
+
                     {isUserMenuOpen && (
                       <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                         <div className="py-1">
@@ -198,6 +207,7 @@ const Navbar = () => {
                           </button>
                         </div>
                       </div>
+
                     )}
                   </div>
                 ) : (
