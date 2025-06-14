@@ -1,4 +1,39 @@
 {
+  "Refer":{
+    "referFriend": {
+      "pageTitle": "Refer a Friend",
+      "heading": "Help Change a Life, Earn a Reward",
+      "intro": "At LinkedMed, some of our most inspiring success stories began with a simple conversation between friends...\n\n✅ Fill out our Referral Rewards Registration Form\n✅ Introduce a friend or colleague to LinkedMed\n✅ If they’re successfully placed, you’ll receive a cash reward.",
+      "referrerSection": "Your Information (Referrer)",
+      "candidateSection": "Your Friend's Information (Candidate)",
+      "fields": {
+        "referrerName": "Full Name",
+        "referrerEmail": "Email Address",
+        "referrerPhone": "Phone Number",
+        "workedWith": "Have you worked with LinkedMed before?",
+        "referrerMessage": "Short Message (e.g., Why I’m referring this person)",
+        "candidateName": "Candidate's Full Name",
+        "candidateEmail": "Candidate's Email Address",
+        "candidatePhone": "Candidate's Phone Number",
+        "country": "Country of Residence",
+        "profession": "Profession",
+        "specialty": "Specialty (if applicable)",
+        "experience": "Experience Level",
+        "location": "Interested in working in",
+        "language": "Language Proficiency"
+      },
+      "yes": "Yes",
+      "no": "No",
+      "consent1": "I confirm that I have my friend's consent to share their contact information with LinkedMed.",
+      "consent2": "I agree to the LinkedMed referral terms and privacy policy.",
+      "submit": "Submit Referral",
+      "thankYouTitle": "Thank You for Referring a Future Healthcare Hero!",
+      "thankYouMessage": "We’ll reach out to your friend soon—and once they begin their journey with LinkedMed, you’ll receive your cash reward. Stay tuned!",
+      "showTerms": "View Terms & Conditions",
+      "hideTerms": "Hide Terms & Conditions",
+      "terms": "1. Referrals must be submitted via our official form...\n2. There is no limit to how many...\n...\n11. By participating in this program, you acknowledge and accept these terms in full."
+    }
+  },
   "messageFromCeo": "Message from the CEO",
   "ceotext": "From the first meeting to the final delivery, Ethan Vina instilled confidence and provided everything we asked for. The quality of his work speaks for itself—he can execute quickly. He is an excellent Webflow developer, and we will work with him again very soon.",
   "Message from cso": "Message from the Civil Society Organization",
@@ -574,7 +609,60 @@
       "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
       "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
       "button": "Start your dream!"
+    },
+      "linkedmed": {
+        "hero": {
+          "title": "Our Story: A Journey Beyond Borders",
+          "subtitle": "It started with a simple truth—",
+          "truth": "Talent is everywhere. But opportunity is not.",
+          "description": "In hospitals across the Arab world, we met doctors filled with potential, nurses brimming with compassion, and pharmacists ready to serve. But between them and their dreams stood language barriers, complex visa systems, endless paperwork, and, above all, uncertainty.",
+          "birth": "That's when LinkedMed was born. Not just as a company, but as a mission. A promise.",
+          "vision": "Founded in Dubai, LinkedMed began as a vision: to empower healthcare professionals with the tools, support, and guidance to build a better life beyond borders. We didn't just want to recruit—we wanted to uplift. To transform careers. To change lives."
+        },
+        "journey": {
+          "title": "From One Dream to Many",
+          "start": "From that vision, our journey took off.",
+          "expansion": "We built our foundation in Dubai, but quickly expanded to Germany—where our candidates now work in over 400 trusted hospitals and clinics. From Berlin to Munich, LinkedMed professionals are thriving, respected, and building lives they once only dreamed of.",
+          "cairo": "And now, we're proud to open our third branch—in Cairo. Why? Because this mission is personal. Because Egypt, and the Arab world, is full of brilliance waiting to be seen. Because the next doctor, the next nurse, the next leader is out there—and we're here to help them rise."
+        },
+        "process": {
+          "title": "More Than a Process—It's a Journey",
+          "description": "We know your journey is more than a checklist. It's a decision to believe in yourself. To choose growth. And to face uncertainty with courage.",
+          "support": "That's why LinkedMed supports you at every step:",
+          "steps": {
+            "language": "We teach you the German language—not just conversational, but with depth.",
+            "exam": "We train you to pass the specialized scientific language exam, required to practice in Germany's healthcare system—through our advanced e-learning platform, accessible anytime, anywhere.",
+            "documents": "We prepare your documents, verify them, and guide you through every embassy step.",
+            "matching": "We match you with the right employer, where your skills are needed and your future can grow.",
+            "support": "We support you on the ground, from your arrival to your first day, and beyond."
+          },
+          "logistics": "This isn't just logistics.",
+          "transformation": "This is transformation."
+        },
+        "stories": {
+          "title": "Real People. Real Stories.",
+          "aya": "Like Dr. Aya from Syria—who was ready to give up until LinkedMed stepped in. Today, she's a pediatrician in Cologne, mentoring new arrivals.",
+          "mahmoud": "Or Mahmoud, a nurse from Giza, who studied late nights on our platform, passed the Fachsprachprüfung, and now sends photos in scrubs with the caption: \"I made it.\"",
+          "notPlacements": "These are not just placements.",
+          "newBeginnings": "They are new beginnings."
+        },
+        "identity": {
+          "title": "This Is Who We Are",
+          "notAgents": "We are not agents.",
+          "notService": "We are not a service.",
+          "believers": "We are believers.",
+          "potential": "In potential.",
+          "people": "In people.",
+          "you": "In you.",
+          "connect": "At LinkedMed, we don't just connect you to a job.",
+          "future": "We connect you to a future.",
+          "bigger": "One that's bigger, brighter, and finally within reach.",
+          "ready": "So if you're ready to rise—",
+          "walkBeside": "We're ready to walk beside you."
+        },
+        "cta": {
+          "welcome": "🌍 Welcome to LinkedMed. Your journey starts here.",
+          "button": "🎯 Start Your Journey Now"
+        }
+      }
     }
-  
-  
-}

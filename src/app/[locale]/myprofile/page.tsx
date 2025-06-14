@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { UserDataTypes } from "@/libs/helpers/types";
-
+import TabsProfile from "./TabsProfile";
 const Page = () => {
   const t = useTranslations("Profile");
   const [user, setUser] = useState<UserDataTypes>({
@@ -444,6 +444,8 @@ const Page = () => {
           </div>
         </div>
       </div>
+
+      <TabsProfile />
     </div>
   );
 };
