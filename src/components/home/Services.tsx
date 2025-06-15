@@ -47,7 +47,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
 
         <div className="front-full-inner w-full max-w-[1920px] mx-auto">
           <div className="font-full-inner-content front-story w-full">
-            <h3 className="text-[clamp(25px,3.125vw,60px)] w-full text-center font-bold leading-snug text-white">
+            <h3 className="text-[clamp(42px,4.27083vw,82px)] w-full text-center font-bold leading-snug text-white">
               {t("our_services")}
             </h3>
             <div className="flex px-[5px] gap-[20px] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">

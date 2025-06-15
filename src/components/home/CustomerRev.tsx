@@ -59,7 +59,7 @@ const Testimonials: React.FC = () => {
   const animationRef = useRef<number>(0);
   // Initialize with null and include null in the type
   const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const cardWidth = 320; // This should match the width of your cards with margin
+  const cardWidth = 380; // Increased from 320 to 380 for larger cards
   const scrollSpeed = 1.5; // pixels per frame - increase for faster scrolling
 
   // Create an extended array for infinite scrolling effect
@@ -116,11 +116,11 @@ const Testimonials: React.FC = () => {
   // Render stars based on rating
   const renderStars = (starCount: number = 5) => {
     return (
-      <div className="flex items-center mt-1">
+      <div className="flex items-center mt-2">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            size={14}
+            size={16}
             className={i < starCount ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
           />
         ))}
@@ -129,9 +129,9 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <div id="testimonials" className="w-full bg-[#000] py-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-['Satoshi_Variable'] text-white mb-4">Testimonials</h2>
+    <div id="testimonials" className=" w-full bg-[#000] py-8 px-11 overflow-hidden">
+      <div className="w-full px-6">
+        <h2 className="text-4xl font-['Satoshi_Variable'] text-white mb-6 text-center">Testimonials</h2>
 
         <div className="relative">
           {/* Scroll container */}
@@ -144,13 +144,13 @@ const Testimonials: React.FC = () => {
             {extendedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
-                className="flex-shrink-0 w-64 md:w-72 lg:w-80 mx-2.5 flip-card h-80"
+                className="flex-shrink-0 w-80 md:w-86 lg:w-96 mx-3 flip-card h-96"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
               >
                 <div className="flip-card-inner">
                   {/* Front of card */}
-                  <div className="flip-card-front rounded-lg overflow-hidden shadow-sm bg-black">
+                  <div className="flip-card-front rounded-xl overflow-hidden shadow-lg bg-black">
                     <div className="w-full h-full relative">
                       <Image
                         src={testimonial.image || '/api/placeholder/300/300'}
@@ -160,20 +160,23 @@ const Testimonials: React.FC = () => {
                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                         priority={index < 4}
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-3 backdrop-blur-sm">
-                        <h3 className="font-['Satoshi_Variable'] text-white bg-black py-1">{testimonial.name}</h3>
+                      <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-4 backdrop-blur-sm">
+                        <h3 className="font-['Satoshi_Variable'] text-lg text-white bg-black py-2 px-2 rounded">{testimonial.name}</h3>
                         {renderStars(testimonial.stars)}
                       </div>
                     </div>
                   </div>
 
                   {/* Back of card */}
-                  <div className="flip-card-back bg-blue-900 text-white rounded-lg overflow-hidden shadow-sm p-6 flex flex-col justify-between">
+                  <div className="flip-card-back bg-blue-900 text-white rounded-xl overflow-hidden shadow-lg p-8 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-['Satoshi_Variable'] text-lg mb-3">{testimonial.name}</h3>
-                      <p className="text-sm leading-relaxed overflow-y-auto max-h-40">
+                      <h3 className="font-['Satoshi_Variable'] text-xl mb-4">{testimonial.name}</h3>
+                      <p className="text-base leading-relaxed overflow-y-auto max-h-48">
                         {testimonial.testimonial}
                       </p>
+                    </div>
+                    <div className="mt-4">
+                      {renderStars(testimonial.stars)}
                     </div>
                   </div>
                 </div>
@@ -182,21 +185,21 @@ const Testimonials: React.FC = () => {
           </div>
 
           {/* Navigation buttons */}
-          <div className="flex justify-between mt-4 px-2">
+          <div className="flex justify-center space-x-8 mt-6 px-6">
             <button
               onClick={() => handleScroll('left')}
-              className="p-2 rounded-full text-gray-600 hover:bg-gray-200 z-10"
+              className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10"
               aria-label="Previous reviews"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-6 w-6" />
             </button>
 
             <button
               onClick={() => handleScroll('right')}
-              className="p-2 rounded-full text-gray-600 hover:bg-gray-200 z-10"
+              className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10"
               aria-label="Next reviews"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-6 w-6" />
             </button>
           </div>
         </div>
