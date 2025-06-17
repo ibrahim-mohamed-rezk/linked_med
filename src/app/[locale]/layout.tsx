@@ -7,6 +7,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer";
+import SocialMediaIcons from "@/components/SocialMediaIcons";  // Import the server-side component
 
 export const metadata: Metadata = {
   title: "Linked Med",
@@ -38,6 +39,7 @@ export default async function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <SocialMediaIcons />  {/* Server-side Social Media Icons Component */}
         </NextIntlClientProvider>
       </body>
     </html>

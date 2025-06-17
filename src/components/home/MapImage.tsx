@@ -16,7 +16,7 @@ const MapImage = () => {
 
         <div className="front-full-inner max-w-[1920px] mx-auto w-full px-4 sm:px-6 md:px-[8vw] lg:px-[12vw] mt-8">
           <div className="font-full-inner-content front-story w-full">
-            <h3 className="text-2xl sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white text-center md:text-left font-['Satoshi_Variable']">
+            <h3 className="text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-['Satoshi_Variable']">
               {t("carrer")}
             </h3>
             <div className="front-excerpt mt-4 md:mt-6 flex items-center md:items-start justify-center md:justify-start gap-3 sm:gap-4 flex-col text-white w-full">

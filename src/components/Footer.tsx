@@ -138,14 +138,16 @@ const Footer = () => {
 
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
-                {["whyLinkedmed", "Partners"].map((item) => (
-                  <li
-                    key={item}
+                <li
+                  className="text-[#111127] text-sm sm:text-base font-bold"
+                > <Link href={"#why-linkedmed"}>{t("whyLinkedmed")}</Link>
+                </li>
+                <li
                     className="text-[#111127] text-sm sm:text-base font-bold"
                   >
-                    {t(item)}
+                  {t("Partners")}
                   </li>
-                ))}
+
               </ul>
             </div>
 
@@ -161,7 +163,8 @@ const Footer = () => {
                     key={item}
                     className="text-[#111127] text-sm sm:text-base font-bold"
                   >
-                    {t(item)}
+                    <Link href={"#Message-CEO"}>{t(item)}</Link>
+
                   </li>
                 ))}
                 <li

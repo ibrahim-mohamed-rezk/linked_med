@@ -52,11 +52,12 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
             </h3>
             <div className="flex px-[5px] gap-[20px] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
               <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(42px,4.27083vw,82px)] font-bold font-['Satoshi Variable']">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
                   {t("in")}
                 </div>
-                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-start justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                  {inServices?.map((service: { service: string }) => (
+
+                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
+                {inServices?.map((service: { service: string }) => (
                     <li
                       key={service.service}
                       className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
@@ -99,10 +100,10 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                 </svg>
               </div>
               <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(42px,4.27083vw,82px)] font-bold font-['Satoshi Variable']">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
                   {t("out")}
-                  <ul className="w-full max-w-[671px] list-none md:translate-x-[100%] flex flex-col items-start justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                    {outServices?.map((service: { service: string }) => (
+                  <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
+                  {outServices?.map((service: { service: string }) => (
                       <li
                         key={service.service}
                         className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"

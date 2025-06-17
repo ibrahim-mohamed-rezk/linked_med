@@ -1,4 +1,5 @@
 {
+  
   "Refer":{
     "referFriend": {
       "pageTitle": "أوصي بصديق",
@@ -90,11 +91,12 @@
     },
     "mapImage": {
       "welcomePound": "العمل مع LinkedMed (المسار المهني)",
-      "makeForgs": "hr@linkedmedorg",
+      "makeForgs": "hr@linkedmed.org",
       "carrer": "اتصل بنا"
     }
   },
   "footer": {
+    "Testimonials":"الشهادات",
     "missionStatement": "مهمتنا هي تقديم خدمات استثنائية",
     "solutions": "حلول",
     "support": "دعم",
@@ -125,6 +127,7 @@
     "about": "من نحن"
   },
   "header": {
+    "employees":"الموظفين",
     "home": "الصفحة الرئيسية",
     "services": "الخدمات",
     "portfolio": "مجموعة",
@@ -647,10 +650,12 @@
 "rule6": "6. يتم دفع المكافآت بعد بدء المرشح مهامه أو حصوله على دور دائم.",
 "rule7": "7. تحتفظ هيد ميديكال بحق تغيير أو إلغاء النظام في أي وقت.",
 "Home":{
-  "journey": "Every great journey begins with a single, brave step—and at LinkedMed, we walk that step with you.",
-  "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
-  "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
-  "button": "Start your dream!"
+  "CEO":"الرئيس التنفيذي",
+  "Message from":"رسالة من",
+  "journey": "كل رحلة عظيمة تبدأ بخطوة واحدة شجاعة—وفي LinkedMed، نخطو هذه الخطوة معك.",
+  "connect": "نحن لا نربط فقط المهنيين الصحيين بالوظائف—بل نساعدك في بناء حياة ذات هدف في الخارج. على مدار السنوات الأربع الماضية، وجهنا المئات نحو مهن في ألمانيا، محولين الطموح إلى حقيقة من خلال عقود آمنة ونجاح في الحصول على التأشيرات.",
+  "roots": "من جذورنا في دبي إلى ألمانيا، والآن القاهرة، نحن أقرب من أي وقت مضى إلى قلب المجتمع الطبي العربي—مستعدون لدعمك بأدوات تعلم ذكية، وإرشاد عملي، وشركاء عالميين موثوقين.",
+  "button": "ابدأ حلمك!"
 },
   "linkedmed": {
     "hero": {
@@ -706,5 +711,9 @@
       "welcome": "🌍 مرحبًا بك في LinkedMed. رحلتك تبدأ هنا.",
       "button": "🎯 ابدأ رحلتك الآن"
     }
+  },
+  "whyLinkedMed":{
+    "title": "لماذا LinkedMed؟",
+    "description1": "يمكن أن تكون مثل الخريطة المرفقة ولكن تفاعلية، مع وميض الدول (ألمانيا، دبي، مصر، لندن، كولومبيا)."
   }
 }

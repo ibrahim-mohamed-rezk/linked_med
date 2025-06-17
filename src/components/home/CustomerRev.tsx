@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Image from 'next/image';
-
+import { useTranslations } from 'next-intl';
 // Define the Testimonial type with stars
 interface Testimonial {
   name: string;
@@ -77,7 +77,7 @@ const Testimonials: React.FC = () => {
     }
     animationRef.current = requestAnimationFrame(animateScroll);
   };
-
+  const t = useTranslations('footer');
   // Handle manual navigation with exact page control
   const handleScroll = (direction: 'left' | 'right') => {
     // Clear any existing timeout
@@ -131,9 +131,9 @@ const Testimonials: React.FC = () => {
   return (
     <div id="testimonials" className=" w-full bg-[#000] py-8 px-11 overflow-hidden">
       <div className="w-full px-6">
-        <h2 className="text-4xl font-['Satoshi_Variable'] text-white mb-6 text-center">Testimonials</h2>
+        <h2 className="text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-['Satoshi_Variable']">{t("Testimonials")}</h2>
 
-        <div className="relative">
+        <div className="relative mt-10">
           {/* Scroll container */}
           <div
             ref={scrollContainerRef}

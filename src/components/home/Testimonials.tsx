@@ -92,8 +92,8 @@ const Testimonials = () => {
               }}
               className="absolute w-full top-[-620px] inset-0 flex items-center justify-center"
             >
-              <h2 className="relative opacity-10 justify-center text-[#8cb0fd]/60 text-[clamp(55px,15.625vw,300px)] font-bold font-['Inter']">
-                Testimonials
+              <h2 className="relative opacity-10 justify-center text-[#8cb0fd]/60 text-[clamp(55px,15.625vw,300px)] font-bold font-['Satoshi_Variable']">
+                Testimonialsing
               </h2>
             </div>
             <div className="">

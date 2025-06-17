@@ -23,7 +23,7 @@ export default async function Home() {
   // console.log("homeData", homeData);
   return (
     <div>
-      <main className="w-full">
+      <main className="w-full bg-black text-white">
         <Hero data={homeData.intro} />
         <About data={homeData.about} />
         <Services data={homeData.service} />

@@ -73,9 +73,9 @@ const page = async () => {
             {/* Step 3 */}
             <div className="relative flex items-center w-full">
               <div className="w-1/2 pr-8 flex justify-end">
-                <div className="bg-blue-100 p-4 rounded-lg shadow-md w-64">
+                <div className="bg-blue-100 p-4 rounded-lg shadow-md w-96 h-60">
                   <h4 className="font-bold">{t("Interview Coordination")}</h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-base text-gray-600">
                     {t(
                       "Candidates who pass the review are invited for interviews. Coordination between candidates and interviewers is handled seamlessly to align schedules. We streamline the interview process, ensuring a smooth and efficient experience for both candidates and employers."
                     )}

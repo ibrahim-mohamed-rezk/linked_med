@@ -90,7 +90,7 @@
     },
     "mapImage": {
       "welcomePound": "Работайте с LinkedMed (Карьера)",
-      "makeForgs": "hr@linkedmedorg",
+      "makeForgs": "hr@linkedmed.org",
       "carrer": "Свяжитесь с нами"
     }
   },
@@ -125,6 +125,7 @@
     "about": "О нас"
   },
   "header": {
+    "employees": "Сотрудники",
     "home": "Главная",
     "services": "Услуги",
     "portfolio": "Портфолио",
@@ -602,10 +603,12 @@
          "dateReceived": "Дата получения:",
          "initials": "Инициалы:",
          "Home":{
+          "CEO":"CEO",
+      "Message from": "Сообщение от",
           "journey": "Every great journey begins with a single, brave step—and at LinkedMed, we walk that step with you.",
           "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
           "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
-          "button": "Start your dream!"
+          "button": "Начни свою мечту!"
          },
           "linkedmed": {
             "hero": {
@@ -661,5 +664,9 @@
               "welcome": "🌍 Добро пожаловать в LinkedMed. Ваше путешествие начинается здесь.",
               "button": "🎯 Начните своё путешествие сейчас"
             }
+          },
+          "whyLinkedMed":{
+            "title": "Почему LinkedMed?",
+    "description1": "Может быть как прикреплённая карта, но интерактивная, с мигающими странами (Германия, Дубай, Египет, Лондон, Колумбия)."
           }
         }
