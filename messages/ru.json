@@ -38,31 +38,19 @@
   "ceotext": "С первой встречи и до окончательной сдачи проекта Итан Вина внушал доверие и предоставил всё, что мы у него просили. Качество его работы говорит само за себя — он способен быстро всё реализовать. Он отличный разработчик на Webflow, и мы скоро снова с ним будем сотрудничать.",
   "Message from cso": "Сообщение от организации гражданского общества",
   "about":{
-    "title": "О нас",
-    "aboutText": "С двадцатилетним опытом в сфере подбора персонала и решений для здравоохранения, компания LinkedMed была основана в 2022 году, открыв свой первый офис в Дубае — центре медицинских инноваций и глобальных связей Расширяясь, мы запустили офис во Франкфурте — ключевом центре европейского здравоохранения — и сейчас готовимся выйти на рынок Каира, укрепляя позиции в ведущих медицинских центрах LinkedMed — ведущая рекрутинговая компания в сфере здравоохранения, специализирующаяся на поиске, аккредитации и трудоустройстве высококвалифицированных медицинских специалистов в более чем 10 странах Мы сотрудничаем с передовыми медицинскими учреждениями по всему миру, обеспечивая эффективную интеграцию врачей, хирургов, медсестёр, фармацевтов и других медицинских специалистов в клиники высокого уровня Наша миссия — повышать стандарты здравоохранения, соединяя выдающихся медицинских специалистов с престижными учреждениями по всему миру Посредством стратегических решений в области подбора кадров мы устраняем разрыв между экспертностью и возможностями, способствуя улучшению качества медицинской помощи и развитию глобальной медицины",
-    "From Application to Onboarding": "От подачи заявки до выхода на работу",
-    "A Seamless Process": "Бесшовный процесс",
-    "Candidates initiate their journey by submitting applications": "Кандидаты начинают свой путь с подачи заявок",
-  "Language Training":"Языковая подготовка",
-  "Training to enhance communication skills for candidates": "Обучение для улучшения навыков общения для кандидатов",
-    "Application Submission": "Подача заявки",
-    "Candidates initiate their journey by submitting applications through our online platform They can upload credentials and details easily": "Кандидаты начинают свой путь, подавая заявки через нашу онлайн-платформу Они могут легко загрузить документы и данные",
-    "Review Process": "Процесс проверки",
-    "Submitted applications go through a review process considering qualifications, experience, and language proficiency": "Поданные заявки проходят проверку с учетом квалификации, опыта и владения языком",
-    "Interview Coordination": "Организация собеседования",
-    "Candidates who pass the review are invited for interviews We coordinate schedules to ensure an efficient experience": "Кандидаты, прошедшие отбор, приглашаются на собеседование Мы координируем расписание для эффективного взаимодействия",
-    "Offer Presentation": "Предложение работы",
-    "Onboarding Procedures": "Процедура адаптации",
-    "Accepted candidates enter the onboarding phase with orientation and training for a smooth transition into the German healthcare system": "Принятые кандидаты проходят вводный этап с обучением для плавной интеграции в систему здравоохранения Германии",
-    "Candidates initiate their journey by submitting applications through wwwlinkedinmedorg, ensuring that all required information is captured effectively Our online platform simplifies the application process, allowing candidates to upload their credentials and details conveniently": "Кандидаты начинают свой путь с подачи заявок через wwwlinkedinmedorg, обеспечивая эффективный сбор всей необходимой информации Наша онлайн-платформа упрощает процесс подачи заявки, позволяя кандидатам удобно загружать свои документы и данные",
-    "Submitted applications undergo a thorough review process Qualified personnel evaluate candidates based on predefined criteria, ensuring only the best move forward Our team carefully considers your experience, qualifications, and language proficiency to find the perfect match": "Поданные заявки проходят тщательную проверку Квалифицированный персонал оценивает кандидатов на основе заранее определенных критериев, гарантируя, что только лучшие проходят дальше Наша команда внимательно учитывает ваш опыт, квалификацию и уровень владения языком, чтобы найти идеальное соответствие",
-    "Candidates who pass the review are invited for interviews Coordination between candidates and interviewers is handled seamlessly to align schedules We streamline the interview process, ensuring a smooth and efficient experience for both candidates and employers": "Кандидаты, прошедшие отбор, приглашаются на собеседование Координация между кандидатами и интервьюерами осуществляется без проблем для согласования расписания Мы упрощаем процесс собеседования, обеспечивая плавный и эффективный опыт как для кандидатов, так и для работодателей",
-    "Successful candidates receive formal offers, which detail job roles and responsibilities, ensuring clarity and transparency Our team works closely with employers to ensure that the offers meet your expectations and reflect your desired career path": " Успешные кандидаты получают официальные предложения, в которых подробно изложены роли и обязанности, обеспечивая ясность и прозрачность Наша команда тесно сотрудничает с работодателями, чтобы гарантировать, что предложения соответствуют вашим ожиданиям и отражают желаемый карьерный путь",
-    "Once candidates accept offers, they enter the onboarding phase, which includes orientation sessions and training to equip them for their new roles We support your transition into the German healthcare system, providing guidance on regulations, procedures, and cultural nuances": " После того, как кандидаты принимают предложения, они переходят в этап адаптации, который включает вводные сессии и обучение для подготовки к новым ролям Мы поддерживаем вашу интеграцию в систему здравоохранения Германии, предоставляя рекомендации по правилам, процедурам и культурным нюансам",
-    "": ""
-    
+    "Seamless Process": "Бесшовный процесс",
+    "From Application to Onboarding": "От подачи заявки до включения в процесс",
+    "Submit Application": "Подача заявки",
+    "Candidates submit": "Кандидаты подают заявки через платформу, обеспечивая правильную фиксацию всей необходимой информации.",
+    "Review Application": "Процесс проверки",
+    "Applications": "Поданные заявки проверяются квалифицированным персоналом, чтобы убедиться, что только лучшие кандидаты продолжают процесс.",
+    "Coordinate Interview": "Координация собеседований",
+    "Candidate": "Кандидаты, прошедшие проверку, приглашаются на собеседования, при этом координация для согласования расписания проходит без проблем.",
+    "Offer Job": "Предложение работы",
+    "Successful": "Успешные кандидаты получают официальные предложения с четким описанием ролей и обязанностей.",
+    "Onboard": "Процесс адаптации",
+    "Candidates": "Кандидаты, принявшие предложения, проходят процесс адаптации, включая ориентационные сессии и обучение."
   },
-  
   "HomePage": {
     "our_services": "Наши услуги",
     "about_us": "О нас",
@@ -125,7 +113,7 @@
     "about": "О нас"
   },
   "header": {
-    "employees": "Сотрудники",
+    "managers":"менеджеры",
     "home": "Главная",
     "services": "Услуги",
     "portfolio": "Портфолио",
