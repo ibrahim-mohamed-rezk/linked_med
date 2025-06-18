@@ -115,7 +115,7 @@ const Navbar = () => {
                 ))}
 
               </div>
-              <button className="px-4 py-2 bg-blue-500 text-white text-sm rounded-full font-medium hover:bg-blue-700 transition">{t("managers")}</button>
+              <button className="px-4 py-2 bg-blue-500 text-white text-sm rounded-full font-medium hover:bg-blue-700 transition">{t("employers")}</button>
 
               {/* Desktop Buttons */}
               <div className="hidden lg:flex items-center gap-4">
