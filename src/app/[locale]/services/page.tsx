@@ -11,12 +11,18 @@ const services = [
 ];
 
 export default function EnhancedTimelinePage() {
-  const data = useAnimationControls()
   const containerRef = useRef<HTMLDivElement>(null);
   const [activePoint, setActivePoint] = useState<number | null>(null);
   const [dimensions, setDimensions] = useState({ width: 1200, height: 1400 });
-  const pointControls = useRef(services.map(() => data)); // Initialize animation controls for each service outside the callback
   const svgControls = useAnimationControls();
+  
+  // Fixed animation controls initialization
+  const pointControls = [
+    useAnimationControls(),
+    useAnimationControls(),
+    useAnimationControls(),
+    useAnimationControls()
+  ];
 
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end end'] });
 
@@ -58,7 +64,7 @@ export default function EnhancedTimelinePage() {
 
           if (isActive && activePoint !== idx) setActivePoint(idx);
 
-          pointControls.current[idx].start({
+          pointControls[idx].start({
             opacity: inRange ? (isActive ? 1 : 0.7) : 0.3,
             y: inRange ? 0 : 30,
             scale: inRange ? (isActive ? 1.2 : 1) : 0.8,
@@ -127,7 +133,7 @@ export default function EnhancedTimelinePage() {
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                animate={pointControls.current[idx]}
+                animate={pointControls[idx]}
                 className="absolute cursor-pointer"
                 style={{ top: y, left: x, transform: 'translate(-50%, -50%)' }}
                 onClick={() => scrollToPoint(idx)}
@@ -165,7 +171,7 @@ export default function EnhancedTimelinePage() {
                 className="w-16 h-16 rounded-full bg-indigo-500 mb-3 flex items-center justify-center"
                 animate={{
                   scale: activePoint === idx ? 1.3 : 1,
-                  backgroundColor: activePoint === idx ? '#a5b4fc' : '#a5b4fc',
+                  backgroundColor: activePoint === idx ? '#6366f1' : '#a5b4fc',
                 }}
                 transition={{ duration: 0.3 }}
               >

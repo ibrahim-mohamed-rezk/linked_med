@@ -54,7 +54,7 @@ const page = async () => {
                 </div>
               </div>
               <div
-                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-blue-500 rounded-full border-4 border-white shadow-md absolute bottom-[-15px] ${
+                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-white rounded-full border-4 border-white  absolute bottom-[-15px] ${
                   isRTL ? "right-1/2 transform translate-x-1/2" : "left-1/2 transform -translate-x-1/2"
                 } md:static md:bottom-auto spin`}
               >
@@ -71,7 +71,7 @@ const page = async () => {
             <div className="relative flex flex-col md:flex-row items-center w-full">
               <div className="w-full md:w-1/2 pr-8 flex justify-end"></div>
               <div
-                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-blue-500 rounded-full border-4 border-white shadow-md absolute bottom-[-15px] ${
+                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-white rounded-full border-4 border-white  absolute bottom-[-15px] ${
                   isRTL ? "left-1/2 transform -translate-x-1/2" : "right-1/2 transform translate-x-1/2"
                 } md:static md:bottom-auto spin`}
               >
@@ -102,7 +102,7 @@ const page = async () => {
                 </div>
               </div>
               <div
-                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-blue-500 rounded-full border-4 border-white shadow-md absolute bottom-[-15px] ${
+                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-white rounded-full border-4 border-white  absolute bottom-[-15px] ${
                   isRTL ? "right-1/2 transform translate-x-1/2" : "left-1/2 transform -translate-x-1/2"
                 } md:static md:bottom-auto spin`}
               >
@@ -119,7 +119,7 @@ const page = async () => {
             <div className="relative flex flex-col md:flex-row items-center w-full">
               <div className="w-full md:w-1/2 pr-8 flex justify-end"></div>
               <div
-                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-blue-500 rounded-full border-4 border-white shadow-md absolute bottom-[-15px] ${
+                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-white rounded-full border-4 border-white  absolute bottom-[-15px] ${
                   isRTL ? "left-1/2 transform -translate-x-1/2" : "right-1/2 transform translate-x-1/2"
                 } md:static md:bottom-auto spin`}
               >
@@ -150,7 +150,7 @@ const page = async () => {
                 </div>
               </div>
               <div
-                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-blue-500 rounded-full border-4 border-white shadow-md absolute bottom-[-15px] ${
+                className={`w-8 h-8 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 bg-white rounded-full border-4 border-white absolute bottom-[-15px] ${
                   isRTL ? "right-1/2 transform translate-x-1/2" : "left-1/2 transform -translate-x-1/2"
                 } md:static md:bottom-auto spin`}
               >
