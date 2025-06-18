@@ -1,14 +1,39 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-const page = async ({ }: { params: Promise<{ locale: string }> }) => {
-  const images = [
-    "/images/about/iO8gkR4SV0lBOYjmX9eOc.webp",
-    "/images/about/AISelect_20250512_223546_Gallery.webp",
-    "/images/about/AISelect_20250512_223609_Gallery.webp",
+// const page =  () => {
+export default function AboutPage() {
+  const imagesList = [
+    [
+      '/images/about/iO8gkR4SV0lBOYjmX9eOc.webp',
+      '/images/about/AISelect_20250512_223546_Gallery.webp',
+      '/images/about/AISelect_20250512_223609_Gallery.webp',
+    ],
+    [
+      '/images/about/IMG_0408.WEBP',
+      '/images/about/IMG_0411.WEBP',
+      '/images/about/IMG_0412.WEBP',
+    ],
+    [
+      '/images/about/IMG_0407.WEBP',
+      '/images/about/IMG_0409.WEBP',
+      '/images/about/IMG_0410.WEBP',
+    ],
   ];
-  const t = await getTranslations("about");
-  // const { locale } = await params;
+  const t = useTranslations("about");
+  const [currentImages, setCurrentImages] = useState(imagesList[0]);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % imagesList.length);
+      setCurrentImages(imagesList[(index + 1) % imagesList.length]);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [index]);
+
 
   return (
     <div className="w-full max-w-[1900px] mx-auto min-h-screen relative bg-white rounded-[20px] overflow-hidden px-[5px] md:px-0">
@@ -26,7 +51,7 @@ const page = async ({ }: { params: Promise<{ locale: string }> }) => {
             </div>
           </div>
           <div className="w-full lg:w-1/2 grid grid-cols-3 gap-4">
-            {images.map((image, i) => (
+            {currentImages.map((image, i) => (
               <div
                 key={i}
                 className={`w-full aspect-[1/2] bg-neutral-400 rounded-[20px] overflow-hidden mt-${i * 8}`}
@@ -49,4 +74,3 @@ const page = async ({ }: { params: Promise<{ locale: string }> }) => {
   );
 };
 
-export default page;
