@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ceoImage from '/public/Assets/Untitled-1.png';
+import ceoImage from '/public/images//H.png';
 import { getTranslations } from 'next-intl/server';
 
 export default async function InspirationPage() {
