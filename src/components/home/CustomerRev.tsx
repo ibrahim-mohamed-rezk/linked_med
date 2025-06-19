@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 // Define the Testimonial type with stars
 interface Testimonial {
   name: string;
@@ -53,6 +53,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const Testimonials: React.FC = () => {
+  const locale = useLocale();
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -129,9 +130,9 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <div id="testimonials" className=" w-full bg-[#000] py-8 px-11 overflow-hidden">
+    <div id="testimonials" className="front-full-inner max-w-[1920px] mx-auto w-full px-2 py-5 sm:px-3 md:px-[4vw] lg:px-[10vw]">
       <div className="w-full px-6">
-        <h2 className="text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-['Satoshi_Variable']">{t("Testimonials")}</h2>
+        <h2 className={`text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-ar  ${locale === "ar" ? 'font-ar' : 'font-en'}`}>{t("Testimonials")}</h2>
 
         <div className="relative mt-10">
           {/* Scroll container */}
@@ -161,7 +162,7 @@ const Testimonials: React.FC = () => {
                         priority={index < 4}
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-4 backdrop-blur-sm">
-                        <h3 className="font-['Satoshi_Variable'] text-lg text-white bg-black py-2 px-2 rounded">{testimonial.name}</h3>
+                        <h3 className={`font-en text-lg text-white bg-black py-2 px-2 rounded ${locale === "ar" ? 'font-ar' : 'font-en'}`}>{t(testimonial.name)}</h3>
                         {renderStars(testimonial.stars)}
                       </div>
                     </div>
@@ -170,9 +171,9 @@ const Testimonials: React.FC = () => {
                   {/* Back of card */}
                   <div className="flip-card-back bg-blue-900 text-white rounded-xl overflow-hidden shadow-lg p-8 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-['Satoshi_Variable'] text-xl mb-4">{testimonial.name}</h3>
-                      <p className="text-base leading-relaxed overflow-y-auto max-h-48">
-                        {testimonial.testimonial}
+                      <h3 className={`font-en text-xl mb-4 ${locale === "ar" ? 'font-ar' : 'font-en'}`}>{t(testimonial.name)}</h3>
+                      <p className={`text-base leading-relaxed overflow-y-auto max-h-48 ${locale === "ar" ? 'font-ar' : 'font-en'}`}>
+                        {t(testimonial.testimonial)}
                       </p>
                     </div>
                     <div className="mt-4">

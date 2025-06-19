@@ -82,7 +82,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="w-full">
+    <div ref={sectionRef} className="front-full-inner max-w-[1920px] mx-auto w-full px-2 py-5 sm:px-3 md:px-[4vw] lg:px-[10vw]">
       <div className="w-full ">
         <section className="sticky top-0 w-full h-screen">
           <div className="relative w-full h-screen overflow-hidden">
@@ -92,7 +92,7 @@ const Testimonials = () => {
               }}
               className="absolute w-full top-[-620px] inset-0 flex items-center justify-center"
             >
-              <h2 className="relative opacity-10 justify-center text-[#8cb0fd]/60 text-[clamp(55px,15.625vw,300px)] font-bold font-['Satoshi_Variable']">
+              <h2 className="relative opacity-10 justify-center text-[#8cb0fd]/60 text-[clamp(55px,15.625vw,300px)] font-bold font-en">
                 Testimonialsing
               </h2>
             </div>

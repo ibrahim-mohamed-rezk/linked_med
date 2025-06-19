@@ -9,6 +9,10 @@ module.exports = {
         extend: {
             transform: ['hover'],
         },
+        fontFamily: {
+            ar: ['Tajawal', 'sans-serif'],
+            en: ['Poppins', 'sans-serif'],
+          },
     },
     plugins: [],
 }

@@ -27,10 +27,10 @@ const page = async () => {
           </div>
 
           <div className="relative z-10 w-full flex flex-col justify-center items-center">
-            <div className="text-black text-xl md:text-4xl lg:text-5xl font-normal font-['Satoshi_Variable'] text-center">
+            <div className="text-black text-xl md:text-4xl lg:text-5xl font-normal font-en text-center">
               {t("Seamless Process")}
             </div>
-            <div className="text-black text-3xl md:text-5xl lg:text-6xl font-bold font-['Satoshi_Variable'] text-center">
+            <div className="text-black text-3xl md:text-5xl lg:text-6xl font-bold font-en text-center">
               {t("From Application to Onboarding")}
             </div>
           </div>

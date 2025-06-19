@@ -83,8 +83,8 @@ const Hero = ({ data }: { data: { web: string; mobile: string } }) => {
         {visible && (
           <div
             className={`text-white px-[20px] md:px-0 text-[clamp(30px,4.27083vw,82px)] font-bold w-full h-[85%] flex items-end ${
-              locale === "ar" ? "justify-end" : "justify-start"
-            } text-left font-['Satoshi Variable']`}
+              locale === "ar" ? "justify-end font-en" : "justify-start font-ar"
+            } text-left `}
           >
             {t("hero.title")}
             <br />

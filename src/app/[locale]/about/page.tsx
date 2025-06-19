@@ -43,10 +43,10 @@ export default function AboutPage() {
       <div className="px-4 max-w-[1900px] md:px-8 z-10 relative lg:px-16 pt-16 md:pt-24 lg:pt-32 pb-8 mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="w-full lg:w-1/2 flex flex-col gap-6">
-            <h1 className="text-[clamp(14px,5vw,100px)] font-bold font-['Satoshi_Variable'] uppercase text-black">
+            <h1 className="text-[clamp(14px,5vw,100px)] font-bold font-en uppercase text-black">
               {t("title")}
             </h1>
-            <div className="text-neutral-900 text-[clamp(10px,1.25vw,30px)] font-normal font-['Satoshi_Variable']">
+            <div className="text-neutral-900 text-[clamp(10px,1.25vw,30px)] font-normal font-en">
               {t("aboutText")}
             </div>
           </div>

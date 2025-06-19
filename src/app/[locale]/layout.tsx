@@ -34,6 +34,7 @@ export default async function RootLayout({
 
   return (
     <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
+
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />

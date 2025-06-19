@@ -258,7 +258,7 @@ const SocialMediaIcons: FC = () => {
             >
                 {/* Facebook Icon */}
                 <a
-                    href="https://facebook.com"
+                    href="facebook.com/LinkedMed.org"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-gradient-to-br from-[#1877F2] to-[#0C63D4] hover:from-[#165eab] hover:to-[#0a4d8c] p-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 w-12 h-12 flex items-center justify-center"
@@ -278,7 +278,7 @@ const SocialMediaIcons: FC = () => {
 
                 {/* Instagram Icon */}
                 <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/linked_med/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-gradient-to-br from-[#E4405F] via-[#F77737] to-[#FCAF45] hover:from-[#d63384] hover:via-[#fd7e14] hover:to-[#ffc107] p-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 w-12 h-12 flex items-center justify-center"
@@ -298,7 +298,7 @@ const SocialMediaIcons: FC = () => {
 
                 {/* TikTok Icon */}
                 <a
-                    href="https://tiktok.com"
+                    href="https://www.tiktok.com/@linkedmed?_t=ZS-8wx8iIJnMTx&_r=1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-gradient-to-br from-[#000000] via-[#1a1a1a] to-[#333333] hover:from-[#ff0050] hover:via-[#00f2ea] hover:to-[#000000] p-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 w-12 h-12 flex items-center justify-center"

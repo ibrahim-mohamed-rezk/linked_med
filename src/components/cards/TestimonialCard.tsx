@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <div className="testimony-card flex flex-col items-center justify-center gap-[30px] p-6 w-[367px] h-[529px] bg-white rounded-[47px] border font-['Satoshi_Variable'] border-[#96b8ff] transform">
+    <div className="testimony-card flex flex-col items-center justify-center gap-[30px] p-6 w-[367px] h-[529px] bg-white rounded-[47px] border font-en border-[#96b8ff] transform">
       <div className="flex justify-between w-full">
         <svg
           width="18"
@@ -38,7 +38,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           />
         </svg>
       </div>
-      <div className="w-[250px] h-[250px] overflow-hidden rounded-full bg-black border border-[#96b8ff] font-['Satoshi_Variable']">
+      <div className="w-[250px] h-[250px] overflow-hidden rounded-full bg-black border border-[#96b8ff] font-en">
         <Image
           className="w-full h-full"
           src={testimonial.image}
@@ -47,11 +47,11 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           height={250}
         />
       </div>
-      <div className="flex flex-col items-center font-['Satoshi_Variable']">
-        <div className="text-black text-[21px] font-black font-['Satoshi_Variable']">
+      <div className="flex flex-col items-center font-en">
+        <div className="text-black text-[21px] font-black font-en">
           {testimonial.name}
         </div>
-        <div className="text-black text-start line-clamp-3 text-sm font-bold font-['Satoshi_Variable'] mt-4">
+        <div className="text-black text-start line-clamp-3 text-sm font-bold font-en mt-4">
           {testimonial.testimonial}
         </div>
       </div>

@@ -11,12 +11,12 @@ export default async function InspirationPage() {
       {/* Modern Title Section */}
       <div className="text-end w-full flex">
         <h1 className="text-xl flex text-start w-full sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light px-6 ">
-          <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-['Satoshi_Variable']">
+          <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-en">
             {t("Message from")}
           </span>
           <div className="h-1 sm:h-2 md:h-3 lg:h-4 xl:h-5"></div>
           <div>
-            <span className="font-bold bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent tracking-wider px-6 font-['Satoshi_Variable']">
+            <span className="font-bold bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent tracking-wider px-6 font-en">
               {t("CEO")}
             </span>
             <div className="w-16 sm:w-24 md:w-28 lg:w-32 xl:w-40 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mt-2 sm:mt-4 md:mt-4 lg:mt-4 xl:mt-4"></div>
@@ -27,13 +27,13 @@ export default async function InspirationPage() {
       <div className="max-w-full px-2 sm:px-4 mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16 2xl:gap-20">
         {/* Text Section */}
         <div className="lg:w-2/3 xl:w-3/5 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-8">
-          <p className="text-[clamp(21px,0.46875vw,9px)] leading-relaxed font-['Satoshi_Variable']">
+          <p className="text-[clamp(21px,0.46875vw,9px)] leading-relaxed font-en">
             {t('journey')}
           </p>
-          <p className="text-[clamp(21px,0.46875vw,9px)] leading-relaxed font-['Satoshi_Variable']">
+          <p className="text-[clamp(21px,0.46875vw,9px)] leading-relaxed font-en">
             {t('connect')}
           </p>
-          <p className="text-[clamp(21px,0.46875vw,9px)] leading-relaxed font-['Satoshi_Variable']">
+          <p className="text-[clamp(21px,0.46875vw,9px)] leading-relaxed font-en">
             {t('roots')}
           </p>
         </div>
@@ -52,7 +52,7 @@ export default async function InspirationPage() {
           </div>
                      
           <Link href="/start" className="w-full max-w-xs">
-            <div className=" font-['Satoshi_Variable'] bg-blue-800 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14 py-2 sm:py-3 md:py-4 lg:py-5 border-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl border-white rounded-3xl rounded-br-none rounded-tl-none text-white hover:bg-white hover:text-black transition-all duration-300 text-center cursor-pointer w-full">
+            <div className=" font-en bg-blue-800 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14 py-2 sm:py-3 md:py-4 lg:py-5 border-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl border-white rounded-3xl rounded-br-none rounded-tl-none text-white hover:bg-white hover:text-black transition-all duration-300 text-center cursor-pointer w-full">
               {t('button')}
             </div>
           </Link>
