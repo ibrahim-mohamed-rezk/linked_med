@@ -1,90 +1,82 @@
-'use client'
+'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import Image from 'next/image';
-import { useTranslations, useLocale } from 'next-intl';
-// Define the Testimonial type with stars
+import { useTranslations } from 'next-intl';
+
 interface Testimonial {
-  name: string;
+  name: string;         // This is now a translation key
+  testimonial: string;  // This is now a translation key
   image: string;
-  testimonial: string;
   stars?: number;
 }
 
-// Testimonial data with added star ratings
 const testimonials: Testimonial[] = [
   {
     image: "/images/testimonials/hager.png",
-    name: "Hagar Elnahhas",
-    testimonial: "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
+    name: "hagar_name",
+    testimonial: "hagar_testimonial",
     stars: 5
   },
   {
     image: "/images/testimonials/RebicaMuller.jpg",
-    name: "Rebica Müller",
-    testimonial: "LinkedMed provides well- prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
+    name: "rebica_name",
+    testimonial: "rebica_testimonial",
     stars: 5
   },
   {
     image: "/images/testimonials/AhmedSabri.jpg",
-    name: "Ahmed Sabri",
-    testimonial: "LinkedMed helped me achieve training to document verification, their support was my dream of working in Germany! From language incredible. Now, I'm happily working in a top Berlin hospital!",
+    name: "ahmed_name",
+    testimonial: "ahmed_testimonial",
     stars: 5
   },
   {
     image: "/images/testimonials/SaraDabagh.jpg",
-    name: "Sara Dabagh",
-    testimonial: "Navigating the visa process was overwhelming, but LinkedMed handled everything professionally. Their expertise ensured a smooth journey, and today, I'm a licensed pharmacist in Germany. Highly recommended!",
+    name: "sara_name",
+    testimonial: "sara_testimonial",
     stars: 4
   },
   {
     image: "/images/testimonials/FatimaM.jpg",
-    name: "Fatima M",
-    testimonial: "LinkedMed's German courses and exam preparation made learning easy. Their guidance gave me confidence to pass my exams and secure a nursing job in Germany. Truly life- changing!",
+    name: "fatima_name",
+    testimonial: "fatima_testimonial",
     stars: 5
   },
   {
     image: "/images/testimonials/SalmaHany.jpg",
-    name: "Salma Hany",
-    testimonial: "Thanks to LinkedMed, I gained great insight on the crucial role of a pharmacist during my internship (Praktikum) in easy Apotheke for 2 weeks. It enriched my skill pack and experience",
+    name: "salma_name",
+    testimonial: "salma_testimonial",
     stars: 4
   },
 ];
 
 const Testimonials: React.FC = () => {
-  const locale = useLocale();
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>(0);
-  // Initialize with null and include null in the type
   const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const cardWidth = 380; // Increased from 320 to 380 for larger cards
-  const scrollSpeed = 1.5; // pixels per frame - increase for faster scrolling
 
-  // Create an extended array for infinite scrolling effect
+  const cardWidth = 380;
+  const scrollSpeed = 1.5;
+
   const extendedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+  const t = useTranslations('footer');
 
-  // Smooth scrolling animation
   const animateScroll = () => {
     if (scrollContainerRef.current && !isPaused) {
       scrollContainerRef.current.scrollLeft += scrollSpeed;
 
-      // Reset scroll position when we've scrolled through a complete set of testimonials
       if (scrollContainerRef.current.scrollLeft >= testimonials.length * cardWidth) {
         scrollContainerRef.current.scrollLeft = 0;
       }
     }
     animationRef.current = requestAnimationFrame(animateScroll);
   };
-  const t = useTranslations('footer');
-  // Handle manual navigation with exact page control
+
   const handleScroll = (direction: 'left' | 'right') => {
-    // Clear any existing timeout
-    if (pauseTimeoutRef.current) {
-      clearTimeout(pauseTimeoutRef.current);
-    }
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     setIsPaused(true);
 
     const max = testimonials.length;
@@ -99,22 +91,17 @@ const Testimonials: React.FC = () => {
       behavior: 'smooth'
     });
 
-    // Resume auto-scroll after 3 seconds
     pauseTimeoutRef.current = setTimeout(() => setIsPaused(false), 3000);
   };
 
-  // Setup and cleanup animation
   useEffect(() => {
     animationRef.current = requestAnimationFrame(animateScroll);
     return () => {
       cancelAnimationFrame(animationRef.current);
-      if (pauseTimeoutRef.current) {
-        clearTimeout(pauseTimeoutRef.current);
-      }
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     };
   }, [isPaused]);
 
-  // Render stars based on rating
   const renderStars = (starCount: number = 5) => {
     return (
       <div className="flex items-center mt-2">
@@ -132,16 +119,16 @@ const Testimonials: React.FC = () => {
   return (
     <div id="testimonials" className="front-full-inner max-w-[1920px] mx-auto w-full px-2 py-5 sm:px-3 md:px-[4vw] lg:px-[10vw]">
       <div className="w-full px-6">
-        <h2 className={`text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-ar  ${locale === "ar" ? 'font-ar' : 'font-en'}`}>{t("Testimonials")}</h2>
+        <h2 className="text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-ar">
+          {t("Testimonials")}
+        </h2>
 
         <div className="relative mt-10">
-          {/* Scroll container */}
           <div
             ref={scrollContainerRef}
             className="flex overflow-x-hidden scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {/* Cards */}
             {extendedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
@@ -150,7 +137,6 @@ const Testimonials: React.FC = () => {
                 onMouseLeave={() => setIsPaused(false)}
               >
                 <div className="flip-card-inner">
-                  {/* Front of card */}
                   <div className="flip-card-front rounded-xl overflow-hidden shadow-lg bg-black">
                     <div className="w-full h-full relative">
                       <Image
@@ -162,17 +148,18 @@ const Testimonials: React.FC = () => {
                         priority={index < 4}
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-4 backdrop-blur-sm">
-                        <h3 className={`font-en text-lg text-white bg-black py-2 px-2 rounded ${locale === "ar" ? 'font-ar' : 'font-en'}`}>{t(testimonial.name)}</h3>
+                        <h3 className="font-en text-lg text-white bg-black py-2 px-2 rounded">
+                          {t(testimonial.name)}
+                        </h3>
                         {renderStars(testimonial.stars)}
                       </div>
                     </div>
                   </div>
 
-                  {/* Back of card */}
                   <div className="flip-card-back bg-blue-900 text-white rounded-xl overflow-hidden shadow-lg p-8 flex flex-col justify-between">
                     <div>
-                      <h3 className={`font-en text-xl mb-4 ${locale === "ar" ? 'font-ar' : 'font-en'}`}>{t(testimonial.name)}</h3>
-                      <p className={`text-base leading-relaxed overflow-y-auto max-h-48 ${locale === "ar" ? 'font-ar' : 'font-en'}`}>
+                      <h3 className="font-en text-xl mb-4">{t(testimonial.name)}</h3>
+                      <p className="text-base leading-relaxed overflow-y-auto max-h-48">
                         {t(testimonial.testimonial)}
                       </p>
                     </div>
@@ -185,7 +172,6 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
 
-          {/* Navigation buttons */}
           <div className="flex justify-center space-x-8 mt-6 px-6">
             <button
               onClick={() => handleScroll('left')}
@@ -194,7 +180,6 @@ const Testimonials: React.FC = () => {
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
-
             <button
               onClick={() => handleScroll('right')}
               className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10"
@@ -206,13 +191,11 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
 
-      {/* CSS for flip cards and scroll hiding */}
       <style jsx>{`
         .flip-card {
           background-color: transparent;
           perspective: 1000px;
         }
-        
         .flip-card-inner {
           position: relative;
           width: 100%;
@@ -221,24 +204,20 @@ const Testimonials: React.FC = () => {
           transition: transform 0.6s;
           transform-style: preserve-3d;
         }
-        
         .flip-card:hover .flip-card-inner {
           transform: rotateY(180deg);
         }
-        
-        .flip-card-front, .flip-card-back {
+        .flip-card-front,
+        .flip-card-back {
           position: absolute;
           width: 100%;
           height: 100%;
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
         }
-        
         .flip-card-back {
           transform: rotateY(180deg);
         }
-        
-        /* Hide scrollbar */
         ::-webkit-scrollbar {
           display: none;
         }

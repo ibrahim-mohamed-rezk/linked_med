@@ -258,7 +258,7 @@ const SocialMediaIcons: FC = () => {
             >
                 {/* Facebook Icon */}
                 <a
-                    href="facebook.com/LinkedMed.org"
+                    href="https://www.facebook.com/LinkedMed.org"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-gradient-to-br from-[#1877F2] to-[#0C63D4] hover:from-[#165eab] hover:to-[#0a4d8c] p-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 w-12 h-12 flex items-center justify-center"

@@ -12,7 +12,7 @@ export default function LinkedMedPage() {
     <section
       id="why-linkedmed"
       dir={isArabic ? 'rtl' : 'ltr'}
-      className={`front-full-inner max-w-[1920px] mx-auto w-full px-2 py-5 sm:px-3 md:px-[4vw] lg:px-[10vw]`}
+      className={`front-full-inner max-w-[1920px] mx-auto w-full px-2 py-5 pb-17 min-h-screen sm:px-3 md:px-[4vw] lg:px-[10vw]`}
     >
       {/* Large screens layout (xl and above) */}
       <div

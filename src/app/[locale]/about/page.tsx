@@ -53,11 +53,16 @@ export default function AboutPage() {
           <div className="w-full lg:w-1/2 grid grid-cols-3 gap-4">
             {currentImages.map((image, i) => (
               <div
-                key={i}
-                className={`w-full aspect-[1/2] bg-neutral-400 rounded-[20px] overflow-hidden mt-${i * 8}`}
+                key={`${index}-${i}`}
+                className={`w-full aspect-[1/2] bg-neutral-400 rounded-[20px] overflow-hidden mt-${i * 8} transition-all duration-1000 ease-in-out transform`}
+                style={{
+                  animation: `slideInY 1000ms ease-in-out`,
+                  animationDelay: `${i * 200}ms`,
+                  animationFillMode: 'both'
+                }}
               >
                 <Image
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-700 ease-in-out"
                   src={image}
                   alt="Team member"
                   width={500}
@@ -69,8 +74,18 @@ export default function AboutPage() {
         </div>
       </div>
 
-            
+      <style jsx>{`
+        @keyframes slideInY {
+          0% {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </div>
   );
 };
-
