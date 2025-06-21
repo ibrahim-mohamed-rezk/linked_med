@@ -5,7 +5,7 @@ const ContactUsPage = async () => {
   const t = await getTranslations("terms.contact");
 
   return (
-    <main className="w-full bg-black min-h-screen py-12 md:py-16 relative">
+    <main className="w-full bg-black min-h-2/4 py-12 md:py-16 relative">
       <div className="front-full front-full-story featured1  relative">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -31,8 +31,8 @@ const ContactUsPage = async () => {
                   {t("description.line2")}
                 </p>
 
-                <p className="text-sm text-gray-300 mb-1">{t("email")}</p>
-                <p className="text-sm text-gray-300 mb-4">+20 162 80 856</p>
+                <p className="text-sm text-white mb-1">{t("email")}</p>
+                <p className="text-sm text-white mb-4">+20 162 80 856</p>
 
                 <a href="#" className="text-sm text-blue-300 underline font-medium block mb-8 hover:underline">
                   {t("supportLink")}
@@ -42,42 +42,42 @@ const ContactUsPage = async () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm pt-10 lg:pt-40">
                   <div>
                     <p className="font-semibold text-white mb-1">{t("help.customerSupport.title")}</p>
-                    <p className="text-gray-300 leading-relaxed">{t("help.customerSupport.description")}</p>
+                    <p className="text-white leading-relaxed">{t("help.customerSupport.description")}</p>
                   </div>
                   <div>
                     <p className="font-semibold text-white mb-1">{t("help.feedback.title")}</p>
-                    <p className="text-gray-300 leading-relaxed">{t("help.feedback.description")}</p>
+                    <p className="text-white leading-relaxed">{t("help.feedback.description")}</p>
                   </div>
                   <div>
                     <p className="font-semibold text-white mb-1">{t("help.media.title")}</p>
-                    <p className="text-gray-300 leading-relaxed">{t("help.media.description")}</p>
+                    <p className="text-white leading-relaxed">{t("help.media.description")}</p>
                   </div>
                 </div>
               </div>
 
               {/* Right Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg px-6 py-8 w-full max-w-lg mx-auto border border-gray-100">
-                <h2 className="text-lg font-semibold mb-1 text-gray-800">{t("form.title")}</h2>
-                <p className="text-xs text-gray-500 mb-6">{t("form.subtitle")}</p>
+              <div className="px-6 py-8 w-full max-w-lg mx-auto">
+                <h2 className="text-lg font-semibold mb-1 text-white">{t("form.title")}</h2>
+                <p className="text-xs text-white mb-6">{t("form.subtitle")}</p>
 
                 <form className="space-y-4 text-sm">
                   <div className="flex gap-4">
                     <input
                       type="text"
                       placeholder={t("form.firstName")}
-                      className="w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-1/2 px-4 py-2 border text-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                     />
                     <input
                       type="text"
                       placeholder={t("form.lastName")}
-                      className="w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-1/2 px-4 py-2 text-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                     />
                   </div>
 
                   <input
                     type="email"
                     placeholder={t("form.email")}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 text-white py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
 
                   <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ const ContactUsPage = async () => {
                     <input
                       type="tel"
                       placeholder="10 162 80 856"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full text-white px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                     />
                   </div>
 
@@ -96,7 +96,7 @@ const ContactUsPage = async () => {
                     <textarea
                       placeholder={t("form.message")}
                       maxLength={240}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md resize-none h-28 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full px-4 py-2 border text-white border-gray-300 rounded-md resize-none h-28 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     />
                     <p className="text-xs text-right text-gray-400 mt-1">0 / 240</p>
                   </div>

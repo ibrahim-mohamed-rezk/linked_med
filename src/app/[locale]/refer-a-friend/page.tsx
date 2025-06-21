@@ -7,12 +7,18 @@ import { useTranslations } from 'next-intl';
 const ReferFriendPage = () => {
   const t = useTranslations('Refer');
   const [submitted, setSubmitted] = useState(false);
-  const [showTerms, setShowTerms] = useState(false);
+  const [activeTab, setActiveTab] = useState('about'); // 'about', 'terms', 'form'
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };
+
+  const tabs = [
+    { id: 'about', label: 'What about refer a friend' },
+    { id: 'terms', label: 'Terms and conditions' },
+    { id: 'form', label: 'Form' }
+  ];
 
   return (
     <>
@@ -22,97 +28,168 @@ const ReferFriendPage = () => {
 
       <main className="min-h-screen bg-white py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Intro Section */}
-          {!submitted && (
-            <>
-              <h1 className="text-3xl font-bold text-[#0061A7] mb-4">
-                {t('referFriend.heading')}
-              </h1>
-              <p className="text-[#0061A7] mb-6 whitespace-pre-line">
-                {t('referFriend.intro')}
-              </p>
-            </>
-          )}
+          <h1 className="text-3xl font-bold text-[#0061A7] mb-8 text-center">
+            {t('referFriend.heading')}
+          </h1>
 
-          {/* Thank You Message */}
-          {submitted ? (
-            <div className="text-center text-[#0061A7] space-y-4">
-              <h2 className="text-2xl font-bold">{t('referFriend.thankYouTitle')}</h2>
-              <p>{t('referFriend.thankYouMessage')}</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Referrer Section */}
-              <section>
-                <h2 className="text-xl font-semibold text-[#0061A7] mb-2">
-                  {t('referFriend.referrerSection')}
-                </h2>
-                <div className="space-y-4">
-                  <InputField id="referrerName" label={t('referFriend.fields.referrerName')} />
-                  <InputField id="referrerEmail" label={t('referFriend.fields.referrerEmail')} type="email" />
-                  <InputField id="referrerPhone" label={t('referFriend.fields.referrerPhone')} optional />
-                  <RadioGroup
-                    name="workedWithLinkedMed"
-                    label={t('referFriend.fields.workedWith')}
-                    options={[{ label: t('referFriend.yes'), value: 'yes' }, { label: t('referFriend.no'), value: 'no' }]}
-                  />
-                  <TextareaField id="referrerMessage" label={t('referFriend.fields.referrerMessage')} optional />
-                </div>
-              </section>
-
-              {/* Candidate Section */}
-              <section>
-                <h2 className="text-xl font-semibold text-[#0061A7] mb-2">
-                  {t('referFriend.candidateSection')}
-                </h2>
-                <div className="space-y-4">
-                  <InputField id="candidateName" label={t('referFriend.fields.candidateName')} />
-                  <InputField id="candidateEmail" label={t('referFriend.fields.candidateEmail')} type="email" />
-                  <InputField id="candidatePhone" label={t('referFriend.fields.candidatePhone')} optional />
-                  <SelectField id="candidateCountry" label={t('referFriend.fields.country')} options={['Germany', 'UAE', 'Other']} />
-                  <SelectField id="profession" label={t('referFriend.fields.profession')} options={['Doctor', 'Nurse', 'Pharmacist', 'Other']} />
-                  <InputField id="specialty" label={t('referFriend.fields.specialty')} optional />
-                  <SelectField id="experience" label={t('referFriend.fields.experience')} options={['0–2 years', '3–5 years', '6+ years']} />
-                  <SelectField id="location" label={t('referFriend.fields.location')} options={['Germany', 'UAE', 'Other']} />
-                  <SelectField id="language" label={t('referFriend.fields.language')} options={['A1', 'A2', 'B1', 'B2', 'Not Started Yet']} />
-                </div>
-              </section>
-
-              {/* Consent */}
-              <div className="space-y-3 text-sm text-[#0061A7]">
-                <label className="flex items-start gap-2">
-                  <input type="checkbox" required />
-                  {t('referFriend.consent1')}
-                </label>
-                <label className="flex items-start gap-2">
-                  <input type="checkbox" required />
-                  {t('referFriend.consent2')}
-                </label>
-              </div>
-
+          {/* Tab Navigation */}
+          <div className="flex border-b border-gray-200 mb-8">
+            {tabs.map((tab) => (
               <button
-                type="submit"
-                className="w-full py-3 bg-[#0061A7] hover:bg-blue-700 text-white font-semibold rounded transition"
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-3 font-medium text-sm border-b-2 transition-colors ${
+                  activeTab === tab.id
+                    ? 'border-[#0061A7] text-[#0061A7]'
+                    : 'border-transparent text-gray-500 hover:text-[#0061A7]'
+                }`}
               >
-                {t('referFriend.submit')}
+                {tab.label}
               </button>
+            ))}
+          </div>
 
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => setShowTerms(!showTerms)}
-                  className="text-sm text-[#0061A7] underline"
-                >
-                  {showTerms ? t('referFriend.hideTerms') : t('referFriend.showTerms')}
-                </button>
-                {showTerms && (
-                  <div className="mt-4 text-sm text-gray-700 space-y-2 whitespace-pre-line">
-                    {t('referFriend.terms')}
+          {/* Tab Content */}
+          <div className="tab-content">
+            {/* About Tab */}
+            {activeTab === 'about' && (
+              <div className="space-y-6">
+                <div className="text-[#0061A7]">
+                  <h2 className="text-2xl font-semibold mb-4">What is our referral program?</h2>
+                  <div className="space-y-4 text-gray-700">
+                    <p>
+                      Our referral program is designed to help healthcare professionals connect with opportunities 
+                      while rewarding those who help us build our community.
+                    </p>
+                    <p>
+                      When you refer a qualified healthcare professional who successfully joins our network, 
+                      both you and your referral benefit from our program.
+                    </p>
                   </div>
+                </div>
+
+                <div className="bg-blue-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-[#0061A7] mb-3">How it works:</h3>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#0061A7] font-bold">1.</span>
+                      Fill out the referral form with your details and your friend&apos;s information.
+                      </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#0061A7] font-bold">2.</span>
+                      We&apos;ll contact your referred friend with relevant opportunities.
+                      </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#0061A7] font-bold">3.</span>
+                      When they successfully join our network, you both receive rewards
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-[#0061A7] mb-2">For You (Referrer)</h4>
+                    <p className="text-gray-700 text-sm">Earn rewards for each successful referral and help expand our professional network.</p>
+                  </div>
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-[#0061A7] mb-2">For Your Friend</h4>
+                    <p className="text-gray-700 text-sm">Access to exclusive healthcare opportunities and career advancement support.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Terms Tab */}
+            {activeTab === 'terms' && (
+              <div className="space-y-6">
+                <div className="text-[#0061A7]">
+                  <h2 className="text-2xl font-semibold mb-4">Terms and Conditions</h2>
+                </div>
+                <div className="text-sm text-gray-700 space-y-4 whitespace-pre-line">
+                  {t('referFriend.terms')}
+                </div>
+              </div>
+            )}
+
+            {/* Form Tab */}
+            {activeTab === 'form' && (
+              <div>
+                {submitted ? (
+                  <div className="text-center text-[#0061A7] space-y-4">
+                    <h2 className="text-2xl font-bold">{t('referFriend.thankYouTitle')}</h2>
+                    <p>{t('referFriend.thankYouMessage')}</p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="mt-4 px-6 py-2 bg-[#0061A7] text-white rounded hover:bg-blue-700 transition"
+                    >
+                      Submit Another Referral
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <p className="text-[#0061A7] mb-6 whitespace-pre-line">
+                      {t('referFriend.intro')}
+                    </p>
+
+                    {/* Referrer Section */}
+                    <section>
+                      <h2 className="text-xl font-semibold text-[#0061A7] mb-2">
+                        {t('referFriend.referrerSection')}
+                      </h2>
+                      <div className="space-y-4">
+                        <InputField id="referrerName" label={t('referFriend.fields.referrerName')} />
+                        <InputField id="referrerEmail" label={t('referFriend.fields.referrerEmail')} type="email" />
+                        <InputField id="referrerPhone" label={t('referFriend.fields.referrerPhone')} optional />
+                        <RadioGroup
+                          name="workedWithLinkedMed"
+                          label={t('referFriend.fields.workedWith')}
+                          options={[{ label: t('referFriend.yes'), value: 'yes' }, { label: t('referFriend.no'), value: 'no' }]}
+                        />
+                        <TextareaField id="referrerMessage" label={t('referFriend.fields.referrerMessage')} optional />
+                      </div>
+                    </section>
+
+                    {/* Candidate Section */}
+                    <section>
+                      <h2 className="text-xl font-semibold text-[#0061A7] mb-2">
+                        {t('referFriend.candidateSection')}
+                      </h2>
+                      <div className="space-y-4">
+                        <InputField id="candidateName" label={t('referFriend.fields.candidateName')} />
+                        <InputField id="candidateEmail" label={t('referFriend.fields.candidateEmail')} type="email" />
+                        <InputField id="candidatePhone" label={t('referFriend.fields.candidatePhone')} optional />
+                        <SelectField id="candidateCountry" label={t('referFriend.fields.country')} options={['Germany', 'UAE', 'Other']} />
+                        <SelectField id="profession" label={t('referFriend.fields.profession')} options={['Doctor', 'Nurse', 'Pharmacist', 'Other']} />
+                        <InputField id="specialty" label={t('referFriend.fields.specialty')} optional />
+                        <SelectField id="experience" label={t('referFriend.fields.experience')} options={['0–2 years', '3–5 years', '6+ years']} />
+                        <SelectField id="location" label={t('referFriend.fields.location')} options={['Germany', 'UAE', 'Other']} />
+                        <SelectField id="language" label={t('referFriend.fields.language')} options={['A1', 'A2', 'B1', 'B2', 'Not Started Yet']} />
+                      </div>
+                    </section>
+
+                    {/* Consent */}
+                    <div className="space-y-3 text-sm text-[#0061A7]">
+                      <label className="flex items-start gap-2">
+                        <input type="checkbox" required />
+                        {t('referFriend.consent1')}
+                      </label>
+                      <label className="flex items-start gap-2">
+                        <input type="checkbox" required />
+                        {t('referFriend.consent2')}
+                      </label>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full py-3 bg-[#0061A7] hover:bg-blue-700 text-white font-semibold rounded transition"
+                    >
+                      {t('referFriend.submit')}
+                    </button>
+                  </form>
                 )}
               </div>
-            </form>
-          )}
+            )}
+          </div>
         </div>
       </main>
     </>
@@ -141,6 +218,7 @@ const InputField = ({
       id={id}
       name={id}
       type={type}
+      required={!optional}
       className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
     />
   </div>
@@ -176,7 +254,8 @@ const SelectField = ({
     <select
       id={id}
       name={id}
-      className="w-full px-4 py-2 border border-gray-300 rounded"
+      required
+      className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
       defaultValue=""
     >
       <option value="" disabled>
@@ -205,7 +284,7 @@ const RadioGroup = ({
     <div className="flex gap-6">
       {options.map((opt) => (
         <label key={opt.value} className="inline-flex items-center gap-1">
-          <input type="radio" name={name} value={opt.value} />
+          <input type="radio" name={name} value={opt.value} required />
           {opt.label}
         </label>
       ))}

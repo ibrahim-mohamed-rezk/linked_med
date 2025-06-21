@@ -1,7 +1,9 @@
-import Image from 'next/image';
-import React from 'react';
-import { getTranslations } from 'next-intl/server';
+'use client';
 
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { useTranslations } from 'next-intl';
 interface Doctor {
     id: number;
     name: string;
@@ -41,20 +43,21 @@ const doctors: Doctor[] = [
     },
 ];
 
-// Server component to support next-intl
-export default async function DoctorsPage() {
-    const t = await getTranslations('');
+export default function DoctorsPageClient() {
+    const router = useRouter();
+    const t = useTranslations('e-learning');
 
     return (
         <main className="min-h-screen bg-gray-100 p-4 md:p-8 lg:p-12">
             <h1 className="text-center font-bold mb-8 text-[clamp(1.5rem,5vw,2.5rem)]">
-                {t('title')}
+                {t("Our Doctors")}
             </h1>
             <section className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {doctors.map((doc) => (
                     <div
                         key={doc.id}
-                        className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col"
+                        onClick={() => router.push(`e-learning/course/${doc.id}`)}
+                        className="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition-shadow"
                     >
                         <div className="relative w-full h-80">
                             <Image
@@ -71,14 +74,9 @@ export default async function DoctorsPage() {
                             <p className="text-gray-600 mb-4 text-[clamp(0.875rem,2.5vw,1rem)] flex-1">
                                 {doc.specialization}
                             </p>
-                            <a
-                                href={doc.profileLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-auto inline-block text-center font-medium py-2 px-4 border border-primary rounded-xl hover:bg-primary  transition"
-                            >
-                                {t('viewProfile')}
-                            </a>
+                            <span className="mt-auto inline-block text-center font-medium py-2 px-4 border border-primary rounded-xl bg-primary text-white transition">
+                                View Course
+                            </span>
                         </div>
                     </div>
                 ))}

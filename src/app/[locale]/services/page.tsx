@@ -1,65 +1,66 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { GraduationCap, FileText, Briefcase, Plane, Users, Sparkles } from "lucide-react";
+import { GraduationCap, FileText, Briefcase, Plane, FolderCheck } from "lucide-react";
+import dots from "/public/images/logo.ico";
+import Image from "next/image";
 
 const services = [
   {
     id: "01",
-    label: "Language Training",
-    description: "Comprehensive German language courses for medical professionals",
-    icon: GraduationCap,
+    label: "Document Support",
+    description: "Professional handling of all essential medical and legal documents",
+    icon: FolderCheck,
     subPoints: [
-      "German courses A1-C2 levels",
-      "Medical exam prep (Fachsprachprüfung/Kenntnisprüfung)",
-      "24/7 online learning platform"
+      "Issuing Good Standing & Syndicate certificates",
+      "Certified translations, notarization & embassy attestation",
+      "Real-time checklist & document tracking"
     ]
   },
   {
     id: "02",
-    label: "Visa & Embassy",
-    description: "Complete visa and embassy support services",
-    icon: FileText,
+    label: "Language Training",
+    description: "Comprehensive German language courses for medical professionals",
+    icon: GraduationCap,
     subPoints: [
-      "Complete visa application support",
-      "Embassy appointment scheduling",
-      "Interview preparation and training"
+      "German courses from A1 to C2 levels",
+      "Fachsprachprüfung & Kenntnisprüfung exam prep",
+      "24/7 access to an intuitive e-learning platform"
     ]
   },
   {
     id: "03",
-    label: "Job Placement",
-    description: "Professional job placement and career support",
-    icon: Briefcase,
+    label: "Visa & Embassy",
+    description: "Complete visa and embassy support services",
+    icon: FileText,
     subPoints: [
-      "German-standard CV formatting",
-      "Hospital/clinic job matching",
-      "Interview prep and contract negotiation"
+      "Visa application preparation & document management",
+      "Embassy appointment scheduling & interview simulations",
+      "Family reunification & pre-departure checklist"
     ]
   },
   {
     id: "04",
-    label: "Relocation Support",
-    description: "Comprehensive relocation and integration assistance",
-    icon: Plane,
+    label: "Job Placement",
+    description: "Personalized job matching and onboarding into the German healthcare system",
+    icon: Briefcase,
     subPoints: [
-      "Housing search assistance",
-      "School applications for children",
-      "Driving license help",
-      "Cultural integration support"
+      "CV formatting & profile optimization",
+      "Job matching with trusted hospitals",
+      "Interview coaching, contract review & licensing support"
     ]
   },
   {
     id: "05",
-    label: "Community Benefits",
-    description: "Ongoing support and community networking",
-    icon: Users,
+    label: "Relocation Support",
+    description: "Comprehensive relocation and integration assistance for you and your family",
+    icon: Plane,
     subPoints: [
-      "Cash rewards for referrals",
-      "Lifelong career support",
-      "Alumni events and networking"
+      "Travel, housing & school support",
+      "Visa interviews, driving license & residency guidance",
+      "Cultural orientation & post-arrival follow-up"
     ]
-  },
+  }
 ];
 
 const MedicalServicesTimeline = () => {
@@ -134,11 +135,11 @@ const MedicalServicesTimeline = () => {
       const rightX = width * 0.8;
 
       return [
-        { x: rightX, y: height * 0.12 },
+        { x: width * 0.5, y: height * 0.10 },
         { x: rightX, y: height * 0.32 },
         { x: leftX, y: height * 0.48 },
         { x: leftX, y: height * 0.68 },
-        { x: rightX, y: height * 0.82 },
+        { x: rightX, y: height * 0.85 }, 
       ];
     }
   };
@@ -185,7 +186,11 @@ const MedicalServicesTimeline = () => {
         Q ${leftX} ${height * 0.74}, ${leftX + curveRadius} ${height * 0.74} 
         L ${rightX - curveRadius} ${height * 0.74} 
         Q ${rightX} ${height * 0.74}, ${rightX} ${height * 0.76} 
-        L ${rightX} ${height * 0.95}
+        L ${rightX} ${height * 0.85}
+        Q ${rightX} ${height * 0.89}, ${rightX - curveRadius} ${height * 0.89}
+        L ${centerX + curveRadius} ${height * 0.89}
+        Q ${centerX} ${height * 0.89}, ${centerX} ${height * 0.91}
+        L ${centerX} ${height * 0.98}
       `.replace(/\s+/g, ' ').trim();
     }
   };
@@ -210,7 +215,7 @@ const MedicalServicesTimeline = () => {
   }
 
   return (
-    <main className="min-h-screen bg-slate-900 overflow-x-hidden relative">
+    <main className="min-h-screen bg-slate-900 overflow-x-hidden relative pb-20">
       {/* Simple background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -219,15 +224,27 @@ const MedicalServicesTimeline = () => {
 
       {/* Hero section */}
       <div className="relative z-10 pt-20 pb-12 text-center">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <Sparkles className="w-8 h-8 text-blue-400" />
+        <div className="flex items-center justify-center text-center gap-3 mb-6">
+          <Image
+            width={32}
+            height={32}
+            className=" object-contain"
+            src={dots}
+            alt="dot"
+          />
           <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Medical Services
+            Service
           </h1>
-          <Sparkles className="w-8 h-8 text-blue-400" />
+          <Image
+            width={37}
+            height={37}
+            className=" object-contain"
+            src={dots}
+            alt="dot"
+          />
         </div>
         <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto px-4">
-          Your complete journey to medical career success in Germany
+          At LinkedMed, we turn ambition into achievement through a fully guided path to medical careers abroad, organized into four key service categories that support you at every stage.
         </p>
       </div>
 
@@ -382,6 +399,73 @@ const MedicalServicesTimeline = () => {
               </div>
             );
           })}
+        </div>
+      </div>
+
+      {/* Referral & Community Engagement Section */}
+      <div className="relative z-10 mt-20 px-4 max-w-4xl mx-auto">
+        <div className="bg-slate-800/40 backdrop-blur-xl rounded-3xl border border-white/10 p-8 md:p-12">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Referral & Community Engagement
+            </h2>
+            <p className="text-xl md:text-2xl text-blue-400 font-medium">
+              Because You&rsquo;re Family
+            </p>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 bg-blue-400 flex-shrink-0"></div>
+                <span className="text-white/90 leading-relaxed">
+                  Cash rewards for every successful friend referral.
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 bg-blue-400 flex-shrink-0"></div>
+                <span className="text-white/90 leading-relaxed">
+                  A dedicated dashboard to track progress, documents, and service status.
+                </span>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 bg-blue-400 flex-shrink-0"></div>
+                <span className="text-white/90 leading-relaxed">
+                  Lifelong support for new job opportunities, licensing renewals, and education.
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full mt-2 bg-blue-400 flex-shrink-0"></div>
+                <span className="text-white/90 leading-relaxed">
+                  Invitations to alumni events, community check-ins, and LinkedMed updates.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial */}
+          <div className="bg-white/5 rounded-2xl p-6 mb-6 border border-white/10">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">💬</span>
+              <blockquote className="text-white/90 italic text-lg leading-relaxed">
+                My friend joined LinkedMed through me. We&rsquo;re now colleagues in Germany.
+              </blockquote>
+            </div>
+          </div>
+
+          {/* Closing Statement */}
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-2xl">🎉</span>
+              <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-2xl">
+                LinkedMed is more than a service—it&apos;s your support system, your advocate, and your lifelong career partner.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
