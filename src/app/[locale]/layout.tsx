@@ -8,6 +8,14 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer";
 import SocialMediaIcons from "@/components/SocialMediaIcons";  // Import the server-side component
+import { Archivo } from "next/font/google";
+
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo", // optional for CSS variables
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Linked Med",
@@ -33,8 +41,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
-
+    <html  className={archivo.className} dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />

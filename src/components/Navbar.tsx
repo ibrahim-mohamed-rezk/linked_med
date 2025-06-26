@@ -85,7 +85,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full bg-white rounded-bl-[20px] rounded-br-[20px] shadow-md">
+      <nav className="w-full rounded-bl-[20px] rounded-br-[20px] shadow-md" style={{ background: 'linear-gradient(to right, #F3EBFC, #E5EEFC)' }}>
         <div className="max-w-[1900px] mx-auto">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="flex w-full justify-between items-center h-16 relative z-50">
@@ -116,7 +116,7 @@ const Navbar = () => {
 
               </div>
               <Link href="/employers" className="hidden lg:block">
-              <button className="px-4 py-2 bg-blue-500 text-white text-sm rounded-full font-medium hover:bg-blue-700 transition">{t("employers")}</button>
+                <button className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition">{t("employers")}</button>
 
               </Link>
               {/* Desktop Buttons */}
@@ -218,7 +218,7 @@ const Navbar = () => {
                   <>
                     <button
                       onClick={() => setIsLoginOpen(true)}
-                      className="px-4 py-2 bg-blue-600 text-white text-sm rounded-full font-medium hover:bg-blue-700 transition"
+                        className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition"
                     >
                       {t("login")}
                     </button>

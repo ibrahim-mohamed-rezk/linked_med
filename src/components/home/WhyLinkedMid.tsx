@@ -1,28 +1,22 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-
-const Services = ({ data }: { data: { web: string; mobile: string } }) => {
-  const [isMobile, setIsMobile] = useState(true);
+import { useEffect } from "react";
+// { data }: { data: { web: string; mobile: string } }
+const Services = () => {
+// const [isMobile, setIsMobile] = useState(true);
   const t = useTranslations("HomePage");
 
   const outServices = [
-    { service: t("out_services.service1") },
-    { service: t("out_services.service2") },
-    { service: t("out_services.service3") },
-    { service: t("out_services.service4") },
+    { service: t("At LinkedMed") },
   ];
   const inServices = [
-    { service: t("in_services.service1") },
-    { service: t("in_services.service2") },
-    { service: t("in_services.service3") },
-    { service: t("in_services.service4") },
+    { service: t("LinkedMed is") },
   ];
 
   useEffect(() => {
     // Check screen size
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+      // setIsMobile(window.innerWidth < 768);
     };
 
     // Initial check
@@ -36,31 +30,31 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
     };
   }, []);
 
-  return (
-    <div className="w-full">
+  return ( 
+    <div id="why-linkedmed" className="w-full">
       <div className="front-full front-full-story featured1 w-full">
-        {isMobile ? (
+        {/* {isMobile ? (
           <video src={data.mobile} autoPlay loop muted />
         ) : (
           <video src={data.web} autoPlay loop muted />
-        )}
+        )} */}
 
-        <div className="front-full-inner w-full max-w-[1920px] mx-auto">
+        <div className="front-full-inner w-full max-w-[1920px] px-6 mx-auto">
           <div className="font-full-inner-content front-story w-full">
-            <h3 className="text-[clamp(42px,4.27083vw,82px)] w-full text-center font-bold leading-snug text-white">
-              {t("our_services")}
+            <h3 className="text-[clamp(32px,4.27083vw,72px)] w-full text-center font-bold leading-snug text-white">
+              {t("Why LinkedMed")}
             </h3>
-            <div className="flex px-[5px] gap-[20px] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
-              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
-                  {t("in")}
+            <div className="flex px-[5px] gap-[20px]  md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
+              <div className="w-full max-w-[671px] hover:px-6 text-justify group h-fit py-[20px] md:py-[30px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(28px,2vw,60px)] font-bold font-['Satoshi Variable']">
+                  {t("For Medical Professionals")}
                 </div>
 
-                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                {inServices?.map((service: { service: string }) => (
+                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit rounded-[33px] pl-5">
+                  {inServices?.map((service: { service: string }) => (
                     <li
                       key={service.service}
-                      className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
+                      className="text-[clamp(16px,1.2vw,24px)] text-white font-semibold leading-relaxed"
                     >
                       {service.service}
                     </li>
@@ -99,14 +93,14 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                   </defs>
                 </svg>
               </div>
-              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
-                  {t("out")}
-                  <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                  {outServices?.map((service: { service: string }) => (
+              <div className="w-full max-w-[671px] hover:px-6  group h-fit py-[20px] md:py-[30px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px]  text-center text-white text-[clamp(28px,2vw,60px)] font-bold font-['Satoshi Variable']">
+                  {t("For Employers & Healthcare Institutions")}
+                  <ul className="w-full max-w-[671px]  text-justify list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit rounded-[33px] pl-5">
+                    {outServices?.map((service: { service: string }) => (
                       <li
                         key={service.service}
-                        className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
+                        className="text-[clamp(16px,1.2vw,24px)] text-white font-semibold leading-relaxed"
                       >
                         {service.service}
                       </li>

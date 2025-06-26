@@ -10,8 +10,7 @@ module.exports = {
             transform: ['hover'],
         },
         fontFamily: {
-            ar: ['Tajawal', 'sans-serif'],
-            en: ['Poppins', 'sans-serif'],
+            archivo: ["var(--font-archivo)"],
           },
     },
     plugins: [],

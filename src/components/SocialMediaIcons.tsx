@@ -384,7 +384,7 @@ const SocialMediaIcons: FC = () => {
             {/* Toggle Button - Now at the bottom */}
             <button
                 onClick={toggleExpanded}
-                className={`group relative overflow-hidden bg-gradient-to-br from-[#667eea] via-[#764ba2] to-[#f093fb] hover:from-[#5a6cf3] hover:via-[#6a42a0] hover:to-[#ef6aff] p-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 w-12 h-12 flex items-center justify-center ${
+                className={`group relative overflow-hidden gradient-btn p-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm border border-white/10 w-12 h-12 flex items-center justify-center ${
                     isExpanded ? 'rotate-45' : ''
                 }`}
             >

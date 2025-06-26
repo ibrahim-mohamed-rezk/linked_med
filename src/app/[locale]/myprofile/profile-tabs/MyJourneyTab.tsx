@@ -81,6 +81,9 @@ const MyJourneyTab: React.FC = () => {
   useEffect(() => {
     if (!stepRefs.current.length || !containerRef.current) return;
 
+    // Copy the current ref value to avoid stale closure issues
+    const currentStepRefs = stepRefs.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         // Find the step most visible in viewport
@@ -89,7 +92,7 @@ const MyJourneyTab: React.FC = () => {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
         if (visibleSteps.length > 0) {
-          const index = stepRefs.current.findIndex(
+          const index = currentStepRefs.findIndex(
             (el) => el === visibleSteps[0].target
           );
           if (index !== -1) setActiveStep(index);
@@ -102,12 +105,13 @@ const MyJourneyTab: React.FC = () => {
       }
     );
 
-    stepRefs.current.forEach((el) => {
+    currentStepRefs.forEach((el) => {
       if (el) observer.observe(el);
     });
 
     return () => {
-      stepRefs.current.forEach((el) => {
+      // Use the copied ref value in cleanup
+      currentStepRefs.forEach((el) => {
         if (el) observer.unobserve(el);
       });
     };

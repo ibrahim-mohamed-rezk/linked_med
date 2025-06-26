@@ -1,7 +1,7 @@
 /* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+body {
+  font-family: 'Archivo', sans-serif;
+}
 input,
 button,
 select {
@@ -74,38 +74,59 @@ select {
 .spin {
   animation: spin 2s linear infinite;
 }
-
-
-/* globals.css */
-/* '/public/fonts/Tajawal/Tajawal-Regular.ttf' */
-/* globals.css */
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/public/fonts/poppins/Poppins-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('/public/fonts/poppins/Poppins-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+html {
+  scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: 'Tajawal';
-  src: url('/public/fonts/tajawal/Tajawal-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+
+/* Toggle button hover effects */
+.gradient-btn {
+  background: linear-gradient(to right, #095D94, #34AFFF);
+  cursor: pointer;
+  color: white;
 }
-@font-face {
-  font-family: 'Tajawal';
-  src: url('/public/fonts/tajawal/Tajawal-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+
+/* Hover effects */
+.gradient-btn:hover {
+  transform: scale(1.1) translateY(0px);
+}
+
+/* Shimmer effect on hover */
+.gradient-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-12deg) translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.gradient-btn:hover::before {
+  transform: skewX(-12deg) translateX(100%);
+}
+
+/* Icon styling */
+.gradient-btn svg {
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+  fill: white;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
 }

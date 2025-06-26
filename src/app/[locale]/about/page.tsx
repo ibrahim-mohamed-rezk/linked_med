@@ -32,7 +32,7 @@ export default function AboutPage() {
       setCurrentImages(imagesList[(index + 1) % imagesList.length]);
     }, 5000);
     return () => clearInterval(interval);
-  }, [index]);
+  });
 
 
   return (

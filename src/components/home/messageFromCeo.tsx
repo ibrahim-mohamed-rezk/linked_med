@@ -40,7 +40,7 @@ export default async function InspirationPage() {
             href="/start"
             className="!w-[50%] flex items-center justify-center mx-auto"
           >
-            <div className=" font-en bg-blue-700 px-4 sm:px-5 py-1 sm:py-3 md:py-4 lg:py-5 border-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl border-white rounded-3xl rounded-br-none rounded-tl-none text-white hover:bg-white hover:text-black transition-all duration-300 text-center cursor-pointer w-full">
+            <div className=" font-en gradient-btn  px-4 sm:px-5 py-1 sm:py-3 md:py-4 lg:py-5 border-2 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl border-white rounded-3xl rounded-br-none rounded-tl-none text-white  transition-all duration-300 text-center cursor-pointer w-full">
               {t("button")}
             </div>
           </Link>

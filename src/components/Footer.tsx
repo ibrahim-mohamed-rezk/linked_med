@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-white border border-[#f6f6f6] overflow-hidden py-8 px-4 sm:py-12 sm:px-6 lg:px-8">
+    <footer className="w-full border border-[#f6f6f6] overflow-hidden py-8 px-4 sm:py-12 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(to right, #F3EBFC, #E5EEFC)' }}>
       <div className="max-w-[1900px] mx-auto">
         <div className="flex w-full flex-col md:flex-row items-start justify-between gap-8">
           <div className="w-full md:w-auto mb-8 md:mb-0">
@@ -139,9 +139,20 @@ const Footer = () => {
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
                 <li
-                  className="text-[#111127] text-sm sm:text-base font-bold"
-                > <Link href={"#why-linkedmed"}>{t("whyLinkedmed")}</Link>
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname === "/") {
+                      const el = document.getElementById("why-linkedmed");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      router.push("/#why-linkedmed");
+                    }
+                  }}
+                  className="text-[#111127] cursor-pointer text-sm sm:text-base font-bold"
+                >
+                  {t("whyLinkedmed")}
                 </li>
+
                 <li
                     className="text-[#111127] text-sm sm:text-base font-bold"
                   >
@@ -154,7 +165,7 @@ const Footer = () => {
             <div className="mb-4 sm:mb-0">
               <ul className="space-y-3">
                 {[
-                  "messageFromCeo",
+                  // "messageFromCeo",
                   // "blogs/Events",
                   // "Testimonials",
                   "workWithUs",
@@ -173,6 +184,21 @@ const Footer = () => {
                 >
                   {t("Testimonials")}
                 </li>
+                <li
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname === "/") {
+                      const el = document.getElementById("Message-CEO");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    } else {
+                      router.push("/#Message-CEO");
+                    }
+                  }}
+                  className="text-[#111127] cursor-pointer text-sm sm:text-base font-bold"
+                >
+                  {t("messageFromCeo")}
+                </li>
+
               </ul>
             </div>
 

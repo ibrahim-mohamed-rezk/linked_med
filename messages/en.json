@@ -1,4 +1,192 @@
 {
+    "Service": "Services",
+    "At": "At LinkedMed, we transform ambition into achievement through a complete guidance pathway for medical careers abroad, organized into four main service categories that support you at every stage.",
+    "Scroll to explore": "Scroll to explore",
+    "Document Support": "Document Support",
+    "Your journey": "Your journey begins with organizing your documents. We make this process stress-free, fast, and compliant with target country regulations. *What we do:*",
+    "Issue key": "Issue essential documents (certificates of good standing, professional association certificates, etc.)",
+    "Legal transla4ons by embassy-cer4fied translators": "Legal translations by embassy-certified translators",
+    "Cer4fica4on and notariza4on of documents": "Certification and notarization of documents",
+    "Embassy aPesta4on coordina4on and tracking": "Embassy attestation coordination and tracking",
+    "personal checklist and real-4me tracking system so you never miss a step via your LinkedMed portal": "Personal checklist and real-time tracking system so you never miss a step via your LinkedMed portal",
+    "LinkedMed handled": "LinkedMed handled every document with precision—I focused only on my future.",
+    "Language Training": "Language Training",
+    "Language proficiency": "Language proficiency is not just a requirement—it's the foundation of your success. With our e-learning platform, you'll build strong communication skills at your own pace. *What we do:*",
+    " German language courses from A1 to C2 levels": "German language courses from A1 to C2 levels",
+    "Scien4fic language course prepara4on for the Fachsprachprüfung": "Scientific language course preparation for the Fachsprachprüfung",
+    "Scien4fic language course prepara4on for the Kenntnisprüfung": "Scientific language course preparation for the Kenntnisprüfung",
+    "Mock tests, interac4ve lessons, and progress tracking": "Mock tests, interactive lessons, and progress tracking",
+    "Speaking prac4ce and real-world scenarios": "Speaking practice and real-world scenarios",
+    "Personalized learning paths for faster improvement": "Personalized learning paths for faster improvement",
+    "Everday Interac4ons": "Everyday Interactions",
+    "Speaking prac4ce": "Speaking practice designed for healthcare professionals.",
+    "Exam simula4ons": "Exam simulations, grammar boosters, and vocabulary trainers.",
+    "24/7": "24/7 access to LinkedMed's intuitive learning platform",
+    "Thanks to LinkedMed": "Thanks to LinkedMed, I passed the Fachsprachprüfung & Kenntnisprüfung and now speak confidently with patients.",
+    "Visa & Embassy": "Visa & Embassy",
+    "We turn": "We turn complex embassy processes into a clear, guided pathway. *What we do:*",
+    "Complete": "Complete support in preparing your visa application.",
+    "Scheduling": "Scheduling embassy appointments and managing document submission appointments.",
+    "Embassy": "Embassy interview training and simulation so you enter with confidence.",
+    "Family": "Family reunion guidance and dependent visa processing.",
+    "Pre-departure": "Pre-departure checklist covering all details.",
+    "💬 LinkedMed walked me through every embassy step—I felt supported at every moment": "💬 LinkedMed walked me through every embassy step—I felt supported at every moment",
+    "Job Placement": "Job Placement",
+    "just": "We don't just find you a job—we help you start a life-changing career in the German healthcare system. *What we do:*",
+    "German-standard": "German-standard CV formatting and profile coaching.",
+    "Professional profile review and op4miza4on": "Professional profile review and optimization",
+    "Personalized job matching with trusted hospitals and clinics": "Personalized job matching with trusted hospitals and clinics",
+    "Job interview prepara4on and mock sessions": "Job interview preparation and mock sessions",
+    "Interview prepara4on tailored for German medical recruiters": "Interview preparation tailored for German medical recruiters",
+    "Contract": "Contract negotiation and employment integration.",
+    "Licensing, creden4aling, and post-hiring support": "Licensing, credentialing, and post-hiring support",
+    "Contract nego4a4on and final review": "Contract negotiation and final review",
+    "Why it maPers": "*Why it matters:* Finding the right job is more than just employment—it's about growth, security, and respect. We find the match that fits your future. 💬 They connected me with the perfect hospital—I'm thriving professionally and personally.",
+    "Relocation Support": "Relocation Support",
+    "Moving abroad": "Moving abroad can be overwhelming. Our integration support ensures you don't just arrive in Germany—you settle with confidence and start a new life with ease—for you and your family. *What we do:*",
+    "Travel planning and pre-departure orienta4on": "Travel planning and pre-departure orientation",
+    "Visa guidance and Ausländerbehörde interview prepara4on": "Visa guidance and Ausländerbehörde interview preparation",
+    "Housing search assistance and reloca4on logis4cs": "Housing search assistance and relocation logistics",
+    "School applica4on support for your children": "School application support for your children",
+    "Assistance with obtaining driving licenses in Germany": "Assistance with obtaining driving licenses in Germany",
+    "Family reunion visa and documenta4on assistance": "Family reunion visa and documentation assistance",
+    "First-week checklist and cultural orienta4on": "First-week checklist and cultural orientation",
+    "Support with integra4on services and language immersion": "Support with integration services and language immersion",
+    "Post-arrival support and regular check-ins": "Post-arrival support and regular check-ins",
+    "Guidance on long-term residency and ci4zenship pathways": "Guidance on long-term residency and citizenship pathways",
+    "Cultural integra4on support and access to local services.": "Cultural integration support and access to local services.",
+    "Ci4zenship and long-term residency advisory.": "Citizenship and long-term residency advisory.",
+    "Ongoing": "Ongoing follow-up for your peace of mind.",
+    "They didn't": "💬\"They didn't just get me to Germany—they helped me feel at home here.\"",
+    "Key Services": "Key Services",
+    " Referral & Community Engagement": "Referral & Community Engagement",
+    "Because You&rsquo;re Family": "Because You're Family",
+    " Cash": "Cash rewards for each successful friend referral.",
+    "A dedicated": "A dedicated dashboard to track progress, documents, and service status.",
+    "Lifelong": "Lifelong support for new job opportunities, license renewals, and education.",
+    "Invitations": "Invitations to alumni events, community follow-ups, and LinkedMed updates.",
+    "My friend": "My friend joined LinkedMed through me. We're now colleagues in Germany.",
+    "LinkedMed is more": "LinkedMed is more than a service—it's your support system, your advocate, and your lifelong career partner.",
+    "hero": {
+      "badge": "Premium Healthcare Placement",
+      "title": "Transform Your Healthcare Career Globally",
+      "subtitle": "Connect with premium healthcare opportunities worldwide through our comprehensive placement and support program",
+      "messageBox": {
+        "title": "The Truth About Healthcare Career Transformation",
+        "paragraph1": "We understood that finding the right healthcare opportunity abroad isn't just about matching skills—it's about navigating complex systems, language barriers, and cultural differences.",
+        "paragraph2": "LinkedMed was born from recognizing that healthcare professionals needed more than job placement—they needed comprehensive career transformation support.",
+        "paragraph3": "Our vision: to bridge the gap between talented healthcare professionals and global opportunities through personalized guidance and unwavering support."
+      },
+      "buttons": {
+        "startJourney": "Start Your Journey",
+        "watchStory": "Watch Our Story"
+      },
+      "stats": {
+        "professionals": "Healthcare Professionals",
+        "countries": "Countries Served",
+        "successRate": "Success Rate"
+      }
+    },
+    "expansion": {
+      "badge": "Global Expansion",
+      "title": "From One Dream to Many",
+      "paragraph1": "What started as one person's dream of working abroad has evolved into a movement connecting thousands of healthcare professionals worldwide.",
+      "paragraph2": "We've expanded from helping individual nurses find opportunities to building comprehensive pathways for doctors, specialists, and healthcare support staff across multiple countries.",
+      "paragraph3": "From our headquarters in Cairo, we now serve healthcare professionals across the Middle East, Europe, and beyond, creating bridges between talent and opportunity.",
+      "features": {
+        "expertTeam": {
+          "title": "Expert Team",
+          "desc": "Healthcare specialists guiding your journey"
+        },
+        "globalReach": {
+          "title": "Global Reach",
+          "desc": "Opportunities across 15+ countries"
+        },
+        "premiumService": {
+          "title": "Premium Service",
+          "desc": "Personalized support throughout"
+        },
+        "provenResults": {
+          "title": "Proven Results",
+          "desc": "98% success rate with placements"
+        }
+      }
+    },
+    "process": {
+      "badge": "Comprehensive Process",
+      "title": "More Than a Process",
+      "subtitle": "We don't just process applications—we transform careers through comprehensive support that addresses every aspect of your international healthcare journey.",
+      "description": "From language mastery to cultural integration, from exam preparation to ongoing career support, we're with you every step of the way.",
+      "steps": {
+        "languageMastery": {
+          "title": "Language Mastery",
+          "desc": "Comprehensive language training tailored to healthcare terminology and cultural communication"
+        },
+        "examExcellence": {
+          "title": "Exam Excellence",
+          "desc": "Targeted preparation for licensing exams with expert guidance and proven strategies"
+        },
+        "documentPerfection": {
+          "title": "Document Perfection",
+          "desc": "Complete credential evaluation and documentation support for seamless applications"
+        },
+        "perfectMatching": {
+          "title": "Perfect Matching",
+          "desc": "Personalized job matching based on your skills, preferences, and career goals"
+        },
+        "ongoingSupport": {
+          "title": "Ongoing Support",
+          "desc": "Continuous guidance from application to integration and beyond"
+        }
+      },
+      "bottomMessage": {
+        "line1": "We don't just handle logistics and paperwork.",
+        "line2": "We orchestrate complete career transformations."
+      }
+    },
+    "stories": {
+      "badge": "Success Stories",
+      "title": "Real People. Real Stories.",
+      "aya": {
+        "name": "Aya's Journey",
+        "title": "Nurse • Germany",
+        "quote": "I was overwhelmed by the process of working abroad. LinkedMed didn't just find me a position—they prepared me for success. From language training to cultural orientation, they thought of everything. Now I'm thriving in my dream role in Germany."
+      },
+      "mahmoud": {
+        "name": "Mahmoud's Success",
+        "title": "Doctor • UAE",
+        "quote": "The licensing exam seemed impossible until LinkedMed's targeted preparation program. Their expert guidance and personalized study plan made all the difference. I passed on my first attempt and now practice medicine in the UAE with confidence."
+      },
+      "bottomMessage": {
+        "line1": "We don't just create job placements.",
+        "line2": "We create new beginnings and transform lives."
+      }
+    },
+    "whoWeAre": {
+      "title": "This Is Who We Are",
+      "notJust": {
+        "line1": "We are not just recruitment agents processing applications.",
+        "line2": "We are not just a service provider checking boxes."
+      },
+      "weAre": "We are believers in human potential.",
+      "beliefs": {
+        "line1": "We believe in the potential of every healthcare professional to make a difference beyond borders.",
+        "line2": "We see the person behind the CV, the dreams behind the qualifications, the impact you can make in a new country.",
+        "line3": "When you succeed, patients receive better care. When you thrive, healthcare systems improve. When you grow, we all benefit.",
+        "line4": "We don't just connect you with opportunities—we connect you with your future."
+      },
+      "future": {
+        "line1": "The future of healthcare is global, and you're part of that future.",
+        "line2": "Something bigger than yourself is calling.",
+        "line3": "Are you ready to answer that call?",
+        "line4": "We'll be right there to walk beside you, every step of the way."
+      },
+      "welcome": "Welcome to LinkedMed.",
+      "buttons": {
+        "startJourney": "Start Your Journey Today",
+        "scheduleConsultation": "Schedule Consultation"
+      }
+    },
   "Refer":{
     "referFriend": {
       "pageTitle": "Refer a Friend",
@@ -73,6 +261,11 @@
     "Candidates": "Once candidates accept offers, they enter the onboarding phase, which includes orientation sessions and training."
   },
   "HomePage": {
+    "Why LinkedMed": "Why LinkedMed",
+    "For Medical Professionals": "For Medical Professionals",
+    "For Employers & Healthcare Institutions": "For Employers & Healthcare Institutions",
+    "At LinkedMed": "At LinkedMed, we don’t just help you find a job—we empower you to build a new life and career in one of the world’s most respected healthcare systems. With comprehensive support that includes document preparation, German language training, visa coordination, job placement, and post-arrival onboarding, we walk beside you at every stage of your journey. Backed by experience with over 400 trusted partners, our team understands your challenges and works tirelessly to turn them into real opportunities. When you join LinkedMed, you’re not just a client—you become part of a global family committed to professionalism, integrity, and success.",
+    "LinkedMed is": "LinkedMed is the trusted partner of hospitals, clinics, and healthcare institutions across Germany and beyond. We specialize in identifying, preparing, and delivering top-tier medical talent from around the world—professionals who are not only clinically qualified but also linguistically trained and culturally ready to integrate into your teams. Our end-to-end approach, from rigorous document verification to personalized recruitment strategies, saves time, reduces risk, and ensures quality. With LinkedMed, you gain more than candidates—you gain a long-term recruitment partner dedicated to your operational excellence and workforce stability.",  
     "our_services": "Our Services",
     "about_us": "About Us",
     "about_p1": "With over two decades of excellence in healthcare recruitment and workforce solutions, LinkedMed was founded in 2022, establishing its inaugural office in Dubai—an epicenter of medical innovation and global connectivity Expanding our footprint, we launched in Frankfurt, a cornerstone of European healthcare, and are now poised to extend our expertise to Cairo, further solidifying our presence in key medical hubs",

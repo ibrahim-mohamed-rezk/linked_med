@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize, Calendar, Eye, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 interface VideoData {
     id: string;
@@ -87,7 +88,9 @@ const VideoPage = () => {
                     >
                         {/* Video Element Placeholder */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <img
+                            <Image
+                            width={40}
+                            height={40}
                                 src={videoData.thumbnail}
                                 alt={videoData.title}
                                 className="w-full h-full object-cover"
