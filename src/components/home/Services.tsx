@@ -6,17 +6,19 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
   const [isMobile, setIsMobile] = useState(true);
   const t = useTranslations("HomePage");
 
-  const outServices = [
-    { service: t("out_services.service1") },
-    { service: t("out_services.service2") },
-    { service: t("out_services.service3") },
-    { service: t("out_services.service4") },
+  const medicalProfessionalServices = [
+    { service: "Document preparation" },
+    { service: "German language training" },
+    { service: "Visa coordination" },
+    { service: "Job placement and post-arrival onboarding" },
   ];
-  const inServices = [
-    { service: t("in_services.service1") },
-    { service: t("in_services.service2") },
-    { service: t("in_services.service3") },
-    { service: t("in_services.service4") },
+
+  // Services for employers & healthcare institutions
+  const employerServices = [
+    { service: "Rigorous document verification" },
+    { service: "Personalized recruitment strategies" },
+    { service: "Linguistically trained professionals" },
+    { service: "Culturally ready integration" },
   ];
 
   useEffect(() => {
@@ -57,7 +59,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                 </div>
 
                 <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                {inServices?.map((service: { service: string }) => (
+                {medicalProfessionalServices?.map((service: { service: string }) => (
                     <li
                       key={service.service}
                       className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
@@ -103,7 +105,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                 <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
                   {t("out")}
                   <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                  {outServices?.map((service: { service: string }) => (
+                  {employerServices?.map((service: { service: string }) => (
                       <li
                         key={service.service}
                         className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"

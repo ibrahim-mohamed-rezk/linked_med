@@ -1,81 +1,125 @@
-import Image from "next/image";
-import image1 from "@/../public/images/Home/5f138d9875160b5c2f3fd0000386dd7dc0d0eeef.jpg";
-import image2 from "@/../public/images/Home/50ca6f572f4ba4bc65b7bafa7a46b2c7c0c9254c.jpg";
-import { useTranslations, useLocale } from "next-intl";
+"use client";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-export default function LinkedMedPage() {
-  const t = useTranslations('whyLinkedMed');
-  const locale = useLocale();
-  const isArabic = locale === 'ar';
+const Services = ({ data }: { data: { web: string; mobile: string } }) => {
+  const [isMobile, setIsMobile] = useState(true);
+  const t = useTranslations("HomePage");
+
+  const outServices = [
+    { service: t("out_services.service1") },
+    { service: t("out_services.service2") },
+    { service: t("out_services.service3") },
+    { service: t("out_services.service4") },
+  ];
+  const inServices = [
+    { service: t("in_services.service1") },
+    { service: t("in_services.service2") },
+    { service: t("in_services.service3") },
+    { service: t("in_services.service4") },
+  ];
+
+  useEffect(() => {
+    // Check screen size
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Listen for resize events
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   return (
-    <section
-      id="why-linkedmed"
-      dir={isArabic ? 'rtl' : 'ltr'}
-      className={`front-full-inner max-w-[1920px] mx-auto w-full px-2 py-5 pb-17 min-h-screen sm:px-3 md:px-[4vw] lg:px-[10vw]`}
-    >
-      {/* Large screens layout (xl and above) */}
-      <div
-        className="hidden xl:flex relative w-full"
-        style={{ height: "40vw" }}
-      >
-        {/* Text Top-Left or Top-Right based on direction */}
-        <div className={`absolute top-16 ${isArabic ? 'right-10 text-right' : 'left-10 text-left'} w-[40%] max-w-2xl`}>
-          <h1 className="text-xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight md:leading-snug text-white font-en pt-10">
-            {t('title')}
-          </h1>
-          <p className="text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl leading-relaxed font-['Satoshi Variable'] text-white z-10 p-6 backdrop-blur-sm rounded-2xl pt-8">
-            {t('description1')}
-          </p>
-        </div>
+    <div className="w-full">
+      <div className="front-full front-full-story featured1 w-full">
+        {isMobile ? (
+          <video src={data.mobile} autoPlay loop muted />
+        ) : (
+          <video src={data.web} autoPlay loop muted />
+        )}
 
-        {/* Images Bottom-Right or Bottom-Left */}
-        <div className={`absolute bottom-0 ${isArabic ? 'left-0' : 'right-0'} flex gap-6 xl:gap-8 2xl:gap-10`}>
-          {[image1, image2].map((img, index) => (
-            <div
-              className={`relative group ${index === 1 ? 'mt-8 xl:mt-12 2xl:mt-16' : ''}`}
-              key={index}
-            >
-              <div className="w-48 xl:w-52 2xl:w-64 3xl:w-72 h-72 xl:h-80 2xl:h-96 3xl:h-[28rem] rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
-                <Image
-                  src={img}
-                  alt={index === 0 ? 'image1Alt' : 'image2Alt'}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  width={288}
-                  height={448}
-                  priority
-                />
+        <div className="front-full-inner w-full max-w-[1920px] mx-auto">
+          <div className="font-full-inner-content front-story w-full">
+            <h3 className="text-[clamp(42px,4.27083vw,82px)] w-full text-center font-bold leading-snug text-white">
+              {t("our_services")}
+            </h3>
+            <div className="flex px-[5px] gap-[20px] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
+              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
+                  {t("in")}
+                </div>
+
+                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
+                {inServices?.map((service: { service: string }) => (
+                    <li
+                      key={service.service}
+                      className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
+                    >
+                      {service.service}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div
+                className="rotate-90 md:rotate-0 flex items-center justify-center"
+                data-svg-wrapper
+              >
+                <svg
+                  className="w-full md:w-[8px] h-[8px] md:h-[533px] "
+                  viewBox="0 0 8 533"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4L4.00002 529"
+                    stroke="url(#paint0_linear_122_409)"
+                    strokeWidth="7"
+                    strokeLinecap="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_122_409"
+                      x1="3.5"
+                      y1="4"
+                      x2="3.50002"
+                      y2="529"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#999999" stopOpacity="0" />
+                      <stop offset="0.515" stopColor="white" />
+                      <stop offset="1" stopColor="#999999" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
+                  {t("out")}
+                  <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
+                  {outServices?.map((service: { service: string }) => (
+                      <li
+                        key={service.service}
+                        className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
+                      >
+                        {service.service}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-
-      {/* Responsive layout for screens smaller than xl */}
-      <div className={`xl:hidden py-10 flex flex-col items-center gap-6 ${isArabic ? 'text-right' : 'text-center'}`}>
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-en px-4">
-          {t('title')}
-        </h1>
-
-        <p className="text-xs sm:text-sm md:text-base leading-relaxed text-white px-4 max-w-xl backdrop-blur-sm p-4 rounded-2xl shadow-md font-['Satoshi Variable']">
-          {t('description1')}
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
-          {[image1, image2].map((img, index) => (
-            <div className="relative group w-60 h-96 rounded-2xl overflow-hidden shadow-lg" key={index}>
-              <Image
-                src={img}
-                alt={index === 0 ? 'image1Alt' : 'image2Alt'}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                width={240}
-                height={384}
-                priority
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Services;

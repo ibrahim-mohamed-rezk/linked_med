@@ -7,10 +7,7 @@ export default async function InspirationPage() {
   const t = await getTranslations("Home");
 
   return (
-    <div
-      id="Message-CEO"
-      className="min-h-screen w-full px-4 sm:px-6 md:px-[8vw] lg:px-[12vw]  mx-auto bg-black text-white flex flex-col items-center justify-center font-['Satoshi Variable']"
-    >
+    <div id='Message-CEO' className="min-h-screen  h-screen w-full px-4 my-20 sm:px-6 md:px-[8vw] lg:px-[12vw]  mx-auto bg-black text-white flex flex-col items-center justify-center font-['Satoshi Variable']">
       {/* Modern Title Section */}
       <div className="text-end w-full flex">
         <h1 className="text-xl flex text-start w-full sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-light px-6 ">
