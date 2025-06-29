@@ -1,116 +1,113 @@
-'use client'
-import { useState } from 'react'
-import { postData } from '@/libs/server/server'
-import { AxiosHeaders,AxiosError } from 'axios';
+'use client';
 
+import { useState } from 'react';
+import { postData } from '@/libs/server/server';
+import { AxiosHeaders, AxiosError } from 'axios';
+import { useTranslations } from 'next-intl';
+import { toast } from 'react-hot-toast';
 
-const ChangePasswordTab = ({token}:{token:string}) => {
-  const [showCurrentPassword, setShowCurrentPassword] = useState(false)
-  const [showNewPassword, setShowNewPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+const ChangePasswordTab = ({ token }: { token: string }) => {
+  const t = useTranslations('ChangePassword');
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     currentPassword: '',
     newPassword: '',
     confirmPassword: ''
-  })
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
-    // Client-side validation
+    e.preventDefault();
+
     if (formData.newPassword !== formData.confirmPassword) {
-      alert('New passwords do not match!')
-      return
+      toast.error(t('err_mismatch'));
+      return;
     }
     if (formData.newPassword.length < 8) {
-      alert('Password must be at least 8 characters long!')
-      return
+      toast.error(t('err_too_short'));
+      return;
     }
 
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
-      // Prepare the data to send to the API
       const requestData = {
         current_password: formData.currentPassword,
         new_password: formData.newPassword,
         new_password_confirmation: formData.confirmPassword
-      }
+      };
 
-      // Send the request to your API endpoint
-      const response = await postData('profile/change-password', requestData, new AxiosHeaders({Authorization: `Bearer ${token}`}) )
-      
-      // Handle successful response
-      console.log('Password changed successfully:', response)
-      alert('Password changed successfully!')
-      
-      // Reset form
+      const response = await postData(
+        'profile/change-password',
+        requestData,
+        new AxiosHeaders({ Authorization: `Bearer ${token}` })
+      );
+
+      console.log('Password changed successfully:', response);
+      toast.success(t('success'));
+
       setFormData({
         currentPassword: '',
         newPassword: '',
         confirmPassword: ''
-      })
-      
+      });
     } catch (error) {
-      if(error instanceof AxiosError) {
-      // Handle errors
-      console.error('Error changing password:', error)
-      
-      // Display error message to user
-      if (error?.response?.data?.message) {
-        alert(`Error: ${error?.response.data.message}`)
-      } else if (error?.response?.data?.errors) {
-        // Handle validation errors from backend
-        const errors = error?.response.data.errors
-        const errorMessages = Object.values(errors).flat().join('\n')
-        alert(`Validation errors:\n${errorMessages}`)
-      } else {
-        alert('An error occurred while changing the password. Please try again.')
-      }
+      if (error instanceof AxiosError) {
+        console.error('Error changing password:', error);
+
+        if (error?.response?.data?.message) {
+          toast.error(`Error: ${error?.response.data.message}`);
+        } else if (error?.response?.data?.errors) {
+          const errors = error?.response.data.errors;
+          const errorMessages = Object.values(errors).flat().join('\n');
+          toast.error(`Validation errors:\n${errorMessages}`);
+        } else {
+          toast.error(t('err_api'));
+        }
       }
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const togglePasswordVisibility = (field: string) => {
     switch (field) {
       case 'current':
-        setShowCurrentPassword(!showCurrentPassword)
-        break
+        setShowCurrentPassword(!showCurrentPassword);
+        break;
       case 'new':
-        setShowNewPassword(!showNewPassword)
-        break
+        setShowNewPassword(!showNewPassword);
+        break;
       case 'confirm':
-        setShowConfirmPassword(!showConfirmPassword)
-        break
+        setShowConfirmPassword(!showConfirmPassword);
+        break;
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 px-20 rounded-2xl shadow-sm">
-      <h2 className="text-xl font-semibold text-gray-800">Change Password</h2>
-      
+      <h2 className="text-xl font-semibold text-gray-800">{t('title')}</h2>
+
       <div className="space-y-4">
-        {/* Current Password */}
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Current Password</label>
+          <label className="block text-sm text-gray-600 mb-1">{t('current')}</label>
           <div className="relative">
             <input
-              type={showCurrentPassword ? "text" : "password"}
+              type={showCurrentPassword ? 'text' : 'password'}
               name="currentPassword"
               value={formData.currentPassword}
               onChange={handleInputChange}
-              placeholder="Enter your current password"
+              placeholder={t('placeholder_current')}
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-blue-500"
               required
               disabled={isLoading}
@@ -135,16 +132,15 @@ const ChangePasswordTab = ({token}:{token:string}) => {
           </div>
         </div>
 
-        {/* New Password */}
         <div>
-          <label className="block text-sm text-gray-600 mb-1">New Password</label>
+          <label className="block text-sm text-gray-600 mb-1">{t('new')}</label>
           <div className="relative">
             <input
-              type={showNewPassword ? "text" : "password"}
+              type={showNewPassword ? 'text' : 'password'}
               name="newPassword"
               value={formData.newPassword}
               onChange={handleInputChange}
-              placeholder="Enter your new password"
+              placeholder={t('placeholder_new')}
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-blue-500"
               required
               disabled={isLoading}
@@ -167,21 +163,18 @@ const ChangePasswordTab = ({token}:{token:string}) => {
               )}
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-1">
-            Password must be at least 8 characters long
-          </p>
+          <p className="text-xs text-gray-500 mt-1">{t('req_length')}</p>
         </div>
 
-        {/* Confirm New Password */}
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Confirm New Password</label>
+          <label className="block text-sm text-gray-600 mb-1">{t('confirm')}</label>
           <div className="relative">
             <input
-              type={showConfirmPassword ? "text" : "password"}
+              type={showConfirmPassword ? 'text' : 'password'}
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleInputChange}
-              placeholder="Confirm your new password"
+              placeholder={t('placeholder_confirm')}
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-blue-500"
               required
               disabled={isLoading}
@@ -205,36 +198,33 @@ const ChangePasswordTab = ({token}:{token:string}) => {
             </button>
           </div>
           {formData.confirmPassword && formData.newPassword !== formData.confirmPassword && (
-            <p className="text-xs text-red-500 mt-1">
-              Passwords do not match
-            </p>
+            <p className="text-xs text-red-500 mt-1">{t('err_mismatch')}</p>
           )}
         </div>
       </div>
 
-      {/* Password Requirements */}
       <div className="bg-gray-50 rounded-xl p-4">
-        <h3 className="text-sm font-medium text-gray-700 mb-2">Password Requirements:</h3>
+        <h3 className="text-sm font-medium text-gray-700 mb-2">{t('req_title')}</h3>
         <ul className="text-xs text-gray-600 space-y-1">
           <li className={`flex items-center ${formData.newPassword.length >= 8 ? 'text-green-600' : ''}`}>
             <span className="mr-2">{formData.newPassword.length >= 8 ? '✓' : '•'}</span>
-            At least 8 characters long
+            {t('req_length')}
           </li>
           <li className={`flex items-center ${/[A-Z]/.test(formData.newPassword) ? 'text-green-600' : ''}`}>
             <span className="mr-2">{/[A-Z]/.test(formData.newPassword) ? '✓' : '•'}</span>
-            Contains uppercase letter
+            {t('req_upper')}
           </li>
           <li className={`flex items-center ${/[a-z]/.test(formData.newPassword) ? 'text-green-600' : ''}`}>
             <span className="mr-2">{/[a-z]/.test(formData.newPassword) ? '✓' : '•'}</span>
-            Contains lowercase letter
+            {t('req_lower')}
           </li>
           <li className={`flex items-center ${/\d/.test(formData.newPassword) ? 'text-green-600' : ''}`}>
             <span className="mr-2">{/\d/.test(formData.newPassword) ? '✓' : '•'}</span>
-            Contains number
+            {t('req_number')}
           </li>
           <li className={`flex items-center ${/[!@#$%^&*(),.?":{}|<>]/.test(formData.newPassword) ? 'text-green-600' : ''}`}>
             <span className="mr-2">{/[!@#$%^&*(),.?":{}|<>]/.test(formData.newPassword) ? '✓' : '•'}</span>
-            Contains special character
+            {t('req_special')}
           </li>
         </ul>
       </div>
@@ -245,7 +235,7 @@ const ChangePasswordTab = ({token}:{token:string}) => {
           disabled={isLoading}
           className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isLoading ? 'Changing Password...' : 'Change Password'}
+          {isLoading ? t('btn_changing') : t('btn_change')}
         </button>
         <button
           type="button"
@@ -253,11 +243,11 @@ const ChangePasswordTab = ({token}:{token:string}) => {
           onClick={() => setFormData({ currentPassword: '', newPassword: '', confirmPassword: '' })}
           className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Cancel
+          {t('btn_cancel')}
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default ChangePasswordTab
+export default ChangePasswordTab;

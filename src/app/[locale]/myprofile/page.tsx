@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { toast } from 'react-hot-toast';
 import { useTranslations } from "next-intl";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ProfileData, ApiResponse } from "@/libs/helpers/types";
 import TabsProfile from "./TabsProfile";
 import { getData, postData } from "@/libs/server/server";
-// import { AxiosHeaders } from 'axios';
 
 const getCookie = (name: string): string | null => {
   if (typeof document === "undefined") return null;
@@ -18,6 +18,7 @@ const getCookie = (name: string): string | null => {
 
 const Page = () => {
   const t = useTranslations("Profile");
+
   const [profileData, setProfileData] = useState<ProfileData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [profileImage, setProfileImage] = useState<File | null>(null);
@@ -34,12 +35,12 @@ const Page = () => {
           {},
           { Authorization: `Bearer ${token}` }
         );
-
         if (response.status && response.data) {
           setProfileData(response.data);
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
+        toast.error(t("ErrorLoadingProfile"));
       } finally {
         setIsLoading(false);
       }
@@ -70,22 +71,19 @@ const Page = () => {
 
   const handleImageUpload = async () => {
     if (!profileImage || !token) return;
-  
-    console.log("Uploading file: ", profileImage); // 🧪 check file
-  
+
     setIsImageUploading(true);
-  
+
     try {
       const formData = new FormData();
-      formData.append("image", profileImage); // ✅
-  
+      formData.append("image", profileImage);
+
       const response = await postData(
         "profile/update",
         formData,
-        { Authorization: `Bearer ${token}` } // ✅ no content-type manually
+        { Authorization: `Bearer ${token}` }
       );
-  
-      // ✅ Update UI
+
       setProfileData((prev) =>
         prev
           ? {
@@ -97,24 +95,24 @@ const Page = () => {
             }
           : prev
       );
-  
+
+      toast.success(t("ImageUploadSuccess"));
       setProfileImage(null);
       setPreviewUrl(null);
     } catch (error) {
       console.error("Error uploading image:", error);
+      toast.error(t("ImageUploadError"));
     } finally {
       setIsImageUploading(false);
     }
   };
-  
-  
 
   if (isLoading) {
     return (
       <div className="w-full max-w-[1900px] mx-auto min-h-screen flex items-center justify-center bg-gray-50">
         <div className="flex flex-col items-center gap-4">
           <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-gray-600">Loading profile...</p>
+          <p className="text-gray-600">{t("Loading")}</p>
         </div>
       </div>
     );
@@ -124,12 +122,12 @@ const Page = () => {
     return (
       <div className="w-full max-w-[1900px] mx-auto min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
-          <p className="text-gray-600 text-lg">Unable to load profile data</p>
+          <p className="text-gray-600 text-lg">{t("NoProfileData")}</p>
           <button
             onClick={() => window.location.reload()}
             className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
           >
-            Retry
+            {t("Retry")}
           </button>
         </div>
       </div>
@@ -143,7 +141,7 @@ const Page = () => {
       <div className="px-4 max-w-[1200px] md:px-8 lg:px-16 pt-8 md:pt-12 lg:pt-16 pb-8 mx-auto">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8 mb-6">
           <div className="flex flex-col md:flex-row items-start gap-6">
-            {/* Profile Image Section */}
+            {/* Profile Image */}
             <div className="flex flex-col items-center gap-4">
               <div className="relative group">
                 <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-gray-100 shadow-md relative">
@@ -163,13 +161,11 @@ const Page = () => {
                     </div>
                   )}
                 </div>
-
-                {/* Edit Icon */}
                 <button
                   type="button"
                   onClick={triggerFileInput}
                   className="absolute bottom-1 right-1 bg-white p-1 rounded-full shadow-md hover:bg-gray-100 transition-all"
-                  title="Edit Image"
+                  title={t("EditImage")}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +200,7 @@ const Page = () => {
                     isImageUploading ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                 >
-                  {isImageUploading ? t("Uploading...") : t("Upload Image")}
+                  {isImageUploading ? t("Uploading") : t("UploadImage")}
                 </button>
               )}
             </div>
@@ -226,38 +222,33 @@ const Page = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Email</p>
+                    <p className="text-sm text-gray-500 mb-1">{t("Email")}</p>
                     <p className="text-gray-900 font-medium">{user.email}</p>
                   </div>
-
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Phone</p>
+                    <p className="text-sm text-gray-500 mb-1">{t("Phone")}</p>
                     <p className="text-gray-900 font-medium">{profileData.phone_number}</p>
                   </div>
-
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Location</p>
+                    <p className="text-sm text-gray-500 mb-1">{t("Location")}</p>
                     <p className="text-gray-900 font-medium">
                       {profileData.current_city}, {profileData.current_country}
                     </p>
                   </div>
-
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Experience</p>
+                    <p className="text-sm text-gray-500 mb-1">{t("Experience")}</p>
                     <p className="text-gray-900 font-medium">
-                      {profileData.years_of_experience} years
+                      {profileData.years_of_experience} {t("years")}
                     </p>
                   </div>
-
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Nationality</p>
+                    <p className="text-sm text-gray-500 mb-1">{t("Nationality")}</p>
                     <p className="text-gray-900 font-medium">{profileData.nationality}</p>
                   </div>
-
                   <div>
-                    <p className="text-sm text-gray-500 mb-1">Documents</p>
+                    <p className="text-sm text-gray-500 mb-1">{t("Documents")}</p>
                     <p className="text-gray-900 font-medium">
-                      {profileData.documents?.length || 0} files
+                      {profileData.documents?.length || 0} {t("files")}
                     </p>
                   </div>
                 </div>
@@ -266,7 +257,6 @@ const Page = () => {
           </div>
         </div>
 
-        {/* Tabs */}
         <TabsProfile profileData={profileData} token={token as string} />
       </div>
     </div>

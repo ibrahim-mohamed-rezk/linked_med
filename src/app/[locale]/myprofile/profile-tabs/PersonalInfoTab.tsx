@@ -1,15 +1,21 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 import { ProfileData } from "@/libs/helpers/types";
 import { postData } from "@/libs/server/server";
-import { AxiosHeaders,AxiosError } from 'axios';
+import { AxiosHeaders } from "axios";
+import { toast } from "react-hot-toast";
+import { useTranslations } from "next-intl";
 
+const PersonalInfoTab = ({
+  profileData,
+  token,
+}: {
+  profileData: ProfileData;
+  token: string;
+}) => {
+  const t = useTranslations("Profile");
 
-const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, token: string }) => {
-  console.log("profileData", profileData);
-
-  // Form state with real data
   const [formData, setFormData] = useState({
     full_name: "",
     date_of_birth: "",
@@ -18,12 +24,11 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
     current_country: "",
     phone_number: "",
     preferred_contact_language: "",
-    linkedmed_case_manager: ""
+    linkedmed_case_manager: "",
   });
 
   const [isLoading, setIsLoading] = useState(false);
 
-  // Populate form with real data when profileData changes
   useEffect(() => {
     if (profileData) {
       setFormData({
@@ -34,16 +39,18 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         current_country: profileData.current_country || "",
         phone_number: profileData.phone_number || "",
         preferred_contact_language: profileData.preferred_contact_language || "",
-        linkedmed_case_manager: profileData.linkedmed_case_manager || ""
+        linkedmed_case_manager: profileData.linkedmed_case_manager || "",
       });
     }
   }, [profileData]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -52,39 +59,35 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
     setIsLoading(true);
 
     try {
-      // API call to update the profile
-      console.log("Submitting form data:", formData);
-
-      const response = await postData(
+       await postData(
         "profile/update/personal",
-        formData,  new AxiosHeaders({Authorization: `Bearer ${token}`})
+        formData,
+        new AxiosHeaders({ Authorization: `Bearer ${token}` })
       );
 
-      console.log("Profile updated successfully:", response);
-      alert("Profile updated successfully!");
-
+      toast.success(t("UpdateSuccess"));
     } catch (error) {
-      if(error instanceof AxiosError){ 
       console.error("Error updating profile:", error);
-    }
-      // Handle different error scenarios
-      if (error) {
-        // Server responded with error status
-        const errorMessage = "Error updating profile. Please try again.";
-        alert(errorMessage);
-      }
+      toast.error(t("UpdateError"));
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-2xl shadow-sm">
-      <h2 className="text-xl font-semibold text-gray-800">Personal Information</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 bg-white p-6 rounded-2xl shadow-sm"
+    >
+      <h2 className="text-xl font-semibold text-gray-800">
+        {t("Title")}
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Full Name</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("FullName")}
+          </label>
           <input
             type="text"
             name="full_name"
@@ -97,7 +100,9 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Date of Birth</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("DateOfBirth")}
+          </label>
           <input
             type="date"
             name="date_of_birth"
@@ -108,7 +113,9 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Nationality</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("Nationality")}
+          </label>
           <input
             type="text"
             name="nationality"
@@ -120,7 +127,9 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Current City</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("CurrentCity")}
+          </label>
           <input
             type="text"
             name="current_city"
@@ -132,7 +141,9 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Current Country</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("CurrentCountry")}
+          </label>
           <input
             type="text"
             name="current_country"
@@ -144,7 +155,9 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Phone Number</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("PhoneNumber")}
+          </label>
           <input
             type="tel"
             name="phone_number"
@@ -156,22 +169,26 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Preferred Contact Language</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("ContactLang")}
+          </label>
           <select
             name="preferred_contact_language"
             value={formData.preferred_contact_language}
             onChange={handleInputChange}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           >
-            <option value="">Select Language</option>
-            <option value="English">English</option>
-            <option value="Arabic">Arabic</option>
-            <option value="German">German</option>
+            <option value="">{t("SelectLanguage")}</option>
+            <option value="English">{t("Languages.English")}</option>
+            <option value="Arabic">{t("Languages.Arabic")}</option>
+            <option value="German">{t("Languages.German")}</option>
           </select>
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">LinkedMed Case Manager</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("CaseManager")}
+          </label>
           <input
             type="text"
             name="linkedmed_case_manager"
@@ -187,20 +204,22 @@ const PersonalInfoTab = ({ profileData, token }: { profileData: ProfileData, tok
         <button
           type="submit"
           disabled={isLoading}
-          className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
+          className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition ${
+            isLoading ? "opacity-70 cursor-not-allowed" : ""
+          }`}
         >
           {isLoading ? (
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              Saving...
+              {t("Saving")}
             </div>
           ) : (
-            'Save Changes'
+            t("SaveChanges")
           )}
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default PersonalInfoTab
+export default PersonalInfoTab;

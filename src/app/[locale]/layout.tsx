@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer";
 import SocialMediaIcons from "@/components/SocialMediaIcons";  // Import the server-side component
 import { Archivo } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 
 const archivo = Archivo({
@@ -45,7 +46,9 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main>{children}</main>
+          <main>
+                    <Toaster position="top-center" />
+            {children}</main>
           <Footer />
           <SocialMediaIcons />  {/* Server-side Social Media Icons Component */}
         </NextIntlClientProvider>

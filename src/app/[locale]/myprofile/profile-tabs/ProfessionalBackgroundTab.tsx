@@ -3,25 +3,30 @@
 import { useState, useEffect } from "react";
 import { ProfileData } from "@/libs/helpers/types";
 import { postData } from "@/libs/server/server";
-import { AxiosHeaders,AxiosError } from 'axios';
+import { AxiosHeaders, AxiosError } from 'axios';
+import { toast } from "react-hot-toast";
+import { useTranslations } from "next-intl";
 
+const ProfessionalBackgroundTab = ({
+  profileData,
+  token,
+}: {
+  profileData: ProfileData;
+  token: string;
+}) => {
+  const t = useTranslations("Profile");
 
-const ProfessionalBackgroundTab = ({ profileData, token }: { profileData: ProfileData, token: string }) => {
-  console.log("ProfessionalBackgroundTab", profileData);
-
-  // Form state
   const [formData, setFormData] = useState({
     current_job_title: "",
     years_of_experience: 0,
     specialty_field: "",
     languages_spoken: "",
     licensing_status: "",
-    previous_countries_worked_in: ""
+    previous_countries_worked_in: "",
   });
 
   const [isLoading, setIsLoading] = useState(false);
 
-  // Populate form with real data when profileData changes
   useEffect(() => {
     if (profileData) {
       setFormData({
@@ -30,16 +35,18 @@ const ProfessionalBackgroundTab = ({ profileData, token }: { profileData: Profil
         specialty_field: profileData.specialty_field || "",
         languages_spoken: profileData.languages_spoken || "",
         licensing_status: profileData.licensing_status || "",
-        previous_countries_worked_in: profileData.previous_countries_worked_in || ""
+        previous_countries_worked_in: profileData.previous_countries_worked_in || "",
       });
     }
   }, [profileData]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: name === "years_of_experience" ? Number(value) : value,
     }));
   };
 
@@ -48,112 +55,101 @@ const ProfessionalBackgroundTab = ({ profileData, token }: { profileData: Profil
     setIsLoading(true);
 
     try {
-      // API call to update the professional background using postData
-      console.log("Submitting form data:", formData);
-
-      const response = await postData(
+      await postData(
         "profile/update/professional",
-        formData,new AxiosHeaders({Authorization: `Bearer ${token}`})
+        formData,
+        new AxiosHeaders({ Authorization: `Bearer ${token}` })
       );
-
-      console.log("Professional background updated successfully:", response);
-      alert("Professional background updated successfully!");
-
-    } catch (error){ 
-    if (error instanceof AxiosError) {
-      console.error("Error updating professional background:", error);
-      
-      // Handle different error scenarios
-      if (error.response) {
-        // Server responded with error status
-        const errorMessage = error.response.data?.message || "Error updating professional background. Please try again.";
-        alert(errorMessage);
-      } else if (error.request) {
-        // Request was made but no response received
-        alert("Network error. Please check your connection and try again.");
-      } else {
-        // Something else happened
-        alert("An unexpected error occurred. Please try again.");
+      toast.success(t("Professional.UpdateSuccess"));
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        if (error.response) {
+          toast.error(error.response.data?.message || t("Professional.UpdateError"));
+        } else if (error.request) {
+          toast.error(t("Professional.NetworkError"));
+        } else {
+          toast.error(t("Professional.UnknownError"));
+        }
       }
-    }} finally {
+    } finally {
       setIsLoading(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-2xl shadow-sm">
-      <h2 className="text-xl font-semibold text-gray-800">Professional Background</h2>
+      <h2 className="text-xl font-semibold text-gray-800">{t("Professional.Title")}</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Current Job Title</label>
+          <label className="block text-sm text-gray-600 mb-1">{t("CurrentJobTitle")}</label>
           <input
             type="text"
             name="current_job_title"
             value={formData.current_job_title}
             onChange={handleInputChange}
-            placeholder="e.g., Resident Doctor"
+            placeholder={t("CurrentJobTitlePlaceholder")}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">Years of Experience</label>
+          <label className="block text-sm text-gray-600 mb-1">{t("YearsOfExperience")}</label>
           <input
             type="number"
             name="years_of_experience"
             min="0"
             value={formData.years_of_experience}
             onChange={handleInputChange}
-            placeholder="e.g., 5"
+            placeholder={t("YearsOfExperiencePlaceholder")}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">Specialty / Field</label>
+          <label className="block text-sm text-gray-600 mb-1">{t("Specialty")}</label>
           <input
             type="text"
             name="specialty_field"
             value={formData.specialty_field}
             onChange={handleInputChange}
-            placeholder="e.g., Cardiology, General Medicine"
+            placeholder={t("SpecialtyPlaceholder")}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">Languages Spoken</label>
+          <label className="block text-sm text-gray-600 mb-1">{t("Languages")}</label>
           <input
             type="text"
             name="languages_spoken"
             value={formData.languages_spoken}
             onChange={handleInputChange}
-            placeholder="e.g., English, Arabic, German"
+            placeholder={t("LanguagesPlaceholder")}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">Licensing Status</label>
+          <label className="block text-sm text-gray-600 mb-1">{t("Licensing")}</label>
           <input
             type="text"
             name="licensing_status"
             value={formData.licensing_status}
             onChange={handleInputChange}
-            placeholder="e.g., MOH Certified, HAAD Eligible"
+            placeholder={t("LicensingPlaceholder")}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">Previous Countries Worked In</label>
+          <label className="block text-sm text-gray-600 mb-1">{t("PreviousCountries")}</label>
           <input
             type="text"
             name="previous_countries_worked_in"
             value={formData.previous_countries_worked_in}
             onChange={handleInputChange}
-            placeholder="e.g., Egypt, Saudi Arabia, Germany"
+            placeholder={t("PreviousCountriesPlaceholder")}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
@@ -168,15 +164,15 @@ const ProfessionalBackgroundTab = ({ profileData, token }: { profileData: Profil
           {isLoading ? (
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              Saving...
+              {t("Saving")}
             </div>
           ) : (
-            'Save Changes'
+            t("SaveChanges")
           )}
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default ProfessionalBackgroundTab
+export default ProfessionalBackgroundTab;
