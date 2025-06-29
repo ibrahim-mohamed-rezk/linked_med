@@ -1,34 +1,45 @@
-export interface HomeTypes {
-  intro: {
-    web: string;
-    mobile: string;
+export interface ProfileData {
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    role: string;
+    image: string;
+    created_at: string;
+    updated_at: string;
   };
-  about: {
-    web: string;
-    mobile: string;
-  };
-  service: {
-    web: string;
-    mobile: string;
-  };
+  full_name: string;
+  phone_number: string;
+  date_of_birth: string;
+  nationality: string;
+  current_country: string;
+  current_city: string;
+  current_job_title: string;
+  specialty_field: string;
+  years_of_experience: number;
+  languages_spoken: string;
+  language_certifications: string;
+  preferred_contact_language: string;
+  licensing_status: string;
+  medical_degree_details: string;
+  internship_residency_history: string;
+  previous_countries_worked_in: string;
+  linkedmed_case_manager: string;
+  certificates: string;
+  documents: Array<{
+    id: number;
+    user_id: number;
+    document: string;
+    title: string | null;
+    status: number;
+    uploaded_at: string;
+  }>;
+  created_at: string;
+  updated_at: string;
 }
 
-
-export interface UserDataTypes {
-  name: string;
-  email: string;
-  password?: string;
-  password_confirmation?: string;
-  phone?: string;
-  address?: string;
-  city?: string;
-  state?: string;
-  zip_code?: string;
-  country?: string;
-  role?: string;
-  status?: string;
-  profileImage?: string | null;
-  id?: number;
-  updated_at?: string;
-  created_at?: string;
+export interface ApiResponse {
+  status: boolean;
+  msg: string;
+  data: ProfileData;
 }

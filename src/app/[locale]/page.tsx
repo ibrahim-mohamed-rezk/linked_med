@@ -5,7 +5,7 @@ import "../../../public/css/home.css";
 import Testimonials from "@/components/home/CustomerRev";
 // import MapImage from "@/components/home/MapImage";
 import { getData } from "@/libs/server/server";
-import { HomeTypes } from "@/libs/helpers/types";
+// import { HomeTypes } from "@/libs/helpers/types";
 import MessageFromCeo from "@/components/home/messageFromCeo";
 import WhyLinkedMid from "@/components/home/WhyLinkedMid";
 export default async function Home() {
@@ -18,7 +18,7 @@ export default async function Home() {
     }
   };
 
-  const homeData: HomeTypes = await feachData();
+  const homeData = await feachData();
 
   console.log("homeData", homeData);
   return (

@@ -115,10 +115,7 @@ const Navbar = () => {
                 ))}
 
               </div>
-              <Link href="/employers" className="hidden lg:block">
-                <button className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition">{t("employers")}</button>
 
-              </Link>
               {/* Desktop Buttons */}
               <div className="hidden lg:flex items-center gap-4">
                 {/* Language Switcher */}
@@ -218,10 +215,14 @@ const Navbar = () => {
                   <>
                     <button
                       onClick={() => setIsLoginOpen(true)}
-                        className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition"
+                        className="px-8 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition"
                     >
                       {t("login")}
                     </button>
+                      <Link href="/employers" className="hidden lg:block">
+                        <button className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition">{t("employers")}</button>
+
+                      </Link>
                     {/* <button
                       onClick={() => setIsSignupOpen(true)}
                       className="px-4 py-2 border border-blue-600 text-blue-600 text-sm rounded-full font-medium hover:bg-blue-50 transition"

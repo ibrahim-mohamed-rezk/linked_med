@@ -57,9 +57,10 @@ select {
     margin-left: 2.5rem !important; /* Adjust card margin on mobile */
   }
 }
+/* 
 * {
-  @apply capitalize;
-}
+  @apply uppercase;
+} */
 
 
 @keyframes spin {

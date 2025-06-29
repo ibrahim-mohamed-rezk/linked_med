@@ -1,6 +1,6 @@
 {
     "Service": "Services",
-    "At": "At LinkedMed, we transform ambition into achievement through a complete guidance pathway for medical careers abroad, organized into four main service categories that support you at every stage.",
+    "At": "At LinkedMed, we transform ambi4on into achievement by offering a fully guided pathway to medical careers abroad. We’ve organized our services into four clear categories to help you understand how we support you at every stage.",
     "Scroll to explore": "Scroll to explore",
     "Document Support": "Document Support",
     "Your journey": "Your journey begins with organizing your documents. We make this process stress-free, fast, and compliant with target country regulations. *What we do:*",
@@ -187,47 +187,101 @@
         "scheduleConsultation": "Schedule Consultation"
       }
     },
-  "Refer":{
-    "referFriend": {
-      "pageTitle": "Refer a Friend",
-      "heading": "Help Change a Life, Earn a Reward",
-      "intro": "At LinkedMed, some of our most inspiring success stories began with a simple conversation between friends...\n\n✅ Fill out our Referral Rewards Registration Form\n✅ Introduce a friend or colleague to LinkedMed\n✅ If they’re successfully placed, you’ll receive a cash reward.",
-      "referrerSection": "Your Information (Referrer)",
-      "candidateSection": "Your Friend's Information (Candidate)",
-      "fields": {
-        "referrerName": "Full Name",
-        "referrerEmail": "Email Address",
-        "referrerPhone": "Phone Number",
-        "workedWith": "Have you worked with LinkedMed before?",
-        "referrerMessage": "Short Message (e.g., Why I’m referring this person)",
-        "candidateName": "Candidate's Full Name",
-        "candidateEmail": "Candidate's Email Address",
-        "candidatePhone": "Candidate's Phone Number",
-        "country": "Country of Residence",
-        "profession": "Profession",
-        "specialty": "Specialty (if applicable)",
-        "experience": "Experience Level",
-        "location": "Interested in working in",
-        "language": "Language Proficiency"
+      "Refer": {
+        "tabs": {
+          "about": "What about refer a friend",
+          "terms": "Terms and conditions",
+          "form": "Form"
+        },
+        "referFriend": {
+          "pageTitle": "Refer a Friend - LinkedMed",
+          "heading": "Refer a Friend",
+          "intro": "Help us grow our healthcare community by referring qualified professionals.",
+          "referrerSection": "Your Information",
+          "candidateSection": "Candidate Information",
+          "thankYouTitle": "Thank You!",
+          "thankYouMessage": "Your referral has been submitted successfully. We'll be in touch soon.",
+          "submit": "Submit Referral",
+          "yes": "Yes",
+          "no": "No",
+          "fields": {
+            "referrerName": "Your Full Name",
+            "referrerEmail": "Your Email Address",
+            "referrerPhone": "Your Phone Number",
+            "workedWith": "Have you worked with LinkedMed before?",
+            "referrerMessage": "Additional Message",
+            "candidateName": "Candidate's Full Name",
+            "candidateEmail": "Candidate's Email Address",
+            "candidatePhone": "Candidate's Phone Number",
+            "country": "Country",
+            "profession": "Profession",
+            "specialty": "Specialty",
+            "experience": "Years of Experience",
+            "location": "Preferred Work Location",
+            "language": "German Language Level"
+          },
+          "consent1": "I confirm that the candidate is aware of this referral and has consented to be contacted by LinkedMed.",
+          "consent2": "I agree to the terms and conditions of the referral program."
+        },
+        "about": {
+          "title": "What is our referral program?",
+          "description1": "Our referral program is designed to help healthcare professionals connect with opportunities while rewarding those who help us build our community.",
+          "description2": "When you refer a qualified healthcare professional who successfully joins our network, both you and your referral benefit from our program.",
+          "howItWorks": {
+            "title": "How it works:",
+            "step1": "Fill out the referral form with your details and your friend's information.",
+            "step2": "We'll contact your referred friend with relevant opportunities.",
+            "step3": "When they successfully join our network, you both receive rewards"
+          },
+          "benefits": {
+            "referrer": {
+              "title": "For You (Referrer)",
+              "description": "Earn rewards for each successful referral and help expand our professional network."
+            },
+            "friend": {
+              "title": "For Your Friend",
+              "description": "Access to exclusive healthcare opportunities and career advancement support."
+            }
+          }
+        },
+        "terms": {
+          "title": "Terms and Conditions",
+          "content": "📋 **Terms & Conditions**\n\n1. **Referrals must be submitted** via our official [Referral Rewards Registration Form] to be eligible for the program.\n\n2. **There is no limit** to how many individuals you may refer. However, each referred candidate can only be referred once.\n\n3. **You do not need to be a LinkedMed candidate** to refer someone, but you must provide accurate contact details for both yourself and the referred individual.\n\n4. The referred individual must:\n   • Be aware they are being referred.\n   • Have consented to being contacted by LinkedMed.\n   • Not already exist in the LinkedMed candidate database.\n\n5. For a referral to qualify for a reward, the following conditions must be met:\n   • The referred candidate must complete the LinkedMed registration process.\n   • They must successfully obtain a contract through LinkedMed within **12 months** of referral.\n   • They must begin employment and complete the minimum required probationary period (details vary by contract and will be confirmed by LinkedMed).\n\n6. Referred candidates must meet LinkedMed's qualification, licensing, and placement criteria to be eligible.\n\n7. Cash rewards will only be issued **after the referred candidate has started employment and met all outlined conditions**.\n\n8. **Reward amounts may vary** based on the country of employment and role. These details will be communicated during the referral process.\n\n9. LinkedMed reserves the right to validate all claims and to decline or withhold rewards in case of fraudulent, duplicate, or invalid submissions.\n\n10. LinkedMed may revise, suspend, or terminate this referral program at any time without prior notice.\n\n11. By participating in this program, you acknowledge and accept these terms in full."
+        },
+        "form": {
+          "optional": "optional",
+          "submitAnother": "Submit Another Referral"
+        },
+        "countries": {
+          "germany": "Germany",
+          "uae": "UAE",
+          "other": "Other"
+        },
+        "professions": {
+          "doctor": "Doctor",
+          "nurse": "Nurse",
+          "pharmacist": "Pharmacist",
+          "other": "Other"
+        },
+        "experience": {
+          "junior": "0–2 years",
+          "mid": "3–5 years",
+          "senior": "6+ years"
+        },
+        "languages": {
+          "a1": "A1",
+          "a2": "A2",
+          "b1": "B1",
+          "b2": "B2",
+          "notStarted": "Not Started Yet"
+        }
       },
-      "yes": "Yes",
-      "no": "No",
-      "consent1": "I confirm that I have my friend's consent to share their contact information with LinkedMed.",
-      "consent2": "I agree to the LinkedMed referral terms and privacy policy.",
-      "submit": "Submit Referral",
-      "thankYouTitle": "Thank You for Referring a Future Healthcare Hero!",
-      "thankYouMessage": "We’ll reach out to your friend soon—and once they begin their journey with LinkedMed, you’ll receive your cash reward. Stay tuned!",
-      "showTerms": "View Terms & Conditions",
-      "hideTerms": "Hide Terms & Conditions",
-      "terms": "1. Referrals must be submitted via our official form...\n2. There is no limit to how many...\n...\n11. By participating in this program, you acknowledge and accept these terms in full."
-    }
-  },
   "messageFromCeo": "Message from the CEO",
   "ceotext": "From the first meeting to the final delivery, Ethan Vina instilled confidence and provided everything we asked for. The quality of his work speaks for itself—he can execute quickly. He is an excellent Webflow developer, and we will work with him again very soon.",
   "Message from cso": "Message from the Civil Society Organization",
   "about":{
     "title": "About Us",
-    "aboutText": "From the initial meeting to the final delivery, Ethan created a sense of trust and delivered everything we asked for. The quality of his work speaks for itself and he is able to execute at a good pace. He is an excellent web developer and we will use his services again very soon. From the initial meeting to the final delivery, Ethan created a sense of trust and delivered everything we asked for. The quality of his work speaks for itself and he is able to execute at a good pace. He is an excellent web developer and we will use his services again very soon.",
+    "aboutText": "With over two decades of excellence in healthcare recruitment and workforce solu6ons, LinkedMed was founded in 2022, establishing its inaugural office in Dubai—an epicenter of medical innova6on and global connec6vity. Expanding our footprint, we launched in Frankfurt, a cornerstone of European healthcare, and are now poised to extend our exper6se to Cairo, further solidifying our presence in key medical hubs. As a premier healthcare talent acquisi6on firm, LinkedMed specializes in sourcing, creden6aling, and placing elite medical professionals across 10+ countries. We collaborate with world-class healthcare ins6tu6ons, ensuring seamless integra6on of top-6er doctors, physicians, surgeons, nurses, pharmacists, and allied healthcare specialists into high-caliber medical environments. Our mission is to elevate healthcare standards by aligning excep6onal clinical talent with pres6gious medical ins6tu6ons worldwide. Through strategic workforce solu6ons, we bridge the gap between exper6se and opportunity, op6mizing pa6ent care outcomes and advancing the future of global medicine.",
     "A Seamless Process": "A Seamless Process",
     "Candidates initiate their journey by submitting applications": "Candidates initiate their journey by submitting applications",
     "Language Training": "Language Training",
@@ -335,7 +389,7 @@
       "rightsReserved": "All Rights Reserved",
       "Claim": "Claim",
       "Privacy": "Privacy",
-      "Terms": "Terms",
+      "Terms and conditions": "Terms and conditions",
       "about": "About Us"
     },
   "header": {

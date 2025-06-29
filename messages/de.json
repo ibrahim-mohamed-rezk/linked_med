@@ -1,6 +1,6 @@
 {
     "Service": "Dienstleistungen",
-    "At": "Bei LinkedMed verwandeln wir Ambitionen in Erfolge durch einen vollständigen Beratungsweg für medizinische Karrieren im Ausland, organisiert in vier Hauptkategorien von Dienstleistungen, die Sie in jeder Phase unterstützen.",
+    "At": "Bei LinkedMed verwandeln wir Ehrgeiz in Erfolg, indem wir einen vollständig geführten Weg zu medizinischen Karrieren im Ausland anbieten. Wir haben unsere Dienstleistungen in vier klare Kategorien unterteilt, damit Sie verstehen, wie wir Sie in jeder Phase unterstützen.",
     "Scroll to explore": "Scrollen Sie zum Erkunden",
     "Document Support": "Dokumentenunterstützung",
     "Your journey": "Ihre Reise beginnt mit der Organisation Ihrer Dokumente. Wir machen diesen Prozess stressfrei, schnell und konform mit den Vorschriften des Ziellandes. *Was wir tun:*",
@@ -187,47 +187,101 @@
       "scheduleConsultation": "Beratung terminieren"
     }
   },
-  "Refer":{
-    "referFriend": {
-      "pageTitle": "Einen Freund empfehlen",
-      "heading": "Hilf, ein Leben zu verändern – erhalte eine Belohnung",
-      "intro": "Bei LinkedMed begannen viele inspirierende Erfolgsgeschichten mit einem einfachen Gespräch zwischen Freunden...\n\n✅ Fülle das Registrierungsformular aus\n✅ Stelle einen Freund oder Kollegen bei LinkedMed vor\n✅ Wird er erfolgreich vermittelt, erhältst du eine Geldprämie.",
-      "referrerSection": "Deine Informationen (Empfehlender)",
-      "candidateSection": "Informationen deines Freundes (Kandidat)",
-      "fields": {
-        "referrerName": "Vollständiger Name",
-        "referrerEmail": "E-Mail-Adresse",
-        "referrerPhone": "Telefonnummer",
-        "workedWith": "Hast du bereits mit LinkedMed gearbeitet?",
-        "referrerMessage": "Kurze Nachricht (z. B. warum du diese Person empfiehlst)",
-        "candidateName": "Vollständiger Name des Kandidaten",
-        "candidateEmail": "E-Mail des Kandidaten",
-        "candidatePhone": "Telefon des Kandidaten",
-        "country": "Wohnsitzland",
-        "profession": "Beruf",
-        "specialty": "Fachrichtung (falls zutreffend)",
-        "experience": "Erfahrungsniveau",
-        "location": "Interessiert an Arbeit in",
-        "language": "Sprachniveau"
+    "Refer": {
+      "tabs": {
+        "about": "Über das Empfehlungsprogramm",
+        "terms": "Geschäftsbedingungen",
+        "form": "Formular"
       },
-      "yes": "Ja",
-      "no": "Nein",
-      "consent1": "Ich bestätige, dass ich die Zustimmung meines Freundes zur Weitergabe seiner Daten an LinkedMed habe.",
-      "consent2": "Ich stimme den Teilnahmebedingungen und der Datenschutzrichtlinie zu.",
-      "submit": "Empfehlung absenden",
-      "thankYouTitle": "Danke für die Empfehlung eines zukünftigen Gesundheitsexperten!",
-      "thankYouMessage": "Wir kontaktieren deinen Freund bald – und sobald er bei uns startet, bekommst du deine Belohnung.",
-      "showTerms": "Bedingungen anzeigen",
-      "hideTerms": "Bedingungen verbergen",
-      "terms": "1. Empfehlungen müssen über das offizielle Formular eingereicht werden...\n2. Es gibt keine Begrenzung...\n...\n11. Mit der Teilnahme akzeptierst du alle Bedingungen."
-    }
-  },
+      "referFriend": {
+        "pageTitle": "Einen Freund empfehlen - LinkedMed",
+        "heading": "Einen Freund empfehlen",
+        "intro": "Helfen Sie uns, unsere Gesundheitsgemeinschaft zu erweitern, indem Sie qualifizierte Fachkräfte empfehlen.",
+        "referrerSection": "Ihre Informationen",
+        "candidateSection": "Kandidateninformationen",
+        "thankYouTitle": "Vielen Dank!",
+        "thankYouMessage": "Ihre Empfehlung wurde erfolgreich eingereicht. Wir werden uns bald bei Ihnen melden.",
+        "submit": "Empfehlung einreichen",
+        "yes": "Ja",
+        "no": "Nein",
+        "fields": {
+          "referrerName": "Ihr vollständiger Name",
+          "referrerEmail": "Ihre E-Mail-Adresse",
+          "referrerPhone": "Ihre Telefonnummer",
+          "workedWith": "Haben Sie schon einmal mit LinkedMed gearbeitet?",
+          "referrerMessage": "Zusätzliche Nachricht",
+          "candidateName": "Vollständiger Name des Kandidaten",
+          "candidateEmail": "E-Mail-Adresse des Kandidaten",
+          "candidatePhone": "Telefonnummer des Kandidaten",
+          "country": "Land",
+          "profession": "Beruf",
+          "specialty": "Fachgebiet",
+          "experience": "Berufserfahrung",
+          "location": "Bevorzugter Arbeitsort",
+          "language": "Deutschkenntnisse"
+        },
+        "consent1": "Ich bestätige, dass der Kandidat über diese Empfehlung informiert ist und der Kontaktaufnahme durch LinkedMed zugestimmt hat.",
+        "consent2": "Ich stimme den Geschäftsbedingungen des Empfehlungsprogramms zu."
+      },
+      "about": {
+        "title": "Was ist unser Empfehlungsprogramm?",
+        "description1": "Unser Empfehlungsprogramm wurde entwickelt, um Gesundheitsfachkräften dabei zu helfen, sich mit Möglichkeiten zu vernetzen, während diejenigen belohnt werden, die uns beim Aufbau unserer Gemeinschaft helfen.",
+        "description2": "Wenn Sie eine qualifizierte Gesundheitsfachkraft empfehlen, die erfolgreich unserem Netzwerk beitritt, profitieren sowohl Sie als auch Ihre Empfehlung von unserem Programm.",
+        "howItWorks": {
+          "title": "So funktioniert es:",
+          "step1": "Füllen Sie das Empfehlungsformular mit Ihren Daten und den Informationen Ihres Freundes aus.",
+          "step2": "Wir werden Ihren empfohlenen Freund mit relevanten Möglichkeiten kontaktieren.",
+          "step3": "Wenn sie erfolgreich unserem Netzwerk beitreten, erhalten Sie beide Belohnungen"
+        },
+        "benefits": {
+          "referrer": {
+            "title": "Für Sie (Empfehlender)",
+            "description": "Verdienen Sie Belohnungen für jede erfolgreiche Empfehlung und helfen Sie dabei, unser professionelles Netzwerk zu erweitern."
+          },
+          "friend": {
+            "title": "Für Ihren Freund",
+            "description": "Zugang zu exklusiven Gesundheitsmöglichkeiten und Unterstützung bei der Karriereentwicklung."
+          }
+        }
+      },
+      "terms": {
+        "title": "Geschäftsbedingungen",
+        "content": "📋 **Geschäftsbedingungen**\n\n1. **Empfehlungen müssen** über unser offizielles [Empfehlungsbelohnungs-Registrierungsformular] eingereicht werden, um für das Programm berechtigt zu sein.\n\n2. **Es gibt keine Begrenzung** für die Anzahl der Personen, die Sie empfehlen können. Jedoch kann jeder empfohlene Kandidat nur einmal empfohlen werden.\n\n3. **Sie müssen kein LinkedMed-Kandidat sein**, um jemanden zu empfehlen, aber Sie müssen genaue Kontaktdaten sowohl für sich selbst als auch für die empfohlene Person angeben.\n\n4. Die empfohlene Person muss:\n   • Wissen, dass sie empfohlen wird.\n   • Der Kontaktaufnahme durch LinkedMed zugestimmt haben.\n   • Nicht bereits in der LinkedMed-Kandidatendatenbank vorhanden sein.\n\n5. Damit eine Empfehlung für eine Belohnung qualifiziert ist, müssen folgende Bedingungen erfüllt sein:\n   • Der empfohlene Kandidat muss den LinkedMed-Registrierungsprozess abschließen.\n   • Er muss erfolgreich einen Vertrag über LinkedMed innerhalb von **12 Monaten** nach der Empfehlung erhalten.\n   • Er muss die Beschäftigung beginnen und die minimal erforderliche Probezeit abschließen (Details variieren je nach Vertrag und werden von LinkedMed bestätigt).\n\n6. Empfohlene Kandidaten müssen LinkedMeds Qualifikations-, Lizenzierungs- und Vermittlungskriterien erfüllen, um berechtigt zu sein.\n\n7. Geldprämien werden nur **nachdem der empfohlene Kandidat die Beschäftigung begonnen und alle aufgeführten Bedingungen erfüllt hat** ausgegeben.\n\n8. **Belohnungsbeträge können variieren** basierend auf dem Beschäftigungsland und der Rolle. Diese Details werden während des Empfehlungsprozesses mitgeteilt.\n\n9. LinkedMed behält sich das Recht vor, alle Ansprüche zu validieren und Belohnungen im Falle von betrügerischen, doppelten oder ungültigen Einreichungen abzulehnen oder zurückzuhalten.\n\n10. LinkedMed kann dieses Empfehlungsprogramm jederzeit ohne vorherige Ankündigung überarbeiten, aussetzen oder beenden.\n\n11. Durch die Teilnahme an diesem Programm erkennen Sie diese Bedingungen vollständig an und akzeptieren sie."
+      },
+      "form": {
+        "optional": "optional",
+        "submitAnother": "Weitere Empfehlung einreichen"
+      },
+      "countries": {
+        "germany": "Deutschland",
+        "uae": "VAE",
+        "other": "Andere"
+      },
+      "professions": {
+        "doctor": "Arzt",
+        "nurse": "Krankenpfleger/in",
+        "pharmacist": "Apotheker/in",
+        "other": "Andere"
+      },
+      "experience": {
+        "junior": "0–2 Jahre",
+        "mid": "3–5 Jahre",
+        "senior": "6+ Jahre"
+      },
+      "languages": {
+        "a1": "A1",
+        "a2": "A2",
+        "b1": "B1",
+        "b2": "B2",
+        "notStarted": "Noch nicht begonnen"
+      }
+    },
   "messageFromCeo": "Botschaft des Geschäftsführers",
     "ceotext": "Vom ersten Treffen bis zur finalen Übergabe vermittelte Ethan Vina Vertrauen und lieferte alles, was wir von ihm verlangt haben. Die Qualität seiner Arbeit spricht für sich – er kann schnell umsetzen. Er ist ein ausgezeichneter Webflow-Entwickler, und wir werden bald wieder mit ihm arbeiten.",
     "Message from cso": "Botschaft von der Zivilgesellschaftsorganisation",
   "about":{
     "title": "Über uns",
-    "aboutText": "Vom ersten Treffen bis zur endgültigen Übergabe schaffte Ethan ein Vertrauensverhältnis und lieferte alles, worum wir gebeten hatten. Die Qualität seiner Arbeit spricht für sich und er kann in einem guten Tempo arbeiten. Er ist ein hervorragender Webentwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen. Vom ersten Treffen bis zur endgültigen Übergabe schaffte Ethan ein Vertrauensverhältnis und lieferte alles, worum wir gebeten hatten. Die Qualität seiner Arbeit spricht für sich und er kann in einem guten Tempo arbeiten. Er ist ein hervorragender Webentwickler und wir werden seine Dienste sehr bald wieder in Anspruch nehmen.",
+    "aboutText": "Mit mehr als 20 Jahren Erfahrung in der Gesundheitsbranche wurde LinkedMed 2022 gegründet. Unser erstes Büro entstand in Dubai – einem Zentrum für medizinische Innova6on und interna6onale Vernetzung. Seitdem haben wir uns weiterentwickelt, ein Büro in Frankfurt eröffnet und bereiten uns nun auf den nächsten Schri] in Kairo vor, um unsere Präsenz in wich6gen medizinischen Hotspots weiter auszubauen. Als führende Personalvermi]lung im Gesundheitswesen sind wir darauf spezialisiert, hochqualifizierte medizinische Fachkräae zu finden, zu prüfen und in über 10 Ländern zu vermi]eln. Wir arbeiten mit erstklassigen Kliniken und Gesundheitseinrichtungen zusammen und sorgen dafür, dass Ärzte, Chirurgen, Pflegekräae, Apotheker und andere medizinische Spezialisten genau dort landen, wo sie gebraucht werden. Unser Ziel ist es, die Qualität im Gesundheitswesen zu verbessern, indem wir exzellente Fachkräae mit renommierten medizinischen Einrichtungen zusammenbringen. Durch intelligente Personalstrategien schließen wir die Lücke zwischen Talent und Bedarf – für bessere Pa6entenversorgung und eine starke Zukuna der Medizin weltweit.",
     "A Seamless Process": "Ein nahtloser Prozess",
     "Candidates initiate their journey by submitting applications": "Kandidaten beginnen ihre Reise mit der Einreichung von Bewerbungen",
     "Language Training": "Sprachtraining",
@@ -336,7 +390,7 @@
       "rightsReserved": "Alle Rechte vorbehalten",
       "Claim": "Anspruch",
       "Privacy": "Datenschutz",
-      "Terms": "Bedingungen",
+        "Terms and conditions": "Allgemeine Geschäftsbedingungen",
       "about": "Über uns"
     },
   "header": {

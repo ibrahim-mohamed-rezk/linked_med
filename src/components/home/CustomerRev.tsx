@@ -117,7 +117,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <div id="testimonials" className="h-screen max-w-[1920px] h-100vh mx-auto w-full px-2 sm:px-3 md:px-[4vw] lg:px-[8vw] mt-40">
+    <div id="testimonials" className=" py-[3vw] max-w-[1920px] mx-auto w-full px-2 sm:px-3 md:px-[4vw] lg:px-[8vw]">
       <div className="w-full">
         <h2 className="text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-ar">
           {t("Testimonials")}

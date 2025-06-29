@@ -4,24 +4,25 @@ import { useRef, useState } from "react";
 import PersonalInfoTab from "./profile-tabs/PersonalInfoTab";
 import ProfessionalBackgroundTab from "./profile-tabs/ProfessionalBackgroundTab";
 import EducationCertificationsTab from "./profile-tabs/EducationCertificationsTab";
-import DocumentManagementTab from "./profile-tabs/DocumentManagementTab";
+// import DocumentManagementTab from "./profile-tabs/DocumentManagementTab";
 import MyJourneyTab from "./profile-tabs/MyJourneyTab";
 import ChangePasswordTab from "./profile-tabs/ChangePasswordTab";
 // import other tab components similarly...
+import { ProfileData} from "@/libs/helpers/types";
 
 const tabData = [
   "Personal & Contact Information",
   "Professional Background",
   "Education & Certifications",
-  "Document Management",
+  // "Document Management",
   "My Journey",
-  "Payment & Invoices",
+  // "Payment & Invoices",
   // "Messages & Support",
   // "Referrals & Rewards",
   "Settings & Preferences",
 ];
 
-const TabsProfile = () => {
+const TabsProfile = ({profileData,token}:{profileData:ProfileData,token:string}) => {
   const [activeTab, setActiveTab] = useState(tabData[0]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -54,19 +55,19 @@ const TabsProfile = () => {
   const renderTabContent = () => {
     switch (activeTab) {
       case "Personal & Contact Information":
-        return <PersonalInfoTab />;
+        return <PersonalInfoTab profileData={profileData} token={token} />;
       case "Professional Background":
-        return <ProfessionalBackgroundTab />;
+        return <ProfessionalBackgroundTab profileData={profileData} token={token} />;
       case "Education & Certifications":
-        return <EducationCertificationsTab />;
-      case "Document Management":
-        return <DocumentManagementTab />;
+        return <EducationCertificationsTab profileData={profileData}   />;
+      // case "Document Management":
+      //   return <DocumentManagementTab profileData={profileData}  />;
       case "My Journey":
         return <MyJourneyTab />;
       case "Payment & Invoices":
         return <div>Invoices and Payments</div>;
       case "Settings & Preferences":
-        return <ChangePasswordTab />;
+        return <ChangePasswordTab token={token} />;
       default:
         return null;
     }

@@ -46,11 +46,11 @@ export default function AboutPage() {
             <h1 className="text-[clamp(14px,5vw,100px)] font-bold font-en uppercase text-black">
               {t("title")}
             </h1>
-            <div className="text-neutral-900 text-[clamp(10px,1.25vw,30px)] font-normal font-en">
+            <div className="text-neutral-900 text-[clamp(10px,1.25vw,30px)]  font-normal font-en">
               {t("aboutText")}
             </div>
           </div>
-          <div className="w-full lg:w-1/2 grid grid-cols-3 gap-4">
+          <div className="w-full lg:w-1/2 grid grid-cols-3 pt-[clamp(10px,8vw,150px)] gap-4">
             {currentImages.map((image, i) => (
               <div
                 key={`${index}-${i}`}

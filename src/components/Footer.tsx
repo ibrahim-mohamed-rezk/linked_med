@@ -58,6 +58,24 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
+                  href="https://www.linkedin.com/company/linkedmed "
+                  target="_blank"
+                  className="w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4 transition"
+                >
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 26 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.75 0H3.25C1.45508 0 0 1.45508 0 3.25V22.75C0 24.5449 1.45508 26 3.25 26H22.75C24.5449 26 26 24.5449 26 22.75V3.25C26 1.45508 24.5449 0 22.75 0ZM8.125 21.45H3.9V9.1H8.125V21.45ZM5.9625 6.825C4.26758 6.825 2.925 5.48242 2.925 3.7875C2.925 2.09258 4.26758 0.75 5.9625 0.75C7.65742 0.75 9 2.09258 9 3.7875C9 5.48242 7.65742 6.825 5.9625 6.825ZM22.75 21.45H18.55V15.175C18.55 13.7925 18.5257 12.0075 16.475 12.0075C14.4243 12.0075 14.025 13.465 14.025 15.0375V21.45H9.8V9.1H13.8625V10.5H13.9375C14.5208 9.44917 16.1142 8.125 18.3375 8.125C22.6758 8.125 22.75 10.8567 22.75 14.05V21.45Z"
+                      fill="black"
+                    />
+                  </svg>
+                </a>
+                <a
                   href="https://www.instagram.com/linked_med/"
                   target="_blank"
                   className=" w-[66px] h-[66px] flex items-center justify-center rounded-full border border-[#868686] p-4  transition"
@@ -122,7 +140,7 @@ const Footer = () => {
                   { label: "services", url: "/services" },
                   { label: "makingTheMove", url: "/make-move" },
                   { label: "seamlessProcessing", url: "/seamless-processing" },
-                  { label: "tracking", url: "/tracking" },
+                  { label: "tracking", url: "/" },
                   { label: "referAFriend", url: "/refer-a-friend" },
                   { label: "eLearning", url: "/e-learning" },
                 ].map((item) => (
@@ -227,7 +245,7 @@ const Footer = () => {
             <div className="flex space-x-4 sm:space-x-6">
               {[
                 { label: "Privacy", url: "/privacy" },
-                { label: "Terms", url: "/terms" },
+                { label: "Terms and conditions", url: "/terms" },
               ].map((item) => (
                 <Link
                   key={item.label}

@@ -32,7 +32,7 @@ const Services = () => {
 
   return ( 
     <div id="why-linkedmed" className="w-full">
-      <div className="front-full front-full-story featured1 w-full">
+      <div className="  w-full">
         {/* {isMobile ? (
           <video src={data.mobile} autoPlay loop muted />
         ) : (
@@ -44,13 +44,13 @@ const Services = () => {
             <h3 className="text-[clamp(32px,4.27083vw,72px)] w-full text-center font-bold leading-snug text-white">
               {t("Why LinkedMed")}
             </h3>
-            <div className="flex px-[5px] gap-[20px]  md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
-              <div className="w-full max-w-[671px] hover:px-6 text-justify group h-fit py-[20px] md:py-[30px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(28px,2vw,60px)] font-bold font-['Satoshi Variable']">
+            <div className="flex     flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-around">
+              <div className="w-full max-w-[671px] px-6 text-justify group h-fit py-[20px] md:py-[30px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px] text-center text-white text-[clamp(28px,2vw,60px)] font-bold font-['Satoshi Variable'] pb-4">
                   {t("For Medical Professionals")}
                 </div>
 
-                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit rounded-[33px] pl-5">
+                <ul className="w-full max-w-[671px] list-none flex flex-col items-center justify-center translate-x-0 transition-all duration-300 h-fit rounded-[33px] pl-5">
                   {inServices?.map((service: { service: string }) => (
                     <li
                       key={service.service}
@@ -93,10 +93,12 @@ const Services = () => {
                   </defs>
                 </svg>
               </div>
-              <div className="w-full max-w-[671px] hover:px-6  group h-fit py-[20px] md:py-[30px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px]  text-center text-white text-[clamp(28px,2vw,60px)] font-bold font-['Satoshi Variable']">
+              <div className="w-full max-w-[671px] px-6  group h-fit py-[20px] md:py-[30px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
+                <div className="w-full max-w-[671px]  text-center text-white text-[clamp(28px,2vw,30px)] font-bold font-['Satoshi Variable']">
+                  <div className="pb-4">
                   {t("For Employers & Healthcare Institutions")}
-                  <ul className="w-full max-w-[671px]  text-justify list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit rounded-[33px] pl-5">
+                  </div>
+                  <ul className="w-full max-w-[671px]  text-justify list-none  flex flex-col items-center justify-center translate-x-0 transition-all duration-300 h-fit rounded-[33px] pl-5">
                     {outServices?.map((service: { service: string }) => (
                       <li
                         key={service.service}

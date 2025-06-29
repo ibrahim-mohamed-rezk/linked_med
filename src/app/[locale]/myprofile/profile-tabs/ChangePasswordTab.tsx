@@ -1,10 +1,14 @@
 'use client'
 import { useState } from 'react'
+import { postData } from '@/libs/server/server'
+import { AxiosHeaders,AxiosError } from 'axios';
 
-const ChangePasswordTab = () => {
+
+const ChangePasswordTab = ({token}:{token:string}) => {
   const [showCurrentPassword, setShowCurrentPassword] = useState(false)
   const [showNewPassword, setShowNewPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     currentPassword: '',
     newPassword: '',
@@ -19,9 +23,10 @@ const ChangePasswordTab = () => {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Add password validation logic here
+    
+    // Client-side validation
     if (formData.newPassword !== formData.confirmPassword) {
       alert('New passwords do not match!')
       return
@@ -30,8 +35,51 @@ const ChangePasswordTab = () => {
       alert('Password must be at least 8 characters long!')
       return
     }
-    console.log('Password change submitted:', formData)
-    // Handle password change logic here
+
+    setIsLoading(true)
+
+    try {
+      // Prepare the data to send to the API
+      const requestData = {
+        current_password: formData.currentPassword,
+        new_password: formData.newPassword,
+        new_password_confirmation: formData.confirmPassword
+      }
+
+      // Send the request to your API endpoint
+      const response = await postData('profile/change-password', requestData, new AxiosHeaders({Authorization: `Bearer ${token}`}) )
+      
+      // Handle successful response
+      console.log('Password changed successfully:', response)
+      alert('Password changed successfully!')
+      
+      // Reset form
+      setFormData({
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: ''
+      })
+      
+    } catch (error) {
+      if(error instanceof AxiosError) {
+      // Handle errors
+      console.error('Error changing password:', error)
+      
+      // Display error message to user
+      if (error?.response?.data?.message) {
+        alert(`Error: ${error?.response.data.message}`)
+      } else if (error?.response?.data?.errors) {
+        // Handle validation errors from backend
+        const errors = error?.response.data.errors
+        const errorMessages = Object.values(errors).flat().join('\n')
+        alert(`Validation errors:\n${errorMessages}`)
+      } else {
+        alert('An error occurred while changing the password. Please try again.')
+      }
+      }
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const togglePasswordVisibility = (field: string) => {
@@ -65,11 +113,13 @@ const ChangePasswordTab = () => {
               placeholder="Enter your current password"
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-blue-500"
               required
+              disabled={isLoading}
             />
             <button
               type="button"
               onClick={() => togglePasswordVisibility('current')}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+              disabled={isLoading}
             >
               {showCurrentPassword ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,11 +147,13 @@ const ChangePasswordTab = () => {
               placeholder="Enter your new password"
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-blue-500"
               required
+              disabled={isLoading}
             />
             <button
               type="button"
               onClick={() => togglePasswordVisibility('new')}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+              disabled={isLoading}
             >
               {showNewPassword ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,11 +184,13 @@ const ChangePasswordTab = () => {
               placeholder="Confirm your new password"
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 pr-12 outline-none focus:ring-2 focus:ring-blue-500"
               required
+              disabled={isLoading}
             />
             <button
               type="button"
               onClick={() => togglePasswordVisibility('confirm')}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+              disabled={isLoading}
             >
               {showConfirmPassword ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -188,14 +242,16 @@ const ChangePasswordTab = () => {
       <div className="pt-4 flex gap-3">
         <button
           type="submit"
-          className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition"
+          disabled={isLoading}
+          className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Change Password
+          {isLoading ? 'Changing Password...' : 'Change Password'}
         </button>
         <button
           type="button"
+          disabled={isLoading}
           onClick={() => setFormData({ currentPassword: '', newPassword: '', confirmPassword: '' })}
-          className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition"
+          className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Cancel
         </button>

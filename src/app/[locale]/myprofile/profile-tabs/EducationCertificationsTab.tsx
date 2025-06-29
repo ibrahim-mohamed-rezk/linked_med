@@ -2,15 +2,18 @@
 
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import Image from 'next/image'
+import { ProfileData } from "@/libs/helpers/types";
+// import { postData } from '@/libs/server/server';
 
 interface CertificateFile extends File {
   preview?: string
 }
+// const ProfessionalBackgroundTab = ({ profileData }: { profileData: ProfileData }) => {
 
-const EducationCertificationsTab: React.FC = () => {
-  const [medicalDegree, setMedicalDegree] = useState<string>('')
-  const [internshipResidency, setInternshipResidency] = useState<string>('')
-  const [languageCertifications, setLanguageCertifications] = useState<string>('')
+const EducationCertificationsTab = ({ profileData }: { profileData: ProfileData }) => {
+  const [medicalDegree, setMedicalDegree] = useState<string>(profileData?.medical_degree_details || '')
+  const [internshipResidency, setInternshipResidency] = useState<string>(profileData?.internship_residency_history || '')
+  const [languageCertifications, setLanguageCertifications] = useState<string>(profileData?.language_certifications || '')
   const [certificates, setCertificates] = useState<CertificateFile[]>([])
 
   // Generate previews for image certificates
@@ -49,9 +52,22 @@ const EducationCertificationsTab: React.FC = () => {
     })
   }
 
+  const removeExistingDocument = (documentId: number) => {
+    // TODO: Add API call to remove document from server
+    console.log('Remove document with ID:', documentId)
+    alert('Remove existing document functionality needs to be implemented')
+  }
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     // TODO: Add submission logic here (API call or form data handling)
+    const formData = {
+      medical_degree_details: medicalDegree,
+      internship_residency_history: internshipResidency,
+      language_certifications: languageCertifications,
+      new_certificates: certificates
+    }
+    console.log('Form data to submit:', formData)
     alert('Submit Education & Certifications form (implement your logic)')
   }
 
@@ -100,10 +116,65 @@ const EducationCertificationsTab: React.FC = () => {
         />
       </div>
 
-      {/* Certificates Upload */}
+      {/* Existing Documents */}
+      {profileData?.documents && profileData.documents.length > 0 && (
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-3">
+            Existing Documents
+          </label>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            {profileData.documents.map((doc, index) => (
+              <div
+                key={doc.id}
+                className="relative bg-gray-50 p-3 rounded-lg border hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-square relative mb-2">
+                  <Image
+                    src={doc.document}
+                    alt={doc.title || `Document ${index + 1}`}
+                    fill
+                    className="object-cover rounded-md"
+                    onError={(e) => {
+                      // Handle image load error
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="hidden absolute inset-0 flex items-center justify-center bg-gray-200 rounded-md">
+                    <span className="text-gray-600 text-sm">Document</span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-600 mb-2">
+                  Uploaded: {new Date(doc.uploaded_at).toLocaleDateString()}
+                </p>
+                <div className="flex justify-between items-center">
+                  <span className={`text-xs px-2 py-1 rounded-full ${
+                    doc.status === 0 ? 'bg-yellow-100 text-yellow-800' : 
+                    doc.status === 1 ? 'bg-green-100 text-green-800' : 
+                    'bg-red-100 text-red-800'
+                  }`}>
+                    {doc.status === 0 ? 'Pending' : doc.status === 1 ? 'Approved' : 'Rejected'}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => removeExistingDocument(doc.id)}
+                    className="text-red-500 hover:text-red-700 text-xs"
+                    aria-label={`Remove document ${doc.id}`}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* New Certificates Upload */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          Certificates
+          Upload New Certificates
         </label>
         <input
           type="file"
@@ -174,6 +245,30 @@ const EducationCertificationsTab: React.FC = () => {
           required
         />
       </div>
+      <section className="pt-8 border-t border-gray-200">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">
+          Required Documents
+          <span className="text-gray-500 font-normal text-base block mt-1">
+            (depending on destination country and regulatory authority):
+          </span>
+        </h3>
+
+        <ul className="list-disc list-inside space-y-2 text-gray-700 max-w-xl">
+          <li>Certified Passport Copy</li>
+          <li>Good Standing Certificate (recent and valid)</li>
+          <li>Medical Degree Certification</li>
+          <li>Academic Transcript</li>
+          <li>Detailed Course Syllabus (required in some states)</li>
+          <li>Professional Practice License</li>
+          <li>Certificate of Good Conduct from the Professional Syndicate (valid for 3 months)</li>
+          <li>Birth Certificate</li>
+          <li>Medical License or Professional Registration</li>
+          <li>Police Clearance Certificate</li>
+          <li>Language Proficiency Certificates (e.g., Goethe, ÖSD, telc)</li>
+          <li>CV formatted according to professional and regulatory standards</li>
+          <li>Upload others</li>
+        </ul>
+      </section>
 
       <div className="text-right">
         <button

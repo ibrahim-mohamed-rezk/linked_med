@@ -1,9 +1,10 @@
-import axios, { AxiosRequestHeaders } from "axios";
+// import axios, { AxiosRequestHeaders } from "axios";
+import axios from "axios";
 
 const backendServer = axios.create({
   baseURL: process.env.NEXT_PUBLIC_Backend_URL,
   headers: {
-    "Content-Type": "application/json",
+    // ❌ لا تضع Content-Type هنا!
     Accept: "application/json",
     lang:
       (typeof window !== "undefined" &&
@@ -16,10 +17,17 @@ const backendServer = axios.create({
   timeout: 10000,
 });
 
+
+// // types
+// type HeadersType = AxiosRequestHeaders;
+// type ParamsType = Record<string, string | number | boolean>; // أو حدد حسب احتياجك
+// type PostDataType = Record<string, unknown>; // أو use a specific interface
+
 // types
-type HeadersType = AxiosRequestHeaders;
-type ParamsType = Record<string, string | number | boolean>; // أو حدد حسب احتياجك
-type PostDataType = Record<string, unknown>; // أو use a specific interface
+type HeadersType = Record<string, string>; // ✅ هذا يحل المشكلة
+type ParamsType = Record<string, string | number | boolean>;
+type PostDataType = Record<string, unknown> | FormData;
+
 
 // GET function
 export const getData = async (

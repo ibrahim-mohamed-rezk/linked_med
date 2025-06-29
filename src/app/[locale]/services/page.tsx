@@ -285,7 +285,7 @@ const MedicalServicesTimeline = () => {
       </div>
 
       {/* Extended Hero section - Full viewport height */}
-      <div className="relative z-10 min-h-dvh flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 min-h-dvh -mt-[clamp(10px,7vw,100px)] flex flex-col items-center justify-center text-center">
         <div className="flex items-center justify-center text-center gap-3 mb-8">
           <Image src={dots} width={40} height={40} alt="image" />
           <h1 className="text-4xl md:text-6xl font-bold text-white">
