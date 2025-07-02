@@ -1,4 +1,148 @@
 {
+  "Employer": {
+    "pageTitle": "Medizinische Talente einstellen - LinkedMed Arbeitgeber-Registrierung",
+    "heading": {
+      "title": " Medizinische Talente einstellen",
+      "subtitle": "Als Arbeitgeber registrieren"
+    },
+    "tabs": {
+      "about": "Partnerschaft mit LinkedMed",
+      "terms": "Geschäftsbedingungen",
+      "form": "Arbeitgeber-Registrierung"
+    },
+    "about": {
+      "title": "🩺 Partnerschaft mit LinkedMed",
+      "subtitle": "Ihr vertrauensvoller Partner für medizinische Personalvermittlung",
+      "description1": "Bei LinkedMed verstehen wir, dass die Besetzung Ihrer Gesundheitseinrichtung mit den richtigen Fachkräften nicht nur eine Aufgabe ist --- es ist eine Mission.",
+      "description2": "Mit über vier Jahren Erfahrung in der Verbindung von Kliniken, Krankenhäusern und Pflegeeinrichtungen in ganz Europa und dem Nahen Osten mit hochqualifizierten Ärzten, Krankenschwestern und Apothekern spezialisieren wir uns auf klinische Präzision, regulatorische Compliance und menschliche Zuverlässigkeit.",
+      "service": {
+        "title": "Unser umfassender Service",
+        "step1": "Jeder Gesundheitsdienstleister, den wir empfehlen, wurde gründlich überprüft, sprachlich geschult und darauf vorbereitet, die Standards Ihrer Einrichtung zu erfüllen.",
+        "step2": "Unser Team unterstützt Sie vom ersten Kontakt bis zum endgültigen Onboarding — einschließlich Dokumentenbearbeitung, Visa-Logistik und langfristiger Nachbetreuung.",
+        "step3": "Wir antworten innerhalb von 48 Stunden mit Kandidaten, denen Sie vertrauen können, und einem Prozess, den Sie respektieren werden."
+      },
+      "features": {
+        "precision": {
+          "title": "Klinische Präzision",
+          "description": "Medizinisch, kulturell und professionell vorbereitete Gesundheitsfachkräfte."
+        },
+        "compliance": {
+          "title": "Regulatorische Compliance",
+          "description": "Vollständige Unterstützung bei Dokumentenbearbeitung, Visa-Logistik und rechtlichen Anforderungen."
+        }
+      }
+    },
+    "terms": {
+      "title": "LinkedMed — Allgemeine Geschäftsbedingungen für Arbeitgeber",
+      "effective": "Gültig ab [Datum einfügen].",
+      "agreement": "Durch die Einreichung einer Registrierung oder Anfrage bei LinkedMed stimmen Sie (der \"Arbeitgeber\") den folgenden Bedingungen zu:",
+      "scope": {
+        "title": "1. Leistungsumfang",
+        "content": "LinkedMed bietet Rekrutierungs- und Vermittlungsdienstleistungen für die Einführung qualifizierter Gesundheitsfachkräfte (\"Kandidaten\") bei Gesundheitseinrichtungen und Unternehmen (\"Arbeitgeber\"). LinkedMed fungiert ausschließlich als Vermittler und beschäftigt die Kandidaten nicht direkt."
+      },
+      "liability": {
+        "title": "2. Kandidatenbeziehung & Haftung",
+        "point1": "Alle Arbeitsverträge werden ausschließlich zwischen dem Arbeitgeber und dem Kandidaten abgeschlossen.",
+        "point2": "LinkedMed ist nicht haftbar für Handlungen, Unterlassungen, Fahrlässigkeit, Fehlverhalten, Vertragsbruch oder andere Handlungen des Kandidaten nach seiner Anstellung beim Arbeitgeber.",
+        "point3": "Der Arbeitgeber verpflichtet sich, seine eigene Sorgfaltsprüfung durchzuführen, einschließlich professioneller Interviews, Referenzprüfungen und Vertragsverhandlungen vor der Einstellung.",
+        "point4": "LinkedMed garantiert keine Arbeitsleistung, Visa-Genehmigung oder Verbleib über die Einführungsperiode hinaus."
+      },
+      "compliance": {
+        "title": "3. Einhaltung gesetzlicher Bestimmungen",
+        "point1": "Der Arbeitgeber erkennt an, dass er allein dafür verantwortlich ist, die Einhaltung aller geltenden Arbeits-, Einwanderungs-, Lizenzierungs- und Steuergesetze in seinem Zuständigkeitsbereich sicherzustellen.",
+        "point2": "LinkedMed bietet nur unterstützende Dokumentation und administrative Hilfe, keine rechtliche oder Einwanderungsvertretung."
+      },
+      "dataProtection": {
+        "title": "4. Datenschutz (DSGVO & internationale Standards)",
+        "point1": "Alle von LinkedMed oder dem Kandidaten geteilten personenbezogenen Daten müssen in Übereinstimmung mit der DSGVO und den geltenden Datenschutzbestimmungen verarbeitet werden.",
+        "point2": "Arbeitgeber müssen alle Kandidatendaten als vertraulich behandeln und dürfen sie ohne ausdrückliche schriftliche Zustimmung nicht an Dritte weitergeben."
+      },
+      "indemnification": {
+        "title": "5. Schadloshaltung",
+        "content": "Der Arbeitgeber verpflichtet sich, LinkedMed, seine Direktoren, Mitarbeiter und Partner von allen Ansprüchen, Verbindlichkeiten, Verlusten oder Schäden freizustellen und schadlos zu halten, die entstehen durch:",
+        "point1": "Die Nutzung oder den Missbrauch der Dienstleistungen von LinkedMed",
+        "point2": "Die Anstellung oder Beauftragung eines von LinkedMed vermittelten Kandidaten",
+        "point3": "Alle vom Kandidaten erhobenen Ansprüche im Zusammenhang mit Arbeitsbedingungen, Visa-Status oder Rechtsstreitigkeiten"
+      },
+      "noGuarantee": {
+        "title": "6. Keine Garantie-Klausel",
+        "content": "Obwohl LinkedMed sicherstellt, dass Kandidaten die allgemeinen Eignungsanforderungen und Sprachqualifikationen erfüllen, akzeptiert der Arbeitgeber, dass ergebnisbasierte Resultate (wie Visa-Ausstellung, Vertragsdauer oder Umzugserfolg) nicht garantiert werden können. Verzögerungen oder Ausfälle aufgrund von Regierungs-, Botschafts- oder Lizenzierungsbehörden liegen außerhalb der Kontrolle von LinkedMed."
+      },
+      "termination": {
+        "title": "7. Beendigung der Zusammenarbeit",
+        "content": "LinkedMed behält sich das Recht vor, die Dienstleistung für jeden Arbeitgeber zu beenden, der:",
+        "point1": "Kandidatendaten missbraucht oder Datenschutzgesetze verletzt",
+        "point2": "Diskriminiert oder sich an unethischen Einstellungspraktiken beteiligt",
+        "point3": "Arbeitsbedingungen oder vertragliche Verpflichtungen falsch darstellt"
+      },
+      "jurisdiction": {
+        "title": "8. Gerichtsbarkeit & geltendes Recht",
+        "content": "Diese Bedingungen unterliegen den Gesetzen der Bundesrepublik Deutschland und sind entsprechend auszulegen. Streitigkeiten aus dieser Vereinbarung unterliegen der ausschließlichen Gerichtsbarkeit der Gerichte in Frankfurt am Main, Deutschland."
+      },
+      "modification": {
+        "title": "9. Änderungsklausel",
+        "content": "LinkedMed kann diese Geschäftsbedingungen jederzeit aktualisieren. Die fortgesetzte Nutzung unserer Dienstleistungen stellt die Annahme der aktualisierten Version dar."
+      }
+    },
+    "form": {
+      "title": "📝 Arbeitgeber-Registrierungsformular",
+      "description": "Füllen Sie das folgende Formular aus, um sich als Arbeitgeber zu registrieren und mit qualifizierten Gesundheitsfachkräften in Kontakt zu treten.",
+      "optional": "optional",
+      "selectOption": "Auswählen",
+      "fileAccepts": "Akzeptiert PDF, DOCX-Dateien",
+      "sections": {
+        "organization": "Organisationsinformationen",
+        "contact": "Kontaktinformationen",
+        "requirements": "Einstellungsanforderungen",
+        "additional": "Zusätzliche Informationen"
+      },
+      "fields": {
+        "organizationName": "Organisation / Krankenhausname",
+        "countryCity": "Land & Stadt",
+        "countryCityPlaceholder": "z.B. Deutschland, Frankfurt",
+        "facilityType": "Art der Einrichtung",
+        "contactName": "Name der Kontaktperson",
+        "email": "E-Mail-Adresse",
+        "confirmEmail": "E-Mail-Adresse bestätigen",
+        "phoneNumber": "Telefonnummer (mit Ländercode)",
+        "jobTitles": "Stellenbezeichnungen oder benötigte Abteilungen",
+        "jobTitlesPlaceholder": "z.B. Intensivpfleger, Kinderarzt, Apotheker",
+        "numberOfPositions": "Anzahl der Stellen",
+        "languagesRequired": "Erforderliche Sprachen",
+        "languagesPlaceholder": "z.B. Deutsch B2, Arabisch, Englisch",
+        "startDate": "Bevorzugtes Startdatum",
+        "salaryRange": "Erwarteter Gehaltsbereich",
+        "salaryPlaceholder": "z.B. 3.500€ – 5.000€ pro Monat",
+        "jobDescription": "Stellenbeschreibung hochladen",
+        "helpMessage": "Wie können wir Ihnen helfen? (Ihre Nachricht)",
+        "helpPlaceholder": "Anfrage oder spezielle Wünsche",
+        "hearAboutUs": "Wie haben Sie von uns erfahren?"
+      },
+      "options": {
+        "hospital": "Krankenhaus",
+        "clinic": "Klinik",
+        "careHome": "Pflegeheim",
+        "privatePractice": "Privatpraxis",
+        "other": "Andere",
+        "website": "Website",
+        "referral": "Empfehlung",
+        "linkedin": "LinkedIn",
+        "event": "Veranstaltung"
+      },
+      "consent": {
+        "title": "Erforderliche Vereinbarungen",
+        "terms": "Ich stimme den Geschäftsbedingungen und der Datenschutzrichtlinie von LinkedMed zu.",
+        "acknowledge": "Ich bestätige, dass ich die obigen Geschäftsbedingungen gelesen und verstanden habe."
+      },
+      "submit": "Anfrage senden",
+      "submitAnother": "Weitere Registrierung einreichen",
+      "thankYou": {
+        "title": "Vielen Dank für Ihre Registrierung bei LinkedMed!",
+        "message": "Unser Recruiting-Team wird Sie innerhalb von 24-48 Stunden kontaktieren, um Ihre Einstellungsanforderungen zu besprechen.",
+        "email": "Sie sollten in Kürze eine Bestätigungs-E-Mail mit den nächsten Schritten erhalten."
+      }
+    }
+  },
     "ChangePassword": {
     "title": "Passwort ändern",
     "current": "Aktuelles Passwort",

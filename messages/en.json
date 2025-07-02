@@ -1,4 +1,148 @@
 {
+  "Employer": {
+    "pageTitle": "Hire Healthcare Talent - LinkedMed Employer Registration",
+    "heading": {
+      "title": " Hire Healthcare Talent",
+      "subtitle": "Register as an Employer"
+    },
+    "tabs": {
+      "about": "Partner with LinkedMed",
+      "terms": "Terms and Conditions",
+      "form": "Employer Registration"
+    },
+    "about": {
+      "title": "🩺 Partner with LinkedMed",
+      "subtitle": "Your Trusted Medical Recruitment Ally",
+      "description1": "At LinkedMed, we understand that staffing your healthcare facility with the right professionals is not just a task --- it's a mission.",
+      "description2": "With over four years of experience connecting clinics, hospitals, and care institutions across Europe and the Middle East with highly qualified doctors, nurses, and pharmacists, we specialize in clinical precision, regulatory compliance, and human reliability.",
+      "service": {
+        "title": "Our Comprehensive Service",
+        "step1": "Every healthcare provider we recommend has been thoroughly vetted, language-trained, and prepared to meet your institution's standards.",
+        "step2": "Our team supports you from first contact to final onboarding — including document handling, visa logistics, and long-term follow-up.",
+        "step3": "We'll respond within 48 hours with candidates you can trust, and a process you'll respect."
+      },
+      "features": {
+        "precision": {
+          "title": "Clinical Precision",
+          "description": "Medically, culturally, and professionally prepared healthcare professionals."
+        },
+        "compliance": {
+          "title": "Regulatory Compliance",
+          "description": "Full support with document handling, visa logistics, and legal requirements."
+        }
+      }
+    },
+    "terms": {
+      "title": "LinkedMed — Employer Terms & Conditions of Service",
+      "effective": "Effective as of [Insert Date].",
+      "agreement": "By submitting a registration or inquiry to LinkedMed, you (the \"Employer\") agree to the following terms:",
+      "scope": {
+        "title": "1. Scope of Service",
+        "content": "LinkedMed provides recruitment and facilitation services for the introduction of qualified healthcare professionals (\"Candidates\") to healthcare institutions and companies (\"Employers\"). LinkedMed acts solely as an intermediary and does not employ the candidates directly."
+      },
+      "liability": {
+        "title": "2. Candidate Relationship & Liability",
+        "point1": "All employment agreements are entered into exclusively between the Employer and the Candidate.",
+        "point2": "LinkedMed is not liable for any acts, omissions, negligence, misconduct, breach of contract, or other actions taken by the Candidate once employed by the Employer.",
+        "point3": "The Employer agrees to conduct its own due diligence, including professional interviews, reference checks, and contract negotiations before hiring.",
+        "point4": "LinkedMed does not guarantee job performance, visa approval, or retention beyond the introduction period."
+      },
+      "compliance": {
+        "title": "3. Compliance with Legal Requirements",
+        "point1": "The Employer acknowledges that it is solely responsible for ensuring legal compliance with all applicable labor, immigration, licensing, and tax laws in its jurisdiction.",
+        "point2": "LinkedMed provides supporting documentation and administrative assistance only, not legal or immigration representation."
+      },
+      "dataProtection": {
+        "title": "4. Data Protection (GDPR & International Standards)",
+        "point1": "All personal data shared by LinkedMed or the Candidate must be processed in accordance with GDPR and applicable data protection regulations.",
+        "point2": "Employers must treat all candidate data as confidential and shall not disclose it to third parties without express written consent."
+      },
+      "indemnification": {
+        "title": "5. Indemnification",
+        "content": "The Employer agrees to indemnify and hold harmless LinkedMed, its directors, staff, and partners from any claim, liability, loss, or damage arising from:",
+        "point1": "The use or misuse of LinkedMed's services",
+        "point2": "The employment or engagement of a Candidate introduced by LinkedMed",
+        "point3": "Any claims brought by the Candidate related to employment conditions, visa status, or legal disputes"
+      },
+      "noGuarantee": {
+        "title": "6. No Guarantee Clause",
+        "content": "While LinkedMed ensures that candidates meet general eligibility requirements and language qualifications, the Employer accepts that outcome-based results (such as visa issuance, contract duration, or relocation success) cannot be guaranteed. Any delays or failures due to government, embassy, or licensing authorities are outside LinkedMed's control."
+      },
+      "termination": {
+        "title": "7. Termination of Engagement",
+        "content": "LinkedMed reserves the right to terminate service with any employer who:",
+        "point1": "Misuses candidate data or violates privacy laws",
+        "point2": "Discriminates or engages in unethical hiring practices",
+        "point3": "Misrepresents working conditions or contractual obligations"
+      },
+      "jurisdiction": {
+        "title": "8. Jurisdiction & Governing Law",
+        "content": "These Terms shall be governed by and interpreted in accordance with the laws of the Federal Republic of Germany. Disputes arising from this agreement shall be subject to the exclusive jurisdiction of the courts in Frankfurt am Main, Germany."
+      },
+      "modification": {
+        "title": "9. Modification Clause",
+        "content": "LinkedMed may update these Terms & Conditions at any time. Continued use of our services constitutes acceptance of the updated version."
+      }
+    },
+    "form": {
+      "title": "📝 Employer Registration Form",
+      "description": "Complete the form below to register as an employer and start connecting with qualified healthcare professionals.",
+      "optional": "optional",
+      "selectOption": "Select",
+      "fileAccepts": "Accepts PDF, DOCX files",
+      "sections": {
+        "organization": "Organization Information",
+        "contact": "Contact Information",
+        "requirements": "Hiring Requirements",
+        "additional": "Additional Information"
+      },
+      "fields": {
+        "organizationName": "Organization / Hospital Name",
+        "countryCity": "Country & City",
+        "countryCityPlaceholder": "e.g., Germany, Frankfurt",
+        "facilityType": "Type of Facility",
+        "contactName": "Contact Person Name",
+        "email": "Email Address",
+        "confirmEmail": "Confirm Email Address",
+        "phoneNumber": "Phone Number (with country code)",
+        "jobTitles": "Job Titles or Departments Needed",
+        "jobTitlesPlaceholder": "e.g., ICU Nurse, Pediatrician, Pharmacist",
+        "numberOfPositions": "Number of Positions",
+        "languagesRequired": "Languages Required",
+        "languagesPlaceholder": "e.g., German B2, Arabic, English",
+        "startDate": "Preferred Start Date",
+        "salaryRange": "Expected Salary Range",
+        "salaryPlaceholder": "e.g., €3,500 – €5,000 per month",
+        "jobDescription": "Upload Job Description",
+        "helpMessage": "How can we help you? (Your Message)",
+        "helpPlaceholder": "Inquiry or special requests",
+        "hearAboutUs": "How did you hear about us?"
+      },
+      "options": {
+        "hospital": "Hospital",
+        "clinic": "Clinic",
+        "careHome": "Care Home",
+        "privatePractice": "Private Practice",
+        "other": "Other",
+        "website": "Website",
+        "referral": "Referral",
+        "linkedin": "LinkedIn",
+        "event": "Event"
+      },
+      "consent": {
+        "title": "Required Agreements",
+        "terms": "I agree to LinkedMed's terms and data privacy policy.",
+        "acknowledge": "I acknowledge that I have read and understood the Terms & Conditions above."
+      },
+      "submit": "Submit Inquiry",
+      "submitAnother": "Submit Another Registration",
+      "thankYou": {
+        "title": "Thank you for registering with LinkedMed!",
+        "message": "Our recruitment team will contact you within 24–48 hours to discuss your hiring needs.",
+        "email": "You should receive a confirmation email shortly with next steps."
+      }
+    }
+  },
   "ChangePassword":{
     "title": "Change Password",
     "current": "Current Password",
