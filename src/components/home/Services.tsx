@@ -64,7 +64,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                       key={service.service}
                       className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
                     >
-                      {service.service}
+                      {t(service.service)}
                     </li>
                   ))}
                 </ul>
@@ -110,7 +110,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                         key={service.service}
                         className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
                       >
-                        {service.service}
+                        {t(service.service)}
                       </li>
                     ))}
                   </ul>
