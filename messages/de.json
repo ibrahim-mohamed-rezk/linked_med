@@ -692,6 +692,8 @@
       "about": "Über uns"
     },
   "header": {
+    "Profile": "Profil",
+
     "employers": "Arbeitgeber",
     "home": "Startseite",
     "services": "Dienstleistungen",
@@ -1086,6 +1088,8 @@
     }
   },
   "auth": {
+    "loading":"Laden...",
+    "login_failed": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre E-Mail-Adresse und Ihr Passwort.",
     "Name":"Name",
 
     "placeholder_name": "Geben Sie Ihren Namen ein",

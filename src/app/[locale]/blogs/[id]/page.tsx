@@ -56,7 +56,7 @@ const BlogPage = async ({ params }: PageProps) => {
     const blog: BlogData = await getData(`/blogs/${id}`);
 
     return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 max-w-[1920px] mx-auto">
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
         {/* Enhanced Hero Section with Cover */}
         {blog.cover && (
           <section className="relative h-[clamp(60vh,80vh,90vh)] w-full overflow-hidden">
@@ -78,7 +78,7 @@ const BlogPage = async ({ params }: PageProps) => {
 
             {/* Hero Content */}
             <div className="absolute inset-0 z-20 flex items-end">
-              <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-20 w-full">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-20 w-full">
                 <div className="max-w-4xl">
                   <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold text-white mb-4 leading-tight tracking-tight">
                     {blog.title}
@@ -110,7 +110,7 @@ const BlogPage = async ({ params }: PageProps) => {
         )}
 
         {/* Enhanced Main Content */}
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Main Article */}
             <article className="lg:col-span-8">
@@ -335,7 +335,7 @@ const BlogPage = async ({ params }: PageProps) => {
   } catch (error) {
     console.error("Error fetching blog data:", error);
     return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 flex items-center justify-center p-4 max-w-[1920px] mx-auto">
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 flex items-center justify-center p-4">
         <div className="max-w-md mx-auto">
           <div className="bg-white/90 backdrop-blur-sm shadow-2xl rounded-3xl p-8 border border-red-100 text-center">
             <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">

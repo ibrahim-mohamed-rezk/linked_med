@@ -6,52 +6,14 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 interface Testimonial {
-  name: string;         // This is now a translation key
-  testimonial: string;  // This is now a translation key
+  id: number;
+  name: string;
+  testimonial: string;
   image: string;
   stars?: number;
 }
 
-const testimonials: Testimonial[] = [
-  {
-    image: "/images/testimonials/hager.png",
-    name: "hagar_name",
-    testimonial: "hagar_testimonial",
-    stars: 5
-  },
-  {
-    image: "/images/testimonials/RebicaMuller.jpg",
-    name: "rebica_name",
-    testimonial: "rebica_testimonial",
-    stars: 5
-  },
-  {
-    image: "/images/testimonials/AhmedSabri.jpg",
-    name: "ahmed_name",
-    testimonial: "ahmed_testimonial",
-    stars: 5
-  },
-  {
-    image: "/images/testimonials/SaraDabagh.jpg",
-    name: "sara_name",
-    testimonial: "sara_testimonial",
-    stars: 4
-  },
-  {
-    image: "/images/testimonials/FatimaM.jpg",
-    name: "fatima_name",
-    testimonial: "fatima_testimonial",
-    stars: 5
-  },
-  {
-    image: "/images/testimonials/SalmaHany.jpg",
-    name: "salma_name",
-    testimonial: "salma_testimonial",
-    stars: 4
-  },
-];
-
-const Testimonials: React.FC = () => {
+const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
   const [isPaused, setIsPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -61,11 +23,13 @@ const Testimonials: React.FC = () => {
   const cardWidth = 380;
   const scrollSpeed = 1.5;
 
+  // Use the data prop instead of hardcoded testimonials
+  const testimonials = data || [];
   const extendedTestimonials = [...testimonials, ...testimonials, ...testimonials];
   const t = useTranslations('footer');
 
   const animateScroll = () => {
-    if (scrollContainerRef.current && !isPaused) {
+    if (scrollContainerRef.current && !isPaused && testimonials.length > 0) {
       scrollContainerRef.current.scrollLeft += scrollSpeed;
 
       if (scrollContainerRef.current.scrollLeft >= testimonials.length * cardWidth) {
@@ -95,12 +59,14 @@ const Testimonials: React.FC = () => {
   };
 
   useEffect(() => {
-    animationRef.current = requestAnimationFrame(animateScroll);
+    if (testimonials.length > 0) {
+      animationRef.current = requestAnimationFrame(animateScroll);
+    }
     return () => {
       cancelAnimationFrame(animationRef.current);
       if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     };
-  });
+  }, [testimonials.length, isPaused]);
 
   const renderStars = (starCount: number = 5) => {
     return (
@@ -115,6 +81,11 @@ const Testimonials: React.FC = () => {
       </div>
     );
   };
+
+  // Return early if no testimonials
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
 
   return (
     <div id="testimonials" className=" py-[3vw] max-w-[1920px] mx-auto w-full px-2 sm:px-3 md:px-[4vw] lg:px-[8vw]">
@@ -131,7 +102,7 @@ const Testimonials: React.FC = () => {
           >
             {extendedTestimonials.map((testimonial, index) => (
               <div
-                key={`${testimonial.name}-${index}`}
+                key={`${testimonial.id}-${index}`}
                 className="flex-shrink-0 w-80 md:w-86 lg:w-96 mx-3 flip-card h-96"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
@@ -149,7 +120,7 @@ const Testimonials: React.FC = () => {
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-4 backdrop-blur-sm">
                         <h3 className="font-en text-lg text-white bg-black py-2 px-2 rounded">
-                          {t(testimonial.name)}
+                          {testimonial.name}
                         </h3>
                         {renderStars(testimonial.stars)}
                       </div>
@@ -158,9 +129,9 @@ const Testimonials: React.FC = () => {
 
                   <div className="flip-card-back bg-blue-900 text-white rounded-xl overflow-hidden shadow-lg p-8 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-en text-xl mb-4">{t(testimonial.name)}</h3>
+                      <h3 className="font-en text-xl mb-4">{testimonial.name}</h3>
                       <p className="text-base leading-relaxed overflow-y-auto max-h-48">
-                        {t(testimonial.testimonial)}
+                        {testimonial.testimonial}
                       </p>
                     </div>
                     <div className="mt-4">

@@ -6,7 +6,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['randomuser.me', 'goldenrod-crab-464117.hostingersite.com'],
+    // (https://placehold.co/600x400.png)
+    domains: ['randomuser.me', 'goldenrod-crab-464117.hostingersite.com', 'placehold.co'],
   },
 };
 

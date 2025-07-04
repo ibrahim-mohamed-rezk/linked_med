@@ -691,6 +691,7 @@
       "about": "About Us"
     },
   "header": {
+    "Profile": "Profile",
     "employers": "employers",
     "home": "Home",
     "services": "Services",
@@ -1087,6 +1088,8 @@
   },
   
     "auth": {
+      "loading":"Loading...",
+      "login_failed": "Login failed. Please check your email and password.",
       "Name":"Name",
       "placeholder_name": "Enter your name",
       "welcome": "Welcome to",

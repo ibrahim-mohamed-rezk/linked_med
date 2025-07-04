@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { LoginModal } from "./AuthModals";
 import { SignupModal } from "./AuthModals";
 import Image from "next/image";
-import { UserRound } from 'lucide-react';
+// import { UserRound } from "lucide-react";
 import {
   getUserFromCookies,
   isAuthenticated,
@@ -85,7 +85,10 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full rounded-bl-[20px] rounded-br-[20px] shadow-md" style={{ background: 'linear-gradient(to right, #F3EBFC, #E5EEFC)' }}>
+      <nav
+        className="w-full rounded-bl-[20px] rounded-br-[20px] shadow-md"
+        style={{ background: "linear-gradient(to right, #F3EBFC, #E5EEFC)" }}
+      >
         <div className="max-w-[1900px] mx-auto">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="flex w-full justify-between items-center h-16 relative z-50">
@@ -113,7 +116,6 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 ))}
-
               </div>
 
               {/* Desktop Buttons */}
@@ -168,13 +170,10 @@ const Navbar = () => {
 
                 {/* User Menu or Auth Buttons */}
                 {user ? (
-                  <div className="relative flex gap-2 items-center" ref={userMenuRef}>
-
-                    <Link href="/myprofile" locale={locale}>
-                      <UserRound size={24} color="black" className="cursor-pointer" />
-                    </Link>
-
-
+                  <div
+                    className="relative flex gap-2 items-center"
+                    ref={userMenuRef}
+                  >
                     <button
                       onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                       className="flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition"
@@ -195,10 +194,12 @@ const Navbar = () => {
                       </svg>
                     </button>
 
-
-
                     {isUserMenuOpen && (
-                      <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                      <div
+                        className={`absolute  top-12 ${
+                          locale === "ar" ? "left-12 " : "right-12 "
+                        } w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50`}
+                      >
                         <div className="py-1">
                           <button
                             onClick={handleLogout}
@@ -206,23 +207,28 @@ const Navbar = () => {
                           >
                             {t("logout")}
                           </button>
+                          <Link href="/myprofile" locale={locale}>
+                            <div className="block w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100">
+                              <h1>{t("Profile")}</h1>
+                            </div>
+                          </Link>
                         </div>
                       </div>
-
                     )}
                   </div>
                 ) : (
                   <>
                     <button
                       onClick={() => setIsLoginOpen(true)}
-                        className="px-8 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition"
+                      className="px-8 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition"
                     >
                       {t("login")}
                     </button>
-                      <Link href="/employers" className="hidden lg:block">
-                        <button className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition">{t("employers")}</button>
-
-                      </Link>
+                    <Link href="/employers" className="hidden lg:block">
+                      <button className="px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium  transition">
+                        {t("employers")}
+                      </button>
+                    </Link>
                     {/* <button
                       onClick={() => setIsSignupOpen(true)}
                       className="px-4 py-2 border border-blue-600 text-blue-600 text-sm rounded-full font-medium hover:bg-blue-50 transition"

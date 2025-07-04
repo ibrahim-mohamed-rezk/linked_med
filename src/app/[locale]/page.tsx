@@ -8,31 +8,33 @@ import { getData } from "@/libs/server/server";
 // import { HomeTypes } from "@/libs/helpers/types";
 import MessageFromCeo from "@/components/home/messageFromCeo";
 import WhyLinkedMid from "@/components/home/WhyLinkedMid";
+import BlogSection  from "@/components/home/Blogs";
+
 export default async function Home() {
   const feachData = async () => {
     try {
       const response = await getData("/home");
-      return response.videos;
+      return response.data;
     } catch (error) {
       throw error;
     }
   };
 
   const homeData = await feachData();
-
   console.log("homeData", homeData);
   return (
     <div>
       <main className="w-full bg-black text-white">
-        <Hero data={homeData.intro} />
-        <About data={homeData.about} />
-        <Services data={homeData.service} />
+        <Hero data={homeData?.videos.intro} />
+        <About data={homeData?.videos.about} />
+        <Services data={homeData?.videos.service} />
         {/* <MapImage /> */}
         {/* <Map /> */}
         {/* <Testimonials />*/}
         <MessageFromCeo />
         <WhyLinkedMid  />
-        <Testimonials />
+        <Testimonials data={homeData.testimonials} />
+        <BlogSection data={homeData.blogs} />
       </main>
     </div>
   );
