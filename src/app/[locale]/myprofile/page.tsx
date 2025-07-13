@@ -61,6 +61,7 @@ const Page = () => {
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();
+    
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

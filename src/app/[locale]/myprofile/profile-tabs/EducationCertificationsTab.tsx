@@ -156,31 +156,6 @@ const EducationCertificationsTab = ({ profileData }: { profileData: ProfileData 
         />
       </div>
 
-      <section className="pt-8 border-t border-gray-200">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">
-          {t('RequiredDocsTitle')}
-          <span className="text-gray-500 font-normal text-base block mt-1">
-            {t('RequiredDocsSubtitle')}
-          </span>
-        </h3>
-
-        <ul className="list-disc list-inside space-y-2 text-gray-700 max-w-xl">
-          <li>{t('PassportCopy')}</li>
-          <li>{t('GoodStanding')}</li>
-          <li>{t('MedicalDegree')}</li>
-          <li>{t('Transcript')}</li>
-          <li>{t('Syllabus')}</li>
-          <li>{t('PracticeLicense')}</li>
-          <li>{t('GoodConduct')}</li>
-          <li>{t('BirthCertificate')}</li>
-          <li>{t('MedicalLicense')}</li>
-          <li>{t('PoliceClearance')}</li>
-          <li>{t('LanguageProficiency')}</li>
-          <li>{t('CVFormat')}</li>
-          <li>{t('UploadOthers')}</li>
-        </ul>
-      </section>
-
       <div className="text-right">
         <button
           type="submit"
