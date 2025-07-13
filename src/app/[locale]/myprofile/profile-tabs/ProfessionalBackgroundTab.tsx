@@ -89,7 +89,7 @@ const ProfessionalBackgroundTab = ({
             value={formData.current_job_title}
             onChange={handleInputChange}
             placeholder={t("CurrentJobTitlePlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -102,7 +102,7 @@ const ProfessionalBackgroundTab = ({
             value={formData.years_of_experience}
             onChange={handleInputChange}
             placeholder={t("YearsOfExperiencePlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -114,7 +114,7 @@ const ProfessionalBackgroundTab = ({
             value={formData.specialty_field}
             onChange={handleInputChange}
             placeholder={t("SpecialtyPlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -126,7 +126,7 @@ const ProfessionalBackgroundTab = ({
             value={formData.languages_spoken}
             onChange={handleInputChange}
             placeholder={t("LanguagesPlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -138,7 +138,7 @@ const ProfessionalBackgroundTab = ({
             value={formData.licensing_status}
             onChange={handleInputChange}
             placeholder={t("LicensingPlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -150,7 +150,7 @@ const ProfessionalBackgroundTab = ({
             value={formData.previous_countries_worked_in}
             onChange={handleInputChange}
             placeholder={t("PreviousCountriesPlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
       </div>

@@ -26,14 +26,7 @@ export interface ProfileData {
   previous_countries_worked_in: string;
   linkedmed_case_manager: string;
   certificates: string;
-  documents: Array<{
-    id: number;
-    user_id: number;
-    document: string;
-    title: string | null;
-    status: number;
-    uploaded_at: string;
-  }>;
+  documents?: Document[];
   created_at: string;
   updated_at: string;
 }
@@ -42,4 +35,13 @@ export interface ApiResponse {
   status: boolean;
   msg: string;
   data: ProfileData;
+}
+
+interface Document {
+  id: number;
+  user_id: number;
+  document: string;
+  title: string;
+  status: boolean;
+  uploaded_at: string;
 }

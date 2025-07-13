@@ -91,7 +91,10 @@ html {
 .gradient-btn:hover {
   transform: scale(1.1) translateY(0px);
 }
-
+/* Add this to your global CSS file */
+.webkit-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
 /* Shimmer effect on hover */
 .gradient-btn::before {
   content: '';

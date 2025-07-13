@@ -109,7 +109,7 @@ const Page = () => {
 
   if (isLoading) {
     return (
-      <div className="w-full max-w-[1900px] mx-auto min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="w-full mx-auto min-h-screen flex items-center justify-center bg-gray-50">
         <div className="flex flex-col items-center gap-4">
           <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-gray-600">{t("Loading")}</p>
@@ -120,7 +120,7 @@ const Page = () => {
 
   if (!profileData) {
     return (
-      <div className="w-full max-w-[1900px] mx-auto min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="w-full mx-auto min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <p className="text-gray-600 text-lg">{t("NoProfileData")}</p>
           <button
@@ -137,8 +137,8 @@ const Page = () => {
   const { user } = profileData;
 
   return (
-    <div className="w-full max-w-[1900px] mx-auto min-h-screen bg-gray-50">
-      <div className="px-4 max-w-[1200px] md:px-8 lg:px-16 pt-8 md:pt-12 lg:pt-16 pb-8 mx-auto">
+    <div className="w-full mx-auto min-h-screen bg-gray-50">
+      <div className="px-4 max-w-[1440px] md:px-8 lg:px-16 pt-8 md:pt-12 lg:pt-16 pb-8 mx-auto">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8 mb-6">
           <div className="flex flex-col md:flex-row items-start gap-6">
             {/* Profile Image */}

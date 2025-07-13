@@ -94,7 +94,7 @@ const PersonalInfoTab = ({
             value={formData.full_name}
             onChange={handleInputChange}
             placeholder="John Doe"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
             required
           />
         </div>
@@ -108,7 +108,7 @@ const PersonalInfoTab = ({
             name="date_of_birth"
             value={formData.date_of_birth}
             onChange={handleInputChange}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -122,7 +122,7 @@ const PersonalInfoTab = ({
             value={formData.nationality}
             onChange={handleInputChange}
             placeholder="e.g., Egyptian"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -136,7 +136,7 @@ const PersonalInfoTab = ({
             value={formData.current_city}
             onChange={handleInputChange}
             placeholder="Berlin"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -150,7 +150,7 @@ const PersonalInfoTab = ({
             value={formData.current_country}
             onChange={handleInputChange}
             placeholder="Germany"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -164,7 +164,7 @@ const PersonalInfoTab = ({
             value={formData.phone_number}
             onChange={handleInputChange}
             placeholder="+49 123 456789"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
 
@@ -176,7 +176,7 @@ const PersonalInfoTab = ({
             name="preferred_contact_language"
             value={formData.preferred_contact_language}
             onChange={handleInputChange}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           >
             <option value="">{t("SelectLanguage")}</option>
             <option value="English">{t("Languages.English")}</option>
@@ -195,7 +195,7 @@ const PersonalInfoTab = ({
             value={formData.linkedmed_case_manager}
             onChange={handleInputChange}
             placeholder="Coordinator Name"
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           />
         </div>
       </div>

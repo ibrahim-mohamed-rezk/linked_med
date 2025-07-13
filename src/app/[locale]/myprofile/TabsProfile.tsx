@@ -7,6 +7,7 @@ import EducationCertificationsTab from "./profile-tabs/EducationCertificationsTa
 import MyJourneyTab from "./profile-tabs/MyJourneyTab";
 import ChangePasswordTab from "./profile-tabs/ChangePasswordTab";
 import { ProfileData } from "@/libs/helpers/types";
+import Certificates from "./profile-tabs/Certificates";
 
 const TabsProfile = ({ profileData, token }: { profileData: ProfileData; token: string }) => {
   const t = useTranslations("Profile");
@@ -15,6 +16,7 @@ const TabsProfile = ({ profileData, token }: { profileData: ProfileData; token: 
     t("PersonalInfo"),
     t("ProfessionalBackground"),
     t("EducationCertifications"),
+    t("Certificates"),
     // t("DocumentManagement"),
     t("MyJourney"),
     // t("Payments"),
@@ -57,6 +59,8 @@ const TabsProfile = ({ profileData, token }: { profileData: ProfileData; token: 
         return <ProfessionalBackgroundTab profileData={profileData} token={token} />;
       case t("EducationCertifications"):
         return <EducationCertificationsTab profileData={profileData} />;
+        case t("Certificates"):
+          return <Certificates profileData={profileData} token={token} />;
       case t("MyJourney"):
         return <MyJourneyTab />;
       case t("Settings"):
@@ -67,7 +71,7 @@ const TabsProfile = ({ profileData, token }: { profileData: ProfileData; token: 
   };
 
   return (
-    <div className="p-4 container mx-auto">
+    <div className="p-4  w-full mx-auto">
       <h1 className="text-2xl font-bold mb-4">{t("TabsTitle")}</h1>
 
       <div

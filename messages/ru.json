@@ -1086,6 +1086,12 @@
     }
   },
   "auth": {
+     "passwords_dont_match": "Пароли не совпадают",
+  "At least 8 characters": "Не менее 8 символов",
+  "One uppercase letter": "Одна заглавная буква",
+  "One lowercase letter": "Одна строчная буква",
+  "One number": "Одна цифра",
+  "One special character": "Один специальный символ",
     "loading":"Загрузка...",
     "login_failed": "Не удалось войти. Пожалуйста, проверьте свой адрес электронной почты и пароль.",
     "Name":"Имя",

@@ -1088,6 +1088,12 @@
     }
   },
   "auth": {
+     "passwords_dont_match": "Passwörter stimmen nicht überein",
+  "At least 8 characters": "Mindestens 8 Zeichen",
+  "One uppercase letter": "Mindestens ein Großbuchstabe",
+  "One lowercase letter": "Mindestens ein Kleinbuchstabe",
+  "One number": "Mindestens eine Zahl",
+  "One special character": "Mindestens ein Sonderzeichen",
     "loading":"Laden...",
     "login_failed": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre E-Mail-Adresse und Ihr Passwort.",
     "Name":"Name",

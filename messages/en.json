@@ -1088,6 +1088,12 @@
   },
   
     "auth": {
+        "passwords_dont_match": "Passwords don't match",
+  "At least 8 characters": "At least 8 characters",
+  "One uppercase letter": "One uppercase letter",
+  "One lowercase letter": "One lowercase letter",
+  "One number": "One number",
+  "One special character": "One special character",
       "loading":"Loading...",
       "login_failed": "Login failed. Please check your email and password.",
       "Name":"Name",

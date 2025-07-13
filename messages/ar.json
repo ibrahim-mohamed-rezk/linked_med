@@ -1055,6 +1055,12 @@
     }
   },
   "auth": {
+     "passwords_dont_match": "كلمتا المرور غير متطابقتين",
+  "At least 8 characters": "ثمانية أحرف على الأقل",
+  "One uppercase letter": "حرف كبير واحد على الأقل",
+  "One lowercase letter": "حرف صغير واحد على الأقل",
+  "One number": "رقم واحد على الأقل",
+  "One special character": "رمز خاص واحد على الأقل",
     "loading":"جارٍ التحميل...",
     "login_failed": "فشل تسجيل الدخول. يرجى التحقق من البريد الإلكتروني وكلمة المرور.",
     "Name":"الاسم",
