@@ -47,7 +47,8 @@ const Page = () => {
     };
 
     fetchProfileData();
-  }, []);
+  }, [token,t]);
+
 
   useEffect(() => {
     if (profileImage) {
@@ -57,7 +58,7 @@ const Page = () => {
     } else {
       setPreviewUrl(null);
     }
-  }, [profileImage]);
+  }, [profileImage,t,token]);
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();

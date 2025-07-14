@@ -39,7 +39,7 @@ const PersonalInfoTab = ({
         current_country: profileData.current_country || "",
         phone_number: profileData.phone_number || "",
         preferred_contact_language: profileData.preferred_contact_language || "",
-        linkedmed_case_manager: profileData.linkedmed_case_manager || "",
+        linkedmed_case_manager: profileData?.linkedmed_case_manager || "",
       });
     }
   }, [profileData]);

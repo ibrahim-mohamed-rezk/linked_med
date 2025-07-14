@@ -58,7 +58,7 @@ const TabsProfile = ({ profileData, token }: { profileData: ProfileData; token: 
       case t("ProfessionalBackground"):
         return <ProfessionalBackgroundTab profileData={profileData} token={token} />;
       case t("EducationCertifications"):
-        return <EducationCertificationsTab profileData={profileData} />;
+        return <EducationCertificationsTab profileData={profileData} token={token} />;
         case t("Certificates"):
           return <Certificates profileData={profileData} token={token} />;
       case t("MyJourney"):

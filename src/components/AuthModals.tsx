@@ -29,7 +29,6 @@ export const SignupModal: React.FC<AuthModalProps> = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
 
   const t = useTranslations("auth");
   const locale = useLocale();
@@ -42,13 +41,14 @@ export const SignupModal: React.FC<AuthModalProps> = ({
     upper: /[A-Z]/.test(password),
     lower: /[a-z]/.test(password),
     number: /\d/.test(password),
-    special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+    special: /[!@#$%^&*(),.?":{}|<>]/.test(password),
   };
 
   // Check if all password requirements are met
   const isPasswordValid = Object.values(passwordValidation).every(Boolean);
   const isPasswordMatch = password === confirmPassword;
-  const isFormValid = isPasswordValid && isPasswordMatch && name.length > 0 && email.length > 0;
+  const isFormValid =
+    isPasswordValid && isPasswordMatch && name.length > 0 && email.length > 0;
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,7 +102,7 @@ export const SignupModal: React.FC<AuthModalProps> = ({
     <div
       dir={direction}
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50"
-      style={{ overflow: 'hidden' }}
+      style={{ overflow: "hidden" }}
     >
       <div className="relative rounded-2xl shadow-lg w-full max-w-4xl overflow-hidden max-h-[90vh]">
         {/* Background Image - Full Modal */}
@@ -110,7 +110,9 @@ export const SignupModal: React.FC<AuthModalProps> = ({
           src={loginImage}
           alt="Sign Up Background"
           fill
-          className={`object-cover rounded-2xl ${locale === "en" ? "scale-x-[-1]" : ""}`}
+          className={`object-cover rounded-2xl ${
+            locale === "en" ? "scale-x-[-1]" : ""
+          }`}
           priority
         />
 
@@ -121,9 +123,9 @@ export const SignupModal: React.FC<AuthModalProps> = ({
         <div
           dir={direction}
           className="relative z-10 overflow-y-auto items-start justify-start"
-          style={{ 
-            scrollbarWidth: 'none', 
-            msOverflowStyle: 'none'
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
           }}
         >
           <button
@@ -147,10 +149,11 @@ export const SignupModal: React.FC<AuthModalProps> = ({
             </svg>
           </button>
 
-          <div className="rounded-xl p-8 w-3/6 justify-end flex items-end max-h-[100vh] overflow-y-auto"
-            style={{ 
-              scrollbarWidth: 'none', 
-              msOverflowStyle: 'none'
+          <div
+            className="rounded-xl p-8 w-3/6 justify-end flex items-end max-h-[100vh] overflow-y-auto"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
             }}
           >
             <div className="w-full">
@@ -160,7 +163,9 @@ export const SignupModal: React.FC<AuthModalProps> = ({
                   Linkedmed
                 </a>
               </h2>
-              <h1 className="text-3xl font-bold mb-6 text-gray-800">{t("sign_up")}</h1>
+              <h1 className="text-3xl font-bold mb-6 text-gray-800">
+                {t("sign_up")}
+              </h1>
 
               {error && (
                 <div className="bg-red-50 text-red-600 p-3 rounded-md mb-4">
@@ -222,8 +227,6 @@ export const SignupModal: React.FC<AuthModalProps> = ({
                       id="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      onFocus={() => setIsPasswordFocused(true)}
-                      onBlur={() => setIsPasswordFocused(false)}
                       placeholder={t("placeholder_create_password")}
                       className="w-full mt-1 px-4 py-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:bg-blue-50 focus:border-blue-300 focus:outline-none bg-white transition-all duration-200 ease-in-out"
                       required
@@ -247,16 +250,14 @@ export const SignupModal: React.FC<AuthModalProps> = ({
                   </label>
                   <div className="relative">
                     <input
-                      type={showConfirm ? "text" : "password"}
-                      id="confirmPassword"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      onFocus={() => setIsPasswordFocused(true)}
-                      onBlur={() => setIsPasswordFocused(false)}
-                      placeholder={t("placeholder_confirm_password")}
-                      className="w-full mt-1 px-4 py-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:bg-blue-50 focus:border-blue-300 focus:outline-none bg-white transition-all duration-200 ease-in-out"
-                      required
-                    />
+  type={showConfirm ? "text" : "password"}
+  id="confirmPassword"
+  value={confirmPassword}
+  onChange={(e) => setConfirmPassword(e.target.value)}
+  placeholder={t("placeholder_confirm_password")}
+  className="w-full mt-1 px-4 py-2 pr-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:bg-blue-50 focus:border-blue-300 focus:outline-none bg-white transition-all duration-200 ease-in-out"
+  required
+/>
                     <button
                       type="button"
                       onClick={() => setShowConfirm(!showConfirm)}
@@ -266,33 +267,67 @@ export const SignupModal: React.FC<AuthModalProps> = ({
                     </button>
                   </div>
                   {confirmPassword && password !== confirmPassword && (
-                    <p className="text-xs text-red-500 mt-1">{t("passwords_dont_match")}</p>
+                    <p className="text-xs text-red-500 mt-1">
+                      {t("passwords_dont_match")}
+                    </p>
                   )}
                 </div>
 
                 {/* Password Requirements */}
                 {password && (
                   <div className="bg-gray-50 rounded-xl p-4">
-                    <h3 className="text-sm font-medium text-gray-700 mb-2">Password Requirements</h3>
+                    <h3 className="text-sm font-medium text-gray-700 mb-2">
+                      Password Requirements
+                    </h3>
                     <ul className="text-xs text-gray-600 space-y-1">
-                      <li className={`flex items-center ${passwordValidation.length ? 'text-green-600' : ''}`}>
-                        <span className="mr-2">{passwordValidation.length ? '✓' : '•'}</span>
+                      <li
+                        className={`flex items-center ${
+                          passwordValidation.length ? "text-green-600" : ""
+                        }`}
+                      >
+                        <span className="mr-2">
+                          {passwordValidation.length ? "✓" : "•"}
+                        </span>
                         At least 8 characters
                       </li>
-                      <li className={`flex items-center ${passwordValidation.upper ? 'text-green-600' : ''}`}>
-                        <span className="mr-2">{passwordValidation.upper ? '✓' : '•'}</span>
+                      <li
+                        className={`flex items-center ${
+                          passwordValidation.upper ? "text-green-600" : ""
+                        }`}
+                      >
+                        <span className="mr-2">
+                          {passwordValidation.upper ? "✓" : "•"}
+                        </span>
                         One uppercase letter
                       </li>
-                      <li className={`flex items-center ${passwordValidation.lower ? 'text-green-600' : ''}`}>
-                        <span className="mr-2">{passwordValidation.lower ? '✓' : '•'}</span>
+                      <li
+                        className={`flex items-center ${
+                          passwordValidation.lower ? "text-green-600" : ""
+                        }`}
+                      >
+                        <span className="mr-2">
+                          {passwordValidation.lower ? "✓" : "•"}
+                        </span>
                         One lowercase letter
                       </li>
-                      <li className={`flex items-center ${passwordValidation.number ? 'text-green-600' : ''}`}>
-                        <span className="mr-2">{passwordValidation.number ? '✓' : '•'}</span>
+                      <li
+                        className={`flex items-center ${
+                          passwordValidation.number ? "text-green-600" : ""
+                        }`}
+                      >
+                        <span className="mr-2">
+                          {passwordValidation.number ? "✓" : "•"}
+                        </span>
                         One number
                       </li>
-                      <li className={`flex items-center ${passwordValidation.special ? 'text-green-600' : ''}`}>
-                        <span className="mr-2">{passwordValidation.special ? '✓' : '•'}</span>
+                      <li
+                        className={`flex items-center ${
+                          passwordValidation.special ? "text-green-600" : ""
+                        }`}
+                      >
+                        <span className="mr-2">
+                          {passwordValidation.special ? "✓" : "•"}
+                        </span>
                         One special character
                       </li>
                     </ul>
@@ -304,8 +339,8 @@ export const SignupModal: React.FC<AuthModalProps> = ({
                   disabled={loading || !isFormValid}
                   className={`w-full py-2 rounded-md text-sm font-medium transition ${
                     isFormValid && !loading
-                      ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                      : 'bg-gray-400 text-gray-200 cursor-not-allowed'
+                      ? "bg-blue-600 hover:bg-blue-700 text-white"
+                      : "bg-gray-400 text-gray-200 cursor-not-allowed"
                   }`}
                 >
                   {loading ? t("loading") : t("submit_signup")}
@@ -390,9 +425,10 @@ export function LoginModal({ isOpen, onClose, onSwitchModal }: AuthModalProps) {
         <Image
           src={loginImage}
           alt="Sign In Background"
-
           fill
-          className={`object-cover rounded-2xl ${locale === "en" ? "scale-x-[-1]" : ""}`}
+          className={`object-cover rounded-2xl ${
+            locale === "en" ? "scale-x-[-1]" : ""
+          }`}
           priority
         />
 
@@ -433,7 +469,9 @@ export function LoginModal({ isOpen, onClose, onSwitchModal }: AuthModalProps) {
                   Linkedmed
                 </a>
               </h2>
-              <h1 className="text-3xl font-bold mb-6 text-gray-800">{t("sign_in")}</h1>
+              <h1 className="text-3xl font-bold mb-6 text-gray-800">
+                {t("sign_in")}
+              </h1>
 
               {error && (
                 <div className="bg-red-50 text-red-600 p-3 rounded-md mb-4">
@@ -490,8 +528,15 @@ export function LoginModal({ isOpen, onClose, onSwitchModal }: AuthModalProps) {
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
                   </div>
-                  <div className={`${locale === "en" ? "text-left" : "text-right"}`}>
-                    <a href="#" className="text-sm text-blue-600 hover:underline">
+                  <div
+                    className={`${
+                      locale === "en" ? "text-left" : "text-right"
+                    }`}
+                  >
+                    <a
+                      href="#"
+                      className="text-sm text-blue-600 hover:underline"
+                    >
                       {t("forgot")}
                     </a>
                   </div>

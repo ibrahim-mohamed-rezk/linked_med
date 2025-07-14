@@ -17,15 +17,18 @@ export interface ProfileData {
   current_job_title: string;
   specialty_field: string;
   years_of_experience: number;
+  previous_countries_worked_in: string;
   languages_spoken: string;
-  language_certifications: string;
   preferred_contact_language: string;
   licensing_status: string;
-  medical_degree_details: string;
-  internship_residency_history: string;
-  previous_countries_worked_in: string;
   linkedmed_case_manager: string;
-  certificates: string;
+  education: {
+    language_certifications: string;
+    medical_degree_details: string;
+    internship_residency_history: string;
+    previous_countries_worked_in: string;
+    certificates: string;
+  };
   documents?: Document[];
   created_at: string;
   updated_at: string;
