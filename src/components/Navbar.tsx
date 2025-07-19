@@ -42,22 +42,6 @@ const Navbar = () => {
     }
   }, []);
 
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        userMenuRef.current &&
-        !userMenuRef.current.contains(event.target as Node)
-      ) {
-        setIsUserMenuOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   const changeLang = (lang: string) => {
     if (lang === locale) return;
     router.push(`/${lang}${pathname.replace(`/${locale}`, "")}`);
@@ -91,7 +75,7 @@ const Navbar = () => {
       >
         <div className="max-w-[1900px] mx-auto">
           <div className="px-4 sm:px-6 lg:px-8">
-            <div className="flex w-full justify-between items-center h-16 relative z-50">
+            <div className="flex w-full justify-between items-center h-16 relative z-20">
               {/* Logo */}
               <Link href="/" className="rounded-lg p-2">
                 <Image
@@ -123,7 +107,7 @@ const Navbar = () => {
                 {/* Language Switcher */}
                 <div className="relative">
                   <div
-                    className="flex items-center gap-2 cursor-pointer"
+                    className="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition-all duration-200"
                     onClick={() => setIsLangOpen(!isLangOpen)}
                   >
                     <Image
@@ -136,7 +120,9 @@ const Navbar = () => {
                     <span className="text-xs text-[#5e6278] font-semibold flex items-center pe-8 font-['Inter']">
                       {langs.find((l) => l.value === locale)?.label}
                       <svg
-                        className="h-5 w-5 ml-2"
+                        className={`h-5 w-5 ml-2 transition-transform duration-200 ${
+                          isLangOpen ? "rotate-180" : ""
+                        }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -149,7 +135,7 @@ const Navbar = () => {
                     </span>
                   </div>
                   {isLangOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                    <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
                       <div className="py-1">
                         {langs.map((lang) => (
                           <div
@@ -158,8 +144,15 @@ const Navbar = () => {
                               changeLang(lang.value);
                               setIsLangOpen(false);
                             }}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                            className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer transition-all duration-200 border-b border-gray-100 last:border-b-0"
                           >
+                            <Image
+                              src={`/images/${lang.value}.svg`}
+                              width={24}
+                              height={16}
+                              className="rounded"
+                              alt={lang.label}
+                            />
                             {lang.label}
                           </div>
                         ))}
@@ -243,7 +236,7 @@ const Navbar = () => {
               <div className="lg:hidden flex items-center gap-2">
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="p-3 rounded-lg text-gray-600 hover:text-gray-800 hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
                 >
                   <svg
                     className="h-6 w-6"
@@ -275,67 +268,180 @@ const Navbar = () => {
           {/* Mobile Sidebar */}
           <div
             ref={mobileMenuRef}
-            className={`fixed top-[66px] inset-0 z-20 lg:hidden ${
+            className={`fixed top-0 inset-0 z-40 lg:hidden ${
               isMobileMenuOpen ? "block" : "hidden"
             }`}
           >
+            {/* Backdrop */}
             <div
-              className="fixed inset-0 bg-black/30"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             ></div>
+            
+            {/* Mobile Menu Panel */}
             <div
-              className={`fixed top-[66px] right-0 bottom-0 w-64 bg-white shadow-lg transform transition-all duration-300 ease-in-out ${
+              className={`fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl transform transition-all duration-300 ease-in-out ${
                 isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
-              <div className="pt-5 pb-3 space-y-1">
-                {navItems.map((item, idx) => (
-                  <Link
-                    key={idx}
-                    href={item.href}
-                    className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-purple-50">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/images/logo.svg"
+                    alt="Logo"
+                    width={100}
+                    height={40}
+                    className="w-[100px] h-[40px]"
+                  />
+                </div>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-white/70 transition-all duration-200"
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
 
-                <div className="px-4 pt-4 flex flex-col gap-2">
-                  {user ? (
-                    <>
-                      <div className="py-2 px-4 bg-blue-50 rounded-md">
-                        <p className="text-sm font-medium text-blue-700 truncate">
-                          {getDisplayName()}
-                        </p>
+              {/* Mobile Menu Content */}
+              <div className="flex flex-col h-full">
+                {/* Navigation Items */}
+                <div className="flex-1 py-6">
+                  <div className="space-y-2 px-4">
+                    {navItems.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center px-4 py-3 text-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-all duration-200 group"
+                      >
+                        <span className="group-hover:translate-x-1 transition-transform duration-200">
+                          {item.label}
+                        </span>
+                        {/* <svg className="w-5 h-5 ml-auto text-gray-400 group-hover:text-blue-600 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg> */}
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* User Menu (if user is logged in) */}
+                  {user && (
+                    <div className="px-4 mt-8">
+                      <div className="bg-gray-50 rounded-xl p-4">
+                        <h3 className="text-sm font-semibold text-gray-600 mb-3">
+                          {locale === "ar" ? "الحساب" : "Account"}
+                        </h3>
+                        <div className="space-y-2">
+                          <Link 
+                            href="/myprofile" 
+                            locale={locale}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-3 p-3 bg-white hover:bg-blue-50 rounded-lg transition-all duration-200 group border border-gray-200 hover:border-blue-300"
+                          >
+                            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-200">
+                              <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              </svg>
+                            </div>
+                            <div className="flex-1">
+                              <span className="text-sm font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-200">
+                                {t("Profile")}
+                              </span>
+                              <p className="text-xs text-gray-500 truncate">
+                                {getDisplayName()}
+                              </p>
+                            </div>
+                            <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          
+                          <button
+                            onClick={handleLogout}
+                            className="flex items-center gap-3 w-full p-3 bg-white hover:bg-red-50 rounded-lg transition-all duration-200 group border border-gray-200 hover:border-red-300"
+                          >
+                            <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors duration-200">
+                              <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                              </svg>
+                            </div>
+                            <span className="text-sm font-medium text-gray-800 group-hover:text-red-600 transition-colors duration-200">
+                              {t("logout")}
+                            </span>
+                          </button>
+                        </div>
                       </div>
-                      <button
-                        onClick={handleLogout}
-                        className="w-full px-4 py-2 border border-red-600 text-red-600 rounded-full text-sm font-medium hover:bg-red-50 transition"
-                      >
-                        {t("logout")}
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <button
-                        onClick={() => {
-                          setIsLoginOpen(true);
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="w-full px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition"
-                      >
-                        {t("login")}
-                      </button>
-                      {/* <button
-                        onClick={() => {
-                          setIsSignupOpen(true);
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-full text-sm font-medium hover:bg-blue-50 transition"
-                      >
-                        {t("singup")}
-                      </button> */}
-                    </>
+                    </div>
                   )}
+
+                  {/* Language Switcher */}
+                  <div className="px-4 mt-6">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <h3 className="text-sm font-semibold text-gray-600 mb-3">
+                        {locale === "ar" ? "اللغة" : "Language"}
+                      </h3>
+                      <div className="relative">
+                        <div
+                          className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:border-blue-300 transition-all duration-200"
+                          onClick={() => setIsLangOpen(!isLangOpen)}
+                        >
+                          <div className="flex items-center gap-3">
+                            <Image
+                              src={`/images/${locale}.svg`}
+                              width={32}
+                              height={20}
+                              className="rounded"
+                              alt="lang"
+                            />
+                            <span className="text-sm font-medium text-gray-700">
+                              {langs.find((l) => l.value === locale)?.label}
+                            </span>
+                          </div>
+                          <svg
+                            className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${
+                              isLangOpen ? "rotate-180" : ""
+                            }`}
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        
+                        {isLangOpen && (
+                          <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
+                            {langs.map((lang) => (
+                              <div
+                                key={lang.value}
+                                onClick={() => {
+                                  changeLang(lang.value);
+                                  setIsLangOpen(false);
+                                  setIsMobileMenuOpen(false);
+                                }}
+                                className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer transition-all duration-200 border-b border-gray-100 last:border-b-0"
+                              >
+                                <Image
+                                  src={`/images/${lang.value}.svg`}
+                                  width={24}
+                                  height={16}
+                                  className="rounded"
+                                  alt={lang.label}
+                                />
+                                {lang.label}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

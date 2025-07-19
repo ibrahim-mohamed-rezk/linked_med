@@ -178,7 +178,6 @@
     "PDF": "PDF",
     "Selected Files": "Selected Files",
     "{count} file": "{count, plural, =1 {# file} other {# files}}",
-    "Uploading...": "Uploading...",
     "Upload Files": "Upload Files",
     "Document title (required)": "Document title (required)",
     "MB": "MB",
@@ -257,7 +256,9 @@
   "CVFormat": "CV formatted according to professional and regulatory standards",
   "UploadOthers": "Upload others",
   "SaveButton": "Save",
-     "Professional.Title": "Professional Background",
+     "Professional":{
+      "Title": "Professional Background"
+     },
   "CurrentJobTitle": "Current Job Title",
   "CurrentJobTitlePlaceholder": "e.g., Resident Doctor",
   "YearsOfExperience": "Years of Experience",

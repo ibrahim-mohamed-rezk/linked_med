@@ -6,7 +6,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
   const [isMobile, setIsMobile] = useState(true);
   const t = useTranslations("HomePage");
 
-  const medicalProfessionalServices = [
+ const medicalProfessionalServices = [
     { service: "Document preparation" },
     { service: "German language training" },
     { service: "Visa coordination" },
@@ -47,26 +47,28 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
           <video src={data.web} autoPlay loop muted />
         )}
 
-        <div className="front-full-inner w-full max-w-[1920px] mx-auto">
-          <div className="font-full-inner-content front-story w-full">
+        <div className="front-full-inner w-full max-w-[1920px] mx-auto  ">
+          <div className="font-full-inner-content front-story w-full -mt-[clamp(100px,10vw,100px)] ">
             <h3 className="text-[clamp(42px,4.27083vw,82px)] w-full text-center font-bold leading-snug text-white">
               {t("our_services")}
             </h3>
-            <div className="flex px-[5px] gap-[20px] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[30px] md:mt-[100px] items-center justify-between">
-              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
+            <div className="flex px-[clamp(5px,1.56vw,20px)] gap-[clamp(10px,2.5vw,60px)] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[clamp(15px,4vw,100px)] items-center justify-around">
+              <div className="w-full md:max-w-[clamp(280px,42vw,671px)] group h-[350px] md:h-fit py-[clamp(12px,3vw,30px)] md:py-0 md:h-[clamp(320px,35vw,582px)] relative bg-white/10 rounded-[clamp(8px,1.5vw,30px)] flex-col justify-center md:justify-start items-center md:items-start inline-flex overflow-hidden">
+                <div className="w-full text-center items-center justify-center text-white text-[clamp(38px,3.3vw,79px)] font-bold ">
                   {t("in")}
                 </div>
 
-                <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                {medicalProfessionalServices?.map((service: { service: string }) => (
-                    <li
-                      key={service.service}
-                      className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
-                    >
-                      {t(service.service)}
-                    </li>
-                  ))}
+                <ul className="w-full list-none md:translate-x-[-100%] flex flex-col items-center text-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[clamp(250px,28vw,451px)] rounded-[clamp(12px,1.8vw,33px)] pl-[clamp(8px,1vw,20px)] md:pl-[clamp(8px,1vw,20px)] pl-0">
+                  {medicalProfessionalServices?.map(
+                    (service: { service: string }) => (
+                      <li
+                        key={service.service}
+                        className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
+                      >
+                        {t(service.service)}
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
               <div
@@ -74,7 +76,7 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                 data-svg-wrapper
               >
                 <svg
-                  className="w-full md:w-[8px] h-[8px] md:h-[533px] "
+                  className="w-[clamp(25px,1.5vw,60px)] md:w-[clamp(4px,0.56vw,8px)] h-[clamp(4px,0.56vw,8px)] md:h-[clamp(250px,32vw,533px)]"
                   viewBox="0 0 8 533"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,14 +103,14 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                   </defs>
                 </svg>
               </div>
-              <div className="w-full max-w-[671px] group h-fit py-[20px] md:py-0 md:h-[582px] relative bg-white/10 rounded-[clamp(15px,1.5625vw,30px)] flex-col justify-start items-start inline-flex overflow-hidden">
-                <div className="w-full max-w-[671px] text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
+              <div className="w-full md:max-w-[clamp(280px,42vw,671px)] group h-[350px] md:h-fit py-[clamp(12px,3vw,30px)] md:py-0 md:h-[clamp(320px,35vw,582px)] relative bg-white/10 rounded-[clamp(8px,1.5vw,30px)] flex-col justify-center md:justify-start items-center md:items-start inline-flex overflow-hidden">
+                <div className="w-full text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
                   {t("out")}
-                  <ul className="w-full max-w-[671px] list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[451px] rounded-[33px] pl-5">
-                  {employerServices?.map((service: { service: string }) => (
+                  <ul className="w-full list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[clamp(250px,28vw,451px)] rounded-[clamp(12px,1.8vw,33px)] pl-[clamp(8px,1vw,20px)] md:pl-[clamp(8px,1vw,20px)] pl-0">
+                    {employerServices?.map((service: { service: string }) => (
                       <li
                         key={service.service}
-                        className="text-[clamp(20px,1.5625vw,30px)] text-white font-semibold leading-relaxed"
+                        className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
                       >
                         {t(service.service)}
                       </li>

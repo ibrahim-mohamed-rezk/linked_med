@@ -179,7 +179,6 @@
     "PDF": "PDF",
     "Selected Files": "Ausgewählte Dateien",
     "{count} file": "{count, plural, =1 {# Datei} other {# Dateien}}",
-    "Uploading...": "Wird hochgeladen...",
     "Upload Files": "Dateien hochladen",
     "Document title (required)": "Dokumenttitel (erforderlich)",
     "MB": "MB",
@@ -258,7 +257,9 @@
   "CVFormat": "Lebenslauf im professionellen Format",
   "UploadOthers": "Andere hochladen",
   "SaveButton": "Speichern",
-       "Professional.Title": "Beruflicher Hintergrund",
+       "Professional":{
+        "Title": "Beruflicher Hintergrund"
+      },
   "CurrentJobTitle": "Aktueller Jobtitel",
   "CurrentJobTitlePlaceholder": "z. B.: Assistenzarzt",
   "YearsOfExperience": "Jahre Berufserfahrung",

@@ -214,7 +214,6 @@
     "PDF": "PDF",
     "Selected Files": "Выбранные файлы",
     "{count} file": "{count, plural, =1 {# файл} few {# файла} many {# файлов} other {# файлов}}",
-    "Uploading...": "Загрузка...",
     "Upload Files": "Загрузить файлы",
     "Document title (required)": "Название документа (обязательно)",
     "MB": "МБ",
@@ -258,7 +257,9 @@
   "CVFormat": "Резюме в профессиональном формате",
   "UploadOthers": "Загрузить остальные",
   "SaveButton": "Сохранить",
-        "Professional.Title": "Профессиональный опыт",
+        "Professional":{
+          "Title": "Профессиональный опыт"
+        },
   "CurrentJobTitle": "Текущая должность",
   "CurrentJobTitlePlaceholder": "например: Врач-ординатор",
   "YearsOfExperience": "Годы опыта",

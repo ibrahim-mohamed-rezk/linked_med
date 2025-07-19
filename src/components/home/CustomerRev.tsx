@@ -66,21 +66,21 @@ const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
       cancelAnimationFrame(animationRef.current);
       if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     };
-  }, [testimonials.length, isPaused]);
+  }, [testimonials.length,isPaused]);
 
-  const renderStars = (starCount: number = 5) => {
-    return (
-      <div className="flex items-center mt-2">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            size={16}
-            className={i < starCount ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
-          />
-        ))}
-      </div>
-    );
-  };
+  // const renderStars = (starCount: number = 5) => {
+  //   return (
+  //     <div className="flex items-center mt-2">
+  //       {[...Array(5)].map((_, i) => (
+  //         <Star
+  //           key={i}
+  //           size={16}
+  //           className={i < starCount ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}
+  //         />
+  //       ))}
+  //     </div>
+  //   );
+  // };
 
   // Return early if no testimonials
   if (!testimonials || testimonials.length === 0) {
@@ -88,22 +88,22 @@ const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
   }
 
   return (
-    <div id="testimonials" className=" py-[3vw] max-w-[1920px] mx-auto w-full px-2 sm:px-3 md:px-[4vw] lg:px-[8vw]">
+    <div id="testimonials" className="py-4 sm:py-8 md:py-12 lg:py-16 xl:py-20 max-w-[1920px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <div className="w-full">
-        <h2 className="text-2xl flex text-end sm:text-xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight md:leading-snug text-white md:text-left font-ar">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight text-white text-center md:text-left font-ar mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           {t("Testimonials")}
         </h2>
 
-        <div className="relative mt-10">
+        <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex overflow-x-hidden scroll-smooth"
+            className="flex overflow-x-hidden scroll-smooth gap-3 sm:gap-4 md:gap-6"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {extendedTestimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-80 md:w-86 lg:w-96 mx-3 flip-card h-96"
+                className="flex-shrink-0 w-72 sm:w-80 md:w-86 lg:w-96 xl:w-[400px] 2xl:w-[420px] flip-card h-80 sm:h-96 md:h-[400px] lg:h-[420px]"
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
               >
@@ -118,24 +118,42 @@ const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                         priority={index < 4}
                       />
-                      <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 p-4 backdrop-blur-sm">
-                        <h3 className="font-en text-lg text-white bg-black py-2 px-2 rounded">
-                          {testimonial.name}
-                        </h3>
-                        {renderStars(testimonial.stars)}
+                      <div className="absolute bottom-0 left-0 right-0 bg-opacity-80 backdrop-blur-sm">
+                        <div className="p-3 sm:p-4 md:p-5">
+                          <h3 className="font-en text-sm sm:text-base md:text-lg text-white bg-black py-1 sm:py-2 px-2 sm:px-3 rounded">
+                            {testimonial.name}
+                          </h3>
+                          <div className="flex items-center mt-1 sm:mt-2">
+                            {[...Array(5)].map((_, i) => (
+                              <Star
+                                key={i}
+                                size={12}
+                                className={`sm:w-4 sm:h-4 md:w-5 md:h-5 ${i < (testimonial.stars || 4) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                              />
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="flip-card-back bg-blue-900 text-white rounded-xl overflow-hidden shadow-lg p-8 flex flex-col justify-between">
+                  <div className="flip-card-back bg-blue-900 text-white rounded-xl overflow-hidden shadow-lg p-4 sm:p-6 md:p-8 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-en text-xl mb-4">{testimonial.name}</h3>
-                      <p className="text-base leading-relaxed overflow-y-auto max-h-48">
+                      <h3 className="font-en text-base sm:text-lg md:text-xl mb-3 sm:mb-4">{testimonial.name}</h3>
+                      <p className="text-xs sm:text-sm md:text-base leading-relaxed overflow-y-auto max-h-32 sm:max-h-40 md:max-h-48">
                         {testimonial.testimonial}
                       </p>
                     </div>
-                    <div className="mt-4">
-                      {renderStars(testimonial.stars)}
+                    <div className="mt-3 sm:mt-4">
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            size={12}
+                            className={`sm:w-4 sm:h-4 md:w-5 md:h-5 ${i < (testimonial.stars || 4) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -143,20 +161,20 @@ const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
             ))}
           </div>
 
-          <div className="flex justify-center space-x-8 mt-6 px-6">
+          <div className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 mt-4 sm:mt-6 md:mt-8 px-4 sm:px-6">
             <button
               onClick={() => handleScroll('left')}
-              className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10"
+              className="p-2 sm:p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10 touch-manipulation"
               aria-label="Previous reviews"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10"
+              className="p-2 sm:p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-all duration-200 z-10 touch-manipulation"
               aria-label="Next reviews"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             </button>
           </div>
         </div>
@@ -191,6 +209,13 @@ const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
         }
         ::-webkit-scrollbar {
           display: none;
+        }
+        
+        /* Mobile touch improvements */
+        @media (max-width: 768px) {
+          .flip-card:active .flip-card-inner {
+            transform: rotateY(180deg);
+          }
         }
       `}</style>
     </div>
