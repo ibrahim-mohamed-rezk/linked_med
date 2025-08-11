@@ -28,6 +28,7 @@ const Navbar = () => {
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [user, setUser] = useState<UserProfile | null>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
@@ -41,6 +42,33 @@ const Navbar = () => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Close user menu if click is outside
+      if (
+        isUserMenuOpen &&
+        userMenuRef.current &&
+        !userMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsUserMenuOpen(false);
+      }
+
+      // Close language dropdown if click is outside
+      if (
+        isLangOpen &&
+        langDropdownRef.current &&
+        !langDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsLangOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isUserMenuOpen, isLangOpen]);
 
   const changeLang = (lang: string) => {
     if (lang === locale) return;
@@ -105,7 +133,7 @@ const Navbar = () => {
               {/* Desktop Buttons */}
               <div className="hidden lg:flex items-center gap-4">
                 {/* Language Switcher */}
-                <div className="relative">
+                <div className="relative" ref={langDropdownRef}>
                   <div
                     className="flex items-center gap-2 cursor-pointer p-2 rounded-lg hover:bg-white/50 transition-all duration-200"
                     onClick={() => setIsLangOpen(!isLangOpen)}
@@ -194,17 +222,17 @@ const Navbar = () => {
                         } w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50`}
                       >
                         <div className="py-1">
+                          <Link href="/myprofile" locale={locale}>
+                            <div className="block w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100">
+                              <h1>{t("Profile")}</h1>
+                            </div>
+                          </Link>
                           <button
                             onClick={handleLogout}
                             className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
                           >
                             {t("logout")}
                           </button>
-                          <Link href="/myprofile" locale={locale}>
-                            <div className="block w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100">
-                              <h1>{t("Profile")}</h1>
-                            </div>
-                          </Link>
                         </div>
                       </div>
                     )}
@@ -277,7 +305,7 @@ const Navbar = () => {
               className="fixed inset-0 bg-black/50 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             ></div>
-            
+
             {/* Mobile Menu Panel */}
             <div
               className={`fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl transform transition-all duration-300 ease-in-out ${
@@ -299,8 +327,18 @@ const Navbar = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-white/70 transition-all duration-200"
                 >
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
               </div>
@@ -335,15 +373,25 @@ const Navbar = () => {
                           {locale === "ar" ? "الحساب" : "Account"}
                         </h3>
                         <div className="space-y-2">
-                          <Link 
-                            href="/myprofile" 
+                          <Link
+                            href="/myprofile"
                             locale={locale}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-3 p-3 bg-white hover:bg-blue-50 rounded-lg transition-all duration-200 group border border-gray-200 hover:border-blue-300"
                           >
                             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-200">
-                              <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              <svg
+                                className="w-4 h-4 text-blue-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                />
                               </svg>
                             </div>
                             <div className="flex-1">
@@ -354,18 +402,38 @@ const Navbar = () => {
                                 {getDisplayName()}
                               </p>
                             </div>
-                            <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            <svg
+                              className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
                             </svg>
                           </Link>
-                          
+
                           <button
                             onClick={handleLogout}
                             className="flex items-center gap-3 w-full p-3 bg-white hover:bg-red-50 rounded-lg transition-all duration-200 group border border-gray-200 hover:border-red-300"
                           >
                             <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors duration-200">
-                              <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                              <svg
+                                className="w-4 h-4 text-red-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                />
                               </svg>
                             </div>
                             <span className="text-sm font-medium text-gray-800 group-hover:text-red-600 transition-colors duration-200">
@@ -383,7 +451,8 @@ const Navbar = () => {
                       <h3 className="text-sm font-semibold text-gray-600 mb-3">
                         {locale === "ar" ? "اللغة" : "Language"}
                       </h3>
-                      <div className="relative">
+                      <div className="relative" ref={langDropdownRef}>
+                        {" "}
                         <div
                           className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg cursor-pointer hover:border-blue-300 transition-all duration-200"
                           onClick={() => setIsLangOpen(!isLangOpen)}
@@ -414,7 +483,6 @@ const Navbar = () => {
                             />
                           </svg>
                         </div>
-                        
                         {isLangOpen && (
                           <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
                             {langs.map((lang) => (

@@ -36,7 +36,7 @@ export default async function InspirationPage() {
         {t("journey")}               
         {t("connect")}               
         {t("roots")}               
-        <span className="font-en gradient-btn border-2 text-[clamp(0.625rem,1vw,1.25rem)] border-white rounded-lg p-[clamp(0.25rem,0.5vw,0.5rem)] mx-[clamp(0.5rem,1vw,0.75rem)] text-white transition-all duration-300 text-center cursor-pointer inline-block">                 
+        <span className="font-en gradient-btn border-2 text-[clamp(0.625rem,1vw,1.25rem)] border-white rounded-lg  text-white transition-all duration-300 text-center cursor-pointer inline-block">                 
           {t("button")}               
         </span>             
       </span>           
