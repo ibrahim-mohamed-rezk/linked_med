@@ -451,6 +451,37 @@ const Navbar = () => {
                     </div>
                   )}
 
+                  {/* Auth Buttons (if user is not logged in) */}
+                  {!user && (
+                    <div className="px-4 mt-8">
+                      <div className="bg-gray-50 rounded-xl p-4 flex flex-col gap-3">
+                        <button
+                          onClick={() => {
+                            setIsLoginOpen(true);
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="w-full px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium transition"
+                        >
+                          {t("login")}
+                        </button>
+                        <Link href="/employers" onClick={() => setIsMobileMenuOpen(false)}>
+                          <button className="w-full px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium transition">
+                            {t("employers")}
+                          </button>
+                        </Link>
+                        {/* <button
+                          onClick={() => {
+                            setIsSignupOpen(true);
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="w-full px-4 py-2 border border-blue-600 text-blue-600 text-sm rounded-full font-medium hover:bg-blue-50 transition"
+                        >
+                          {t("singup")}
+                        </button> */}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Language Switcher */}
                   <div className="px-4 mt-6">
                     <div className="bg-gray-50 rounded-xl p-4">
