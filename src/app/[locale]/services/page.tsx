@@ -3,10 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
-  GraduationCap,
-  FileText,
-  Briefcase,
-  Plane,
   FolderCheck,
 } from "lucide-react";
 import dots from "/public/images/logo.ico";
@@ -510,7 +506,7 @@ const MedicalServicesTimeline = () => {
             {/* Testimonial */}
             {modalService.quoteMessage && (
               <blockquote className="italic text-white/90 text-lg md:text-xl border-l-4 border-blue-500 pl-4 pt-1 mt-6">
-                "{t(modalService.quoteMessage.replace(/^"|"$/g, ""))}"
+                &quot;{t(modalService.quoteMessage.replace(/^"|"$/g, ""))}&quot;
               </blockquote>
             )}
           </div>
