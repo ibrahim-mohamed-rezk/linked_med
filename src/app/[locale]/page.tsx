@@ -8,7 +8,7 @@ import { getData } from "@/libs/server/server";
 // import { HomeTypes } from "@/libs/helpers/types";
 import MessageFromCeo from "@/components/home/messageFromCeo";
 import WhyLinkedMid from "@/components/home/WhyLinkedMid";
-import BlogSection  from "@/components/home/Blogs";
+import BlogSection from "@/components/home/Blogs";
 
 export default async function Home() {
   const feachData = async () => {
@@ -27,12 +27,16 @@ export default async function Home() {
       <main className="w-full bg-black text-white">
         <Hero data={homeData?.videos.intro} />
         <About data={homeData?.videos.about} />
-        <Services data={homeData?.videos.service} />
+        <Services
+          servicesHomeCountry={homeData["services-home-country"]}
+          servicesAbroad={homeData["services-abroad"]}
+          data={homeData?.videos.service}
+        />
         {/* <MapImage /> */}
         {/* <Map /> */}
         {/* <Testimonials />*/}
         <MessageFromCeo />
-        <WhyLinkedMid  />
+        <WhyLinkedMid />
         <Testimonials data={homeData.testimonials} />
         <BlogSection data={homeData.blogs} />
       </main>

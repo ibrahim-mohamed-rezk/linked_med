@@ -55,13 +55,13 @@ const Navbar = () => {
       }
 
       // Close language dropdown if click is outside
-      if (
-        isLangOpen &&
-        langDropdownRef.current &&
-        !langDropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsLangOpen(false);
-      }
+      // if (
+      //   isLangOpen &&
+      //   langDropdownRef.current &&
+      //   !langDropdownRef.current.contains(event.target as Node)
+      // ) {
+      //   setIsLangOpen(false);
+      // }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -170,11 +170,17 @@ const Navbar = () => {
                             key={lang.value}
                             onClick={() => {
                               changeLang(lang.value);
-                              setIsLangOpen(false);
+                              console.log(lang);
+                              // setIsLangOpen(false);
                             }}
                             className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer transition-all duration-200 border-b border-gray-100 last:border-b-0"
                           >
                             <Image
+                              onClick={() => {
+                                changeLang(lang.value);
+                                console.log(lang);
+                                setIsLangOpen(false);
+                              }}
                               src={`/images/${lang.value}.svg`}
                               width={24}
                               height={16}

@@ -96,7 +96,7 @@ html {
   display: none;
 }
 /* Shimmer effect on hover */
-.gradient-btn::before {
+/* .gradient-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -111,7 +111,7 @@ html {
   );
   transform: skewX(-12deg) translateX(-100%);
   transition: transform 0.7s ease;
-}
+} */
 
 .gradient-btn:hover::before {
   transform: skewX(-12deg) translateX(100%);

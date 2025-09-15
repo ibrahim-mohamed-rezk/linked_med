@@ -2,24 +2,37 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
-const Services = ({ data }: { data: { web: string; mobile: string } }) => {
+interface Service {
+  id: number;
+  title: "string";
+}
+
+const Services = ({
+  data,
+  servicesHomeCountry,
+  servicesAbroad,
+}: {
+  data: { web: string; mobile: string };
+  servicesHomeCountry: Service[];
+  servicesAbroad: Service[];
+}) => {
   const [isMobile, setIsMobile] = useState(true);
   const t = useTranslations("HomePage");
 
- const medicalProfessionalServices = [
-    { service: "Document preparation" },
-    { service: "German language training" },
-    { service: "Visa coordination" },
-    { service: "Job placement and post-arrival onboarding" },
-  ];
+  // const medicalProfessionalServices = [
+  //   { service: "Document preparation" },
+  //   { service: "German language training" },
+  //   { service: "Visa coordination" },
+  //   { service: "Job placement and post-arrival onboarding" },
+  // ];
 
   // Services for employers & healthcare institutions
-  const employerServices = [
-    { service: "Rigorous document verification" },
-    { service: "Personalized recruitment strategies" },
-    { service: "Linguistically trained professionals" },
-    { service: "Culturally ready integration" },
-  ];
+  // const employerServices = [
+  //   { service: "Rigorous document verification" },
+  //   { service: "Personalized recruitment strategies" },
+  //   { service: "Linguistically trained professionals" },
+  //   { service: "Culturally ready integration" },
+  // ];
 
   useEffect(() => {
     // Check screen size
@@ -59,13 +72,13 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                 </div>
 
                 <ul className="w-full list-none md:translate-x-[-100%] flex flex-col items-center text-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[clamp(250px,28vw,451px)] rounded-[clamp(12px,1.8vw,33px)] pl-[clamp(8px,1vw,20px)] md:pl-[clamp(8px,1vw,20px)] pl-0">
-                  {medicalProfessionalServices?.map(
-                    (service: { service: string }) => (
+                  {servicesHomeCountry?.map(
+                    (service: { title: string; id: number }) => (
                       <li
-                        key={service.service}
+                        key={service.id}
                         className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
                       >
-                        {t(service.service)}
+                        {t(service.title)}
                       </li>
                     )
                   )}
@@ -107,14 +120,16 @@ const Services = ({ data }: { data: { web: string; mobile: string } }) => {
                 <div className="w-full text-center text-white text-[clamp(38px,3.3vw,79px)] font-bold font-['Satoshi Variable']">
                   {t("out")}
                   <ul className="w-full list-none md:translate-x-[-100%] flex flex-col items-center justify-center group-hover:translate-x-0 transition-all duration-300 h-fit md:h-[clamp(250px,28vw,451px)] rounded-[clamp(12px,1.8vw,33px)] pl-[clamp(8px,1vw,20px)] md:pl-[clamp(8px,1vw,20px)] pl-0">
-                    {employerServices?.map((service: { service: string }) => (
-                      <li
-                        key={service.service}
-                        className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
-                      >
-                        {t(service.service)}
-                      </li>
-                    ))}
+                    {servicesAbroad?.map(
+                      (service: { title: string; id: number }) => (
+                        <li
+                          key={service.id}
+                          className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
+                        >
+                          {t(service.title)}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
               </div>
