@@ -128,7 +128,7 @@
         "referral": "إحالة",
         "linkedin": "LinkedIn",
         "event": "فعالية"
-            },
+      },
       "consent": {
         "title": "الاتفاقيات المطلوبة",
         "terms": "أوافق على شروط وسياسة خصوصية البيانات الخاصة بـ LinkedMed.",
@@ -143,7 +143,7 @@
       }
     }
   },
-    "ChangePassword": {
+  "ChangePassword": {
     "title": "تغيير كلمة المرور",
     "current": "كلمة المرور الحالية",
     "new": "كلمة المرور الجديدة",
@@ -191,7 +191,7 @@
     "Start by uploading your first certificate or document": "ابدأ بتحميل أول شهادة أو مستند لك",
     "Drag & Drop": "السحب والإفلات",
     "Click to Browse": "انقر للتصفح",
-        "Certificates":"الشهادات",
+    "Certificates": "الشهادات",
     "Journey": {
       "ProgressLabel": "التقدم: الخطوة {step} من {total}",
       "GoToStep": "اذهب إلى الخطوة {num}",
@@ -204,11 +204,18 @@
       },
       "Step2": {
         "Title": "الخطوة 2: تقديم الوثائق",
-        "Items": ["رفع الوثائق المطلوبة (مثل جواز السفر، الدرجة، الرخصة)", "مراجعة الوثائق من قبل فريق LinkedMed", "بدء الترجمة المعتمدة (إذا لزم)"]
+        "Items": [
+          "رفع الوثائق المطلوبة (مثل جواز السفر، الدرجة، الرخصة)",
+          "مراجعة الوثائق من قبل فريق LinkedMed",
+          "بدء الترجمة المعتمدة (إذا لزم)"
+        ]
       },
       "Step3": {
         "Title": "الخطوة 3: التحضير للغة",
-        "Items": ["الالتحاق بدورة اللغة الألمانية العامة", "الالتحاق بدورة اللغة العلمية (تحضير اختبار Fachsprachprüfung)"]
+        "Items": [
+          "الالتحاق بدورة اللغة الألمانية العامة",
+          "الالتحاق بدورة اللغة العلمية (تحضير اختبار Fachsprachprüfung)"
+        ]
       },
       "Step4": {
         "Title": "الخطوة 4: إجراءات السفارة",
@@ -216,7 +223,11 @@
       },
       "Step5": {
         "Title": "الخطوة 5: العثور على وظيفة",
-        "Items": ["التحضير للمقابلة المهنية والإرشاد", "مقابلات مع أصحاب عمل في الرعاية الصحية", "الاختيار النهائي والتفاوض على العرض"]
+        "Items": [
+          "التحضير للمقابلة المهنية والإرشاد",
+          "مقابلات مع أصحاب عمل في الرعاية الصحية",
+          "الاختيار النهائي والتفاوض على العرض"
+        ]
       },
       "Step6": {
         "Title": "الخطوة 6: إبرام العقد",
@@ -224,39 +235,43 @@
       },
       "Step7": {
         "Title": "الخطوة 7: الدمج والانتقال",
-        "Items": ["تنسيق السفر ودعم الانتقال", "المساعدة في السكن والوصول", "الاندماج والدعم في أول يوم"]
+        "Items": [
+          "تنسيق السفر ودعم الانتقال",
+          "المساعدة في السكن والوصول",
+          "الاندماج والدعم في أول يوم"
+        ]
       }
     },
-     "EducationCert.Title": "التعليم والشهادات",
-  "MedicalDegreeLabel": "تفاصيل الشهادة الطبية (الجامعة، السنة، الدولة)",
-  "MedicalDegreePlaceholder": "مثال: جامعة هارفارد، 2015، الولايات المتحدة",
-  "InternshipLabel": "تاريخ التدريب والإقامة",
-  "InternshipPlaceholder": "صف خبراتك في التدريب والإقامة",
-  "ExistingDocuments": "الوثائق الموجودة",
-  "Pending": "قيد الانتظار",
-  "Approved": "معتمد",
-  "Rejected": "مرفوض",
-  "Remove": "إزالة",
-  "UploadNewCerts": "تحميل شهادات جديدة",
-  "LanguageCertLabel": "شهادات اللغة (A1، A2، B1، B2، امتحان Fachsprachprüfung، إلخ)",
-  "LanguageCertPlaceholder": "مثال: A2 ألمانية، B1 إنجليزية، Fachsprachprüfung",
-  "RequiredDocsTitle": "الوثائق المطلوبة",
-  "RequiredDocsSubtitle": "(اعتمادًا على بلد الوجهة والجهة التنظيمية):",
-  "PassportCopy": "نسخة مصدقة من جواز السفر",
-  "GoodStanding": "شهادة حسن السيرة والسلوك (حديثة وصالحة)",
-  "MedicalDegree": "شهادة الدرجة الطبية",
-  "Transcript": "السجل الأكاديمي",
-  "Syllabus": "منهج تفصيلي للدورة (مطّلَب في بعض الولايات)",
-  "PracticeLicense": "رخصة مزاولة المهنة",
-  "GoodConduct": "شهادة حسن السلوك من النقابة (صالحة ٣ أشهر)",
-  "BirthCertificate": "شهادة الميلاد",
-  "MedicalLicense": "رخصة طبية أو التسجيل المهني",
-  "PoliceClearance": "شهادة خلو من السوابق الأمنية",
-  "LanguageProficiency": "شهادات إتقان اللغة (مثل Goethe، ÖSD، telc)",
-  "CVFormat": "السيرة الذاتية بتنسيق احترافي ومنظم",
-  "UploadOthers": "تحميل أخرى",
-  "SaveButton": "حفظ",
-    "Professional":{
+    "EducationCert.Title": "التعليم والشهادات",
+    "MedicalDegreeLabel": "تفاصيل الشهادة الطبية (الجامعة، السنة، الدولة)",
+    "MedicalDegreePlaceholder": "مثال: جامعة هارفارد، 2015، الولايات المتحدة",
+    "InternshipLabel": "تاريخ التدريب والإقامة",
+    "InternshipPlaceholder": "صف خبراتك في التدريب والإقامة",
+    "ExistingDocuments": "الوثائق الموجودة",
+    "Pending": "قيد الانتظار",
+    "Approved": "معتمد",
+    "Rejected": "مرفوض",
+    "Remove": "إزالة",
+    "UploadNewCerts": "تحميل شهادات جديدة",
+    "LanguageCertLabel": "شهادات اللغة (A1، A2، B1، B2، امتحان Fachsprachprüfung، إلخ)",
+    "LanguageCertPlaceholder": "مثال: A2 ألمانية، B1 إنجليزية، Fachsprachprüfung",
+    "RequiredDocsTitle": "الوثائق المطلوبة",
+    "RequiredDocsSubtitle": "(اعتمادًا على بلد الوجهة والجهة التنظيمية):",
+    "PassportCopy": "نسخة مصدقة من جواز السفر",
+    "GoodStanding": "شهادة حسن السيرة والسلوك (حديثة وصالحة)",
+    "MedicalDegree": "شهادة الدرجة الطبية",
+    "Transcript": "السجل الأكاديمي",
+    "Syllabus": "منهج تفصيلي للدورة (مطّلَب في بعض الولايات)",
+    "PracticeLicense": "رخصة مزاولة المهنة",
+    "GoodConduct": "شهادة حسن السلوك من النقابة (صالحة ٣ أشهر)",
+    "BirthCertificate": "شهادة الميلاد",
+    "MedicalLicense": "رخصة طبية أو التسجيل المهني",
+    "PoliceClearance": "شهادة خلو من السوابق الأمنية",
+    "LanguageProficiency": "شهادات إتقان اللغة (مثل Goethe، ÖSD، telc)",
+    "CVFormat": "السيرة الذاتية بتنسيق احترافي ومنظم",
+    "UploadOthers": "تحميل أخرى",
+    "SaveButton": "حفظ",
+    "Professional": {
       "Title": "الخلفية المهنية"
     },
     "CurrentJobTitle": "المسمى الوظيفي الحالي",
@@ -631,15 +646,15 @@
     "Candidates": "بمجرد قبول المرشحين للعروض، يدخلون مرحلة الانضمام، والتي تشمل الجلسات التعريفية والتدريب."
   },
   "HomePage": {
-  "Document preparation": "تحضير المستندات",
-  "German language training": "تدريب اللغة الألمانية",
-  "Visa coordination": "تنسيق التأشيرات",
-  "Job placement and post-arrival onboarding": "التوظيف والتوجيه بعد الوصول",
+    "Document preparation": "تحضير المستندات",
+    "German language training": "تدريب اللغة الألمانية",
+    "Visa coordination": "تنسيق التأشيرات",
+    "Job placement and post-arrival onboarding": "التوظيف والتوجيه بعد الوصول",
 
-  "Rigorous document verification": "التحقق الدقيق من المستندات",
-  "Personalized recruitment strategies": "استراتيجيات توظيف مخصصة",
-  "Linguistically trained professionals": "محترفون مدربون لغويًا",
-  "Culturally ready integration": "اندماج جاهز ثقافيًا",
+    "Rigorous document verification": "التحقق الدقيق من المستندات",
+    "Personalized recruitment strategies": "استراتيجيات توظيف مخصصة",
+    "Linguistically trained professionals": "محترفون مدربون لغويًا",
+    "Culturally ready integration": "اندماج جاهز ثقافيًا",
     "Why LinkedMed": "لماذا لينكد ميد",
     "For Medical Professionals": "للمتخصصين في الطب",
     "For Employers & Healthcare Institutions": "لاصحاب العمل والمؤسسات الصحية",
@@ -676,7 +691,7 @@
     }
   },
   "footer": {
-    "Testimonials": "الشهادات",
+    "Testimonials": "التوصيات",
     "hagar_name": "هاجر النحّاس",
     "hagar_testimonial": "الدعم والموارد التي قدمتها LinkedMed ساعدتني في الحصول على وظيفة كصيدلانية (Approbierte). المنصة حسّنت معرفتي الطبية ومهاراتي اللغوية بشكل كبير.",
     "rebica_name": "ريبيكا مولر",
@@ -870,11 +885,7 @@
         "acceptanceNote": "الاستمرار في الاستخدام يعني القبول"
       }
     },
-    "locations": [
-      "ألمانيا",
-      "دبي",
-      "القاهرة"
-    ],
+    "locations": ["ألمانيا", "دبي", "القاهرة"],
     "privacyPromise": {
       "commitment": "تلتزم ميديالينك بحماية خصوصيتك ومعالجة بياناتك الشخصية بشفافية وأمان",
       "purpose": "نحن نجمع ونعالج ونخزن بياناتك فقط بغرض تقديم خدمات التوظيف",
@@ -1083,15 +1094,15 @@
     }
   },
   "auth": {
-     "passwords_dont_match": "كلمتا المرور غير متطابقتين",
-  "At least 8 characters": "ثمانية أحرف على الأقل",
-  "One uppercase letter": "حرف كبير واحد على الأقل",
-  "One lowercase letter": "حرف صغير واحد على الأقل",
-  "One number": "رقم واحد على الأقل",
-  "One special character": "رمز خاص واحد على الأقل",
-    "loading":"جارٍ التحميل...",
+    "passwords_dont_match": "كلمتا المرور غير متطابقتين",
+    "At least 8 characters": "ثمانية أحرف على الأقل",
+    "One uppercase letter": "حرف كبير واحد على الأقل",
+    "One lowercase letter": "حرف صغير واحد على الأقل",
+    "One number": "رقم واحد على الأقل",
+    "One special character": "رمز خاص واحد على الأقل",
+    "loading": "جارٍ التحميل...",
     "login_failed": "فشل تسجيل الدخول. يرجى التحقق من البريد الإلكتروني وكلمة المرور.",
-    "Name":"الاسم",
+    "Name": "الاسم",
     "placeholder_name": "أدخل اسمك",
     "welcome": "مرحبًا بك في",
     "sign_in": "تسجيل الدخول",
@@ -1318,5 +1329,34 @@
   "whyLinkedMed": {
     "title": "لماذا LinkedMed؟",
     "description1": "نساعدك على بدء حياة مهنية جديدة في ألمانيا، بدعم كامل في اللغة، التأشيرة، التوظيف، والتأقلم بعد الوصول. لدينا أكثر من 400 شريك ونحول التحديات إلى فرص. أنت لست مجرد عميل، بل فرد من عائلتنا. نقدم كوادر طبية مؤهلة لغويًا وثقافيًا. نقوم بالتدقيق، التوظيف، والمتابعة لتحقيق جودة واستقرار طويل الأمد. LinkedMed شريكك في التوظيف الناجح."
-  }
+  },
+  "blogs": "المقالات",
+  "Blogs": {
+    "pageTitle": "مقال - LinkedMed",
+    "readingTime": "5 دقائق قراءة",
+    "publishedDate": "اليوم",
+    "contentComingSoon": {
+      "title": "المحتوى قريباً",
+      "description": "المحتوى الكامل لهذا المقال سيكون متاحاً قريباً."
+    },
+    "tags": "العلامات",
+    "seoInsights": "رؤى تحسين محركات البحث",
+    "metaTitle": "العنوان التعريفي",
+    "metaDescription": "الوصف التعريفي",
+    "keywords": "الكلمات المفتاحية",
+    "shareArticle": "مشاركة المقال",
+    "shareOnTwitter": "مشاركة على تويتر",
+    "shareOnFacebook": "مشاركة على فيسبوك",
+    "shareOnLinkedIn": "مشاركة على لينكد إن",
+    "copyLink": "نسخ الرابط",
+    "stayUpdated": "ابق محدثاً",
+    "newsletterDescription": "احصل على أحدث المقالات في صندوق الوارد الخاص بك.",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "subscribe": "اشتراك",
+    "errorTitle": "عذراً! حدث خطأ ما",
+    "errorDescription": "لا يمكننا تحميل هذا المقال. يرجى المحاولة مرة أخرى لاحقاً.",
+    "tryAgain": "حاول مرة أخرى"
+  },
+  "viewAll": "عرض الكل",
+  "recent": "الاحدث"
 }

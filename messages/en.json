@@ -143,7 +143,7 @@
       }
     }
   },
-  "ChangePassword":{
+  "ChangePassword": {
     "title": "Change Password",
     "current": "Current Password",
     "new": "New Password",
@@ -165,8 +165,8 @@
     "err_api": "An error occurred while changing the password. Please try again.",
     "success": "Password changed successfully!"
   },
-  "Profile":{
-     "Only images and PDF files are allowed": "Only images and PDF files are allowed",
+  "Profile": {
+    "Only images and PDF files are allowed": "Only images and PDF files are allowed",
     "Document removed successfully": "Document removed successfully",
     "Failed to remove document:": "Failed to remove document. Please try again.",
     "Please provide titles for all files before uploading": "Please provide titles for all files before uploading",
@@ -191,7 +191,7 @@
     "Start by uploading your first certificate or document": "Start by uploading your first certificate or document",
     "Drag & Drop": "Drag & Drop",
     "Click to Browse": "Click to Browse",
-    "Certificates":"Certificates",
+    "Certificates": "Certificates",
     "Journey": {
       "ProgressLabel": "Progress: Step {step} of {total}",
       "GoToStep": "Go to step {num}",
@@ -204,398 +204,419 @@
       },
       "Step2": {
         "Title": "Step 2: Document Submission",
-        "Items": ["Upload Required Documents (e.g., Passport, Degree, License)", "Document Review by LinkedMed Team", "Certified Translations Initiated (if required)"]
+        "Items": [
+          "Upload Required Documents (e.g., Passport, Degree, License)",
+          "Document Review by LinkedMed Team",
+          "Certified Translations Initiated (if required)"
+        ]
       },
       "Step3": {
         "Title": "Step 3: Language Preparation",
-        "Items": ["Enrollment in General German Language Course", "Enrollment in Scientific Language Course (Fachsprachprüfung Prep)"]
+        "Items": [
+          "Enrollment in General German Language Course",
+          "Enrollment in Scientific Language Course (Fachsprachprüfung Prep)"
+        ]
       },
       "Step4": {
         "Title": "Step 4: Embassy Process",
-        "Items": ["Embassy Appointment Scheduled", "Embassy Interview Training and Simulation"]
+        "Items": [
+          "Embassy Appointment Scheduled",
+          "Embassy Interview Training and Simulation"
+        ]
       },
       "Step5": {
         "Title": "Step 5: Job Placement",
-        "Items": ["Job Interview Preparation & Coaching", "Interviews with Healthcare Employers", "Final Selection and Offer Negotiation"]
+        "Items": [
+          "Job Interview Preparation & Coaching",
+          "Interviews with Healthcare Employers",
+          "Final Selection and Offer Negotiation"
+        ]
       },
       "Step6": {
         "Title": "Step 6: Contract Finalization",
-        "Items": ["Contract Review and Signing", "Legal and Administrative Verification"]
+        "Items": [
+          "Contract Review and Signing",
+          "Legal and Administrative Verification"
+        ]
       },
       "Step7": {
         "Title": "Step 7: Onboarding & Relocation",
-        "Items": ["Travel Coordination and Relocation Support", "Housing and Arrival Assistance", "Integration and First‑Day Support"]
+        "Items": [
+          "Travel Coordination and Relocation Support",
+          "Housing and Arrival Assistance",
+          "Integration and First‑Day Support"
+        ]
       }
     },
-  "EducationCert.Title": "Education & Certifications",
-  "MedicalDegreeLabel": "Medical Degree Details (University, Year, Country)",
-  "MedicalDegreePlaceholder": "e.g., Harvard University, 2015, USA",
-  "InternshipLabel": "Internship & Residency History",
-  "InternshipPlaceholder": "Describe your internship and residency experiences",
-  "ExistingDocuments": "Existing Documents",
-  "Pending": "Pending",
-  "Approved": "Approved",
-  "Rejected": "Rejected",
-  "Remove": "Remove",
-  "UploadNewCerts": "Upload New Certificates",
-  "LanguageCertLabel": "Language Certifications (A1, A2, B1, B2, Fachsprachprüfung, etc.)",
-  "LanguageCertPlaceholder": "e.g., A2 German, B1 English, Fachsprachprüfung",
-  "RequiredDocsTitle": "Required Documents",
-  "RequiredDocsSubtitle": "(depending on destination country and regulatory authority):",
-  "PassportCopy": "Certified Passport Copy",
-  "GoodStanding": "Good Standing Certificate (recent and valid)",
-  "MedicalDegree": "Medical Degree Certification",
-  "Transcript": "Academic Transcript",
-  "Syllabus": "Detailed Course Syllabus (required in some states)",
-  "PracticeLicense": "Professional Practice License",
-  "GoodConduct": "Certificate of Good Conduct from the Professional Syndicate (valid for 3 months)",
-  "BirthCertificate": "Birth Certificate",
-  "MedicalLicense": "Medical License or Professional Registration",
-  "PoliceClearance": "Police Clearance Certificate",
-  "LanguageProficiency": "Language Proficiency Certificates (e.g., Goethe, ÖSD, telc)",
-  "CVFormat": "CV formatted according to professional and regulatory standards",
-  "UploadOthers": "Upload others",
-  "SaveButton": "Save",
-     "Professional":{
+    "EducationCert.Title": "Education & Certifications",
+    "MedicalDegreeLabel": "Medical Degree Details (University, Year, Country)",
+    "MedicalDegreePlaceholder": "e.g., Harvard University, 2015, USA",
+    "InternshipLabel": "Internship & Residency History",
+    "InternshipPlaceholder": "Describe your internship and residency experiences",
+    "ExistingDocuments": "Existing Documents",
+    "Pending": "Pending",
+    "Approved": "Approved",
+    "Rejected": "Rejected",
+    "Remove": "Remove",
+    "UploadNewCerts": "Upload New Certificates",
+    "LanguageCertLabel": "Language Certifications (A1, A2, B1, B2, Fachsprachprüfung, etc.)",
+    "LanguageCertPlaceholder": "e.g., A2 German, B1 English, Fachsprachprüfung",
+    "RequiredDocsTitle": "Required Documents",
+    "RequiredDocsSubtitle": "(depending on destination country and regulatory authority):",
+    "PassportCopy": "Certified Passport Copy",
+    "GoodStanding": "Good Standing Certificate (recent and valid)",
+    "MedicalDegree": "Medical Degree Certification",
+    "Transcript": "Academic Transcript",
+    "Syllabus": "Detailed Course Syllabus (required in some states)",
+    "PracticeLicense": "Professional Practice License",
+    "GoodConduct": "Certificate of Good Conduct from the Professional Syndicate (valid for 3 months)",
+    "BirthCertificate": "Birth Certificate",
+    "MedicalLicense": "Medical License or Professional Registration",
+    "PoliceClearance": "Police Clearance Certificate",
+    "LanguageProficiency": "Language Proficiency Certificates (e.g., Goethe, ÖSD, telc)",
+    "CVFormat": "CV formatted according to professional and regulatory standards",
+    "UploadOthers": "Upload others",
+    "SaveButton": "Save",
+    "Professional": {
       "Title": "Professional Background"
-     },
-  "CurrentJobTitle": "Current Job Title",
-  "CurrentJobTitlePlaceholder": "e.g., Resident Doctor",
-  "YearsOfExperience": "Years of Experience",
-  "YearsOfExperiencePlaceholder": "e.g., 5",
-  "Specialty": "Specialty / Field",
-  "SpecialtyPlaceholder": "e.g., Cardiology, General Medicine",
-  "Languages": "Languages Spoken",
-  "LanguagesPlaceholder": "e.g., English, Arabic, German",
-  "Licensing": "Licensing Status",
-  "LicensingPlaceholder": "e.g., MOH Certified, HAAD Eligible",
-  "PreviousCountries": "Previous Countries Worked In",
-  "PreviousCountriesPlaceholder": "e.g., Egypt, Saudi Arabia, Germany",
-  "Professional.UpdateSuccess": "Professional background updated successfully!",
-  "Professional.UpdateError": "Error updating professional background. Please try again.",
-  "Professional.NetworkError": "Network error. Please check your connection.",
-  "Professional.UnknownError": "Unexpected error occurred. Please try again.",
-     "Title": "Personal Information",
-  "FullName": "Full Name",
-  "DateOfBirth": "Date of Birth",
-  "CurrentCity": "Current City",
-  "CurrentCountry": "Current Country",
-  "PhoneNumber": "Phone Number",
-  "ContactLang": "Preferred Contact Language",
-  "SelectLanguage": "Select Language",
-  "Languages.English": "English",
-  "Languages.Arabic": "Arabic",
-  "Languages.German": "German",
-  "CaseManager": "LinkedMed Case Manager",
-  "SaveChanges": "Save Changes",
-  "Saving": "Saving...",
-  "UpdateSuccess": "Profile updated successfully!",
-  "UpdateError": "Error updating profile. Please try again.",
-     "TabsTitle": "Profile",
-  "PersonalInfo": "Personal & Contact Information",
-  "ProfessionalBackground": "Professional Background",
-  "EducationCertifications": "Education & Certifications",
-  "MyJourney": "My Journey",
-  "Settings": "Settings & Preferences",
- "Loading": "Loading profile...",
-  "NoProfileData": "Unable to load profile data",
-  "Retry": "Retry",
-  "EditImage": "Edit Image",
-  "UploadImage": "Upload Image",
-  "Uploading": "Uploading...",
-  "Email": "Email",
-  "Phone": "Phone",
-  "Location": "Location",
-  "Experience": "Experience",
-  "Nationality": "Nationality",
-  "Documents": "Documents",
-  "files": "files",
-  "years": "years",
-  "ErrorLoadingProfile": "Failed to load profile data.",
-  "ImageUploadSuccess": "Profile image updated!",
-  "ImageUploadError": "Image upload failed."
+    },
+    "CurrentJobTitle": "Current Job Title",
+    "CurrentJobTitlePlaceholder": "e.g., Resident Doctor",
+    "YearsOfExperience": "Years of Experience",
+    "YearsOfExperiencePlaceholder": "e.g., 5",
+    "Specialty": "Specialty / Field",
+    "SpecialtyPlaceholder": "e.g., Cardiology, General Medicine",
+    "Languages": "Languages Spoken",
+    "LanguagesPlaceholder": "e.g., English, Arabic, German",
+    "Licensing": "Licensing Status",
+    "LicensingPlaceholder": "e.g., MOH Certified, HAAD Eligible",
+    "PreviousCountries": "Previous Countries Worked In",
+    "PreviousCountriesPlaceholder": "e.g., Egypt, Saudi Arabia, Germany",
+    "Professional.UpdateSuccess": "Professional background updated successfully!",
+    "Professional.UpdateError": "Error updating professional background. Please try again.",
+    "Professional.NetworkError": "Network error. Please check your connection.",
+    "Professional.UnknownError": "Unexpected error occurred. Please try again.",
+    "Title": "Personal Information",
+    "FullName": "Full Name",
+    "DateOfBirth": "Date of Birth",
+    "CurrentCity": "Current City",
+    "CurrentCountry": "Current Country",
+    "PhoneNumber": "Phone Number",
+    "ContactLang": "Preferred Contact Language",
+    "SelectLanguage": "Select Language",
+    "Languages.English": "English",
+    "Languages.Arabic": "Arabic",
+    "Languages.German": "German",
+    "CaseManager": "LinkedMed Case Manager",
+    "SaveChanges": "Save Changes",
+    "Saving": "Saving...",
+    "UpdateSuccess": "Profile updated successfully!",
+    "UpdateError": "Error updating profile. Please try again.",
+    "TabsTitle": "Profile",
+    "PersonalInfo": "Personal & Contact Information",
+    "ProfessionalBackground": "Professional Background",
+    "EducationCertifications": "Education & Certifications",
+    "MyJourney": "My Journey",
+    "Settings": "Settings & Preferences",
+    "Loading": "Loading profile...",
+    "NoProfileData": "Unable to load profile data",
+    "Retry": "Retry",
+    "EditImage": "Edit Image",
+    "UploadImage": "Upload Image",
+    "Uploading": "Uploading...",
+    "Email": "Email",
+    "Phone": "Phone",
+    "Location": "Location",
+    "Experience": "Experience",
+    "Nationality": "Nationality",
+    "Documents": "Documents",
+    "files": "files",
+    "years": "years",
+    "ErrorLoadingProfile": "Failed to load profile data.",
+    "ImageUploadSuccess": "Profile image updated!",
+    "ImageUploadError": "Image upload failed."
   },
-    "Service": "Services",
-    "At": "At LinkedMed, we transform ambi4on into achievement by offering a fully guided pathway to medical careers abroad. We’ve organized our services into four clear categories to help you understand how we support you at every stage.",
-    "Scroll to explore": "Scroll to explore",
-    "Document Support": "Document Support",
-    "Your journey": "Your journey begins with organizing your documents. We make this process stress-free, fast, and compliant with target country regulations. *What we do:*",
-    "Issue key": "Issue essential documents (certificates of good standing, professional association certificates, etc.)",
-    "Legal transla4ons by embassy-cer4fied translators": "Legal translations by embassy-certified translators",
-    "Cer4fica4on and notariza4on of documents": "Certification and notarization of documents",
-    "Embassy aPesta4on coordina4on and tracking": "Embassy attestation coordination and tracking",
-    "personal checklist and real-4me tracking system so you never miss a step via your LinkedMed portal": "Personal checklist and real-time tracking system so you never miss a step via your LinkedMed portal",
-    "LinkedMed handled": "LinkedMed handled every document with precision—I focused only on my future.",
-    "Language Training": "Language Training",
-    "Language proficiency": "Language proficiency is not just a requirement—it's the foundation of your success. With our e-learning platform, you'll build strong communication skills at your own pace. *What we do:*",
-    " German language courses from A1 to C2 levels": "German language courses from A1 to C2 levels",
-    "Scien4fic language course prepara4on for the Fachsprachprüfung": "Scientific language course preparation for the Fachsprachprüfung",
-    "Scien4fic language course prepara4on for the Kenntnisprüfung": "Scientific language course preparation for the Kenntnisprüfung",
-    "Mock tests, interac4ve lessons, and progress tracking": "Mock tests, interactive lessons, and progress tracking",
-    "Speaking prac4ce and real-world scenarios": "Speaking practice and real-world scenarios",
-    "Personalized learning paths for faster improvement": "Personalized learning paths for faster improvement",
-    "Everday Interac4ons": "Everyday Interactions",
-    "Speaking prac4ce": "Speaking practice designed for healthcare professionals.",
-    "Exam simula4ons": "Exam simulations, grammar boosters, and vocabulary trainers.",
-    "24/7": "24/7 access to LinkedMed's intuitive learning platform",
-    "Thanks to LinkedMed": "Thanks to LinkedMed, I passed the Fachsprachprüfung & Kenntnisprüfung and now speak confidently with patients.",
-    "Visa & Embassy": "Visa & Embassy",
-    "We turn": "We turn complex embassy processes into a clear, guided pathway. *What we do:*",
-    "Complete": "Complete support in preparing your visa application.",
-    "Scheduling": "Scheduling embassy appointments and managing document submission appointments.",
-    "Embassy": "Embassy interview training and simulation so you enter with confidence.",
-    "Family": "Family reunion guidance and dependent visa processing.",
-    "Pre-departure": "Pre-departure checklist covering all details.",
-    "💬 LinkedMed walked me through every embassy step—I felt supported at every moment": "💬 LinkedMed walked me through every embassy step—I felt supported at every moment",
-    "Job Placement": "Job Placement",
-    "just": "We don't just find you a job—we help you start a life-changing career in the German healthcare system. *What we do:*",
-    "German-standard": "German-standard CV formatting and profile coaching.",
-    "Professional profile review and op4miza4on": "Professional profile review and optimization",
-    "Personalized job matching with trusted hospitals and clinics": "Personalized job matching with trusted hospitals and clinics",
-    "Job interview prepara4on and mock sessions": "Job interview preparation and mock sessions",
-    "Interview prepara4on tailored for German medical recruiters": "Interview preparation tailored for German medical recruiters",
-    "Contract": "Contract negotiation and employment integration.",
-    "Licensing, creden4aling, and post-hiring support": "Licensing, credentialing, and post-hiring support",
-    "Contract nego4a4on and final review": "Contract negotiation and final review",
-    "Why it maPers": "*Why it matters:* Finding the right job is more than just employment—it's about growth, security, and respect. We find the match that fits your future. 💬 They connected me with the perfect hospital—I'm thriving professionally and personally.",
-    "Relocation Support": "Relocation Support",
-    "Moving abroad": "Moving abroad can be overwhelming. Our integration support ensures you don't just arrive in Germany—you settle with confidence and start a new life with ease—for you and your family. *What we do:*",
-    "Travel planning and pre-departure orienta4on": "Travel planning and pre-departure orientation",
-    "Visa guidance and Ausländerbehörde interview prepara4on": "Visa guidance and Ausländerbehörde interview preparation",
-    "Housing search assistance and reloca4on logis4cs": "Housing search assistance and relocation logistics",
-    "School applica4on support for your children": "School application support for your children",
-    "Assistance with obtaining driving licenses in Germany": "Assistance with obtaining driving licenses in Germany",
-    "Family reunion visa and documenta4on assistance": "Family reunion visa and documentation assistance",
-    "First-week checklist and cultural orienta4on": "First-week checklist and cultural orientation",
-    "Support with integra4on services and language immersion": "Support with integration services and language immersion",
-    "Post-arrival support and regular check-ins": "Post-arrival support and regular check-ins",
-    "Guidance on long-term residency and ci4zenship pathways": "Guidance on long-term residency and citizenship pathways",
-    "Cultural integra4on support and access to local services.": "Cultural integration support and access to local services.",
-    "Ci4zenship and long-term residency advisory.": "Citizenship and long-term residency advisory.",
-    "Ongoing": "Ongoing follow-up for your peace of mind.",
-    "They didn't": "💬\"They didn't just get me to Germany—they helped me feel at home here.\"",
-    "Key Services": "Key Services",
-    " Referral & Community Engagement": "Referral & Community Engagement",
-    "Because You&rsquo;re Family": "Because You're Family",
-    " Cash": "Cash rewards for each successful friend referral.",
-    "A dedicated": "A dedicated dashboard to track progress, documents, and service status.",
-    "Lifelong": "Lifelong support for new job opportunities, license renewals, and education.",
-    "Invitations": "Invitations to alumni events, community follow-ups, and LinkedMed updates.",
-    "My friend": "My friend joined LinkedMed through me. We're now colleagues in Germany.",
-    "LinkedMed is more": "LinkedMed is more than a service—it's your support system, your advocate, and your lifelong career partner.",
-    "hero": {
-      "badge": "Premium Healthcare Placement",
-      "title": "Transform Your Healthcare Career Globally",
-      "subtitle": "Connect with premium healthcare opportunities worldwide through our comprehensive placement and support program",
-      "messageBox": {
-        "title": "The Truth About Healthcare Career Transformation",
-        "paragraph1": "We understood that finding the right healthcare opportunity abroad isn't just about matching skills—it's about navigating complex systems, language barriers, and cultural differences.",
-        "paragraph2": "LinkedMed was born from recognizing that healthcare professionals needed more than job placement—they needed comprehensive career transformation support.",
-        "paragraph3": "Our vision: to bridge the gap between talented healthcare professionals and global opportunities through personalized guidance and unwavering support."
+  "Service": "Services",
+  "At": "At LinkedMed, we transform ambi4on into achievement by offering a fully guided pathway to medical careers abroad. We’ve organized our services into four clear categories to help you understand how we support you at every stage.",
+  "Scroll to explore": "Scroll to explore",
+  "Document Support": "Document Support",
+  "Your journey": "Your journey begins with organizing your documents. We make this process stress-free, fast, and compliant with target country regulations. *What we do:*",
+  "Issue key": "Issue essential documents (certificates of good standing, professional association certificates, etc.)",
+  "Legal transla4ons by embassy-cer4fied translators": "Legal translations by embassy-certified translators",
+  "Cer4fica4on and notariza4on of documents": "Certification and notarization of documents",
+  "Embassy aPesta4on coordina4on and tracking": "Embassy attestation coordination and tracking",
+  "personal checklist and real-4me tracking system so you never miss a step via your LinkedMed portal": "Personal checklist and real-time tracking system so you never miss a step via your LinkedMed portal",
+  "LinkedMed handled": "LinkedMed handled every document with precision—I focused only on my future.",
+  "Language Training": "Language Training",
+  "Language proficiency": "Language proficiency is not just a requirement—it's the foundation of your success. With our e-learning platform, you'll build strong communication skills at your own pace. *What we do:*",
+  " German language courses from A1 to C2 levels": "German language courses from A1 to C2 levels",
+  "Scien4fic language course prepara4on for the Fachsprachprüfung": "Scientific language course preparation for the Fachsprachprüfung",
+  "Scien4fic language course prepara4on for the Kenntnisprüfung": "Scientific language course preparation for the Kenntnisprüfung",
+  "Mock tests, interac4ve lessons, and progress tracking": "Mock tests, interactive lessons, and progress tracking",
+  "Speaking prac4ce and real-world scenarios": "Speaking practice and real-world scenarios",
+  "Personalized learning paths for faster improvement": "Personalized learning paths for faster improvement",
+  "Everday Interac4ons": "Everyday Interactions",
+  "Speaking prac4ce": "Speaking practice designed for healthcare professionals.",
+  "Exam simula4ons": "Exam simulations, grammar boosters, and vocabulary trainers.",
+  "24/7": "24/7 access to LinkedMed's intuitive learning platform",
+  "Thanks to LinkedMed": "Thanks to LinkedMed, I passed the Fachsprachprüfung & Kenntnisprüfung and now speak confidently with patients.",
+  "Visa & Embassy": "Visa & Embassy",
+  "We turn": "We turn complex embassy processes into a clear, guided pathway. *What we do:*",
+  "Complete": "Complete support in preparing your visa application.",
+  "Scheduling": "Scheduling embassy appointments and managing document submission appointments.",
+  "Embassy": "Embassy interview training and simulation so you enter with confidence.",
+  "Family": "Family reunion guidance and dependent visa processing.",
+  "Pre-departure": "Pre-departure checklist covering all details.",
+  "💬 LinkedMed walked me through every embassy step—I felt supported at every moment": "💬 LinkedMed walked me through every embassy step—I felt supported at every moment",
+  "Job Placement": "Job Placement",
+  "just": "We don't just find you a job—we help you start a life-changing career in the German healthcare system. *What we do:*",
+  "German-standard": "German-standard CV formatting and profile coaching.",
+  "Professional profile review and op4miza4on": "Professional profile review and optimization",
+  "Personalized job matching with trusted hospitals and clinics": "Personalized job matching with trusted hospitals and clinics",
+  "Job interview prepara4on and mock sessions": "Job interview preparation and mock sessions",
+  "Interview prepara4on tailored for German medical recruiters": "Interview preparation tailored for German medical recruiters",
+  "Contract": "Contract negotiation and employment integration.",
+  "Licensing, creden4aling, and post-hiring support": "Licensing, credentialing, and post-hiring support",
+  "Contract nego4a4on and final review": "Contract negotiation and final review",
+  "Why it maPers": "*Why it matters:* Finding the right job is more than just employment—it's about growth, security, and respect. We find the match that fits your future. 💬 They connected me with the perfect hospital—I'm thriving professionally and personally.",
+  "Relocation Support": "Relocation Support",
+  "Moving abroad": "Moving abroad can be overwhelming. Our integration support ensures you don't just arrive in Germany—you settle with confidence and start a new life with ease—for you and your family. *What we do:*",
+  "Travel planning and pre-departure orienta4on": "Travel planning and pre-departure orientation",
+  "Visa guidance and Ausländerbehörde interview prepara4on": "Visa guidance and Ausländerbehörde interview preparation",
+  "Housing search assistance and reloca4on logis4cs": "Housing search assistance and relocation logistics",
+  "School applica4on support for your children": "School application support for your children",
+  "Assistance with obtaining driving licenses in Germany": "Assistance with obtaining driving licenses in Germany",
+  "Family reunion visa and documenta4on assistance": "Family reunion visa and documentation assistance",
+  "First-week checklist and cultural orienta4on": "First-week checklist and cultural orientation",
+  "Support with integra4on services and language immersion": "Support with integration services and language immersion",
+  "Post-arrival support and regular check-ins": "Post-arrival support and regular check-ins",
+  "Guidance on long-term residency and ci4zenship pathways": "Guidance on long-term residency and citizenship pathways",
+  "Cultural integra4on support and access to local services.": "Cultural integration support and access to local services.",
+  "Ci4zenship and long-term residency advisory.": "Citizenship and long-term residency advisory.",
+  "Ongoing": "Ongoing follow-up for your peace of mind.",
+  "They didn't": "💬\"They didn't just get me to Germany—they helped me feel at home here.\"",
+  "Key Services": "Key Services",
+  " Referral & Community Engagement": "Referral & Community Engagement",
+  "Because You&rsquo;re Family": "Because You're Family",
+  " Cash": "Cash rewards for each successful friend referral.",
+  "A dedicated": "A dedicated dashboard to track progress, documents, and service status.",
+  "Lifelong": "Lifelong support for new job opportunities, license renewals, and education.",
+  "Invitations": "Invitations to alumni events, community follow-ups, and LinkedMed updates.",
+  "My friend": "My friend joined LinkedMed through me. We're now colleagues in Germany.",
+  "LinkedMed is more": "LinkedMed is more than a service—it's your support system, your advocate, and your lifelong career partner.",
+  "hero": {
+    "badge": "Premium Healthcare Placement",
+    "title": "Transform Your Healthcare Career Globally",
+    "subtitle": "Connect with premium healthcare opportunities worldwide through our comprehensive placement and support program",
+    "messageBox": {
+      "title": "The Truth About Healthcare Career Transformation",
+      "paragraph1": "We understood that finding the right healthcare opportunity abroad isn't just about matching skills—it's about navigating complex systems, language barriers, and cultural differences.",
+      "paragraph2": "LinkedMed was born from recognizing that healthcare professionals needed more than job placement—they needed comprehensive career transformation support.",
+      "paragraph3": "Our vision: to bridge the gap between talented healthcare professionals and global opportunities through personalized guidance and unwavering support."
+    },
+    "buttons": {
+      "startJourney": "Start Your Journey",
+      "watchStory": "Watch Our Story"
+    },
+    "stats": {
+      "professionals": "Healthcare Professionals",
+      "countries": "Countries Served",
+      "successRate": "Success Rate"
+    }
+  },
+  "expansion": {
+    "badge": "Global Expansion",
+    "title": "From One Dream to Many",
+    "paragraph1": "What started as one person's dream of working abroad has evolved into a movement connecting thousands of healthcare professionals worldwide.",
+    "paragraph2": "We've expanded from helping individual nurses find opportunities to building comprehensive pathways for doctors, specialists, and healthcare support staff across multiple countries.",
+    "paragraph3": "From our headquarters in Cairo, we now serve healthcare professionals across the Middle East, Europe, and beyond, creating bridges between talent and opportunity.",
+    "features": {
+      "expertTeam": {
+        "title": "Expert Team",
+        "desc": "Healthcare specialists guiding your journey"
       },
-      "buttons": {
-        "startJourney": "Start Your Journey",
-        "watchStory": "Watch Our Story"
+      "globalReach": {
+        "title": "Global Reach",
+        "desc": "Opportunities across 15+ countries"
       },
-      "stats": {
-        "professionals": "Healthcare Professionals",
-        "countries": "Countries Served",
-        "successRate": "Success Rate"
+      "premiumService": {
+        "title": "Premium Service",
+        "desc": "Personalized support throughout"
+      },
+      "provenResults": {
+        "title": "Proven Results",
+        "desc": "98% success rate with placements"
+      }
+    }
+  },
+  "process": {
+    "badge": "Comprehensive Process",
+    "title": "More Than a Process",
+    "subtitle": "We don't just process applications—we transform careers through comprehensive support that addresses every aspect of your international healthcare journey.",
+    "description": "From language mastery to cultural integration, from exam preparation to ongoing career support, we're with you every step of the way.",
+    "steps": {
+      "languageMastery": {
+        "title": "Language Mastery",
+        "desc": "Comprehensive language training tailored to healthcare terminology and cultural communication"
+      },
+      "examExcellence": {
+        "title": "Exam Excellence",
+        "desc": "Targeted preparation for licensing exams with expert guidance and proven strategies"
+      },
+      "documentPerfection": {
+        "title": "Document Perfection",
+        "desc": "Complete credential evaluation and documentation support for seamless applications"
+      },
+      "perfectMatching": {
+        "title": "Perfect Matching",
+        "desc": "Personalized job matching based on your skills, preferences, and career goals"
+      },
+      "ongoingSupport": {
+        "title": "Ongoing Support",
+        "desc": "Continuous guidance from application to integration and beyond"
       }
     },
-    "expansion": {
-      "badge": "Global Expansion",
-      "title": "From One Dream to Many",
-      "paragraph1": "What started as one person's dream of working abroad has evolved into a movement connecting thousands of healthcare professionals worldwide.",
-      "paragraph2": "We've expanded from helping individual nurses find opportunities to building comprehensive pathways for doctors, specialists, and healthcare support staff across multiple countries.",
-      "paragraph3": "From our headquarters in Cairo, we now serve healthcare professionals across the Middle East, Europe, and beyond, creating bridges between talent and opportunity.",
-      "features": {
-        "expertTeam": {
-          "title": "Expert Team",
-          "desc": "Healthcare specialists guiding your journey"
+    "bottomMessage": {
+      "line1": "We don't just handle logistics and paperwork.",
+      "line2": "We orchestrate complete career transformations."
+    }
+  },
+  "stories": {
+    "badge": "Success Stories",
+    "title": "Real People. Real Stories.",
+    "aya": {
+      "name": "Aya's Journey",
+      "title": "Nurse • Germany",
+      "quote": "I was overwhelmed by the process of working abroad. LinkedMed didn't just find me a position—they prepared me for success. From language training to cultural orientation, they thought of everything. Now I'm thriving in my dream role in Germany."
+    },
+    "mahmoud": {
+      "name": "Mahmoud's Success",
+      "title": "Doctor • UAE",
+      "quote": "The licensing exam seemed impossible until LinkedMed's targeted preparation program. Their expert guidance and personalized study plan made all the difference. I passed on my first attempt and now practice medicine in the UAE with confidence."
+    },
+    "bottomMessage": {
+      "line1": "We don't just create job placements.",
+      "line2": "We create new beginnings and transform lives."
+    }
+  },
+  "whoWeAre": {
+    "title": "This Is Who We Are",
+    "notJust": {
+      "line1": "We are not just recruitment agents processing applications.",
+      "line2": "We are not just a service provider checking boxes."
+    },
+    "weAre": "We are believers in human potential.",
+    "beliefs": {
+      "line1": "We believe in the potential of every healthcare professional to make a difference beyond borders.",
+      "line2": "We see the person behind the CV, the dreams behind the qualifications, the impact you can make in a new country.",
+      "line3": "When you succeed, patients receive better care. When you thrive, healthcare systems improve. When you grow, we all benefit.",
+      "line4": "We don't just connect you with opportunities—we connect you with your future."
+    },
+    "future": {
+      "line1": "The future of healthcare is global, and you're part of that future.",
+      "line2": "Something bigger than yourself is calling.",
+      "line3": "Are you ready to answer that call?",
+      "line4": "We'll be right there to walk beside you, every step of the way."
+    },
+    "welcome": "Welcome to LinkedMed.",
+    "buttons": {
+      "startJourney": "Start Your Journey Today",
+      "scheduleConsultation": "Schedule Consultation"
+    }
+  },
+  "Refer": {
+    "tabs": {
+      "about": "What about refer a friend",
+      "terms": "Terms and conditions",
+      "form": "Form"
+    },
+    "referFriend": {
+      "pageTitle": "Refer a Friend - LinkedMed",
+      "heading": "Refer a Friend",
+      "intro": "Help us grow our healthcare community by referring qualified professionals.",
+      "referrerSection": "Your Information",
+      "candidateSection": "Candidate Information",
+      "thankYouTitle": "Thank You!",
+      "thankYouMessage": "Your referral has been submitted successfully. We'll be in touch soon.",
+      "submit": "Submit Referral",
+      "yes": "Yes",
+      "no": "No",
+      "fields": {
+        "referrerName": "Your Full Name",
+        "referrerEmail": "Your Email Address",
+        "referrerPhone": "Your Phone Number",
+        "workedWith": "Have you worked with LinkedMed before?",
+        "referrerMessage": "Additional Message",
+        "candidateName": "Candidate's Full Name",
+        "candidateEmail": "Candidate's Email Address",
+        "candidatePhone": "Candidate's Phone Number",
+        "country": "Country",
+        "profession": "Profession",
+        "specialty": "Specialty",
+        "experience": "Years of Experience",
+        "location": "Preferred Work Location",
+        "language": "German Language Level"
+      },
+      "consent1": "I confirm that the candidate is aware of this referral and has consented to be contacted by LinkedMed.",
+      "consent2": "I agree to the terms and conditions of the referral program."
+    },
+    "about": {
+      "title": "What is our referral program?",
+      "description1": "Our referral program is designed to help healthcare professionals connect with opportunities while rewarding those who help us build our community.",
+      "description2": "When you refer a qualified healthcare professional who successfully joins our network, both you and your referral benefit from our program.",
+      "howItWorks": {
+        "title": "How it works:",
+        "step1": "Fill out the referral form with your details and your friend's information.",
+        "step2": "We'll contact your referred friend with relevant opportunities.",
+        "step3": "When they successfully join our network, you both receive rewards"
+      },
+      "benefits": {
+        "referrer": {
+          "title": "For You (Referrer)",
+          "description": "Earn rewards for each successful referral and help expand our professional network."
         },
-        "globalReach": {
-          "title": "Global Reach",
-          "desc": "Opportunities across 15+ countries"
-        },
-        "premiumService": {
-          "title": "Premium Service",
-          "desc": "Personalized support throughout"
-        },
-        "provenResults": {
-          "title": "Proven Results",
-          "desc": "98% success rate with placements"
+        "friend": {
+          "title": "For Your Friend",
+          "description": "Access to exclusive healthcare opportunities and career advancement support."
         }
       }
     },
-    "process": {
-      "badge": "Comprehensive Process",
-      "title": "More Than a Process",
-      "subtitle": "We don't just process applications—we transform careers through comprehensive support that addresses every aspect of your international healthcare journey.",
-      "description": "From language mastery to cultural integration, from exam preparation to ongoing career support, we're with you every step of the way.",
-      "steps": {
-        "languageMastery": {
-          "title": "Language Mastery",
-          "desc": "Comprehensive language training tailored to healthcare terminology and cultural communication"
-        },
-        "examExcellence": {
-          "title": "Exam Excellence",
-          "desc": "Targeted preparation for licensing exams with expert guidance and proven strategies"
-        },
-        "documentPerfection": {
-          "title": "Document Perfection",
-          "desc": "Complete credential evaluation and documentation support for seamless applications"
-        },
-        "perfectMatching": {
-          "title": "Perfect Matching",
-          "desc": "Personalized job matching based on your skills, preferences, and career goals"
-        },
-        "ongoingSupport": {
-          "title": "Ongoing Support",
-          "desc": "Continuous guidance from application to integration and beyond"
-        }
-      },
-      "bottomMessage": {
-        "line1": "We don't just handle logistics and paperwork.",
-        "line2": "We orchestrate complete career transformations."
-      }
+    "terms": {
+      "title": "Terms and Conditions",
+      "content": "📋 **Terms & Conditions**\n\n1. **Referrals must be submitted** via our official [Referral Rewards Registration Form] to be eligible for the program.\n\n2. **There is no limit** to how many individuals you may refer. However, each referred candidate can only be referred once.\n\n3. **You do not need to be a LinkedMed candidate** to refer someone, but you must provide accurate contact details for both yourself and the referred individual.\n\n4. The referred individual must:\n   • Be aware they are being referred.\n   • Have consented to being contacted by LinkedMed.\n   • Not already exist in the LinkedMed candidate database.\n\n5. For a referral to qualify for a reward, the following conditions must be met:\n   • The referred candidate must complete the LinkedMed registration process.\n   • They must successfully obtain a contract through LinkedMed within **12 months** of referral.\n   • They must begin employment and complete the minimum required probationary period (details vary by contract and will be confirmed by LinkedMed).\n\n6. Referred candidates must meet LinkedMed's qualification, licensing, and placement criteria to be eligible.\n\n7. Cash rewards will only be issued **after the referred candidate has started employment and met all outlined conditions**.\n\n8. **Reward amounts may vary** based on the country of employment and role. These details will be communicated during the referral process.\n\n9. LinkedMed reserves the right to validate all claims and to decline or withhold rewards in case of fraudulent, duplicate, or invalid submissions.\n\n10. LinkedMed may revise, suspend, or terminate this referral program at any time without prior notice.\n\n11. By participating in this program, you acknowledge and accept these terms in full."
     },
-    "stories": {
-      "badge": "Success Stories",
-      "title": "Real People. Real Stories.",
-      "aya": {
-        "name": "Aya's Journey",
-        "title": "Nurse • Germany",
-        "quote": "I was overwhelmed by the process of working abroad. LinkedMed didn't just find me a position—they prepared me for success. From language training to cultural orientation, they thought of everything. Now I'm thriving in my dream role in Germany."
-      },
-      "mahmoud": {
-        "name": "Mahmoud's Success",
-        "title": "Doctor • UAE",
-        "quote": "The licensing exam seemed impossible until LinkedMed's targeted preparation program. Their expert guidance and personalized study plan made all the difference. I passed on my first attempt and now practice medicine in the UAE with confidence."
-      },
-      "bottomMessage": {
-        "line1": "We don't just create job placements.",
-        "line2": "We create new beginnings and transform lives."
-      }
+    "form": {
+      "optional": "optional",
+      "submitAnother": "Submit Another Referral"
     },
-    "whoWeAre": {
-      "title": "This Is Who We Are",
-      "notJust": {
-        "line1": "We are not just recruitment agents processing applications.",
-        "line2": "We are not just a service provider checking boxes."
-      },
-      "weAre": "We are believers in human potential.",
-      "beliefs": {
-        "line1": "We believe in the potential of every healthcare professional to make a difference beyond borders.",
-        "line2": "We see the person behind the CV, the dreams behind the qualifications, the impact you can make in a new country.",
-        "line3": "When you succeed, patients receive better care. When you thrive, healthcare systems improve. When you grow, we all benefit.",
-        "line4": "We don't just connect you with opportunities—we connect you with your future."
-      },
-      "future": {
-        "line1": "The future of healthcare is global, and you're part of that future.",
-        "line2": "Something bigger than yourself is calling.",
-        "line3": "Are you ready to answer that call?",
-        "line4": "We'll be right there to walk beside you, every step of the way."
-      },
-      "welcome": "Welcome to LinkedMed.",
-      "buttons": {
-        "startJourney": "Start Your Journey Today",
-        "scheduleConsultation": "Schedule Consultation"
-      }
+    "countries": {
+      "germany": "Germany",
+      "uae": "UAE",
+      "other": "Other"
     },
-      "Refer": {
-        "tabs": {
-          "about": "What about refer a friend",
-          "terms": "Terms and conditions",
-          "form": "Form"
-        },
-        "referFriend": {
-          "pageTitle": "Refer a Friend - LinkedMed",
-          "heading": "Refer a Friend",
-          "intro": "Help us grow our healthcare community by referring qualified professionals.",
-          "referrerSection": "Your Information",
-          "candidateSection": "Candidate Information",
-          "thankYouTitle": "Thank You!",
-          "thankYouMessage": "Your referral has been submitted successfully. We'll be in touch soon.",
-          "submit": "Submit Referral",
-          "yes": "Yes",
-          "no": "No",
-          "fields": {
-            "referrerName": "Your Full Name",
-            "referrerEmail": "Your Email Address",
-            "referrerPhone": "Your Phone Number",
-            "workedWith": "Have you worked with LinkedMed before?",
-            "referrerMessage": "Additional Message",
-            "candidateName": "Candidate's Full Name",
-            "candidateEmail": "Candidate's Email Address",
-            "candidatePhone": "Candidate's Phone Number",
-            "country": "Country",
-            "profession": "Profession",
-            "specialty": "Specialty",
-            "experience": "Years of Experience",
-            "location": "Preferred Work Location",
-            "language": "German Language Level"
-          },
-          "consent1": "I confirm that the candidate is aware of this referral and has consented to be contacted by LinkedMed.",
-          "consent2": "I agree to the terms and conditions of the referral program."
-        },
-        "about": {
-          "title": "What is our referral program?",
-          "description1": "Our referral program is designed to help healthcare professionals connect with opportunities while rewarding those who help us build our community.",
-          "description2": "When you refer a qualified healthcare professional who successfully joins our network, both you and your referral benefit from our program.",
-          "howItWorks": {
-            "title": "How it works:",
-            "step1": "Fill out the referral form with your details and your friend's information.",
-            "step2": "We'll contact your referred friend with relevant opportunities.",
-            "step3": "When they successfully join our network, you both receive rewards"
-          },
-          "benefits": {
-            "referrer": {
-              "title": "For You (Referrer)",
-              "description": "Earn rewards for each successful referral and help expand our professional network."
-            },
-            "friend": {
-              "title": "For Your Friend",
-              "description": "Access to exclusive healthcare opportunities and career advancement support."
-            }
-          }
-        },
-        "terms": {
-          "title": "Terms and Conditions",
-          "content": "📋 **Terms & Conditions**\n\n1. **Referrals must be submitted** via our official [Referral Rewards Registration Form] to be eligible for the program.\n\n2. **There is no limit** to how many individuals you may refer. However, each referred candidate can only be referred once.\n\n3. **You do not need to be a LinkedMed candidate** to refer someone, but you must provide accurate contact details for both yourself and the referred individual.\n\n4. The referred individual must:\n   • Be aware they are being referred.\n   • Have consented to being contacted by LinkedMed.\n   • Not already exist in the LinkedMed candidate database.\n\n5. For a referral to qualify for a reward, the following conditions must be met:\n   • The referred candidate must complete the LinkedMed registration process.\n   • They must successfully obtain a contract through LinkedMed within **12 months** of referral.\n   • They must begin employment and complete the minimum required probationary period (details vary by contract and will be confirmed by LinkedMed).\n\n6. Referred candidates must meet LinkedMed's qualification, licensing, and placement criteria to be eligible.\n\n7. Cash rewards will only be issued **after the referred candidate has started employment and met all outlined conditions**.\n\n8. **Reward amounts may vary** based on the country of employment and role. These details will be communicated during the referral process.\n\n9. LinkedMed reserves the right to validate all claims and to decline or withhold rewards in case of fraudulent, duplicate, or invalid submissions.\n\n10. LinkedMed may revise, suspend, or terminate this referral program at any time without prior notice.\n\n11. By participating in this program, you acknowledge and accept these terms in full."
-        },
-        "form": {
-          "optional": "optional",
-          "submitAnother": "Submit Another Referral"
-        },
-        "countries": {
-          "germany": "Germany",
-          "uae": "UAE",
-          "other": "Other"
-        },
-        "professions": {
-          "doctor": "Doctor",
-          "nurse": "Nurse",
-          "pharmacist": "Pharmacist",
-          "other": "Other"
-        },
-        "experience": {
-          "junior": "0–2 years",
-          "mid": "3–5 years",
-          "senior": "6+ years"
-        },
-        "languages": {
-          "a1": "A1",
-          "a2": "A2",
-          "b1": "B1",
-          "b2": "B2",
-          "notStarted": "Not Started Yet"
-        }
-      },
+    "professions": {
+      "doctor": "Doctor",
+      "nurse": "Nurse",
+      "pharmacist": "Pharmacist",
+      "other": "Other"
+    },
+    "experience": {
+      "junior": "0–2 years",
+      "mid": "3–5 years",
+      "senior": "6+ years"
+    },
+    "languages": {
+      "a1": "A1",
+      "a2": "A2",
+      "b1": "B1",
+      "b2": "B2",
+      "notStarted": "Not Started Yet"
+    }
+  },
   "messageFromCeo": "Message from the CEO",
   "ceotext": "From the first meeting to the final delivery, Ethan Vina instilled confidence and provided everything we asked for. The quality of his work speaks for itself—he can execute quickly. He is an excellent Webflow developer, and we will work with him again very soon.",
   "Message from cso": "Message from the Civil Society Organization",
-  "about":{
+  "about": {
     "title": "About Us",
     "aboutText": "With over two decades of excellence in healthcare recruitment and workforce solu6ons, LinkedMed was founded in 2022, establishing its inaugural office in Dubai—an epicenter of medical innova6on and global connec6vity. Expanding our footprint, we launched in Frankfurt, a cornerstone of European healthcare, and are now poised to extend our exper6se to Cairo, further solidifying our presence in key medical hubs. As a premier healthcare talent acquisi6on firm, LinkedMed specializes in sourcing, creden6aling, and placing elite medical professionals across 10+ countries. We collaborate with world-class healthcare ins6tu6ons, ensuring seamless integra6on of top-6er doctors, physicians, surgeons, nurses, pharmacists, and allied healthcare specialists into high-caliber medical environments. Our mission is to elevate healthcare standards by aligning excep6onal clinical talent with pres6gious medical ins6tu6ons worldwide. Through strategic workforce solu6ons, we bridge the gap between exper6se and opportunity, op6mizing pa6ent care outcomes and advancing the future of global medicine.",
     "A Seamless Process": "A Seamless Process",
@@ -631,21 +652,21 @@
     "Candidates": "Once candidates accept offers, they enter the onboarding phase, which includes orientation sessions and training."
   },
   "HomePage": {
-  "Document preparation": "Document preparation",
-  "German language training": "German language training",
-  "Visa coordination": "Visa coordination",
-  "Job placement and post-arrival onboarding": "Job placement and post-arrival onboarding",
+    "Document preparation": "Document preparation",
+    "German language training": "German language training",
+    "Visa coordination": "Visa coordination",
+    "Job placement and post-arrival onboarding": "Job placement and post-arrival onboarding",
 
-  "Rigorous document verification": "Rigorous document verification",
-  "Personalized recruitment strategies": "Personalized recruitment strategies",
-  "Linguistically trained professionals": "Linguistically trained professionals",
-  "Culturally ready integration": "Culturally ready integration",
+    "Rigorous document verification": "Rigorous document verification",
+    "Personalized recruitment strategies": "Personalized recruitment strategies",
+    "Linguistically trained professionals": "Linguistically trained professionals",
+    "Culturally ready integration": "Culturally ready integration",
 
     "Why LinkedMed": "Why LinkedMed",
     "For Medical Professionals": "For Medical Professionals",
     "For Employers & Healthcare Institutions": "For Employers & Healthcare Institutions",
     "At LinkedMed": "At LinkedMed, we don’t just help you find a job—we empower you to build a new life and career in one of the world’s most respected healthcare systems. With comprehensive support that includes document preparation, German language training, visa coordination, job placement, and post-arrival onboarding, we walk beside you at every stage of your journey. Backed by experience with over 400 trusted partners, our team understands your challenges and works tirelessly to turn them into real opportunities. When you join LinkedMed, you’re not just a client—you become part of a global family committed to professionalism, integrity, and success.",
-    "LinkedMed is": "LinkedMed is the trusted partner of hospitals, clinics, and healthcare institutions across Germany and beyond. We specialize in identifying, preparing, and delivering top-tier medical talent from around the world—professionals who are not only clinically qualified but also linguistically trained and culturally ready to integrate into your teams. Our end-to-end approach, from rigorous document verification to personalized recruitment strategies, saves time, reduces risk, and ensures quality. With LinkedMed, you gain more than candidates—you gain a long-term recruitment partner dedicated to your operational excellence and workforce stability.",  
+    "LinkedMed is": "LinkedMed is the trusted partner of hospitals, clinics, and healthcare institutions across Germany and beyond. We specialize in identifying, preparing, and delivering top-tier medical talent from around the world—professionals who are not only clinically qualified but also linguistically trained and culturally ready to integrate into your teams. Our end-to-end approach, from rigorous document verification to personalized recruitment strategies, saves time, reduces risk, and ensures quality. With LinkedMed, you gain more than candidates—you gain a long-term recruitment partner dedicated to your operational excellence and workforce stability.",
     "our_services": "Our Services",
     "about_us": "About Us",
     "about_p1": "With over two decades of excellence in healthcare recruitment and workforce solutions, LinkedMed was founded in 2022, establishing its inaugural office in Dubai—an epicenter of medical innovation and global connectivity Expanding our footprint, we launched in Frankfurt, a cornerstone of European healthcare, and are now poised to extend our expertise to Cairo, further solidifying our presence in key medical hubs",
@@ -676,48 +697,48 @@
       "carrer": "Contact Us"
     }
   },
-    "footer": {
-      "Testimonials": "Testimonials",
-      "hagar_name": "Hagar Elnahhas",
-      "hagar_testimonial": "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
-      "rebica_name": "Rebica Müller",
-      "rebica_testimonial": "LinkedMed provides well-prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
-      "ahmed_name": "Ahmed Sabri",
-      "ahmed_testimonial": "LinkedMed helped me achieve my dream of working in Germany! From language training to document verification, their support was incredible. Now, I'm happily working in a top Berlin hospital!",
-      "sara_name": "Sara Dabagh",
-      "sara_testimonial": "Navigating the visa process was overwhelming, but LinkedMed handled everything professionally. Their expertise ensured a smooth journey, and today, I'm a licensed pharmacist in Germany. Highly recommended!",
-      "fatima_name": "Fatima M",
-      "fatima_testimonial": "LinkedMed's German courses and exam preparation made learning easy. Their guidance gave me confidence to pass my exams and secure a nursing job in Germany. Truly life-changing!",
-      "salma_name": "Salma Hany",
-      "salma_testimonial": "Thanks to LinkedMed, I gained great insight into the crucial role of a pharmacist during my internship (Praktikum) at easy Apotheke for 2 weeks. It enriched my skill set and experience.",
-      "missionStatement": "Our mission is to provide exceptional services",
-      "solutions": "Solutions",
-      "support": "Support",
-      "company": "Company",
-      "home": "Home",
-      "ourStory": "Our Story",
-      "ourValues": "Our Values",
-      "contactUs": "Contact Us",
-      "services": "Services",
-      "makingTheMove": "Making The Move",
-      "seamlessProcessing": "Seamless Processing",
-      "tracking": "Tracking",
-      "referAFriend": "Refer A Friend",
-      "eLearning": "E-Learning",
-      "whyLinkedmed": "Why LinkedMed",
-      "Partners": "Partners",
-      "messageFromCeo": "Message From CEO",
-      "blogs/Events": "Blogs/Events",
-      "workWithUs": "Work With Us",
-      "privacyPolicy": "Privacy Policy",
-      "termsAndConditions": "Terms And Conditions",
-      "Press": "Press",
-      "rightsReserved": "All Rights Reserved",
-      "Claim": "Claim",
-      "Privacy": "Privacy",
-      "Terms and conditions": "Terms and conditions",
-      "about": "About Us"
-    },
+  "footer": {
+    "Testimonials": "Testimonials",
+    "hagar_name": "Hagar Elnahhas",
+    "hagar_testimonial": "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
+    "rebica_name": "Rebica Müller",
+    "rebica_testimonial": "LinkedMed provides well-prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
+    "ahmed_name": "Ahmed Sabri",
+    "ahmed_testimonial": "LinkedMed helped me achieve my dream of working in Germany! From language training to document verification, their support was incredible. Now, I'm happily working in a top Berlin hospital!",
+    "sara_name": "Sara Dabagh",
+    "sara_testimonial": "Navigating the visa process was overwhelming, but LinkedMed handled everything professionally. Their expertise ensured a smooth journey, and today, I'm a licensed pharmacist in Germany. Highly recommended!",
+    "fatima_name": "Fatima M",
+    "fatima_testimonial": "LinkedMed's German courses and exam preparation made learning easy. Their guidance gave me confidence to pass my exams and secure a nursing job in Germany. Truly life-changing!",
+    "salma_name": "Salma Hany",
+    "salma_testimonial": "Thanks to LinkedMed, I gained great insight into the crucial role of a pharmacist during my internship (Praktikum) at easy Apotheke for 2 weeks. It enriched my skill set and experience.",
+    "missionStatement": "Our mission is to provide exceptional services",
+    "solutions": "Solutions",
+    "support": "Support",
+    "company": "Company",
+    "home": "Home",
+    "ourStory": "Our Story",
+    "ourValues": "Our Values",
+    "contactUs": "Contact Us",
+    "services": "Services",
+    "makingTheMove": "Making The Move",
+    "seamlessProcessing": "Seamless Processing",
+    "tracking": "Tracking",
+    "referAFriend": "Refer A Friend",
+    "eLearning": "E-Learning",
+    "whyLinkedmed": "Why LinkedMed",
+    "Partners": "Partners",
+    "messageFromCeo": "Message From CEO",
+    "blogs/Events": "Blogs/Events",
+    "workWithUs": "Work With Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsAndConditions": "Terms And Conditions",
+    "Press": "Press",
+    "rightsReserved": "All Rights Reserved",
+    "Claim": "Claim",
+    "Privacy": "Privacy",
+    "Terms and conditions": "Terms and conditions",
+    "about": "About Us"
+  },
   "header": {
     "Profile": "Profile",
     "employers": "employers",
@@ -1114,167 +1135,196 @@
       "description": "At LinkedMed, our mission goes beyond personnel placement – we are committed to advancing global healthcare As part of our corporate responsibility, we pledge to support groundbreaking cancer research initiatives annually, contributing to medical progress that saves lives By investing in innovation and scientific discoveries, we stand together with medical professionals in the fight against one of the world's greatest health challenges, reaffirming our commitment to a healthier future for all"
     }
   },
-  
-    "auth": {
-        "passwords_dont_match": "Passwords don't match",
-  "At least 8 characters": "At least 8 characters",
-  "One uppercase letter": "One uppercase letter",
-  "One lowercase letter": "One lowercase letter",
-  "One number": "One number",
-  "One special character": "One special character",
-      "loading":"Loading...",
-      "login_failed": "Login failed. Please check your email and password.",
-      "Name":"Name",
-      "placeholder_name": "Enter your name",
-      "welcome": "Welcome to",
-      "sign_in": "Sign in",
-      "sign_up": "Create Account",
-      "email": "Email Address",
-      "password": "Password",
-      "confirm_password": "Confirm Password",
-      "placeholder_email": "name@examplecom",
-      "placeholder_password": "••••••••",
-      "placeholder_create_password": "Create a password",
-      "placeholder_confirm_password": "Repeat your password",
-      "forgot": "Forgot?",
-      "submit_signin": "Sign in",
-      "submit_signup": "Create account",
-      "no_account": "No account?",
-      "have_account": "Already have an account?",
-      "link_signup": "Create one",
-      "link_signin": "Sign in"
+
+  "auth": {
+    "passwords_dont_match": "Passwords don't match",
+    "At least 8 characters": "At least 8 characters",
+    "One uppercase letter": "One uppercase letter",
+    "One lowercase letter": "One lowercase letter",
+    "One number": "One number",
+    "One special character": "One special character",
+    "loading": "Loading...",
+    "login_failed": "Login failed. Please check your email and password.",
+    "Name": "Name",
+    "placeholder_name": "Enter your name",
+    "welcome": "Welcome to",
+    "sign_in": "Sign in",
+    "sign_up": "Create Account",
+    "email": "Email Address",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "placeholder_email": "name@examplecom",
+    "placeholder_password": "••••••••",
+    "placeholder_create_password": "Create a password",
+    "placeholder_confirm_password": "Repeat your password",
+    "forgot": "Forgot?",
+    "submit_signin": "Sign in",
+    "submit_signup": "Create account",
+    "no_account": "No account?",
+    "have_account": "Already have an account?",
+    "link_signup": "Create one",
+    "link_signin": "Sign in"
+  },
+  "Testimonials": [
+    {
+      "name": "Hagar Elnahhas",
+      "testimonial": "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
+      "stars": 5
     },
-    "Testimonials": [
-      {
-        "name": "Hagar Elnahhas",
-        "testimonial": "The support and resources provided by LinkedMed helped me secure my position as a pharmacist (Approbierte). To do so, the platform/company sharpened both my medical knowledge and my language skills to prepare me well for this position.",
-        "stars": 5
-      },
-      {
-        "name": "Rebica Müller",
-        "testimonial": "LinkedMed provides well-prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
-        "stars": 5
-      },
-      {
-        "name": "Ahmed Sabri",
-        "testimonial": "LinkedMed helped me achieve training for document verification; their support was my dream of working in Germany! The language courses were incredible. Now, I'm happily working in a top Berlin hospital!",
-        "stars": 5
-      },
-      {
-        "name": "Sara Dabagh",
-        "testimonial": "Navigating the visa process was overwhelming, but LinkedMed handled everything professionally. Their expertise ensured a smooth journey, and today, I'm a licensed pharmacist in Germany. Highly recommended!",
-        "stars": 4
-      },
-      {
-        "name": "Fatima M",
-        "testimonial": "LinkedMed's German courses and exam preparation made learning easy. Their guidance gave me confidence to pass my exams and secure a nursing job in Germany. Truly life-changing!",
-        "stars": 5
-      },
-      {
-        "name": "Salma Hany",
-        "testimonial": "Thanks to LinkedMed, I gained great insight on the crucial role of a pharmacist during my internship (Praktikum) in easy Apotheke for 2 weeks. It enriched my skill set and experience.",
-        "stars": 4
-      }
-    ],
-    "title": "e-learning",
-    "viewProfile": "View Profile",
-    "pageTitle": "Refer a Friend - Head Medical",
-    "siteName": "Head Medical",
-    "formTitle": "Refer a Friend Registration Form",
-    "instructions": "Simply enter your details and your friend’s details in the form, return it to",
-    "referralEmail": "referrals@headmedical.com",
-    "fields": {
-      "yourName": "Your name",
-      "yourEmail": "Your email",
-      "friendName": "Friend’s name",
-      "friendEmail": "Friend’s email",
-      "friendPhone": "Friend’s phone number",
-      "friendOccupation": "Friend’s occupation",
-      "locations": "Location(s) of interest"
+    {
+      "name": "Rebica Müller",
+      "testimonial": "LinkedMed provides well-prepared, qualified healthcare professionals. Their recruitment process ensures seamless integration into our hospital. A trusted partner for hiring skilled international medical staff!",
+      "stars": 5
     },
-    "otherInfo": "Other information",
-    "termsText": "I have read and accept the",
-    "termsLink": "Terms & Conditions",
-    "consentNote": "Please ensure the above named person has agreed to you sharing their details with Head Medical for the purpose of contacting them regarding recruitment.",
-    "submit": "Submit",
-    "termsHeader": "Head Medical Referral Rewards Scheme – Terms & Conditions",
-      "rule1":"1. All referrals should be made by completing our Referral Rewards Registration form.",
-      "rule2":"2. Prospective candidates can only be referred once.",
-      "rule3":"3. You must be registered with Head Medical to refer a candidate.",
-      "rule4":"4. The candidate must not have been referred previously.",
-      "rule5":"5. The candidate must not have already had an interview via Head Medical.",
-      "rule6":"6. Rewards are paid after the candidate starts their assignment or permanent role.",
-      "rule7":"7. Head Medical reserves the right to change or cancel the scheme at any time.",
-    "taxHeader": "Tax Implications:",
-    "taxNote": "Participation may be subject to taxes; individuals should seek their own advice.",
-    "officeUse": "For Office Use Only",
-    "dateReceived": "Date Received:",
-    "initials": "Initials:",
-    "Home":{
-      "CEO": "CEO",
-      "Message from": "Message from",
-      "journey": "Every great journey begins with a single, brave step—and at LinkedMed, we walk that step with you.",
-      "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
-      "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
-      "button": "Start your dream!"
+    {
+      "name": "Ahmed Sabri",
+      "testimonial": "LinkedMed helped me achieve training for document verification; their support was my dream of working in Germany! The language courses were incredible. Now, I'm happily working in a top Berlin hospital!",
+      "stars": 5
     },
-      "linkedmed": {
-        "hero": {
-          "title": "Our Story: A Journey Beyond Borders",
-          "subtitle": "It started with a simple truth—",
-          "truth": "Talent is everywhere. But opportunity is not.",
-          "description": "In hospitals across the Arab world, we met doctors filled with potential, nurses brimming with compassion, and pharmacists ready to serve. But between them and their dreams stood language barriers, complex visa systems, endless paperwork, and, above all, uncertainty.",
-          "birth": "That's when LinkedMed was born. Not just as a company, but as a mission. A promise.",
-          "vision": "Founded in Dubai, LinkedMed began as a vision: to empower healthcare professionals with the tools, support, and guidance to build a better life beyond borders. We didn't just want to recruit—we wanted to uplift. To transform careers. To change lives."
-        },
-        "journey": {
-          "title": "From One Dream to Many",
-          "start": "From that vision, our journey took off.",
-          "expansion": "We built our foundation in Dubai, but quickly expanded to Germany—where our candidates now work in over 400 trusted hospitals and clinics. From Berlin to Munich, LinkedMed professionals are thriving, respected, and building lives they once only dreamed of.",
-          "cairo": "And now, we're proud to open our third branch—in Cairo. Why? Because this mission is personal. Because Egypt, and the Arab world, is full of brilliance waiting to be seen. Because the next doctor, the next nurse, the next leader is out there—and we're here to help them rise."
-        },
-        "process": {
-          "title": "More Than a Process—It's a Journey",
-          "description": "We know your journey is more than a checklist. It's a decision to believe in yourself. To choose growth. And to face uncertainty with courage.",
-          "support": "That's why LinkedMed supports you at every step:",
-          "steps": {
-            "language": "We teach you the German language—not just conversational, but with depth.",
-            "exam": "We train you to pass the specialized scientific language exam, required to practice in Germany's healthcare system—through our advanced e-learning platform, accessible anytime, anywhere.",
-            "documents": "We prepare your documents, verify them, and guide you through every embassy step.",
-            "matching": "We match you with the right employer, where your skills are needed and your future can grow.",
-            "support": "We support you on the ground, from your arrival to your first day, and beyond."
-          },
-          "logistics": "This isn't just logistics.",
-          "transformation": "This is transformation."
-        },
-        "stories": {
-          "title": "Real People. Real Stories.",
-          "aya": "Like Dr. Aya from Syria—who was ready to give up until LinkedMed stepped in. Today, she's a pediatrician in Cologne, mentoring new arrivals.",
-          "mahmoud": "Or Mahmoud, a nurse from Giza, who studied late nights on our platform, passed the Fachsprachprüfung, and now sends photos in scrubs with the caption: \"I made it.\"",
-          "notPlacements": "These are not just placements.",
-          "newBeginnings": "They are new beginnings."
-        },
-        "identity": {
-          "title": "This Is Who We Are",
-          "notAgents": "We are not agents.",
-          "notService": "We are not a service.",
-          "believers": "We are believers.",
-          "potential": "In potential.",
-          "people": "In people.",
-          "you": "In you.",
-          "connect": "At LinkedMed, we don't just connect you to a job.",
-          "future": "We connect you to a future.",
-          "bigger": "One that's bigger, brighter, and finally within reach.",
-          "ready": "So if you're ready to rise—",
-          "walkBeside": "We're ready to walk beside you."
-        },
-        "cta": {
-          "welcome": "🌍 Welcome to LinkedMed. Your journey starts here.",
-          "button": "🎯 Start Your Journey Now"
-        }
-      },
-      "whyLinkedMed":{
-        "title": "Why LinkedMed?",
-        "description1": "LinkedMed helps you build a new life and medical career in Germany. We offer full support: document prep, German courses, visa help, job placement, and onboarding. With over 400 partners, we turn challenges into real opportunities. You become part of a trusted, global family. LinkedMed delivers top-tier, language- and culture-ready medical staff. We handle verification, strategy, and recruitment—saving time and reducing risk. We’re not just providers—we're your long-term hiring partners."
-      }
+    {
+      "name": "Sara Dabagh",
+      "testimonial": "Navigating the visa process was overwhelming, but LinkedMed handled everything professionally. Their expertise ensured a smooth journey, and today, I'm a licensed pharmacist in Germany. Highly recommended!",
+      "stars": 4
+    },
+    {
+      "name": "Fatima M",
+      "testimonial": "LinkedMed's German courses and exam preparation made learning easy. Their guidance gave me confidence to pass my exams and secure a nursing job in Germany. Truly life-changing!",
+      "stars": 5
+    },
+    {
+      "name": "Salma Hany",
+      "testimonial": "Thanks to LinkedMed, I gained great insight on the crucial role of a pharmacist during my internship (Praktikum) in easy Apotheke for 2 weeks. It enriched my skill set and experience.",
+      "stars": 4
     }
+  ],
+  "title": "e-learning",
+  "viewProfile": "View Profile",
+  "pageTitle": "Refer a Friend - Head Medical",
+  "siteName": "Head Medical",
+  "formTitle": "Refer a Friend Registration Form",
+  "instructions": "Simply enter your details and your friend’s details in the form, return it to",
+  "referralEmail": "referrals@headmedical.com",
+  "fields": {
+    "yourName": "Your name",
+    "yourEmail": "Your email",
+    "friendName": "Friend’s name",
+    "friendEmail": "Friend’s email",
+    "friendPhone": "Friend’s phone number",
+    "friendOccupation": "Friend’s occupation",
+    "locations": "Location(s) of interest"
+  },
+  "otherInfo": "Other information",
+  "termsText": "I have read and accept the",
+  "termsLink": "Terms & Conditions",
+  "consentNote": "Please ensure the above named person has agreed to you sharing their details with Head Medical for the purpose of contacting them regarding recruitment.",
+  "submit": "Submit",
+  "termsHeader": "Head Medical Referral Rewards Scheme – Terms & Conditions",
+  "rule1": "1. All referrals should be made by completing our Referral Rewards Registration form.",
+  "rule2": "2. Prospective candidates can only be referred once.",
+  "rule3": "3. You must be registered with Head Medical to refer a candidate.",
+  "rule4": "4. The candidate must not have been referred previously.",
+  "rule5": "5. The candidate must not have already had an interview via Head Medical.",
+  "rule6": "6. Rewards are paid after the candidate starts their assignment or permanent role.",
+  "rule7": "7. Head Medical reserves the right to change or cancel the scheme at any time.",
+  "taxHeader": "Tax Implications:",
+  "taxNote": "Participation may be subject to taxes; individuals should seek their own advice.",
+  "officeUse": "For Office Use Only",
+  "dateReceived": "Date Received:",
+  "initials": "Initials:",
+  "Home": {
+    "CEO": "CEO",
+    "Message from": "Message from",
+    "journey": "Every great journey begins with a single, brave step—and at LinkedMed, we walk that step with you.",
+    "connect": "We don’t just connect healthcare professionals to jobs—we help you build a life of purpose abroad. Over the past four years, we’ve guided hundreds toward careers in Germany, turning ambition into reality through secure contracts and visa success.",
+    "roots": "From our roots in Dubai to Germany, and now Cairo, we’re closer than ever to the heart of the Arab medical community—ready to support you with smart learning tools, hands-on guidance, and trusted global partners.",
+    "button": "Start your dream!"
+  },
+  "linkedmed": {
+    "hero": {
+      "title": "Our Story: A Journey Beyond Borders",
+      "subtitle": "It started with a simple truth—",
+      "truth": "Talent is everywhere. But opportunity is not.",
+      "description": "In hospitals across the Arab world, we met doctors filled with potential, nurses brimming with compassion, and pharmacists ready to serve. But between them and their dreams stood language barriers, complex visa systems, endless paperwork, and, above all, uncertainty.",
+      "birth": "That's when LinkedMed was born. Not just as a company, but as a mission. A promise.",
+      "vision": "Founded in Dubai, LinkedMed began as a vision: to empower healthcare professionals with the tools, support, and guidance to build a better life beyond borders. We didn't just want to recruit—we wanted to uplift. To transform careers. To change lives."
+    },
+    "journey": {
+      "title": "From One Dream to Many",
+      "start": "From that vision, our journey took off.",
+      "expansion": "We built our foundation in Dubai, but quickly expanded to Germany—where our candidates now work in over 400 trusted hospitals and clinics. From Berlin to Munich, LinkedMed professionals are thriving, respected, and building lives they once only dreamed of.",
+      "cairo": "And now, we're proud to open our third branch—in Cairo. Why? Because this mission is personal. Because Egypt, and the Arab world, is full of brilliance waiting to be seen. Because the next doctor, the next nurse, the next leader is out there—and we're here to help them rise."
+    },
+    "process": {
+      "title": "More Than a Process—It's a Journey",
+      "description": "We know your journey is more than a checklist. It's a decision to believe in yourself. To choose growth. And to face uncertainty with courage.",
+      "support": "That's why LinkedMed supports you at every step:",
+      "steps": {
+        "language": "We teach you the German language—not just conversational, but with depth.",
+        "exam": "We train you to pass the specialized scientific language exam, required to practice in Germany's healthcare system—through our advanced e-learning platform, accessible anytime, anywhere.",
+        "documents": "We prepare your documents, verify them, and guide you through every embassy step.",
+        "matching": "We match you with the right employer, where your skills are needed and your future can grow.",
+        "support": "We support you on the ground, from your arrival to your first day, and beyond."
+      },
+      "logistics": "This isn't just logistics.",
+      "transformation": "This is transformation."
+    },
+    "stories": {
+      "title": "Real People. Real Stories.",
+      "aya": "Like Dr. Aya from Syria—who was ready to give up until LinkedMed stepped in. Today, she's a pediatrician in Cologne, mentoring new arrivals.",
+      "mahmoud": "Or Mahmoud, a nurse from Giza, who studied late nights on our platform, passed the Fachsprachprüfung, and now sends photos in scrubs with the caption: \"I made it.\"",
+      "notPlacements": "These are not just placements.",
+      "newBeginnings": "They are new beginnings."
+    },
+    "identity": {
+      "title": "This Is Who We Are",
+      "notAgents": "We are not agents.",
+      "notService": "We are not a service.",
+      "believers": "We are believers.",
+      "potential": "In potential.",
+      "people": "In people.",
+      "you": "In you.",
+      "connect": "At LinkedMed, we don't just connect you to a job.",
+      "future": "We connect you to a future.",
+      "bigger": "One that's bigger, brighter, and finally within reach.",
+      "ready": "So if you're ready to rise—",
+      "walkBeside": "We're ready to walk beside you."
+    },
+    "cta": {
+      "welcome": "🌍 Welcome to LinkedMed. Your journey starts here.",
+      "button": "🎯 Start Your Journey Now"
+    }
+  },
+  "whyLinkedMed": {
+    "title": "Why LinkedMed?",
+    "description1": "LinkedMed helps you build a new life and medical career in Germany. We offer full support: document prep, German courses, visa help, job placement, and onboarding. With over 400 partners, we turn challenges into real opportunities. You become part of a trusted, global family. LinkedMed delivers top-tier, language- and culture-ready medical staff. We handle verification, strategy, and recruitment—saving time and reducing risk. We’re not just providers—we're your long-term hiring partners."
+  },
+  "blogs": "Blogs",
+  "Blogs": {
+    "pageTitle": "Blog Post - LinkedMed",
+    "readingTime": "5 min read",
+    "publishedDate": "Today",
+    "contentComingSoon": {
+      "title": "Content Coming Soon",
+      "description": "The full content for this blog post will be available shortly."
+    },
+    "tags": "Tags",
+    "seoInsights": "SEO Insights",
+    "metaTitle": "Meta Title",
+    "metaDescription": "Meta Description",
+    "keywords": "Keywords",
+    "shareArticle": "Share Article",
+    "shareOnTwitter": "Share on Twitter",
+    "shareOnFacebook": "Share on Facebook",
+    "shareOnLinkedIn": "Share on LinkedIn",
+    "copyLink": "Copy Link",
+    "stayUpdated": "Stay Updated",
+    "newsletterDescription": "Get the latest blog posts delivered to your inbox.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "errorTitle": "Oops! Something went wrong",
+    "errorDescription": "We could not load this blog post. Please try again later.",
+    "tryAgain": "Try Again"
+  },
+  "viewAll": "View All",
+  "recent": "Recent"
+}

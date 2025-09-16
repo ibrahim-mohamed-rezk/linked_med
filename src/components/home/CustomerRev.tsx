@@ -90,7 +90,7 @@ const Testimonials: React.FC<{data: Testimonial[]}> = ({data}) => {
   return (
     <div id="testimonials" className="py-4 sm:py-8 md:py-12 lg:py-16 xl:py-20 max-w-[1920px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
       <div className="w-full">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight text-white text-center md:text-left font-ar mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+        <h2 className="text-xl sm:text-2xl text-start md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-tight text-white w-full flex md:text-left font-ar mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           {t("Testimonials")}
         </h2>
 

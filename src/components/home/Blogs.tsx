@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import { motion } from "framer-motion";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface Blog {
   id: number;
@@ -28,6 +28,7 @@ const springTransition = {
 export default function BlogSection({ data }: { data: Blog[] }) {
 //   console.log("blogs", data);
   const locale = useLocale();
+  const t = useTranslations();
 
   const blogData = data || [];
 
@@ -51,7 +52,7 @@ export default function BlogSection({ data }: { data: Blog[] }) {
               fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
             }}
           >
-            Insights<span className="text-blue-500">.</span>
+           {t("blogs")} <span className="text-blue-500">.</span>
           </h2>
           <a
             href="#"
@@ -61,7 +62,7 @@ export default function BlogSection({ data }: { data: Blog[] }) {
               fontSize: "clamp(0.875rem, 1.5vw, 1rem)",
             }}
           >
-            View all
+            {t("viewAll")}
           </a>
         </div>
 
@@ -97,7 +98,7 @@ export default function BlogSection({ data }: { data: Blog[] }) {
                 </div>
                 <div className="flex items-center gap-5 text-gray-300 text-sm">
                   <Clock size={16} className="text-blue-400" />
-                  <span>{blogData[0].description}</span>
+                  <span dangerouslySetInnerHTML={{ __html: blogData[0].description }} />
                 </div>
               </div>
             </motion.div>
@@ -136,7 +137,7 @@ export default function BlogSection({ data }: { data: Blog[] }) {
                     </div>
                     <div className="flex items-center gap-5 border-2 w-fit rounded-xl p-1 text-gray-300 text-xs mt-1">
                       <Clock size={14} className="text-blue-400" />
-                      <span>Recent</span>
+                      <span>{t("recent")}</span>
                     </div>
                   </div>
                 </motion.div>
