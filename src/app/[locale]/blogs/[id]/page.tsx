@@ -28,7 +28,6 @@ export async function generateMetadata({
   try {
     const { id, locale } = await params;
     const blog: BlogData = await getData(`/blogs/${id}`, {}, { lang: locale });
-    const t = await getTranslations("Blogs" );
 
     return {
       title: blog.meta_title || blog.title,
@@ -47,7 +46,6 @@ export async function generateMetadata({
       },
     };
   } catch {
-    const { locale } = await params;
     const t = await getTranslations("Blogs");
     
     return {
