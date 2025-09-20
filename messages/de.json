@@ -851,6 +851,7 @@
     },
     "contact": {
       "title": "Kontaktinformationen",
+      "success": "Ihre Nachricht wurde erfolgreich gesendet",
       "description": {
         "line1": "Senden Sie eine E-Mail, rufen Sie an oder füllen Sie das Formular aus, um zu erfahren,",
         "line2": "wie Snappy Ihr Nachrichtenproblem lösen kann"

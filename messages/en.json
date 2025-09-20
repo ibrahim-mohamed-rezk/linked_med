@@ -851,6 +851,7 @@
     },
     "contact": {
       "title": "Contact Information",
+      "success": "Your message has been sent successfully",
       "description": {
         "line1": "Email, call, or complete the form to learn how",
         "line2": "Snappy can solve your messaging problem"
