@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import { useLocale, useTranslations } from "next-intl";
 import { postData, getData } from "@/libs/server/server";
+import axios from "axios";
 
 const ReferFriendPage = () => {
   const t = useTranslations("Refer");
@@ -82,9 +83,11 @@ const ReferFriendPage = () => {
     try {
       await postData("refer-form", formData);
       setSubmitted(true);
-    } catch (error: any) {
-      if (error.response?.data?.errors) {
-        setErrors(error.response.data.errors);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.log(error.response?.data);
+      } else {
+        console.log("An unexpected error occurred");
       }
     } finally {
       setLoading(false);
@@ -585,24 +588,24 @@ const SelectField = ({
   );
 };
 
-const RadioGroup = ({
-  name,
-  label,
-  options,
-}: {
-  name: string;
-  label: string;
-  options: { label: string; value: string }[];
-}) => (
-  <div>
-    <span className="block text-sm text-[#0061A7] mb-1">{label}</span>
-    <div className="flex gap-6">
-      {options?.map((opt) => (
-        <label key={opt.value} className="inline-flex items-center gap-1">
-          <input type="radio" name={name} value={opt.value} required />
-          {opt.label}
-        </label>
-      ))}
-    </div>
-  </div>
-);
+//  const RadioGroup = ({
+//   name,
+//   label,
+//   options,
+// }: {
+//   name: string;
+//   label: string;
+//   options: { label: string; value: string }[];
+// }) => (
+//   <div>
+//     <span className="block text-sm text-[#0061A7] mb-1">{label}</span>
+//     <div className="flex gap-6">
+//       {options?.map((opt) => (
+//         <label key={opt.value} className="inline-flex items-center gap-1">
+//           <input type="radio" name={name} value={opt.value} required />
+//           {opt.label}
+//         </label>
+//       ))}
+//     </div>
+//   </div>
+// );

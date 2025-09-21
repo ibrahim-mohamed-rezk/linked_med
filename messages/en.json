@@ -1327,5 +1327,11 @@
     "tryAgain": "Try Again"
   },
   "viewAll": "View All",
-  "recent": "Recent"
+  "recent": "Recent",
+"VerifyModal": {
+  "title": "Verify",
+  "subtitle": "Please check your email to get the verification code.",
+  "spam_notice": "If the code does not appear in your inbox, please check your spam folder.",
+  "verify": "Verify"
+}
 }

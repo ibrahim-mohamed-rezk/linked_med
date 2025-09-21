@@ -1327,5 +1327,11 @@
     "tryAgain": "Erneut versuchen"
   },
   "viewAll": "Alle anzeigen",
-  "recent": "Neueste"
+  "recent": "Neueste",
+"VerifyModal": {
+  "title": "Verifizieren",
+  "subtitle": "Bitte überprüfen Sie Ihre E-Mails, um den Verifizierungscode zu erhalten.",
+  "spam_notice": "Wenn der Code nicht in Ihrem Posteingang erscheint, überprüfen Sie bitte Ihren Spam-Ordner.",
+  "verify": "Verifizieren"
+}
 }

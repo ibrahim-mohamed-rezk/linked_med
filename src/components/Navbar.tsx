@@ -5,12 +5,13 @@ import { Link } from "@/i18n/navigation";
 import { langs } from "@/libs/data/langs";
 import { useTranslations, useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
-import { LoginModal } from "./AuthModals";
+import { LoginModal, VerifyModal } from "./AuthModals";
 import { SignupModal } from "./AuthModals";
 import Image from "next/image";
 // import { UserRound } from "lucide-react";
 import {
   getUserFromCookies,
+  handleVerify,
   isAuthenticated,
   logout,
   UserProfile,
@@ -26,6 +27,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+  const [isVerifyOpen, setIsVerifyOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [user, setUser] = useState<UserProfile | null>(null);
   const langDropdownRef = useRef<HTMLDivElement>(null);
@@ -464,7 +466,10 @@ const Navbar = () => {
                         >
                           {t("login")}
                         </button>
-                        <Link href="/employers" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Link
+                          href="/employers"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
                           <button className="w-full px-4 py-2 gradient-btn text-white text-sm rounded-full font-medium transition">
                             {t("employers")}
                           </button>
@@ -574,6 +579,7 @@ const Navbar = () => {
 
       <SignupModal
         isOpen={isSignupOpen}
+        openVerifyModal={() => setIsVerifyOpen(true)}
         onClose={() => {
           setIsSignupOpen(false);
           // Check if user signed up after modal closes
@@ -587,6 +593,15 @@ const Navbar = () => {
         onSwitchModal={() => {
           setIsSignupOpen(false);
           setIsLoginOpen(true);
+        }}
+      />
+
+      <VerifyModal
+        isOpen={isVerifyOpen}
+        onClose={() => setIsVerifyOpen(false)}
+        onVerify={async (code) => {
+          await handleVerify(code);
+          window.location.reload();
         }}
       />
     </>

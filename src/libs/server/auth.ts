@@ -1,10 +1,11 @@
 import { postData, getData } from "./server";
 import Cookies from "js-cookie";
 import { AxiosRequestHeaders } from "axios";
+import toast from "react-hot-toast";
 
 // Types
 export interface LoginCredentials {
-  email: string;
+  login: string;
   password: string;
   [key: string]: unknown; // Add index signature
 }
@@ -91,7 +92,7 @@ export const login = async (
   credentials: LoginCredentials
 ): Promise<ApiResponse> => {
   try {
-    const response = await postData("/login", credentials);
+    const response = await postData("/login-api", credentials);
 
     // Store auth data in cookies
     storeAuthData(response);
@@ -103,6 +104,8 @@ export const login = async (
   }
 };
 
+let credentialsEmail = "";
+
 /**
  * Register a new user
  */
@@ -113,7 +116,7 @@ export const signup = async (
     const response = await postData("/register-api", credentials);
 
     // Store auth data in cookies
-    storeAuthData(response);
+    credentialsEmail = credentials.email;
 
     return response;
   } catch (error) {
@@ -215,4 +218,24 @@ export const isAuthenticated = (): boolean => {
     return false; // We're on the server side
   }
   return !!getAuthToken();
+};
+
+// verify email
+export const handleVerify = async (code: string) => {
+  try {
+    const response = await postData("verify-code-register", {
+      code,
+      email: credentialsEmail,
+    });
+
+    // Store auth data in cookies
+    storeAuthData(response);
+    toast.success("Email verified successfully");
+
+    return response;
+  } catch (error) {
+    console.error("Error verifying email:", error);
+    toast.error("Error verifying email");
+    throw error;
+  }
 };
