@@ -136,7 +136,7 @@ const PersonalInfoTab = ({
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           >
             <option value="">Select country</option>
-            {countries?.map((country: any) => {
+            {countries?.map((country: CountryTypes) => {
               const key =
                 country?.id ??
                 country?.code ??
@@ -184,23 +184,10 @@ const PersonalInfoTab = ({
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           >
             <option value="">Select country</option>
-            {countries?.map((country: any) => {
-              const key =
-                country?.id ??
-                country?.code ??
-                country?.iso2 ??
-                country?.iso3 ??
-                country?.name ??
-                country?.en_name ??
-                country?.country_name;
-              const label =
-                country?.name ??
-                country?.en_name ??
-                country?.country_name ??
-                "";
+            {countries?.map((country: CountryTypes) => {
               return (
-                <option key={String(key)} value={label}>
-                  {label}
+                <option key={country.id} value={country.name}>
+                  {country.name}
                 </option>
               );
             })}
