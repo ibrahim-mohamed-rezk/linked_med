@@ -137,22 +137,9 @@ const PersonalInfoTab = ({
           >
             <option value="">Select country</option>
             {countries?.map((country: CountryTypes) => {
-              const key =
-                country?.id ??
-                country?.code ??
-                country?.iso2 ??
-                country?.iso3 ??
-                country?.name ??
-                country?.en_name ??
-                country?.country_name;
-              const label =
-                country?.name ??
-                country?.en_name ??
-                country?.country_name ??
-                "";
               return (
-                <option key={String(key)} value={label}>
-                  {label}
+                <option key={country.id} value={country.name}>
+                  {country.name}
                 </option>
               );
             })}
