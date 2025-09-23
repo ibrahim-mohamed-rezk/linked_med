@@ -85,6 +85,7 @@ const MyJourneyTab: React.FC<{ token: string }> = ({ token }) => {
 
   const scrollToStep = (i: number) => {
     // No-op: scrolling disabled; progress is driven by API
+    console.log(i)
   };
 
   return (
