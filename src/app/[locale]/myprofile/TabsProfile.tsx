@@ -62,7 +62,7 @@ const TabsProfile = ({ profileData, token }: { profileData: ProfileData; token: 
         case t("Certificates"):
           return <Certificates profileData={profileData} token={token} />;
       case t("MyJourney"):
-        return <MyJourneyTab />;
+        return <MyJourneyTab token={token} />;
       case t("Settings"):
         return <ChangePasswordTab token={token} />;
       default:

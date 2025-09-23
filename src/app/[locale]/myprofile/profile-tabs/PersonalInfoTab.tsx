@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ProfileData } from "@/libs/helpers/types";
-import { postData } from "@/libs/server/server";
+import { CountryTypes, ProfileData } from "@/libs/helpers/types";
+import { getData, postData } from "@/libs/server/server";
 import { AxiosHeaders } from "axios";
 import { toast } from "react-hot-toast";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const PersonalInfoTab = ({
   profileData,
@@ -15,6 +15,7 @@ const PersonalInfoTab = ({
   token: string;
 }) => {
   const t = useTranslations("Profile");
+  const locale = useLocale();
 
   const [formData, setFormData] = useState({
     full_name: "",
@@ -26,8 +27,21 @@ const PersonalInfoTab = ({
     preferred_contact_language: "",
     linkedmed_case_manager: "",
   });
+  const [countries, setCountries] = useState<CountryTypes[]>([]);
+  const getCountries = async () => {
+    const response = await getData(
+      "countries",
+      {},
+      { Authorization: `Bearer ${token}`, lang: locale }
+    );
+    setCountries(response.data);
+  };
 
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    getCountries();
+  }, [token]);
 
   useEffect(() => {
     if (profileData) {
@@ -38,7 +52,8 @@ const PersonalInfoTab = ({
         current_city: profileData.current_city || "",
         current_country: profileData.current_country || "",
         phone_number: profileData.phone_number || "",
-        preferred_contact_language: profileData.preferred_contact_language || "",
+        preferred_contact_language:
+          profileData.preferred_contact_language || "",
         linkedmed_case_manager: profileData?.linkedmed_case_manager || "",
       });
     }
@@ -59,7 +74,7 @@ const PersonalInfoTab = ({
     setIsLoading(true);
 
     try {
-       await postData(
+      await postData(
         "profile/update/personal",
         formData,
         new AxiosHeaders({ Authorization: `Bearer ${token}` })
@@ -79,9 +94,7 @@ const PersonalInfoTab = ({
       onSubmit={handleSubmit}
       className="space-y-6 bg-white p-6 rounded-2xl shadow-sm"
     >
-      <h2 className="text-xl font-semibold text-gray-800">
-        {t("Title")}
-      </h2>
+      <h2 className="text-xl font-semibold text-gray-800">{t("Title")}</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
@@ -116,14 +129,34 @@ const PersonalInfoTab = ({
           <label className="block text-sm text-gray-600 mb-1">
             {t("Nationality")}
           </label>
-          <input
-            type="text"
+          <select
             name="nationality"
             value={formData.nationality}
             onChange={handleInputChange}
-            placeholder="e.g., Egyptian"
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
-          />
+          >
+            <option value="">Select country</option>
+            {countries?.map((country: any) => {
+              const key =
+                country?.id ??
+                country?.code ??
+                country?.iso2 ??
+                country?.iso3 ??
+                country?.name ??
+                country?.en_name ??
+                country?.country_name;
+              const label =
+                country?.name ??
+                country?.en_name ??
+                country?.country_name ??
+                "";
+              return (
+                <option key={String(key)} value={label}>
+                  {label}
+                </option>
+              );
+            })}
+          </select>
         </div>
 
         <div>
@@ -144,14 +177,34 @@ const PersonalInfoTab = ({
           <label className="block text-sm text-gray-600 mb-1">
             {t("CurrentCountry")}
           </label>
-          <input
-            type="text"
+          <select
             name="current_country"
             value={formData.current_country}
             onChange={handleInputChange}
-            placeholder="Germany"
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
-          />
+          >
+            <option value="">Select country</option>
+            {countries?.map((country: any) => {
+              const key =
+                country?.id ??
+                country?.code ??
+                country?.iso2 ??
+                country?.iso3 ??
+                country?.name ??
+                country?.en_name ??
+                country?.country_name;
+              const label =
+                country?.name ??
+                country?.en_name ??
+                country?.country_name ??
+                "";
+              return (
+                <option key={String(key)} value={label}>
+                  {label}
+                </option>
+              );
+            })}
+          </select>
         </div>
 
         <div>

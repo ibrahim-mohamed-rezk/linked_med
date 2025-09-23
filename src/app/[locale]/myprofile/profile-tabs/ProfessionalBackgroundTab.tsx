@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
-import { ProfileData } from "@/libs/helpers/types";
-import { postData } from "@/libs/server/server";
-import { AxiosHeaders, AxiosError } from 'axios';
+import { ProfileData, SpecializationTypes } from "@/libs/helpers/types";
+import { getData, postData } from "@/libs/server/server";
+import { AxiosHeaders, AxiosError } from "axios";
 import { toast } from "react-hot-toast";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const ProfessionalBackgroundTab = ({
   profileData,
@@ -26,8 +26,23 @@ const ProfessionalBackgroundTab = ({
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const locale = useLocale();
+
+  const [specializations, setSpecializations] = useState<SpecializationTypes[]>(
+    []
+  );
+  const getSpecializations = async () => {
+    const response = await getData(
+      "specializations",
+      {},
+      { Authorization: `Bearer ${token}`, lang: locale }
+    );
+    setSpecializations(response.data);
+  };
 
   useEffect(() => {
+    getSpecializations();
+    
     if (profileData) {
       setFormData({
         current_job_title: profileData.current_job_title || "",
@@ -35,14 +50,13 @@ const ProfessionalBackgroundTab = ({
         specialty_field: profileData.specialty_field || "",
         languages_spoken: profileData.languages_spoken || "",
         licensing_status: profileData.licensing_status || "",
-        previous_countries_worked_in: profileData.previous_countries_worked_in || "",
+        previous_countries_worked_in:
+          profileData.previous_countries_worked_in || "",
       });
     }
   }, [profileData]);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -64,7 +78,9 @@ const ProfessionalBackgroundTab = ({
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response) {
-          toast.error(error.response.data?.message || t("Professional.UpdateError"));
+          toast.error(
+            error.response.data?.message || t("Professional.UpdateError")
+          );
         } else if (error.request) {
           toast.error(t("Professional.NetworkError"));
         } else {
@@ -77,12 +93,19 @@ const ProfessionalBackgroundTab = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-2xl shadow-sm">
-      <h2 className="text-xl font-semibold text-gray-800">{t("Professional.Title")}</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 bg-white p-6 rounded-2xl shadow-sm"
+    >
+      <h2 className="text-xl font-semibold text-gray-800">
+        {t("Professional.Title")}
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm text-gray-600 mb-1">{t("CurrentJobTitle")}</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("CurrentJobTitle")}
+          </label>
           <input
             type="text"
             name="current_job_title"
@@ -94,7 +117,9 @@ const ProfessionalBackgroundTab = ({
         </div>
 
         <div>
-          <label className="block text-sm text-gray-600 mb-1">{t("YearsOfExperience")}</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("YearsOfExperience")}
+          </label>
           <input
             type="number"
             name="years_of_experience"
@@ -107,19 +132,36 @@ const ProfessionalBackgroundTab = ({
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">{t("Specialty")}</label>
-          <input
-            type="text"
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("Specialty")}
+          </label>
+          <select
             name="specialty_field"
             value={formData.specialty_field}
-            onChange={handleInputChange}
-            placeholder={t("SpecialtyPlaceholder")}
+            onChange={(e) => {
+              handleInputChange(
+                e as unknown as React.ChangeEvent<HTMLInputElement>
+              );
+              setFormData({
+                ...formData,
+                specialty_field: e.target.value,
+              });
+            }}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
-          />
+          >
+            <option value="">Select specialization</option>
+            {specializations?.map((specialization: SpecializationTypes) => (
+              <option key={specialization.id} value={specialization.name}>
+                {specialization.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">{t("Languages")}</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("Languages")}
+          </label>
           <input
             type="text"
             name="languages_spoken"
@@ -131,7 +173,9 @@ const ProfessionalBackgroundTab = ({
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">{t("Licensing")}</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("Licensing")}
+          </label>
           <input
             type="text"
             name="licensing_status"
@@ -143,7 +187,9 @@ const ProfessionalBackgroundTab = ({
         </div>
 
         <div className="sm:col-span-2">
-          <label className="block text-sm text-gray-600 mb-1">{t("PreviousCountries")}</label>
+          <label className="block text-sm text-gray-600 mb-1">
+            {t("PreviousCountries")}
+          </label>
           <input
             type="text"
             name="previous_countries_worked_in"
@@ -159,7 +205,9 @@ const ProfessionalBackgroundTab = ({
         <button
           type="submit"
           disabled={isLoading}
-          className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
+          className={`bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition ${
+            isLoading ? "opacity-70 cursor-not-allowed" : ""
+          }`}
         >
           {isLoading ? (
             <div className="flex items-center gap-2">

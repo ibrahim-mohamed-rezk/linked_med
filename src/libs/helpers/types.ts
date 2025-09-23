@@ -48,3 +48,13 @@ interface Document {
   status: boolean;
   uploaded_at: string;
 }
+
+export interface CountryTypes {
+  id: number;
+  name: string;
+}
+
+export interface SpecializationTypes {
+  id: number;
+  name: string;
+}

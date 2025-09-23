@@ -191,7 +191,7 @@
     "Start by uploading your first certificate or document": "ابدأ بتحميل أول شهادة أو مستند لك",
     "Drag & Drop": "السحب والإفلات",
     "Click to Browse": "انقر للتصفح",
-    "Certificates": "الشهادات",
+    "Certificates": "الوثائق",
     "Journey": {
       "ProgressLabel": "التقدم: الخطوة {step} من {total}",
       "GoToStep": "اذهب إلى الخطوة {num}",
@@ -1366,4 +1366,5 @@
     "spam_notice": "اذا لم يظهر الكود في بريدك الألكتروني، يرجى التحقق من ملف الرسائل الغير المرغوب فيها (سبام).",
     "verify": "تحقق"
   }
+
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { getData } from "@/libs/server/server";
 
 const steps = [
   {
@@ -34,74 +35,62 @@ const steps = [
   },
 ];
 
-const MyJourneyTab: React.FC = () => {
+
+
+const MyJourneyTab: React.FC<{ token: string }> = ({ token }) => {
   const t = useTranslations("Profile");
-  const [activeStep, setActiveStep] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeStep, setActiveStep] = useState(-1);
   const containerRef = useRef<HTMLDivElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
-      const progress = Math.min(scrollTop / (scrollHeight - clientHeight), 1);
-      setScrollProgress(progress);
-    };
-    const c = containerRef.current;
-    c?.addEventListener("scroll", handleScroll);
-    return () => c?.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-  if (!containerRef.current || stepRefs.current.length === 0) return;
-
-  // ✅ Copy ref to local variable
-  const currentStepRefs = [...stepRefs.current];
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visibleSteps = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (visibleSteps.length > 0) {
-        const index = currentStepRefs.findIndex((el) => el === visibleSteps[0].target);
-        if (index !== -1) setActiveStep(index);
-      }
-    },
-    {
-      root: containerRef.current,
-      rootMargin: "-30% 0px -30% 0px",
-      threshold: [0.1, 0.3, 0.5, 0.7, 0.9],
-    }
-  );
-
-  currentStepRefs.forEach((el) => {
-    if (el) observer.observe(el);
-  });
-
-  return () => {
-    currentStepRefs.forEach((el) => {
-      if (el) observer.unobserve(el);
-    });
+  const [journeyStatus, setJourneyStatus] = useState<Record<string, boolean> | null>(null);
+  const locale = useLocale();
+  const getMyJourney = async () => {
+    const response = await getData(
+      "my-journey",
+      {},
+      { Authorization: `Bearer ${token}`, lang: locale }
+    );
+    setJourneyStatus(response.data);
   };
-}, [stepRefs]);
 
-  const progressPercent = Math.max(((activeStep + 1) / steps.length) * 100, scrollProgress * 100);
+
+  useEffect(() => {
+    getMyJourney();
+  }, [token]);
+
+  // Derive active/completed step from API response
+  useEffect(() => {
+    if (!journeyStatus) return;
+    const stepKeys = [
+      "registration",
+      "document_submission",
+      "language_preparation",
+      "embassy_process",
+      "contract_finalization",
+      "job_placement",
+      "onboarding_and_relocation",
+    ];
+    let lastCompleted = -1;
+    for (let i = stepKeys.length - 1; i >= 0; i -= 1) {
+      const key = stepKeys[i];
+      if (journeyStatus[key]) {
+        lastCompleted = i;
+        break;
+      }
+    }
+    setActiveStep(lastCompleted);
+  }, [journeyStatus]);
+
+  const progressPercent = Math.max(((activeStep + 1) / steps.length) * 100, 0);
 
   const scrollToStep = (i: number) => {
-    const el = stepRefs.current[i];
-    const c = containerRef.current;
-    if (el && c) {
-      const offset = el.getBoundingClientRect().top - c.getBoundingClientRect().top + c.scrollTop - 120;
-      c.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
-    }
+    // No-op: scrolling disabled; progress is driven by API
   };
 
   return (
     <div
       ref={containerRef}
-      className="w-full bg-white rounded-2xl shadow overflow-y-auto max-h-screen scrollbar-hide"
+      className="w-full bg-white rounded-2xl shadow"
     >
       <div className="sticky top-0 bg-white/95 backdrop-blur-sm pt-4 pb-3 z-50 border-b border-gray-200 shadow-sm">
         <div className="px-4">
