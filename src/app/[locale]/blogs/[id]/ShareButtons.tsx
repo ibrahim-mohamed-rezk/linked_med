@@ -43,6 +43,7 @@ const ShareButtons = ({
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
       // Fallback for older browsers
+      console.error('Failed to copy: ', err)
       const textArea = document.createElement('textarea')
       textArea.value = url
       document.body.appendChild(textArea)
