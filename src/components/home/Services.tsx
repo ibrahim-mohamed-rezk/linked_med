@@ -53,19 +53,35 @@ const Services = ({
 
   return (
     <div className="w-full">
-      <div className="front-full front-full-story featured1 w-full">
+      <div
+        className="front-full front-full-story featured1 w-full relative"
+        style={{ height: "100vh" }}
+      >
         {isMobile ? (
-          <video src={data.mobile} autoPlay loop muted />
+          <video
+            src={data.mobile}
+            autoPlay
+            loop
+            muted
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            style={{ position: "absolute", zIndex: 0 }}
+          />
         ) : (
-          <video src={data.web} autoPlay loop muted />
+          <video
+            src={data.web}
+            autoPlay
+            loop
+            muted
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            style={{ position: "absolute", zIndex: 0 }}
+          />
         )}
-
-        <div className="front-full-inner w-full max-w-[1920px] mx-auto  ">
-          <div className="font-full-inner-content front-story w-full -mt-[clamp(100px,10vw,100px)] ">
+        <div className="front-full-inner absolute inset-0 z-10 flex flex-col items-center justify-center w-full max-w-[1920px] mx-auto ">
+          <div className="font-full-inner-content front-story mt-[20px] w-full ">
             <h3 className="text-[clamp(42px,4.27083vw,82px)] w-full text-center font-bold leading-snug text-white">
               {t("our_services")}
             </h3>
-            <div className="flex px-[clamp(5px,1.56vw,20px)] gap-[clamp(10px,2.5vw,60px)] md:gap-0 md:px-0 flex-col md:flex-row w-full mt-[clamp(15px,4vw,100px)] items-center justify-around">
+            <div className="flex px-[clamp(5px,1.56vw,20px)] gap-[clamp(20px,4vw,80px)] md:gap-[clamp(40px,6vw,120px)] md:px-0 flex-col md:flex-row w-full mt-[clamp(15px,4vw,100px)] items-center justify-center">
               <div className="w-full md:max-w-[clamp(280px,42vw,671px)] group h-[350px] md:h-fit py-[clamp(12px,3vw,30px)] md:py-0 md:h-[clamp(320px,35vw,582px)] relative bg-white/10 rounded-[clamp(8px,1.5vw,30px)] flex-col justify-center md:justify-start items-center md:items-start inline-flex overflow-hidden">
                 <div className="w-full text-center items-center justify-center text-white text-[clamp(38px,3.3vw,79px)] font-bold ">
                   {t("in")}
@@ -78,7 +94,7 @@ const Services = ({
                         key={service.id}
                         className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
                       >
-                        {t(service.title)}
+                        {service.title}
                       </li>
                     )
                   )}
@@ -126,7 +142,7 @@ const Services = ({
                           key={service.id}
                           className="text-[clamp(16px,4vw,30px)] text-white font-semibold leading-relaxed"
                         >
-                          {t(service.title)}
+                          {service.title}
                         </li>
                       )
                     )}

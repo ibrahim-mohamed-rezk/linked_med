@@ -26,7 +26,7 @@ const springTransition = {
 };
 
 export default function BlogSection({ data }: { data: Blog[] }) {
-//   console.log("blogs", data);
+  //   console.log("blogs", data);
   const locale = useLocale();
   const t = useTranslations();
 
@@ -52,7 +52,7 @@ export default function BlogSection({ data }: { data: Blog[] }) {
               fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
             }}
           >
-           {t("blogs")} <span className="text-blue-500">.</span>
+            {t("blogs")} <span className="text-blue-500">.</span>
           </h2>
           <a
             href="#"
@@ -87,7 +87,7 @@ export default function BlogSection({ data }: { data: Blog[] }) {
                 className="absolute inset-0 transition-transform duration-300 group-hover:scale-105 object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 flex flex-col justify-between p-6">
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 flex flex-col justify-start p-6">
                 <div>
                   <p className="font-medium text-gray-300 text-sm mb-1">
                     {blogData[0].keywords || "Blog"}
@@ -97,8 +97,13 @@ export default function BlogSection({ data }: { data: Blog[] }) {
                   </h3>
                 </div>
                 <div className="flex items-center gap-5 text-gray-300 text-sm">
-                  <Clock size={16} className="text-blue-400" />
-                  <span dangerouslySetInnerHTML={{ __html: blogData[0].description }} />
+                  <Clock size={20} className="text-blue-400" />
+                  <span
+                    className="line-clamp-3"
+                    dangerouslySetInnerHTML={{
+                      __html: blogData[0].description,
+                    }}
+                  />
                 </div>
               </div>
             </motion.div>
@@ -107,8 +112,11 @@ export default function BlogSection({ data }: { data: Blog[] }) {
           {/* Right Small Blog Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {blogData.slice(1).map((blog, index) => (
-              <Link href={`/${locale}/blogs/${blog.id}`} key={blog.id} className="block">
-
+              <Link
+                href={`/${locale}/blogs/${blog.id}`}
+                key={blog.id}
+                className="block"
+              >
                 <motion.div
                   initial={{ opacity: 0, x: 100 }}
                   whileInView={{ opacity: 1, x: 0 }}

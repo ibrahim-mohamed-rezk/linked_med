@@ -272,7 +272,7 @@
     "UploadOthers": "تحميل أخرى",
     "SaveButton": "حفظ",
     "Professional": {
-      "Title": "الخلفية المهنية"
+      "Title": "المسيرة المهنية"
     },
     "CurrentJobTitle": "المسمى الوظيفي الحالي",
     "CurrentJobTitlePlaceholder": "مثال: طبيب مقيم",
@@ -286,8 +286,8 @@
     "LicensingPlaceholder": "مثال: مرخص من وزارة الصحة، مؤهل HAAD",
     "PreviousCountries": "الدول التي عملت بها سابقًا",
     "PreviousCountriesPlaceholder": "مثال: مصر، السعودية، ألمانيا",
-    "Professional.UpdateSuccess": "تم تحديث الخلفية المهنية بنجاح!",
-    "Professional.UpdateError": "حدث خطأ أثناء تحديث الخلفية المهنية. حاول مرة أخرى.",
+    "Professional.UpdateSuccess": "تم تحديث المسيرة المهنية بنجاح!",
+    "Professional.UpdateError": "حدث خطأ أثناء تحديث المسيرة المهنية. حاول مرة أخرى.",
     "Professional.NetworkError": "خطأ في الاتصال. تحقق من الشبكة وحاول مرة أخرى.",
     "Professional.UnknownError": "حدث خطأ غير متوقع. حاول مرة أخرى.",
     "Title": "المعلومات الشخصية",
@@ -308,7 +308,7 @@
     "UpdateError": "حدث خطأ أثناء تحديث الملف الشخصي. حاول مرة أخرى.",
     "TabsTitle": "الملف الشخصي",
     "PersonalInfo": "المعلومات الشخصية ووسائل الاتصال",
-    "ProfessionalBackground": "الخلفية المهنية",
+    "ProfessionalBackground": "المسيرة المهنية",
     "EducationCertifications": "التعليم والشهادات",
     "MyJourney": "رحلتي",
     "Settings": "الإعدادات والتفضيلات",

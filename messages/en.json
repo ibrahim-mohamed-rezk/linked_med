@@ -278,7 +278,7 @@
     "UploadOthers": "Upload others",
     "SaveButton": "Save",
     "Professional": {
-      "Title": "Professional Background"
+      "Title": "Professional Journey"
     },
     "CurrentJobTitle": "Current Job Title",
     "CurrentJobTitlePlaceholder": "e.g., Resident Doctor",
@@ -292,8 +292,8 @@
     "LicensingPlaceholder": "e.g., MOH Certified, HAAD Eligible",
     "PreviousCountries": "Previous Countries Worked In",
     "PreviousCountriesPlaceholder": "e.g., Egypt, Saudi Arabia, Germany",
-    "Professional.UpdateSuccess": "Professional background updated successfully!",
-    "Professional.UpdateError": "Error updating professional background. Please try again.",
+    "Professional.UpdateSuccess": "Professional Journey updated successfully!",
+    "Professional.UpdateError": "Error updating professional Journey. Please try again.",
     "Professional.NetworkError": "Network error. Please check your connection.",
     "Professional.UnknownError": "Unexpected error occurred. Please try again.",
     "Title": "Personal Information",
@@ -749,7 +749,7 @@
     "about": "About",
     "enrol_now": "Enroll Now",
     "contact_us": "Contact Us",
-    "login": "Login",
+    "login": "Register",
     "singup": "Register",
     "logout": "Logout"
   },

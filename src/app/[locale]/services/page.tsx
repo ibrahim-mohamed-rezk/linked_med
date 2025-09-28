@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import "../../../../public/css/home.css";
 import { useLocale, useTranslations } from "next-intl";
-import {
-  FolderCheck,
-} from "lucide-react";
-import dots from "/public/images/logo.ico";
-import Image from "next/image";
+import { FolderCheck } from "lucide-react";
+// import dots from "/public/images/logo.ico";
+// import Image from "next/image";
 import { getData } from "@/libs/server/server";
+import ServicesComponent from "@/components/home/Services";
 
 interface Service {
   id: string;
@@ -18,6 +18,14 @@ interface Service {
   description: string;
   subPoints: string[];
   quoteMessage: string;
+}
+
+interface HomeData {
+  "services-home-country": { id: number; title: "string" }[];
+  "services-abroad": { id: number; title: "string" }[];
+  videos: {
+    service: { web: string; mobile: string };
+  };
 }
 
 const MedicalServicesTimeline = () => {
@@ -31,20 +39,35 @@ const MedicalServicesTimeline = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [services, setServices] = useState<Service[]>([]);
   const loacale = useLocale();
+  const [homeData, setHomeData] = useState<HomeData | null>(null);
 
   const getServices = async () => {
     try {
-      const response = await getData("/services", {}, {
-        lang:loacale
-      });
+      const response = await getData(
+        "/services",
+        {},
+        {
+          lang: loacale,
+        }
+      );
       setServices(response.data);
     } catch (error) {
       console.error("Error fetching services:", error);
     }
   };
 
+  const feachData = async () => {
+    try {
+      const response = await getData("/home", {}, { lang: loacale });
+      setHomeData(response.data);
+    } catch (error) {
+      throw error;
+    }
+  };
+
   useEffect(() => {
     getServices();
+    feachData();
   }, []);
 
   useEffect(() => {
@@ -243,27 +266,24 @@ const MedicalServicesTimeline = () => {
         <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-blue-400/5 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Extended Hero section - Full viewport height */}
-      <div className="relative z-10 min-h-dvh -mt-[clamp(10px,7vw,100px)] flex flex-col items-center justify-center text-center">
-        <div className="flex items-center justify-center text-center gap-3 mb-8">
-          <Image src={dots} width={40} height={40} alt="image" />
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            {t("Service")}
-          </h1>
-          <Image src={dots} width={40} height={40} alt="image" />
-        </div>
-        <p className="text-white text-lg md:text-xl max-w-2xl mx-auto px-4 text-justify">
-          {t("At")}
-        </p>
+      <ServicesComponent
+        servicesHomeCountry={
+          (homeData && homeData["services-home-country"]) || []
+        }
+        servicesAbroad={(homeData && homeData["services-abroad"]) || []}
+        data={(homeData && homeData.videos.service) || { web: "", mobile: "" }}
+      />
 
-        {/* Optional scroll indicator */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/60">
+      {/* Extended Hero section - Full viewport height */}
+      <div className="relative z-10 min-h-[40vh] -mt-[clamp(10px,7vw,100px)] flex flex-col items-center justify-center text-center">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/60">
           <span className="text-sm mb-2">{t("Scroll to explore")}</span>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </div>
+   
 
       <div
         ref={containerRef}

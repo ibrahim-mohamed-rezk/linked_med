@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ProfileData, SpecializationTypes } from "@/libs/helpers/types";
 import { getData, postData } from "@/libs/server/server";
 import { AxiosHeaders, AxiosError } from "axios";
@@ -31,6 +31,10 @@ const ProfessionalBackgroundTab = ({
   const [specializations, setSpecializations] = useState<SpecializationTypes[]>(
     []
   );
+  const [specializationSearch, setSpecializationSearch] = useState("");
+  const [showSpecializationDropdown, setShowSpecializationDropdown] = useState(false);
+  const specializationInputRef = useRef<HTMLInputElement>(null);
+
   const getSpecializations = async () => {
     const response = await getData(
       "specializations",
@@ -42,7 +46,7 @@ const ProfessionalBackgroundTab = ({
 
   useEffect(() => {
     getSpecializations();
-    
+
     if (profileData) {
       setFormData({
         current_job_title: profileData.current_job_title || "",
@@ -53,6 +57,7 @@ const ProfessionalBackgroundTab = ({
         previous_countries_worked_in:
           profileData.previous_countries_worked_in || "",
       });
+      setSpecializationSearch(profileData.specialty_field || "");
     }
   }, [profileData]);
 
@@ -63,6 +68,50 @@ const ProfessionalBackgroundTab = ({
       [name]: name === "years_of_experience" ? Number(value) : value,
     }));
   };
+
+  // For clicking outside the dropdown to close it
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        specializationInputRef.current &&
+        !specializationInputRef.current.contains(event.target as Node)
+      ) {
+        setShowSpecializationDropdown(false);
+      }
+    }
+    if (showSpecializationDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSpecializationDropdown]);
+
+  const handleSpecializationInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSpecializationSearch(e.target.value);
+    setShowSpecializationDropdown(true);
+    setFormData((prev) => ({
+      ...prev,
+      specialty_field: e.target.value,
+    }));
+  };
+
+  const handleSpecializationSelect = (name: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      specialty_field: name,
+    }));
+    setSpecializationSearch(name);
+    setShowSpecializationDropdown(false);
+  };
+
+  const filteredSpecializations = specializationSearch
+    ? specializations.filter((spec) =>
+        spec.name.toLowerCase().includes(specializationSearch.toLowerCase())
+      )
+    : specializations;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -131,31 +180,45 @@ const ProfessionalBackgroundTab = ({
           />
         </div>
 
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-2" ref={specializationInputRef}>
           <label className="block text-sm text-gray-600 mb-1">
             {t("Specialty")}
           </label>
-          <select
-            name="specialty_field"
-            value={formData.specialty_field}
-            onChange={(e) => {
-              handleInputChange(
-                e as unknown as React.ChangeEvent<HTMLInputElement>
-              );
-              setFormData({
-                ...formData,
-                specialty_field: e.target.value,
-              });
-            }}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
-          >
-            <option value="">Select specialization</option>
-            {specializations?.map((specialization: SpecializationTypes) => (
-              <option key={specialization.id} value={specialization.name}>
-                {specialization.name}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <input
+              type="text"
+              name="specialty_field"
+              autoComplete="off"
+              value={specializationSearch}
+              onChange={handleSpecializationInput}
+              onFocus={() => setShowSpecializationDropdown(true)}
+              placeholder={t("SpecialtyPlaceholder") || "Type or select specialization"}
+              className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
+            />
+            {showSpecializationDropdown && (
+              <ul className="absolute z-10 left-0 right-0 bg-white border border-gray-200 rounded-2xl mt-1 max-h-48 overflow-auto shadow-lg">
+                {filteredSpecializations.length > 0 ? (
+                  filteredSpecializations.map((specialization) => (
+                    <li
+                      key={specialization.id}
+                      className={`px-4 py-2 cursor-pointer hover:bg-blue-100 ${
+                        specialization.name === formData.specialty_field
+                          ? "bg-blue-50 font-semibold"
+                          : ""
+                      }`}
+                      onClick={() => handleSpecializationSelect(specialization.name)}
+                    >
+                      {specialization.name}
+                    </li>
+                  ))
+                ) : (
+                  <li className="px-4 py-2 text-gray-400">
+                    {t("NoResults") || "No specializations found"}
+                  </li>
+                )}
+              </ul>
+            )}
+          </div>
         </div>
 
         <div className="sm:col-span-2">

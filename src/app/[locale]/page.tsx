@@ -1,6 +1,6 @@
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
-import Services from "@/components/home/Services";
+// import Services from "@/components/home/Services";
 import "../../../public/css/home.css";
 import Testimonials from "@/components/home/CustomerRev";
 // import MapImage from "@/components/home/MapImage";
@@ -10,10 +10,15 @@ import MessageFromCeo from "@/components/home/messageFromCeo";
 import WhyLinkedMid from "@/components/home/WhyLinkedMid";
 import BlogSection from "@/components/home/Blogs";
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const feachData = async () => {
     try {
-      const response = await getData("/home");
+      const response = await getData("/home", {}, { lang: locale });
       return response.data;
     } catch (error) {
       throw error;
@@ -21,17 +26,17 @@ export default async function Home() {
   };
 
   const homeData = await feachData();
-  console.log("homeData", homeData);
+  // console.log("homeData", homeData);
   return (
     <div>
       <main className="w-full bg-black text-white">
         <Hero data={homeData?.videos.intro} />
         <About data={homeData?.videos.about} />
-        <Services
+        {/* <Services
           servicesHomeCountry={homeData["services-home-country"]}
           servicesAbroad={homeData["services-abroad"]}
           data={homeData?.videos.service}
-        />
+        /> */}
         {/* <MapImage /> */}
         {/* <Map /> */}
         {/* <Testimonials />*/}
