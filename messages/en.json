@@ -304,9 +304,15 @@
     "PhoneNumber": "Phone Number",
     "ContactLang": "Preferred Contact Language",
     "SelectLanguage": "Select Language",
-    "Languages.English": "English",
-    "Languages.Arabic": "Arabic",
-    "Languages.German": "German",
+    "languages": {
+      "English": "English",
+      "Arabic": "Arabic",
+      "German": "German"
+    },
+    "Other": "Other",
+    "PleaseSpecify": "Please specify",
+    "Add": "Add",
+    "Cancel": "Cancel",
     "CaseManager": "LinkedMed Case Manager",
     "SaveChanges": "Save Changes",
     "Saving": "Saving...",
@@ -334,7 +340,10 @@
     "years": "years",
     "ErrorLoadingProfile": "Failed to load profile data.",
     "ImageUploadSuccess": "Profile image updated!",
-    "ImageUploadError": "Image upload failed."
+    "ImageUploadError": "Image upload failed.",
+    "ExistingCertificate": "Existing Certificate",
+    "NewCertificate": "New Certificate to Upload",
+    "NoResults": "No specializations found"
   },
   "Service": "Services",
   "At": "At LinkedMed, we transform ambi4on into achievement by offering a fully guided pathway to medical careers abroad. We’ve organized our services into four clear categories to help you understand how we support you at every stage.",

@@ -7,7 +7,6 @@ import loginImage from "../../public/images/Home/login.jpg";
 import { Eye, EyeOff } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { login, signup, getFullAuthData } from "@/libs/server/auth";
-import { useRouter } from "next/navigation";
 
 type AuthModalProps = {
   isOpen: boolean;
@@ -388,7 +387,6 @@ export function LoginModal({ isOpen, onClose, onSwitchModal }: AuthModalProps) {
   const t = useTranslations("auth");
   const locale = useLocale();
   const direction = locale === "ar" ? "rtl" : "ltr";
-  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -409,10 +407,10 @@ export function LoginModal({ isOpen, onClose, onSwitchModal }: AuthModalProps) {
       const authData = getFullAuthData();
       console.log("Full auth data:", authData);
 
-      // Close modal after a short delay
+      // Close modal after a short delay and redirect to profile
       setTimeout(() => {
         onClose();
-        router.refresh(); // Refresh page to update UI with logged-in state
+        window.location.href = `/${locale}/myprofile`; // Redirect to profile page
       }, 1500);
     } catch (error) {
       console.error("Login error:", error);

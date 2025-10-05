@@ -18,12 +18,27 @@ const ProfessionalBackgroundTab = ({
 
   const [formData, setFormData] = useState({
     current_job_title: "",
-    years_of_experience: 0,
+    years_of_experience: "",
     specialty_field: "",
     languages_spoken: "",
     licensing_status: "",
     previous_countries_worked_in: "",
   });
+
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
+  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const languageInputRef = useRef<HTMLDivElement>(null);
+  const [showCustomLanguage, setShowCustomLanguage] = useState(false);
+  const [customLanguage, setCustomLanguage] = useState("");
+
+  const availableLanguages = [
+    "English",
+    "Deutsch",
+    "عربي",
+    "French",
+    "Turkey",
+    "Russian",
+  ];
 
   const [isLoading, setIsLoading] = useState(false);
   const locale = useLocale();
@@ -32,7 +47,8 @@ const ProfessionalBackgroundTab = ({
     []
   );
   const [specializationSearch, setSpecializationSearch] = useState("");
-  const [showSpecializationDropdown, setShowSpecializationDropdown] = useState(false);
+  const [showSpecializationDropdown, setShowSpecializationDropdown] =
+    useState(false);
   const specializationInputRef = useRef<HTMLInputElement>(null);
 
   const getSpecializations = async () => {
@@ -50,7 +66,7 @@ const ProfessionalBackgroundTab = ({
     if (profileData) {
       setFormData({
         current_job_title: profileData.current_job_title || "",
-        years_of_experience: profileData.years_of_experience || 0,
+        years_of_experience: String(profileData.years_of_experience || ""),
         specialty_field: profileData.specialty_field || "",
         languages_spoken: profileData.languages_spoken || "",
         licensing_status: profileData.licensing_status || "",
@@ -58,6 +74,33 @@ const ProfessionalBackgroundTab = ({
           profileData.previous_countries_worked_in || "",
       });
       setSpecializationSearch(profileData.specialty_field || "");
+
+      // Parse existing languages from string to array
+      if (profileData.languages_spoken) {
+        const languagesArray = profileData.languages_spoken
+          .split("-")
+          .filter((lang) => lang.trim());
+
+        // Check if any language is not in predefined options
+        const predefinedLanguages = [
+          "English",
+          "Deutsch",
+          "عربي",
+          "French",
+          "Turkey",
+          "Russian",
+        ];
+        const customLanguages = languagesArray.filter(
+          (lang) => !predefinedLanguages.includes(lang)
+        );
+
+        if (customLanguages.length > 0) {
+          // Add custom languages to selected languages
+          setSelectedLanguages(languagesArray);
+        } else {
+          setSelectedLanguages(languagesArray);
+        }
+      }
     }
   }, [profileData]);
 
@@ -65,7 +108,7 @@ const ProfessionalBackgroundTab = ({
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "years_of_experience" ? Number(value) : value,
+      [name]: name === "years_of_experience" ? value : value,
     }));
   };
 
@@ -78,8 +121,14 @@ const ProfessionalBackgroundTab = ({
       ) {
         setShowSpecializationDropdown(false);
       }
+      if (
+        languageInputRef.current &&
+        !languageInputRef.current.contains(event.target as Node)
+      ) {
+        setShowLanguageDropdown(false);
+      }
     }
-    if (showSpecializationDropdown) {
+    if (showSpecializationDropdown || showLanguageDropdown) {
       document.addEventListener("mousedown", handleClickOutside);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -87,9 +136,11 @@ const ProfessionalBackgroundTab = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showSpecializationDropdown]);
+  }, [showSpecializationDropdown, showLanguageDropdown]);
 
-  const handleSpecializationInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSpecializationInput = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setSpecializationSearch(e.target.value);
     setShowSpecializationDropdown(true);
     setFormData((prev) => ({
@@ -105,6 +156,46 @@ const ProfessionalBackgroundTab = ({
     }));
     setSpecializationSearch(name);
     setShowSpecializationDropdown(false);
+  };
+
+  const handleLanguageToggle = (language: string) => {
+    if (language === "Other") {
+      setShowCustomLanguage(true);
+      setShowLanguageDropdown(false);
+      return;
+    }
+
+    setSelectedLanguages((prev) => {
+      const isSelected = prev.includes(language);
+      let newLanguages;
+
+      if (isSelected) {
+        newLanguages = prev.filter((lang) => lang !== language);
+      } else {
+        newLanguages = [...prev, language];
+      }
+
+      // Update formData with dash-separated string
+      setFormData((prevForm) => ({
+        ...prevForm,
+        languages_spoken: newLanguages.join("-"),
+      }));
+
+      return newLanguages;
+    });
+  };
+
+  const handleCustomLanguageAdd = () => {
+    if (customLanguage.trim()) {
+      const newLanguages = [...selectedLanguages, customLanguage.trim()];
+      setSelectedLanguages(newLanguages);
+      setFormData((prevForm) => ({
+        ...prevForm,
+        languages_spoken: newLanguages.join("-"),
+      }));
+      setCustomLanguage("");
+      setShowCustomLanguage(false);
+    }
   };
 
   const filteredSpecializations = specializationSearch
@@ -192,7 +283,9 @@ const ProfessionalBackgroundTab = ({
               value={specializationSearch}
               onChange={handleSpecializationInput}
               onFocus={() => setShowSpecializationDropdown(true)}
-              placeholder={t("SpecialtyPlaceholder") || "Type or select specialization"}
+              placeholder={
+                t("SpecialtyPlaceholder") || "Type or select specialization"
+              }
               className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
             />
             {showSpecializationDropdown && (
@@ -206,7 +299,9 @@ const ProfessionalBackgroundTab = ({
                           ? "bg-blue-50 font-semibold"
                           : ""
                       }`}
-                      onClick={() => handleSpecializationSelect(specialization.name)}
+                      onClick={() =>
+                        handleSpecializationSelect(specialization.name)
+                      }
                     >
                       {specialization.name}
                     </li>
@@ -221,18 +316,109 @@ const ProfessionalBackgroundTab = ({
           </div>
         </div>
 
-        <div className="sm:col-span-2">
+        <div className="sm:col-span-2" ref={languageInputRef}>
           <label className="block text-sm text-gray-600 mb-1">
             {t("Languages")}
           </label>
-          <input
-            type="text"
-            name="languages_spoken"
-            value={formData.languages_spoken}
-            onChange={handleInputChange}
-            placeholder={t("LanguagesPlaceholder")}
-            className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
-          />
+          <div className="relative">
+            <div
+              className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out cursor-pointer min-h-[48px] flex flex-wrap gap-2 items-center"
+              onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+            >
+              {selectedLanguages.length > 0 ? (
+                selectedLanguages.map((language) => (
+                  <span
+                    key={language}
+                    className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                  >
+                    {language}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleLanguageToggle(language);
+                      }}
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))
+              ) : (
+                <span className="text-gray-400">
+                  {t("LanguagesPlaceholder") || "Select languages"}
+                </span>
+              )}
+            </div>
+            {showLanguageDropdown && (
+              <ul className="absolute z-10 left-0 right-0 bg-white border border-gray-200 rounded-2xl mt-1 max-h-48 overflow-auto shadow-lg">
+                {availableLanguages.map((language) => (
+                  <li
+                    key={language}
+                    className={`px-4 py-2 cursor-pointer hover:bg-blue-100 flex items-center gap-2 ${
+                      selectedLanguages.includes(language)
+                        ? "bg-blue-50 font-semibold"
+                        : ""
+                    }`}
+                    onClick={() => handleLanguageToggle(language)}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedLanguages.includes(language)}
+                      onChange={() => {}} // Handled by onClick
+                      className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    />
+                    {language}
+                  </li>
+                ))}
+                <li
+                  className="px-4 py-2 cursor-pointer hover:bg-blue-100 flex items-center gap-2 border-t border-gray-200"
+                  onClick={() => handleLanguageToggle("Other")}
+                >
+                  <input
+                    type="checkbox"
+                    checked={false}
+                    onChange={() => {}} // Handled by onClick
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  {t("Other")}
+                </li>
+              </ul>
+            )}
+            {showCustomLanguage && (
+              <div className="absolute z-10 left-0 right-0 bg-white border border-gray-200 rounded-2xl mt-1 p-4 shadow-lg">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={customLanguage}
+                    onChange={(e) => setCustomLanguage(e.target.value)}
+                    placeholder={t("PleaseSpecify")}
+                    className="flex-1 bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
+                    onKeyPress={(e) =>
+                      e.key === "Enter" && handleCustomLanguageAdd()
+                    }
+                  />
+                  <button
+                    type="button"
+                    onClick={handleCustomLanguageAdd}
+                    className="px-4 py-3 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition-colors"
+                  >
+                    {t("Add")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowCustomLanguage(false);
+                      setCustomLanguage("");
+                    }}
+                    className="px-4 py-3 bg-gray-500 text-white rounded-2xl hover:bg-gray-600 transition-colors"
+                  >
+                    {t("Cancel")}
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="sm:col-span-2">

@@ -305,9 +305,15 @@
     "PhoneNumber": "Telefonnummer",
     "ContactLang": "Bevorzugte Kontaktsprache",
     "SelectLanguage": "Sprache auswählen",
-    "Languages.English": "Englisch",
-    "Languages.Arabic": "Arabisch",
-    "Languages.German": "Deutsch",
+    "languages": {
+      "English": "Englisch",
+      "Arabic": "Arabisch",
+      "German": "Deutsch"
+    },
+    "Other": "Andere",
+    "PleaseSpecify": "Bitte angeben",
+    "Add": "Hinzufügen",
+    "Cancel": "Abbrechen",
     "CaseManager": "LinkedMed Fallmanager",
     "SaveChanges": "Änderungen speichern",
     "Saving": "Speichern...",
@@ -335,7 +341,10 @@
     "years": "Jahre",
     "ErrorLoadingProfile": "Fehler beim Laden des Profils.",
     "ImageUploadSuccess": "Profilbild aktualisiert!",
-    "ImageUploadError": "Bild-Upload fehlgeschlagen."
+    "ImageUploadError": "Bild-Upload fehlgeschlagen.",
+    "ExistingCertificate": "Vorhandenes Zertifikat",
+    "NewCertificate": "Neues Zertifikat zum Hochladen",
+    "NoResults": "Keine Spezialisierungen gefunden"
   },
   "Service": "Dienstleistungen",
   "At": "Bei LinkedMed verwandeln wir Ehrgeiz in Erfolg, indem wir einen vollständig geführten Weg zu medizinischen Karrieren im Ausland anbieten. Wir haben unsere Dienstleistungen in vier klare Kategorien unterteilt, damit Sie verstehen, wie wir Sie in jeder Phase unterstützen.",

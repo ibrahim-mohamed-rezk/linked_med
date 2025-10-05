@@ -27,6 +27,8 @@ const PersonalInfoTab = ({
     preferred_contact_language: "",
     linkedmed_case_manager: "",
   });
+  const [showCustomLanguage, setShowCustomLanguage] = useState(false);
+  const [customLanguage, setCustomLanguage] = useState("");
   const [countries, setCountries] = useState<CountryTypes[]>([]);
   const getCountries = async () => {
     const response = await getData(
@@ -45,17 +47,35 @@ const PersonalInfoTab = ({
 
   useEffect(() => {
     if (profileData) {
-      setFormData({
-        full_name: profileData.full_name || "",
-        date_of_birth: profileData.date_of_birth || "",
-        nationality: profileData.nationality || "",
-        current_city: profileData.current_city || "",
-        current_country: profileData.current_country || "",
-        phone_number: profileData.phone_number || "",
-        preferred_contact_language:
-          profileData.preferred_contact_language || "",
-        linkedmed_case_manager: profileData?.linkedmed_case_manager || "",
-      });
+      const predefinedLanguages = ["English", "Arabic", "German"];
+      const apiLanguage = profileData.preferred_contact_language || "";
+
+      // Check if API language is not in predefined options
+      if (apiLanguage && !predefinedLanguages.includes(apiLanguage)) {
+        setShowCustomLanguage(true);
+        setCustomLanguage(apiLanguage);
+        setFormData({
+          full_name: profileData.full_name || "",
+          date_of_birth: profileData.date_of_birth || "",
+          nationality: profileData.nationality || "",
+          current_city: profileData.current_city || "",
+          current_country: profileData.current_country || "",
+          phone_number: profileData.phone_number || "",
+          preferred_contact_language: apiLanguage,
+          linkedmed_case_manager: profileData?.linkedmed_case_manager || "",
+        });
+      } else {
+        setFormData({
+          full_name: profileData.full_name || "",
+          date_of_birth: profileData.date_of_birth || "",
+          nationality: profileData.nationality || "",
+          current_city: profileData.current_city || "",
+          current_country: profileData.current_country || "",
+          phone_number: profileData.phone_number || "",
+          preferred_contact_language: apiLanguage,
+          linkedmed_case_manager: profileData?.linkedmed_case_manager || "",
+        });
+      }
     }
   }, [profileData]);
 
@@ -63,9 +83,37 @@ const PersonalInfoTab = ({
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
+
+    if (name === "preferred_contact_language") {
+      if (value === "Other") {
+        setShowCustomLanguage(true);
+        setFormData((prev) => ({
+          ...prev,
+          [name]: "",
+        }));
+      } else {
+        setShowCustomLanguage(false);
+        setFormData((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
+      }
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleCustomLanguageChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = e.target.value;
+    setCustomLanguage(value);
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      preferred_contact_language: value,
     }));
   };
 
@@ -201,15 +249,27 @@ const PersonalInfoTab = ({
           </label>
           <select
             name="preferred_contact_language"
-            value={formData.preferred_contact_language}
+            value={
+              showCustomLanguage ? "Other" : formData.preferred_contact_language
+            }
             onChange={handleInputChange}
             className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out"
           >
             <option value="">{t("SelectLanguage")}</option>
-            <option value="English">{t("Languages.English")}</option>
-            <option value="Arabic">{t("Languages.Arabic")}</option>
-            <option value="German">{t("Languages.German")}</option>
+            <option value="English">{t("languages.English")}</option>
+            <option value="Arabic">{t("languages.Arabic")}</option>
+            <option value="German">{t("languages.German")}</option>
+            <option value="Other">{t("Other")}</option>
           </select>
+          {showCustomLanguage && (
+            <input
+              type="text"
+              value={customLanguage}
+              onChange={handleCustomLanguageChange}
+              placeholder={t("PleaseSpecify")}
+              className="w-full bg-gray-100 rounded-2xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-50 focus:border-blue-300 transition-all duration-200 ease-in-out mt-2"
+            />
+          )}
         </div>
 
         <div className="sm:col-span-2">

@@ -298,9 +298,15 @@
     "PhoneNumber": "رقم الهاتف",
     "ContactLang": "لغة التواصل المفضلة",
     "SelectLanguage": "اختر اللغة",
-    "Languages.English": "الإنجليزية",
-    "Languages.Arabic": "العربية",
-    "Languages.German": "الألمانية",
+    "languages": {
+      "English": "الإنجليزية",
+      "Arabic": "العربية",
+      "German": "الألمانية"
+    },
+    "Other": "أخرى",
+    "PleaseSpecify": "يرجى التحديد",
+    "Add": "إضافة",
+    "Cancel": "إلغاء",
     "CaseManager": "مدير الحالة من LinkedMed",
     "SaveChanges": "حفظ التغييرات",
     "Saving": "جارٍ الحفظ...",
@@ -328,7 +334,10 @@
     "years": "سنة",
     "ErrorLoadingProfile": "فشل في تحميل الملف الشخصي.",
     "ImageUploadSuccess": "تم تحديث صورة الملف الشخصي!",
-    "ImageUploadError": "فشل تحميل الصورة."
+    "ImageUploadError": "فشل تحميل الصورة.",
+    "ExistingCertificate": "الشهادة الموجودة",
+    "NewCertificate": "شهادة جديدة للتحميل",
+    "NoResults": "لم يتم العثور على تخصصات"
   },
   "Service": "الخدمات",
   "At": "في LinkedMed، نحول الطموح إلى إنجاز من خلال تقديم مسار موجه بالكامل نحو الوظائف الطبية في الخارج. لقد قمنا بتنظيم خدماتنا إلى أربع فئات واضحة لمساعدتك على فهم كيفية دعمنا لك في كل مرحلة.",

@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import { langs } from "@/libs/data/langs";
 import { useTranslations, useLocale } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { LoginModal, VerifyModal } from "./AuthModals";
 import { SignupModal } from "./AuthModals";
 import Image from "next/image";
@@ -19,7 +19,6 @@ import {
 
 const Navbar = () => {
   const t = useTranslations("header");
-  const router = useRouter();
   const locale = useLocale();
   const pathname = usePathname();
 
@@ -74,14 +73,14 @@ const Navbar = () => {
 
   const changeLang = (lang: string) => {
     if (lang === locale) return;
-    router.push(`/${lang}${pathname.replace(`/${locale}`, "")}`);
+    window.location.href = `/${lang}${pathname.replace(`/${locale}`, "")}`;
   };
 
   const handleLogout = async () => {
     await logout();
     setUser(null);
     setIsUserMenuOpen(false);
-    router.refresh(); // Refresh the page to update UI
+    window.location.reload(); // Refresh the page to update UI
   };
 
   // Display name or email depending on what's available
@@ -601,7 +600,8 @@ const Navbar = () => {
         onClose={() => setIsVerifyOpen(false)}
         onVerify={async (code) => {
           await handleVerify(code);
-          window.location.reload();
+          setIsVerifyOpen(false);
+          window.location.href = `/${locale}/myprofile`; // Redirect to profile page
         }}
       />
     </>
