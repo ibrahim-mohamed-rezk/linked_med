@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import Image from 'next/image';
 import { ProfileData } from '@/libs/helpers/types';
 import { useTranslations } from 'next-intl';
 import { postData } from '@/libs/server/server';
@@ -78,23 +77,6 @@ const EducationCertificationsTab = ({
     setExistingCertificateUrl(null);
   };
 
-  const getFileExtension = (filename: string | undefined) => {
-    if (!filename) return "FILE";
-    return filename.split(".").pop()?.toUpperCase() || "FILE";
-  };
-
-  const isImageFile = (filename: string | undefined, type?: string) => {
-    if (type) return type.startsWith("image/");
-    if (!filename) return false;
-    const imageExtensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"];
-    return imageExtensions.some((ext) => filename.toLowerCase().endsWith(ext));
-  };
-
-  const isPdfFile = (filename: string | undefined, type?: string) => {
-    if (type) return type === "application/pdf";
-    if (!filename) return false;
-    return filename.toLowerCase().endsWith(".pdf");
-  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
