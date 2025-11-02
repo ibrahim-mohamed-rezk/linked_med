@@ -7,10 +7,9 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer";
-import SocialMediaIcons from "@/components/SocialMediaIcons";  // Import the server-side component
+import SocialMediaIcons from "@/components/SocialMediaIcons"; // Import the server-side component
 import { Archivo } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -42,16 +41,30 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html  className={archivo.className} dir={locale === "ar" ? "rtl" : "ltr"} lang={locale}>
-      <body>
-        <NextIntlClientProvider messages={messages}>
+    <html
+      className={archivo.className}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      lang={locale}
+    >
+      <body className="bg-black">
+        {/* <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>
                     <Toaster position="top-center" />
             {children}</main>
           <Footer />
-          <SocialMediaIcons />  {/* Server-side Social Media Icons Component */}
-        </NextIntlClientProvider>
+          <SocialMediaIcons /> 
+        </NextIntlClientProvider> */}
+        <div className="w-screen h-screen flex flex-col gap-4 items-center justify-center text-red-600">
+          <h2>الموقع متوقف لفتره محدوده</h2>
+          {/* Arabic */}
+          <h2>The site is temporarily down</h2>
+          {/* English */}
+          <h2>Сайт временно недоступен</h2>
+          {/* Russian */}
+          <h2>Die Website ist vorübergehend nicht erreichbar</h2>
+          {/* German */}
+        </div>
       </body>
     </html>
   );
