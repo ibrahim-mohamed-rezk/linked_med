@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import "../../../public/fonts/satoshi/css/satoshi.css";
-import Navbar from "@/components/Navbar";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+// import Navbar from "@/components/Navbar";
+// import { NextIntlClientProvider } from "next-intl";
+// import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import Footer from "@/components/Footer";
-import SocialMediaIcons from "@/components/SocialMediaIcons"; // Import the server-side component
+// import Footer from "@/components/Footer";
+// import SocialMediaIcons from "@/components/SocialMediaIcons"; // Import the server-side component
 import { Archivo } from "next/font/google";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -38,7 +38,9 @@ export default async function RootLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  console.log(children);
+
+  // const messages = await getMessages();
 
   return (
     <html
