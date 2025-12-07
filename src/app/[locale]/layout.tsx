@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import "../../../public/fonts/satoshi/css/satoshi.css";
-// import Navbar from "@/components/Navbar";
-// import { NextIntlClientProvider } from "next-intl";
-// import { getMessages } from "next-intl/server";
+import Navbar from "@/components/Navbar";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-// import Footer from "@/components/Footer";
-// import SocialMediaIcons from "@/components/SocialMediaIcons"; // Import the server-side component
+import Footer from "@/components/Footer";
+import SocialMediaIcons from "@/components/SocialMediaIcons"; // Import the server-side component
 import { Archivo } from "next/font/google";
-// import { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -40,7 +40,7 @@ export default async function RootLayout({
 
   console.log(children);
 
-  // const messages = await getMessages();
+  const messages = await getMessages();
 
   return (
     <html
@@ -49,24 +49,20 @@ export default async function RootLayout({
       lang={locale}
     >
       <body className="bg-black">
-        {/* <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>
                     <Toaster position="top-center" />
             {children}</main>
           <Footer />
           <SocialMediaIcons /> 
-        </NextIntlClientProvider> */}
-        <div className="w-screen h-screen flex flex-col gap-4 items-center justify-center text-red-600">
+        </NextIntlClientProvider>
+        {/* <div className="w-screen h-screen flex flex-col gap-4 items-center justify-center text-red-600">
           <h2>الموقع متوقف لفتره محدوده</h2>
-          {/* Arabic */}
           <h2>The site is temporarily down</h2>
-          {/* English */}
           <h2>Сайт временно недоступен</h2>
-          {/* Russian */}
           <h2>Die Website ist vorübergehend nicht erreichbar</h2>
-          {/* German */}
-        </div>
+        </div> */}
       </body>
     </html>
   );
