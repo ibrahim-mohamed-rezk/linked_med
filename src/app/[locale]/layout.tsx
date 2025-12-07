@@ -57,12 +57,7 @@ export default async function RootLayout({
           <Footer />
           <SocialMediaIcons /> 
         </NextIntlClientProvider>
-        {/* <div className="w-screen h-screen flex flex-col gap-4 items-center justify-center text-red-600">
-          <h2>الموقع متوقف لفتره محدوده</h2>
-          <h2>The site is temporarily down</h2>
-          <h2>Сайт временно недоступен</h2>
-          <h2>Die Website ist vorübergehend nicht erreichbar</h2>
-        </div> */}
+       
       </body>
     </html>
   );
