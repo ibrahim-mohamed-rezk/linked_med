@@ -38,10 +38,7 @@ export default async function RootLayout({
     notFound();
   }
 
-  console.log(children);
-
   const messages = await getMessages();
-
   return (
     <html
       className={archivo.className}
@@ -52,12 +49,12 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main>
-                    <Toaster position="top-center" />
-            {children}</main>
+            <Toaster position="top-center" />
+            {children}
+          </main>
           <Footer />
-          <SocialMediaIcons /> 
+          <SocialMediaIcons />
         </NextIntlClientProvider>
-       
       </body>
     </html>
   );
