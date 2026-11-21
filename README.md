@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Linked Med
+
+Linked Med — a LinkedIn-like professional platform for medical professionals and employers. Build a professional profile, showcase your background and education, connect with employers, and explore medical services, e-learning and the blog.
+
+**Live demo:** https://linked-med.vercel.app
+
+> This repository contains the frontend only; it loads its content from the project's backend API through Axios (`src/libs/axios.ts`).
+
+## Features
+
+- **Auth and email verification** — sign-up, sign-in and email verification, with an employer registration flow (`src/app/[locale]/register-panel`, `src/components/EmailVerificationModal.tsx`).
+- **User profiles** — professional profiles with a professional background and education / certifications tabs (`src/app/[locale]/myprofile`, `src/components/myprofile/EducationCertificationsTab.tsx`).
+- **Employer registration** — employers can register and present their organisation (`register-panel`).
+- **Refer a friend** — invite colleagues to the platform (`src/app/[locale]/refer-a-friend`).
+- **Blog** — articles with detail pages (`src/app/[locale]/blogs`, `blogs/[id]`).
+- **Medical services** — a services section (`src/app/[locale]/services`).
+- **E-learning** — learning content (`src/app/[locale]/e-learning`).
+- **Onboarding journeys** — “make a move” and “seamless processing” flows (`make-move`, `seamless-processing`).
+- **Internationalisation** — localised routes under `src/app/[locale]`, with translations in `messages/` (via `next-intl`).
+- **About the platform** — our story, our values, about and contact pages.
+
+## Tech Stack
+
+- Next.js 15.2.6 (App Router) — `next`
+- React 19.0.0 — `react`, `react-dom`
+- TypeScript — `typescript`
+- Tailwind CSS 4 — `tailwindcss`, `@tailwindcss/postcss`
+- Internationalisation — `next-intl` 3.26.5
+- Data fetching — Axios 1.6.7 (`src/libs/axios.ts`)
+- Animation — framer-motion 12.4.7, AOS 2.3.4
+- Maps — `@react-google-maps/api` 2.20.6
+- UI — `lucide-react` 0.475.0, `react-hot-toast` 2.5.2, `js-cookie` 3.0.5
+
+## Project Structure
+
+```
+src/
+  app/[locale]/   # Localised routes: about, blogs, e-learning, employers, myprofile, services, ...
+  components/     # Shared components and page sections (home, profile, ...)
+  libs/           # API client (axios), i18n helpers
+  messages/       # Translations
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js and npm
+
+### Install and run
 
 ```bash
-npm run dev 
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ibrahim-mohamed-rezk/linked_med.git
+cd linked_med
+npm install
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Other commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build   # Production build (next build)
+npm start       # Start the production server (next start)
+npm run lint    # Lint (next lint)
+```
